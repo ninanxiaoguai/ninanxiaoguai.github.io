@@ -285,10 +285,12 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+
+
 symbols_count_time:
   separated_meta: true
   item_text_post: true
-  item_text_total: false
+  item_text_total: true
   awl: 4
   wpm: 275
 
@@ -382,7 +384,7 @@ cheers_enabled: true
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
@@ -403,7 +405,7 @@ font:
   headings:
     external: true
     family:
-    size:
+    size: 40
 
   # Font settings for posts.
   # Fallback to `global` font settings.
@@ -663,6 +665,7 @@ busuanzi_count:
   total_views_icon: eye
   post_views: true
   post_views_icon: eye
+
 
 
 # Tencent analytics ID

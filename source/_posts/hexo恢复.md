@@ -2,7 +2,9 @@
 title: hexo恢复
 date: 2018-12-22 15:17:37
 categories: hexo 
-tags: hexo 教程
+tags: 
+- hexo 
+- 教程
 mathjax: false
 description:
 ---

@@ -3,7 +3,7 @@ title: markdown语法
 date: 2018-08-23 18:07:50
 tags: 
 - markdown 
-- 收藏
+- 语法
 categories: markdown
 mathjax: true
 ---

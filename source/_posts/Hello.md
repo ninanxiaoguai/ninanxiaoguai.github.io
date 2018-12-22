@@ -1,8 +1,10 @@
 ---
 title: Hello
 date: 2018-08-22 10:19:37
-categories: hexo 
-tags: hexo 教程
+categories: hexo
+tags: 
+- hexo
+- 教程
 mathjax: false
 description:
 ---
@@ -298,8 +300,6 @@ description:
   daovoice_app_id: 这里填你的刚才获得的 app_id
   ```
 
-  
-
 - 打开`/themes/next/layout/_partials/head.swig ` ,代码放进去，哪行都可以
 
   ```
@@ -379,5 +379,48 @@ description:
       ]
   });
   ```
+
+### 修改网站主题字体大小
+在主题配置文件中
+```
+font:
+  enable: true
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  # 亲测这个可用，如果不可用，自己搜索 [Google 字体 国内镜像]，找个能用的就行
+  host: https://fonts.cat.net
+  # Global font settings used on <body> element.
+    # 全局字体，应用在 body 元素上
+  global:
+    external: true
+    family: Lato
+    size: 16
+    #csdn上就是16看着舒服多了
+
+  # 标题字体 (h1, h2, h3, h4, h5, h6)
+  headings:
+    external: true
+    family: Roboto Slab
+
+  # 文章字体
+  posts:
+    external: true
+    family:
+
+  # Logo 字体
+  logo:
+    external: true
+    family: Lobster Two
+    size: 24
+
+  # 代码字体，应用于 code 以及代码块
+  codes:
+    external: true
+    family: Roboto Mono
+--------------------- 
+作者：Leesin Dong 
+来源：CSDN 
+原文：https://blog.csdn.net/dataiyangu/article/details/84981745 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+```
 
   至此，网站已基本配置完成。
