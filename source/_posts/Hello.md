@@ -416,11 +416,6 @@ font:
   codes:
     external: true
     family: Roboto Mono
---------------------- 
-作者：Leesin Dong 
-来源：CSDN 
-原文：https://blog.csdn.net/dataiyangu/article/details/84981745 
-版权声明：本文为博主原创文章，转载请附上博文链接！
 ```
 
   至此，网站已基本配置完成。
