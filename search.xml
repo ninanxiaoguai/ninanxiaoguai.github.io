@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo恢复]]></title>
+    <url>%2F2018%2F12%2F22%2Fhexo%E6%81%A2%E5%A4%8D%2F</url>
+    <content type="text"><![CDATA[想重新开始写博客，第一件事当然是恢复博客的正常使用啦！搜了小半天终于找到了符合我条件的教程。 背景：起初已配置好，但之后从未使用，期间重新做了一次系统。待我有时间再查询一下如何备份至云端。 安装git、node.js在原来储存博客的文件夹中(blog)`右键`-&gt;`选择`-&gt;`Git Bash Here` 再输入：1npm install hexo -g 因为重装系统有可能删除了配置文件包括环境变量里面的，没有配置 name 和 email 的话，git 是无法正常工作的。所以首先得重新配置name跟email在git bash里面输入下面两行 12git config --global user.name &quot;你的名字&quot;git config --global user.email &quot;你的邮箱&quot; 如果上面两条命令fail了的话，记得先用命令git init再输入上面两条命令 创建SSH输入 ssh-keygen -t rsa -C &quot;myemail@example.com&quot; 再按两次回车输入 cd ~/.ssh 再输入 cat id_rsa.pub会输出 12ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmyemail@example.com 登陆我的Github在settings中找到ssh and GPG keys点击new ssh key，title随意 把ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx输入到key位置在git bash输入ssh -T git@github.com 可验证时候正确 修改blog目录下_config.yml如果执行hexo deploy提示 123Logon failed, use ctrl+c to cancel basic credential prompt.bash: /dev/tty: No such device or addressINFO Catch you later 则需要把下方的 1234deploy: type: git repo: https://github.com/mygithubName/mygithubName.github.io.git branch: master 修改成： 1234deploy: type: git repo: ssh://git@github.com/mygithubName/mygithubName.github.io.git branch: master 执行 hexo g -d 大功告成 常规操作： 1234hexo cleanhexo generatehexo server(本地测试用)hexo deploy 至此，网站已基本恢复。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo 教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[小小念]]></title>
     <url>%2F2018%2F12%2F22%2F%E5%B0%8F%E5%B0%8F%E5%BF%B5%2F</url>
     <content type="text"><![CDATA[​ 啊啊啊啊啊啊，当时心一热搭建了一个博客，时隔四个月一直却没有更新博客善哉善哉，但期间也经历了好多，从准备保研的焦头烂额，到现在天天看剧打游戏的糜烂生活，落差之大，以至于日日积累的罪恶感促使我又有好好学习之意，遂重新在网上找了小半天的教程，把静静躺在H盘的blog文件夹重新唤醒。​ 当时心心念的保研，经历了很多很多次的失败，多方权衡下，最后以去南方科技大学而告终，毕业设计的题目也基本确定，很经典的问题——多目标优化，这也可能是我研究生研究的方向了。 ​ 从今天开始，可能就要持续更新我的小博客，记录一下~~]]></content>
@@ -21,17 +32,6 @@
       <tags>
         <tag>markdown</tag>
         <tag>收藏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[恢复hexo]]></title>
-    <url>%2F2018%2F08%2F22%2Fhexo%E6%81%A2%E5%A4%8D%2F</url>
-    <content type="text"><![CDATA[想重新开始写博客，第一件事当然是恢复博客的正常使用啦啦！搜了小半天终于找到了符合我条件的教程。 背景：起初已配置好，但之后从未使用，期间重新做了一次系统。待我有时间再查询一下如何备份至云端。 安装git、node.js在原来储存博客的文件夹中(blog)`右键`-&gt;`选择`-&gt;`Git Bash Here` 再输入：1npm install hexo -g 因为重装系统有可能删除了配置文件包括环境变量里面的，没有配置 name 和 email 的话，git 是无法正常工作的。所以首先得重新配置name跟email在git bash里面输入下面两行 12git config --global user.name &quot;你的名字&quot;git config --global user.email &quot;你的邮箱&quot; 如果上面两条命令fail了的话，记得先用命令 init```12345678再输入上面两条命令### 创建SSH输入 `ssh-keygen -t rsa -C &quot;myemail@example.com&quot;` 再按两次回车输入 `cd ~/.ssh` 再输入 `cat id_rsa.pub`会输出 ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmyemail@example.com12345678910111213### 登陆我的Github 在`settings`中找到`ssh and GPG keys`点击`new ssh key`，`title`随意把`ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`输入到key位置在`git bash`输入`ssh -T git@github.com` 可验证时候正确### 修改blog目录下`_config.yml` 如果执行`hexo deploy`提示 Logon failed, use ctrl+c to cancel basic credential prompt.bash: /dev/tty: No such device or addressINFO Catch you later12则需要把下方的 deploy: type: git repo: https://github.com/mygithubName/mygithubName.github.io.git branch: master12修改成： deploy: type: git repo: ssh://git@github.com/mygithubName/mygithubName.github.io.git branch: master12345 执行 ```hexo g -d 大功告成 常规操作： 1234hexo cleanhexo generatehexo server(本地测试用)hexo deploy 至此，网站已基本恢复。]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo 教程</tag>
       </tags>
   </entry>
   <entry>
