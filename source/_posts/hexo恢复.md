@@ -160,12 +160,40 @@ git add .
 git commit -m ""
 git push origin hexo
 	```
-### 从github上还原
-配置好基本的环境，npm install 安装依赖，然后克隆分支到本地
-```
+## 从github上还原
+此部分完全摘抄自网站，我并非试过，并不知道是否可行。
+- 克隆项目
+	```
 git clone -b hexo git@github.com:myname/myname.github.io.git
-```
-
+	```
+- 进入博客目录
+	```
+cd myname.github.io.git
+	```
+- 切换到博客文件分支
+	```
+git checkout -b hexo origin/hexo
+	```
+- 安装hexo
+	```
+nmp install hexo --save
+	```
+- 编辑，查看
+	```
+hexo g
+hexo s
+	```
+- 提交git
+若提交过程中出现`ERROR Deployer not found: git`,可执行以下代码，然后重新提交
+	```
+npm install hexo-deployer-git --save1
+	```
+- 新的文章等更新
+	```
+git add .
+git commit -m "新增博客"
+git push origin hexo
+	```
 
 
 END
