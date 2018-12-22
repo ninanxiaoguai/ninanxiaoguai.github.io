@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vscode配置c环境]]></title>
+    <url>%2F2018%2F12%2F22%2Fvscode%E9%85%8D%E7%BD%AEc%2F</url>
+    <content type="text"><![CDATA[在sublime和vscode的权衡下，选择了vscode，毕竟之前一直用的是sublime，想换一换了。于是就遇到一个老问题，配环境！ 此内容几乎完全来自于某乎 安装 vscode LLVM 选Pre-Built Binaries中的Clang for Windows (64-bit)，不需要下.sig文件 添加环境变量：Add LLVM to the system PATH for all users 安装路径推荐：C:\LLVM 工具链：MinGW 其他默认 MinGW-w64 - for 32 and 64 bit Windows 链接，提取码：dclo 下好后，把x86_64-7.2.0-posix-seh-rt_v5-rev0.7z\mingw64 中所有的文件都复制到 C:\LLVM中 检验：打开cmd 输入gcc，如果为no input files而不是其他，即为成功。 ​ 输入clang，如果为no input files而不是其他，即为成功。 ​ 插件一定要下： C/C++ C/C++ Clang Command Adapter Code Runner 自由推荐： Bracket Pair Colorizer：彩虹花括号 Include Autocomplete：提供头文件名字的补全 One Dark Pro：VS Code安装量最高的主题 环境配置打开vscode，一定要选 open folder 选择刚才那个文件夹，点VS Code上的新建文件夹，名称为.vscode（这样做的原因是Windows的Explorer不允许创建的文件夹第一个字符是点），然后创建 launch.json，tasks.json，settings.json，c_cpp_properties.json放到.vscode文件夹下 launch.json:12345678910111213141516171819202122232425262728// https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md&#123; &quot;version&quot;: &quot;0.2.0&quot;, &quot;configurations&quot;: [ &#123; &quot;name&quot;: &quot;(gdb) Launch&quot;, // 配置名称，将会在启动配置的下拉菜单中显示 &quot;type&quot;: &quot;cppdbg&quot;, // 配置类型，这里只能为cppdbg &quot;request&quot;: &quot;launch&quot;, // 请求配置类型，可以为launch（启动）或attach（附加） &quot;program&quot;: &quot;$&#123;fileDirname&#125;/$&#123;fileBasenameNoExtension&#125;.exe&quot;, // 将要进行调试的程序的路径 &quot;args&quot;: [], // 程序调试时传递给程序的命令行参数，一般设为空即可 &quot;stopAtEntry&quot;: false, // 设为true时程序将暂停在程序入口处，我一般设置为true &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;&quot;, // 调试程序时的工作目录 &quot;environment&quot;: [], // （环境变量？） &quot;externalConsole&quot;: true, // 调试时是否显示控制台窗口，一般设置为true显示控制台 &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot;, // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，你应该不需要对gdb手动输命令吧？ &quot;MIMode&quot;: &quot;gdb&quot;, // 指定连接的调试器，可以为gdb或lldb。但目前lldb在windows下没有预编译好的版本。 &quot;miDebuggerPath&quot;: &quot;gdb.exe&quot;, // 调试器路径，Windows下后缀不能省略，Linux下则去掉 &quot;setupCommands&quot;: [ // 用处未知，模板如此 &#123; &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;, &quot;text&quot;: &quot;-enable-pretty-printing&quot;, &quot;ignoreFailures&quot;: false &#125; ], &quot;preLaunchTask&quot;: &quot;Compile&quot; // 调试会话开始前执行的任务，一般为编译程序。与tasks.json的label相对应 &#125; ]&#125; tasks.json:命令行参数方面，-std根据自己的需要修改。如果使用Clang编写C语言，把command的值改成clang。如果使用MinGW，编译C用gcc，编译c++用g++，并把-target和-fcolor那两条删去。 123456789101112131415161718192021222324252627282930313233// https://code.visualstudio.com/docs/editor/tasks&#123; &quot;version&quot;: &quot;2.0.0&quot;, &quot;tasks&quot;: [ &#123; &quot;label&quot;: &quot;Compile&quot;, // 任务名称，与launch.json的preLaunchTask相对应 &quot;command&quot;: &quot;clang++&quot;, // 要使用的编译器 &quot;args&quot;: [ &quot;$&#123;file&#125;&quot;, &quot;-o&quot;, // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out &quot;$&#123;fileDirname&#125;/$&#123;fileBasenameNoExtension&#125;.exe&quot;, &quot;-g&quot;, // 生成和调试有关的信息 &quot;-Wall&quot;, // 开启额外警告 &quot;-static-libgcc&quot;, // 静态链接 &quot;-fcolor-diagnostics&quot;, // 彩色的错误信息？但貌似clang默认开启而gcc不接受此参数 &quot;--target=x86_64-w64-mingw&quot;, // clang的默认target为msvc，不加这一条就会找不到头文件；Linux下去掉这一条 &quot;-std=c++17&quot; // C语言最新标准为c11，或根据自己的需要进行修改 ], // 编译命令参数 &quot;type&quot;: &quot;shell&quot;, // 可以为shell或process，前者相当于先打开shell再输入命令，后者是直接运行命令 &quot;group&quot;: &#123; &quot;kind&quot;: &quot;build&quot;, &quot;isDefault&quot;: true // 设为false可做到一个tasks.json配置多个编译指令，需要自己修改本文件，我这里不多提 &#125;, &quot;presentation&quot;: &#123; &quot;echo&quot;: true, &quot;reveal&quot;: &quot;always&quot;, // 在“终端”中显示编译信息的策略，可以为always，silent，never。具体参见VSC的文档 &quot;focus&quot;: false, // 设为true后可以使执行task时焦点聚集在终端，但对编译c和c++来说，设为true没有意义 &quot;panel&quot;: &quot;shared&quot; // 不同的文件的编译信息共享一个终端面板 &#125; // &quot;problemMatcher&quot;:&quot;$gcc&quot; // 如果你不使用clang，去掉前面的注释符，并在上一条之后加个逗号。照着我的教程做的不需要改（也可以把这行删去) &#125; ]&#125; settings.json: Code Runner的命令行和某些选项可以根据自己的需要在此处修改，用法还是参见此扩展的文档和百度gcc使用教程。如果你要使用其他地方的头文件和库文件，可能要往clang.cflags和clang.cxxflags里加-I和-L，用法百度gcc使用教程。12345678910111213141516171819202122232425262728293031&#123; &quot;files.defaultLanguage&quot;: &quot;cpp&quot;, // ctrl+N新建文件后默认的语言 &quot;editor.formatOnType&quot;: true, // 输入时就进行格式化，默认触发字符较少，分号可以触发 &quot;editor.snippetSuggestions&quot;: &quot;top&quot;, // snippets代码优先显示补全 &quot;code-runner.runInTerminal&quot;: true, // 设置成false会在“输出”中输出，无法输入 &quot;code-runner.executorMap&quot;: &#123; &quot;c&quot;: &quot;cd $dir &amp;&amp; clang $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c11 &amp;&amp; $dir$fileNameWithoutExt&quot;, &quot;cpp&quot;: &quot;cd $dir &amp;&amp; clang++ $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c++17 &amp;&amp; $dir$fileNameWithoutExt&quot; &#125;, // 设置code runner的命令行 &quot;code-runner.saveFileBeforeRun&quot;: true, // run code前保存 &quot;code-runner.preserveFocus&quot;: true, // 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false &quot;code-runner.clearPreviousOutput&quot;: false, // 每次run code前清空属于code runner的终端消息 &quot;C_Cpp.clang_format_sortIncludes&quot;: true, // 格式化时调整include的顺序（按字母排序） &quot;C_Cpp.intelliSenseEngine&quot;: &quot;Default&quot;, // 可以为Default或Tag Parser，后者较老，功能较简单。具体差别参考cpptools扩展文档 &quot;C_Cpp.errorSquiggles&quot;: &quot;Disabled&quot;, // 因为有clang的lint，所以关掉 &quot;C_Cpp.autocomplete&quot;: &quot;Disabled&quot;, // 因为有clang的补全，所以关掉 &quot;clang.cflags&quot;: [ // 控制c语言静态检测的参数 &quot;--target=x86_64-w64-mingw&quot;, &quot;-std=c11&quot;, &quot;-Wall&quot; ], &quot;clang.cxxflags&quot;: [ // 控制c++静态检测时的参数 &quot;--target=x86_64-w64-mingw&quot;, &quot;-std=c++17&quot;, &quot;-Wall&quot; ], &quot;clang.completion.enable&quot;:true // 效果效果比cpptools要好&#125; c_cpp_properties.json: 1234567891011121314151617181920212223&#123; &quot;configurations&quot;: [ &#123; &quot;name&quot;: &quot;MinGW&quot;, &quot;intelliSenseMode&quot;: &quot;clang-x64&quot;, &quot;compilerPath&quot;: &quot;C:/LLVM/bin/gcc.exe&quot;, &quot;includePath&quot;: [ &quot;$&#123;workspaceFolder&#125;&quot; ], &quot;defines&quot;: [], &quot;browse&quot;: &#123; &quot;path&quot;: [ &quot;$&#123;workspaceFolder&#125;&quot; ], &quot;limitSymbolsToIncludedHeaders&quot;: true, &quot;databaseFilename&quot;: &quot;&quot; &#125;, &quot;cStandard&quot;: &quot;c11&quot;, &quot;cppStandard&quot;: &quot;c++17&quot; &#125; ], &quot;version&quot;: 4&#125; 编译技巧 ctrl+shift+B单纯编译 按F5为运行并调试（运行前会自动编译） 加断点在列号前面点一下就行，如果想从一开始就停下来，可以加在main函数那里，或者launch.json中设置&quot;stopAtEntry&quot;: true。 按f11可以一步一步进行，箭头所指的那行代码就是下一步要运行的代码。 左边有个调试栏，可以看到变量的值,自动栏没有的可以手动添加表达式 把鼠标放到变量上可以看到变量的值，但是只能识别简单的表达式 栈帧对于递归很有用；在某些时候还可以抓取“异常”。 如果你不需要调试，可以直接右键选run code。 输出端可以输入，在settings.json中添加&quot;code-runner.runInTerminal&quot;: true]]></content>
+      <categories>
+        <category>vscode</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo恢复]]></title>
     <url>%2F2018%2F12%2F22%2Fhexo%E6%81%A2%E5%A4%8D%2F</url>
     <content type="text"><![CDATA[想重新开始写博客，第一件事当然是恢复博客的正常使用啦！搜了小半天终于找到了符合我条件的教程。 背景：起初已配置好，但之后从未使用，期间重新做了一次系统。待我有时间再查询一下如何备份至云端。(已完成) 恢复安装git、node.js在原来储存博客的文件夹中(blog)`右键`-&gt;`选择`-&gt;`Git Bash Here` 再输入：1npm install hexo -g 因为重装系统有可能删除了配置文件包括环境变量里面的，没有配置 name 和 email 的话，git 是无法正常工作的。所以首先得重新配置name跟email在git bash里面输入下面两行 12git config --global user.name &quot;你的名字&quot;git config --global user.email &quot;你的邮箱&quot; 如果上面两条命令fail了的话，记得先用命令git init再输入上面两条命令 创建SSH输入 ssh-keygen -t rsa -C &quot;myemail@example.com&quot; 再按两次回车输入 cd ~/.ssh 再输入 cat id_rsa.pub会输出 12ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmyemail@example.com 登陆我的Github在settings中找到ssh and GPG keys点击new ssh key，title随意 把ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx输入到key位置在git bash输入ssh -T git@github.com 可验证时候正确 修改blog目录下_config.yml如果执行hexo deploy提示 123Logon failed, use ctrl+c to cancel basic credential prompt.bash: /dev/tty: No such device or addressINFO Catch you later 则需要把下方的 1234deploy: type: git repo: https://github.com/mygithubName/mygithubName.github.io.git branch: master 修改成： 1234deploy: type: git repo: ssh://git@github.com/mygithubName/mygithubName.github.io.git branch: master 执行 hexo g -d 大功告成 常规操作： 1234hexo cleanhexo generatehexo server(本地测试用)hexo deploy 至此，网站已基本恢复。 云备份至Github为了以后更方便的从云端备份下来，我又查了一些教程，下面便是详细步骤 基本原理网站的部署其实就是生成静态文件，hexo下所有生成的静态文件会放在public/文件夹中，所谓部署deploy其实就是 将public/文件夹中内容上传到git仓库myname.github.io中。也就是说，你的仓库myname.github.io中的文件只是blog（或者命名为hexo）文件夹下的public/下的文件。本背景下，方便放在myname.github.io的repository下创建一个分支来管理 建立分支hexo 在本地磁盘下（位置任意）右键 -&gt; Git bash here，执行以下指令将myname.github.io项目文件克隆到本地： 1git clone git@github.com:myname/myname.github.io.git 此目录下便有myname.github.io文件夹，把此文件夹中除了.git之外的所有文件删掉 把blog中所有文件复制到myname.github.io 文件夹中，其中会提示是否替换，选择跳过。 如果有.gitignore文件，把里面的内容修改成 1234567.DS_StoreThumbs.dbdb.json*.lognode_modules/public/.deploy*/ 如果没有此文件，便在git bash中输入touch .gitignore 在myname.github.io 文件夹中右键 -&gt; Git bash here 创建一个叫hexo的分支并切换到这个分支上 git checkout -b hexo 提交复制过来的文件到暂存区git add --all 提交git commit -m &quot;&quot; 推送分支到githubgit push --set-upstream origin hexo在github上可以看到 branch中有master和hexo，至此，已经成功。并且hexo中的文件便在.gitirnore所忽略而剩下需要备份的文件， 更新文章，修改主题等步骤 在github中myname.github.io中，找到settings -&gt; Branches 将hexo设为默认 从此更新文章，修改主题等操作一直都在myname.github.io了 执行如下 123456hexo cleanhexo generatehexo deploygit add .git commit -m &quot;&quot;git push origin hexo 从github上还原此部分完全摘抄自网站，我并非试过，并不知道是否可行。 克隆项目 1git clone -b hexo git@github.com:myname/myname.github.io.git 进入博客目录 1cd myname.github.io.git 切换到博客文件分支 1git checkout -b hexo origin/hexo 安装hexo 1nmp install hexo --save 编辑，查看 12hexo ghexo s 提交git若提交过程中出现ERROR Deployer not found: git,可执行以下代码，然后重新提交 1npm install hexo-deployer-git --save1 新的文章等更新 123git add .git commit -m &quot;新增博客&quot;git push origin hexo END]]></content>
@@ -8,7 +20,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo 教程</tag>
+        <tag>hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -19,7 +32,8 @@
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>感慨 随想</tag>
+        <tag>感慨</tag>
+        <tag>随想</tag>
       </tags>
   </entry>
   <entry>
@@ -31,7 +45,7 @@
       </categories>
       <tags>
         <tag>markdown</tag>
-        <tag>收藏</tag>
+        <tag>语法</tag>
       </tags>
   </entry>
   <entry>
@@ -42,7 +56,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>hexo 教程</tag>
+        <tag>hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
 </search>
