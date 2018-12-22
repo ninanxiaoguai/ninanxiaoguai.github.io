@@ -8,13 +8,11 @@ description:
 ---
 想重新开始写博客，第一件事当然是恢复博客的正常使用啦！搜了小半天终于找到了符合我条件的教程。
 
-背景：起初已配置好，但之后从未使用，期间重新做了一次系统。待我有时间再查询一下如何备份至云端。
-
-测试测试
+背景：起初已配置好，但之后从未使用，期间重新做了一次系统。待我有时间再查询一下如何备份至云端。(已完成)
 
 <!--more-->
 
-
+## 恢复
 
 ### 安装[git](https://git-scm.com/)、[node.js](https://nodejs.org/en/)
 
@@ -100,3 +98,91 @@ deploy:
   ```
 
   至此，网站已基本恢复。
+
+## 云备份至Github
+
+为了以后更方便的从云端备份下来，我又查了一些教程，下面便是详细步骤
+
+### 基本原理 
+网站的部署其实就是生成静态文件，hexo下所有生成的静态文件会放在`public/`文件夹中，所谓部署deploy其实就是 将`public/`文件夹中内容上传到git仓库`myname.github.io`中。 
+也就是说，你的仓库`myname.github.io`中的文件只是blog（或者命名为hexo）文件夹下的`public/`下的文件。
+本背景下，方便放在`myname.github.io`的`repository`下创建一个分支来管理
+
+### 建立分支hexo
+- 在本地磁盘下（位置任意）`右键 -> Git bash here`，执行以下指令将`myname.github.io`项目文件克隆到本地：
+  ```
+  git clone git@github.com:myname/myname.github.io.git
+  ```
+
+- 此目录下便有`myname.github.io`文件夹，把此文件夹中除了`.git`之外的所有文件删掉
+
+- 把blog中所有文件复制到`myname.github.io` 文件夹中，其中会提示是否替换，选择**跳过**。
+
+- 如果有`.gitignore`文件，把里面的内容修改成
+
+  ```
+  .DS_Store
+  Thumbs.db
+  db.json
+  *.log
+  node_modules/
+  public/
+  .deploy*/
+  ```
+
+  如果没有此文件，便在`git bash`中输入`touch .gitignore` 
+
+- 在`myname.github.io` 文件夹中`右键 -> Git bash here`
+
+- 创建一个叫hexo的分支并切换到这个分支上
+
+  `git checkout -b hexo`
+- 提交复制过来的文件到暂存区
+  `git add --all`
+- 提交
+  `git commit -m "" `
+- 推送分支到github 
+  `git push --set-upstream origin hexo`
+在github上可以看到 `branch`中有`master`和`hexo`，至此，已经成功。并且`hexo`中的文件便在`.gitirnore`所忽略而剩下需要备份的文件，
+
+### 更新文章，修改主题等步骤
+
+- 在github中`myname.github.io`中，找到`settings` -> `Branches` 将`hexo`设为默认
+
+- 从此更新文章，修改主题等操作一直都在`myname.github.io`了
+- 执行如下
+
+	```
+hexo clean
+hexo generate
+hexo deploy
+git add .
+git commit -m ""
+git push origin hexo
+	```
+### 从github上还原
+配置好基本的环境，npm install 安装依赖，然后克隆分支到本地
+```
+git clone -b hexo git@github.com:myname/myname.github.io.git
+```
+
+
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
