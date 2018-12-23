@@ -572,7 +572,7 @@ needmoreshare2:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: true
 
 # Google Analytics
 #google_analytics:
@@ -587,7 +587,7 @@ needmoreshare2:
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site/
-#baidu_site_verification:
+baidu_site_verification: true
 
 # CNZZ count
 #cnzz_siteid:
@@ -840,7 +840,7 @@ canvas_nest: false
 # three_waves
 three_waves: false
 # canvas_lines
-canvas_lines: false
+canvas_lines: Trebuchet
 # canvas_sphere
 canvas_sphere: false
 
@@ -966,4 +966,5 @@ images: images
 
 # Online contact 
 daovoice: true
-daovoice_app_id: 37874f6b
+#daovoice_app_id: 37874f6b
+daovoice_app_id: 5052a9e6
