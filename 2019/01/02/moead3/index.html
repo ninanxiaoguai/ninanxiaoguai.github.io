@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第三部分，论文中一些具体的细节。">
+<meta name="keywords" content="MOEA,MOEA\D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MOEA&#x2F;D算法(三)">
+<meta property="og:url" content="http://yoursite.com/2019/01/02/moead3/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第三部分，论文中一些具体的细节。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-02T07:13:35.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MOEA&#x2F;D算法(三)">
+<meta name="twitter:description" content="“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第三部分，论文中一些具体的细节。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/02/moead3/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>MOEA/D算法(三) | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/moead3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MOEA/D算法(三)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-02 09:17:02 / 修改时间：15:13:35" itemprop="dateCreated datePublished" datetime="2019-01-02T09:17:02+08:00">2019-01-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MOEA/" itemprop="url" rel="index"><span itemprop="name">MOEA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第三部分，论文中一些具体的细节。</p>
+<a id="more"></a>
+<h3 id="测试函数"><a href="#测试函数" class="headerlink" title="测试函数"></a>测试函数</h3><ul>
+<li>ZDT1<script type="math/tex; mode=display">
+f_1(1)=x_1
+\\f_2=g(x)[1-\sqrt{\frac{f_1(x)}{g(x)}}]
+\\where \quad g(x)=1 + \frac{9(\sum_{i=2}^{n}{x_i})}{n-1}
+\\x=(x_1,...x_n) ，x_1\in [0,1]^n,n=30</script></li>
+</ul>
+<ul>
+<li>ZDT2<script type="math/tex; mode=display">
+f_1(x) = x_1
+\\f_2=g(x)[1-(\frac{f_1(x)}{g(x)})^2]
+\\where \quad g(x)=1 + \frac{9(\sum_{i=2}^{n}{x_i)}}{n-1}
+\\x=(x_1,...x_n) ，x_1\in [0,1]^n,n=30</script></li>
+</ul>
+<ul>
+<li>ZDT3<script type="math/tex; mode=display">
+f_1(x) = x_1
+\\f_2=g(x)[1-\sqrt{\frac{f_1(x)}{g(x)}}-\frac{f_1(x)}{g(x)}sin(10\pi x_1)]
+\\where \quad g(x)=1 + \frac{9(\sum_{i=2}^{n}{x_i)}}{n-1}
+\\x=(x_1,...x_n) ，x_1\in [0,1]^n,n=30</script></li>
+</ul>
+<ul>
+<li>ZDT4<script type="math/tex; mode=display">
+f_1(x) = x_1
+\\f_2=g(x)[1-\sqrt{\frac{f_1(x)}{g(x)}}]
+\\where\quad g(x)=1 + 10(n-1)+\sum_{i=2}^{n}[x_i^2-10cos(4\pi x_i)]
+\\x=(x_1,...x_n) ，x_1\in [0,1] \times [-5,5]^{n-1},n=10</script></li>
+</ul>
+<ul>
+<li>ZDT6<script type="math/tex; mode=display">
+f_1(x)=1-exp(-4x_1)sin^6(6\pi x_1)
+\\f_2=g(x)[1-(\frac{f_1(x)}{g(x)})^2]
+\\g(x)=1 + 9[\frac{\sum_{i=2}^{n}{x_i}}{n-1}]^{0.25}
+\\x=(x_1,...x_n) ，x_1\in [0,1]^n,n=10</script></li>
+</ul>
+<ul>
+<li><p>DTLZ1</p>
+<script type="math/tex; mode=display">
+f_1(x)=(1+g(x))x_1x_2
+\\f_2(x)=(1+g(x))x_1(1-x_2)
+\\f_3(x)=(1+g(x))(1-x_1)
+\\where\quad g(x)=100(n-2)+100\sum_{i=3}^{n}{\{(x_i-0.5)^2-cos[20\pi (x_i-0.5)]\}}
+\\x=(x_1,...,x_n)^T \in [0,1]^n,n=10</script><p>The function value of a Pareto optimal solution satisfies$\sum_{i=1}^{3}{f_i}=1,f_i \geq0$</p>
+</li>
+<li><p>DTLZ2</p>
+<script type="math/tex; mode=display">
+f_1(x)=(1+g(x))cos(\frac{x_1\pi}{2})cos(\frac{x_2\pi}{2})
+\\f_2(x)=(1+g(x))cos(\frac{x_1\pi}{2})sin(\frac{x_2\pi}{2})
+\\f_3(x)=(1+g(x))sin(\frac{x_1\pi}{2})
+\\where\quad g(x)=\sum_{i=3}^{n}{x_i^2},
+\\x=(x_1,...x_n)^T\in [0,1]^2\times [-1,1]^{n-2},n=10</script><p>The function value of a Pareto optimal solution satisfies$\sum_{i=1}^{3}{f_i}^2=1,f_i \geq0$</p>
+</li>
+</ul>
+<h3 id="基本参数设置"><a href="#基本参数设置" class="headerlink" title="基本参数设置"></a>基本参数设置</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">N=<span class="number">300</span>;<span class="comment">%种群大小</span></span><br><span class="line">T=<span class="number">20</span>;<span class="comment">%邻居规模大小</span></span><br><span class="line">max_gen=<span class="number">250</span>;<span class="comment">%进化代数</span></span><br><span class="line">pc=<span class="number">1</span>;<span class="comment">%交叉概率</span></span><br><span class="line">pm=<span class="number">1</span>/x_num;<span class="comment">%变异概率</span></span><br><span class="line">fun=<span class="string">'DTLZ2'</span>;<span class="comment">%有 ZDT1 ZDT2 ZDT3 ZDT4 ZDT6 DTLZ1 DTLZ2</span></span><br><span class="line">yita1=<span class="number">2</span>;<span class="comment">%模拟二进制交叉参数2</span></span><br><span class="line">yita2=<span class="number">5</span>;<span class="comment">%多项式变异参数5</span></span><br><span class="line">x_num =  ;<span class="comment">%根据以上每一个函数的定义</span></span><br><span class="line">f_num = ;<span class="comment">%根据以上每一个函数的定义</span></span><br></pre></td></tr></table></figure>
+<h3 id="权值向量初始化"><a href="#权值向量初始化" class="headerlink" title="权值向量初始化"></a>权值向量初始化</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lamda</span> = <span class="title">genrate_lamda</span><span class="params">( N,f_num )</span></span></span><br><span class="line"><span class="comment">%产生初始化向量lamda</span></span><br><span class="line">lamda2=<span class="built_in">zeros</span>(N+<span class="number">1</span>,f_num);<span class="comment">%初始化</span></span><br><span class="line"><span class="keyword">if</span> f_num==<span class="number">2</span></span><br><span class="line">    array=(<span class="number">0</span>:N)/N;<span class="comment">%均匀分布的值</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N+<span class="number">1</span></span><br><span class="line">            lamda2(<span class="built_in">i</span>,<span class="number">1</span>)=array(<span class="built_in">i</span>);</span><br><span class="line">            lamda2(<span class="built_in">i</span>,<span class="number">2</span>)=<span class="number">1</span>-array(<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    len = <span class="built_in">size</span>(lamda2,<span class="number">1</span>);</span><br><span class="line">    index = randperm(len);</span><br><span class="line">    index = sort(index(<span class="number">1</span>:N));</span><br><span class="line">    lamda = lamda2(index,:);</span><br><span class="line"><span class="keyword">elseif</span> f_num==<span class="number">3</span></span><br><span class="line">    k = <span class="number">1</span>;</span><br><span class="line">    array = (<span class="number">0</span>:<span class="number">25</span>)/<span class="number">25</span>;<span class="comment">%产生均匀分布的值</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">26</span></span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">26</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">i</span>+<span class="built_in">j</span>&lt;<span class="number">28</span></span><br><span class="line">                lamda3(k,<span class="number">1</span>) = array(<span class="built_in">i</span>);</span><br><span class="line">                lamda3(k,<span class="number">2</span>) = array(<span class="built_in">j</span>);</span><br><span class="line">                lamda3(k,<span class="number">3</span>) = array(<span class="number">28</span>-<span class="built_in">i</span>-<span class="built_in">j</span>);</span><br><span class="line">                k=k+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    len = <span class="built_in">size</span>(lamda3,<span class="number">1</span>);</span><br><span class="line">    index = randperm(len);</span><br><span class="line">    index = sort(index(<span class="number">1</span>:N));</span><br><span class="line">    lamda = lamda3(index,:);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="建立权值向量的邻域"><a href="#建立权值向量的邻域" class="headerlink" title="建立权值向量的邻域"></a>建立权值向量的邻域</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B=look_neighbor(lamda,T);</span><br></pre></td></tr></table></figure>
+<p>其中<code>look_neighbor.m</code>为：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span> = <span class="title">look_neighbor</span><span class="params">( lamda,T )</span></span></span><br><span class="line"><span class="comment">%计算任意两个权重向量间的欧式距离</span></span><br><span class="line">N =<span class="built_in">size</span>(lamda,<span class="number">1</span>);</span><br><span class="line">B=<span class="built_in">zeros</span>(N,T);</span><br><span class="line">distance=<span class="built_in">zeros</span>(N,N);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:N</span><br><span class="line">        l=lamda(<span class="built_in">i</span>,:)-lamda(<span class="built_in">j</span>,:);</span><br><span class="line">        distance(<span class="built_in">i</span>,<span class="built_in">j</span>)=<span class="built_in">sqrt</span>(l*l');</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%查找每个权向量最近的T个权重向量的索引</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</span><br><span class="line">    [~,index]=sort(distance(<span class="built_in">i</span>,:));</span><br><span class="line">    B(<span class="built_in">i</span>,:)=index(<span class="number">1</span>:T);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="种群初始化"><a href="#种群初始化" class="headerlink" title="种群初始化"></a>种群初始化</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">X</span> = <span class="title">initialize</span><span class="params">( N,f_num,x_num,x_min,x_max,fun )</span></span></span><br><span class="line"><span class="comment">%   种群初始化</span></span><br><span class="line">X = <span class="built_in">repmat</span>(x_min,N,<span class="number">1</span>)+<span class="built_in">rand</span>(N,x_num).*<span class="built_in">repmat</span>(x_max-x_min,N,<span class="number">1</span>); </span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N</span><br><span class="line">    X(<span class="built_in">i</span>,(x_num+<span class="number">1</span>:(x_num+f_num))) = object_fun(X(<span class="built_in">i</span>,:),f_num,x_num,fun);</span><br><span class="line">    X(<span class="built_in">i</span>,(x_num+f_num+<span class="number">1</span>)) = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>object_fun.m</code>:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">object_fun</span><span class="params">( x,f_num,x_num,fun )</span></span></span><br><span class="line"><span class="comment">%   测试函数的设置</span></span><br><span class="line"><span class="comment">%--------------------ZDT1--------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'ZDT1'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    f(<span class="number">1</span>)=x(<span class="number">1</span>);</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:x_num</span><br><span class="line">        sum = sum+x(<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=<span class="number">1</span>+<span class="number">9</span>*(sum/(x_num<span class="number">-1</span>));</span><br><span class="line">    f(<span class="number">2</span>)=g*(<span class="number">1</span>-(f(<span class="number">1</span>)/g)^<span class="number">0.5</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------ZDT2--------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'ZDT2'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    f(<span class="number">1</span>)=x(<span class="number">1</span>);</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:x_num</span><br><span class="line">        sum = sum+x(<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=<span class="number">1</span>+<span class="number">9</span>*(sum/(x_num<span class="number">-1</span>));</span><br><span class="line">    f(<span class="number">2</span>)=g*(<span class="number">1</span>-(f(<span class="number">1</span>)/g)^<span class="number">2</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------ZDT3--------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'ZDT3'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    f(<span class="number">1</span>)=x(<span class="number">1</span>);</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:x_num</span><br><span class="line">        sum = sum+x(<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=<span class="number">1</span>+<span class="number">9</span>*(sum/(x_num<span class="number">-1</span>));</span><br><span class="line">    f(<span class="number">2</span>)=g*(<span class="number">1</span>-(f(<span class="number">1</span>)/g)^<span class="number">0.5</span>-(f(<span class="number">1</span>)/g)*<span class="built_in">sin</span>(<span class="number">10</span>*<span class="built_in">pi</span>*f(<span class="number">1</span>)));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------ZDT4--------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'ZDT4'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    f(<span class="number">1</span>)=x(<span class="number">1</span>);</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:x_num</span><br><span class="line">        sum = sum+(x(<span class="built_in">i</span>)^<span class="number">2</span><span class="number">-10</span>*<span class="built_in">cos</span>(<span class="number">4</span>*<span class="built_in">pi</span>*x(<span class="built_in">i</span>)));</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=<span class="number">1</span>+<span class="number">9</span>*<span class="number">10</span>+sum;</span><br><span class="line">    f(<span class="number">2</span>)=g*(<span class="number">1</span>-(f(<span class="number">1</span>)/g)^<span class="number">0.5</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------ZDT6--------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'ZDT6'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    f(<span class="number">1</span>)=<span class="number">1</span>-(<span class="built_in">exp</span>(<span class="number">-4</span>*x(<span class="number">1</span>)))*((<span class="built_in">sin</span>(<span class="number">6</span>*<span class="built_in">pi</span>*x(<span class="number">1</span>)))^<span class="number">6</span>);</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:x_num</span><br><span class="line">        sum = sum+x(<span class="built_in">i</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=<span class="number">1</span>+<span class="number">9</span>*((sum/(x_num<span class="number">-1</span>))^<span class="number">0.25</span>);</span><br><span class="line">    f(<span class="number">2</span>)=g*(<span class="number">1</span>-(f(<span class="number">1</span>)/g)^<span class="number">2</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------------------------------</span></span><br><span class="line"><span class="comment">%--------------------DTLZ1-------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'DTLZ1'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">3</span>:x_num</span><br><span class="line">        sum = sum+((x(<span class="built_in">i</span>)<span class="number">-0.5</span>)^<span class="number">2</span>-<span class="built_in">cos</span>(<span class="number">20</span>*<span class="built_in">pi</span>*(x(<span class="built_in">i</span>)<span class="number">-0.5</span>)));</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=<span class="number">100</span>*(x_num<span class="number">-2</span>)+<span class="number">100</span>*sum;</span><br><span class="line">    f(<span class="number">1</span>)=(<span class="number">1</span>+g)*x(<span class="number">1</span>)*x(<span class="number">2</span>);</span><br><span class="line">    f(<span class="number">2</span>)=(<span class="number">1</span>+g)*x(<span class="number">1</span>)*(<span class="number">1</span>-x(<span class="number">2</span>));</span><br><span class="line">    f(<span class="number">3</span>)=(<span class="number">1</span>+g)*(<span class="number">1</span>-x(<span class="number">1</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------------------------------</span></span><br><span class="line"><span class="comment">%--------------------DTLZ2-------------------</span></span><br><span class="line"><span class="keyword">if</span> strcmp(fun,<span class="string">'DTLZ2'</span>)</span><br><span class="line">    f=[];</span><br><span class="line">    sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">3</span>:x_num</span><br><span class="line">        sum = sum+(x(<span class="built_in">i</span>))^<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    g=sum;</span><br><span class="line">    f(<span class="number">1</span>)=(<span class="number">1</span>+g)*<span class="built_in">cos</span>(x(<span class="number">1</span>)*<span class="built_in">pi</span>*<span class="number">0.5</span>)*<span class="built_in">cos</span>(x(<span class="number">2</span>)*<span class="built_in">pi</span>*<span class="number">0.5</span>);</span><br><span class="line">    f(<span class="number">2</span>)=(<span class="number">1</span>+g)*<span class="built_in">cos</span>(x(<span class="number">1</span>)*<span class="built_in">pi</span>*<span class="number">0.5</span>)*<span class="built_in">sin</span>(x(<span class="number">2</span>)*<span class="built_in">pi</span>*<span class="number">0.5</span>);</span><br><span class="line">    f(<span class="number">3</span>)=(<span class="number">1</span>+g)*<span class="built_in">sin</span>(x(<span class="number">1</span>)*<span class="built_in">pi</span>*<span class="number">0.5</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%--------------------------------------------</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="交叉变异操作"><a href="#交叉变异操作" class="headerlink" title="交叉变异操作"></a>交叉变异操作</h3><h4 id="模拟二进制交叉-SBX"><a href="#模拟二进制交叉-SBX" class="headerlink" title="模拟二进制交叉(SBX)"></a>模拟二进制交叉(SBX)</h4><p><code>for j = 1.....x_num</code></p>
+<script type="math/tex; mode=display">
+x'_{1j}(t)=0.5\times[(1+\lambda_j)x_{1j}+(1-\lambda_j)x_{2j}(t)]
+\\x'_{2j}(t)=0.5\times[(1-\lambda_j)x_{1j}+(1+\lambda_j)x_{2j}(t)]</script><p>其中：</p>
+<script type="math/tex; mode=display">
+\lambda_j=\begin{cases} 
+        (2u_i)^{\frac{1}{\eta+1}}, & u_j < 0.5\\ 
+        \frac{1}{2(1-u_i)}^{\frac{1}{\eta+1}}, & other 
+    \end{cases}</script><p>随机$u_j$，使$0 \leq u_j \leq 1$.</p>
+<p><code>endfor</code></p>
+<h4 id="多项式变异"><a href="#多项式变异" class="headerlink" title="多项式变异"></a>多项式变异</h4><p><code>for j = 1.....x_num</code></p>
+<script type="math/tex; mode=display">
+x_{1j}(t)=x_{1j}(t) + \Delta_j</script><p>其中：</p>
+<script type="math/tex; mode=display">
+\Delta_j=\begin{cases}
+    (2u_i)^{\frac{1}{\eta+1}}-1, & u_j < 0.5\\ 
+        1-(2(1-u_i))^{\frac{1}{\eta+1}}, & other 
+\end{cases}</script><p>随机$u_j$，使$0 \leq u_j \leq 1$.</p>
+<p><code>endfor</code></p>
+<h3 id="更新领域解"><a href="#更新领域解" class="headerlink" title="更新领域解"></a>更新领域解</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X=updateNeighbor(lamda,z,X,B(<span class="built_in">i</span>,:),off,x_num,f_num);</span><br></pre></td></tr></table></figure>
+<p>其中<code>updateNeighbor.m</code>：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">X</span> = <span class="title">updateNeighbor</span><span class="params">( lamda,z,X,Bi,off,x_num,f_num )</span></span></span><br><span class="line"><span class="comment">%更新领域解</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">length</span>(Bi)</span><br><span class="line">    gte_xi=tchebycheff_approach(lamda,z,X(Bi(<span class="built_in">i</span>),(x_num+<span class="number">1</span>):(x_num+f_num)),Bi(<span class="built_in">i</span>));</span><br><span class="line">    gte_off=tchebycheff_approach(lamda,z,off(:,(x_num+<span class="number">1</span>):(x_num+f_num)),Bi(<span class="built_in">i</span>));</span><br><span class="line"><span class="comment">%     gte_xi=ws_approach(lamda,X(Bi(i),(x_num+1):(x_num+f_num)),Bi(i));</span></span><br><span class="line"><span class="comment">%     gte_off=ws_approach(lamda,off(:,(x_num+1):(x_num+f_num)),Bi(i));</span></span><br><span class="line">    <span class="keyword">if</span> gte_off &lt;= gte_xi</span><br><span class="line">        X(Bi(<span class="built_in">i</span>),:)=off;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>tchebycheff_approach.m</code>：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fs</span> = <span class="title">tchebycheff_approach</span><span class="params">( lamda,z,f,i)</span></span></span><br><span class="line"><span class="comment">%tchebycheff_approach</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="built_in">length</span>(lamda(<span class="built_in">i</span>,:))</span><br><span class="line">    <span class="keyword">if</span>(lamda(<span class="built_in">i</span>,<span class="built_in">j</span>)==<span class="number">0</span>)</span><br><span class="line">        lamda(<span class="built_in">i</span>,<span class="built_in">j</span>)=<span class="number">0.00001</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">fs=max(lamda(<span class="built_in">i</span>,:).*<span class="built_in">abs</span>(f-z));</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h3><h4 id="C-metric"><a href="#C-metric" class="headerlink" title="C-metric"></a>C-metric</h4><p>令 A和 B是一个 MOP中两个接近PF的集合，定义 C(A,B)如：</p>
+<script type="math/tex; mode=display">
+C(A,B)=\frac{\{u\in B|\exists v\in A:v\quad dominates\quad u\}}{|B|}</script><p>C(A,B)不等于 1-C(B,A)。C(A,B)=1意味着 B中所有的解都被 A中的某些解支配了， C(A,B)=0意味着 B中没有解被 A中的解支配。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">C_AB</span> = <span class="title">cal_c</span><span class="params">(A,B,f_num)</span></span></span><br><span class="line">[temp_A,~]=<span class="built_in">size</span>(A);</span><br><span class="line">[temp_B,~]=<span class="built_in">size</span>(B);</span><br><span class="line">number=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:temp_B</span><br><span class="line">    nn=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:temp_A</span><br><span class="line">        less=<span class="number">0</span>;<span class="comment">%当前个体的目标函数值小于多少个体的数目</span></span><br><span class="line">        equal=<span class="number">0</span>;<span class="comment">%当前个体的目标函数值等于多少个体的数目</span></span><br><span class="line">        <span class="keyword">for</span> k=<span class="number">1</span>:f_num</span><br><span class="line">            <span class="keyword">if</span>(B(<span class="built_in">i</span>,k)&lt;A(<span class="built_in">j</span>,k))</span><br><span class="line">                less=less+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">elseif</span>(B(<span class="built_in">i</span>,k)==A(<span class="built_in">j</span>,k))</span><br><span class="line">                equal=equal+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span>(less==<span class="number">0</span> &amp;&amp; equal~=f_num)</span><br><span class="line">            nn=nn+<span class="number">1</span>;<span class="comment">%被支配个体数目n+1</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">if</span>(nn~=<span class="number">0</span>)</span><br><span class="line">        number=number+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">C_AB=number/temp_B;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h4 id="D-metric"><a href="#D-metric" class="headerlink" title="D-metric"></a>D-metric</h4><p>令 $P^*$为一组均匀分布在 PF上的点集合。  A是一个接近 PF的集合。 的集合。 $P^*$到 A的平均距离定义为：</p>
+<script type="math/tex; mode=display">
+D(A,P)=\frac{\sum_{v\in P^*}d(v,A)}{|P^*|}</script><p>这里 $𝑑(𝑣,𝐴)$是v和A中的点最小欧式距离。如果 $P^*$足够大,说明其可以很好的代表PF。$D(A,P^*)$可以从某种意义上评估A的收敛性和多样。为了让$D(A,P^*)$的值很低，必须设置 A非常接近PF，并且不能缺失整个PF的任何部分。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">D_AP</span> = <span class="title">cal_d</span><span class="params">(A,P)</span></span></span><br><span class="line">[temp_A,~]=<span class="built_in">size</span>(A);</span><br><span class="line">[temp_P,~]=<span class="built_in">size</span>(P);</span><br><span class="line">min_d=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> v=<span class="number">1</span>:temp_P</span><br><span class="line">    d_va=(A-<span class="built_in">repmat</span>(P(v,:),temp_A,<span class="number">1</span>)).^<span class="number">2</span>;</span><br><span class="line">    min_d=min_d+min(<span class="built_in">sqrt</span>(sum(d_va,<span class="number">2</span>)));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">D_AP=(min_d/temp_P);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>‘</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MOEA/" rel="tag"># MOEA</a>
+          
+            <a href="/tags/MOEA-D/" rel="tag"># MOEA\D</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/01/moead2/" rel="next" title="MOEA/D算法(二)">
+                <i class="fa fa-chevron-left"></i> MOEA/D算法(二)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试函数"><span class="nav-number">1.</span> <span class="nav-text">测试函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本参数设置"><span class="nav-number">2.</span> <span class="nav-text">基本参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权值向量初始化"><span class="nav-number">3.</span> <span class="nav-text">权值向量初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立权值向量的邻域"><span class="nav-number">4.</span> <span class="nav-text">建立权值向量的邻域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#种群初始化"><span class="nav-number">5.</span> <span class="nav-text">种群初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉变异操作"><span class="nav-number">6.</span> <span class="nav-text">交叉变异操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟二进制交叉-SBX"><span class="nav-number">6.1.</span> <span class="nav-text">模拟二进制交叉(SBX)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多项式变异"><span class="nav-number">6.2.</span> <span class="nav-text">多项式变异</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新领域解"><span class="nav-number">7.</span> <span class="nav-text">更新领域解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评价指标"><span class="nav-number">8.</span> <span class="nav-text">评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-metric"><span class="nav-number">8.1.</span> <span class="nav-text">C-metric</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D-metric"><span class="nav-number">8.2.</span> <span class="nav-text">D-metric</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">50k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">45 分钟</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+ <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
