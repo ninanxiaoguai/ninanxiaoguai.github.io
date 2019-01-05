@@ -196,7 +196,7 @@ daovoice('init', {
 <meta property="og:site_name" content="清 泉">
 <meta property="og:description" content="“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第二部分，算法的流程框架。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-01T08:01:25.898Z">
+<meta property="og:updated_time" content="2019-01-05T03:30:46.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MOEA&#x2F;D算法(二)">
 <meta name="twitter:description" content="“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第二部分，算法的流程框架。">
@@ -478,12 +478,24 @@ daovoice('init', {
                 
               
 
-              <time title="创建时间：2019-01-01 14:00:02 / 修改时间：16:01:25" itemprop="dateCreated datePublished" datetime="2019-01-01T14:00:02+08:00">2019-01-01</time>
+              <time title="创建时间：2019-01-01 09:17:02" itemprop="dateCreated datePublished" datetime="2019-01-01T09:17:02+08:00">2019-01-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-05 11:30:46" itemprop="dateModified" datetime="2019-01-05T11:30:46+08:00">2019-01-05</time>
               
             
           </span>
@@ -536,7 +548,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.4k</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -550,7 +562,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -572,20 +584,21 @@ daovoice('init', {
       
         <p>“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第二部分，算法的流程框架。</p>
 <a id="more"></a>
-<h3 id="规定"><a href="#规定" class="headerlink" title="规定"></a>规定</h3><p>$\lambda^1$,…$\lambda^N$ 是均匀分布的权值向量</p>
+<h3 id="规定"><a href="#规定" class="headerlink" title="规定"></a>规定</h3><p>本文提出的基于分解的多目标进化算法(MOEA/D)需要对MOPs进行分解。任何分解方法都可以达到这个目的。在下面的描述中，我们假设使用了Tchebycheff方法。在使用其他分解方法时，修改下面的MOEA/D也非常简单。</p>
+<p>$\lambda^1​$,…$\lambda^N​$ 是均匀分布的权值向量</p>
 <p>$z^*$ 是reference point</p>
 <p>选用Tchebycheff Approach把多目标问题拆成N个标量优化子问题，表达式如下:</p>
+<script type="math/tex; mode=display">
+g^{te}(x|\lambda^j,z^*)=\max\limits_{1\leq i \leq m}\{\lambda_i^j|f_i(x)-z_i^*|\}</script><ul>
+<li>其中 $\lambda ^j=(\lambda_1^j,…\lambda_m^j)^T$.        $\lambda=(\lambda^1,…,\lambda^N)$ </li>
+</ul>
+<p>可知$g^{te}$是关于$\lambda$连续的，当$\lambda^i$与$\lambda^j$彼此接近，那么接近$\lambda ^i$向量的$g^{te}$权向量的信息也对最优解$g^{te}(x|\lambda^j,z^*)$有一定的作用。这也是MOEA/D的理论基础。</p>
+<p>在MOEA/D中，权向量的邻域被定义为它的几个最近的权向量的集合。第$i$个子问题的邻域由所有的子问题组成，这些子问题的权向量来自于第$i$个子问题的邻域。在MOEA/D中，只有相邻子问题的当前解被用来优化子问题。</p>
+<p>切比雪夫法的MOEA/D算法中，有以下规定：</p>
 <ul>
-<li><script type="math/tex; mode=display">
-g^{te}(x|\lambda^j,z^*)=\max\limits_{1\leq i \leq m}\{\lambda_i^j|f_i(x)-z_i^*|\}</script></li>
-<li><p>其中 $\lambda ^j=(\lambda_1^j,…\lambda_m^j)^T$.        $\lambda=(\lambda^1,…,\lambda^N)$ </p>
-</li>
-<li><p>$x^1,…x^N \in \Omega$  $x^i$是当前的第i个子问题</p>
-</li>
-<li><p>$FV^1,…,FV^N$ ，其中 $FV^i = F(x^i)$  $ x \in [1,N]$ </p>
-</li>
-<li><p>$z=(z_1,…z_m)^T $ ，$z_i$ 是目前对目标$f_i$所找到的最好的点。</p>
-</li>
+<li>$x^1,…x^N \in \Omega$  $x^i$是当前的第i个子问题</li>
+<li>$FV^1,…,FV^N$ ，其中 $FV^i = F(x^i)$  $ x \in [1,N]$ </li>
+<li>$z=(z_1,…z_m)^T $ ，$z_i$ 是目前对目标$f_i$所找到的最好的点。</li>
 </ul>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><ul>
 <li>MOP(1)</li>
