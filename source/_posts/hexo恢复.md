@@ -162,7 +162,11 @@ git add .
 git commit -m ""
 git push origin hexo
 	```
+
+注意 -m “要写一点东西”
+
 ## 从github上还原
+
 此部分完全摘抄自网站，我并非试过，并不知道是否可行。
 - 克隆项目
 	```
@@ -188,7 +192,7 @@ hexo s
 - 提交git
 若提交过程中出现`ERROR Deployer not found: git`,可执行以下代码，然后重新提交
 	```
-npm install hexo-deployer-git --save1
+npm install hexo-deployer-git --save
 	```
 - 新的文章等更新
 	```
