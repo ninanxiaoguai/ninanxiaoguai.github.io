@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MOEA/D算法(0)]]></title>
+    <url>%2F2019%2F01%2F07%2Fmoead0%2F</url>
+    <content type="text"><![CDATA[最近在复现“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”这篇论文这是一个后补上的文章，几乎是翻译的原论文呢】，因为课程设计凑字数，也为了省事，就干脆发在我的小博客上了。 多目标优化问题可以表示如下： maximize \quad F(x)=(f_1(x),...,f_m(x))^T \\subject \ to \ x \in \Omega其中，$\Omega$是决策空间，$F$：$\Omega \rightarrow R^m$是m个实数目标函数，$R^m$叫做目标空间，可实现的目标定义如下： \Omega=\{x \in R^n|h_j(x)\leq 0,j=1,...,m\}$h_j$是连续的函数，因此，我们也称$F(x)$是连续的MOP问题。 在现实生活中，大多数的目标函数却是相互矛盾的，并不存在$\Omega$可以同时放大所有的目标值。因此需要找相应的方法去平衡这些目标。目标之间的最佳权衡可以用帕累托(Pareto)最优性来定义。 定义$u,v\in R^m$,如果对于$\forall i \in \{1,…,m\}$，使得$u_i\geq v_i$，并且$\exists j \in \{1,…,m\} $，使得$u_i &gt; v_i$，则称$u$支配$v$。如果存在这种点$x^\in \Omega$，不存在点$x$，使$F(x)$支配$F(x^)$，那么称$F(x^*）$为帕累托最优目标向量。换言之，一个目标中帕累托最优点的任何改进都必须导致至少另一个目标的恶化。所有帕累托最优点的集合称为帕累托集合(PS)，所有帕累托最优目标向量的集合称为帕累托阵(PF)。 在多目标优化的许多实际应用中，决策者需要近似于PF来选择最终的首选解决方案。大多数MOPs可能有许多甚至无限帕累托最优向量。获取完整的PF是非常耗时的。另一方面，由于信息的溢出，决策者可能对拥有过多的帕累托最优向量不感兴趣。因此，许多多目标优化算法都是为了找到一个可管理的帕累托最优向量。一些研究者也尝试用数学模型来近似PF。 目前没有涉及到分解的大部分多目标进化算法，将MOP视为一个整体。它们不会将每个单独的解决方案与任何特定的标量优化问题关联起来。在标量目标优化问题，所有的解决方案都可以在它们目标函数值的基础上进行比较，标量目标的任务进化算法(EA)往往是寻找一个单一的最优的解决方案。然而，在MOPs中，支配并非定义目标函数中解的完整顺序空间，MOEAs旨在产生一些帕累托最优尽可能多样化的解决方案来代表整体PF。 因此，最初设计用于标量优化的传统选择算子不能直接用于非分解MOEAs。那么可以说，如果有一种适合度分配方案，用于为单个解决方案分配一个相对适合度值，以反映其选择的实用价值，那么标量优化EAs可以很容易地扩展到处理MOPs。因此，适应度分配一直是当前的一个主要问题MOEA研究。目前流行的适应度分配策略包括基于交互目标的适应度分配，如向量评价遗传算法(VEGA);基于优势的适应度分配，如帕累托存档进化策略（PAES）。 分解的思想在一些针对MOPs的元启发式中得到了一定程度的应用。例如，两阶段局部搜索(TPLS)考虑了一组标量优化问题，其中目标是所考虑的MOP中的目标的集合，基于集合系数的序列将标量优化算法应用于这些标量优化问题中，将前一个问题得到的解作为下一个问题求解的起点，因为它的集合目标与前一个问题的集合目标略有不同。多目标遗传局部搜索(MOGLS)旨在同时优化加权和方法或Tchebycheff方法构建的所有聚合。在每次迭代中，它优化随机生成的聚合目标。]]></content>
+      <categories>
+        <category>MOEA</category>
+      </categories>
+      <tags>
+        <tag>MOEA</tag>
+        <tag>MOEA\D</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[matlab]]></title>
     <url>%2F2019%2F01%2F02%2Fmatlab%2F</url>
     <content type="text"><![CDATA[此文会持续更新，记录一些在matlab中的一些常用函数。 repmat123456&gt;&gt; a = [1 2 3];&gt;&gt; repmat(a,2,3) %把矩阵整体堆叠成新矩阵ans = 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 sort12345678910&gt;&gt; a = [6 3 2 1 4 5];&gt;&gt; [~,ans] = sort(a) % 默认从小到大的索引值ans = 4 3 2 5 6 1&gt;&gt; a(ans)ans = 1 2 3 4 5 6 尺寸扩展12345678&gt;&gt; a = ones(3);&gt;&gt; a(1,(4:5)) = 10a = 1 1 1 10 10 1 1 1 0 0 1 1 1 0 0]]></content>
@@ -28,18 +40,6 @@
     <title><![CDATA[MOEA/D算法(二)]]></title>
     <url>%2F2019%2F01%2F01%2Fmoead2%2F</url>
     <content type="text"><![CDATA[“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”第二部分，算法的流程框架。 规定本文提出的基于分解的多目标进化算法(MOEA/D)需要对MOPs进行分解。任何分解方法都可以达到这个目的。在下面的描述中，我们假设使用了Tchebycheff方法。在使用其他分解方法时，修改下面的MOEA/D也非常简单。 $\lambda^1​$,…$\lambda^N​$ 是均匀分布的权值向量 $z^*$ 是reference point 选用Tchebycheff Approach把多目标问题拆成N个标量优化子问题，表达式如下: g^{te}(x|\lambda^j,z^*)=\max\limits_{1\leq i \leq m}\{\lambda_i^j|f_i(x)-z_i^*|\} 其中 $\lambda ^j=(\lambda_1^j,…\lambda_m^j)^T$. $\lambda=(\lambda^1,…,\lambda^N)$ 可知$g^{te}$是关于$\lambda$连续的，当$\lambda^i$与$\lambda^j$彼此接近，那么接近$\lambda ^i$向量的$g^{te}$权向量的信息也对最优解$g^{te}(x|\lambda^j,z^*)$有一定的作用。这也是MOEA/D的理论基础。 在MOEA/D中，权向量的邻域被定义为它的几个最近的权向量的集合。第$i$个子问题的邻域由所有的子问题组成，这些子问题的权向量来自于第$i$个子问题的邻域。在MOEA/D中，只有相邻子问题的当前解被用来优化子问题。 切比雪夫法的MOEA/D算法中，有以下规定： $x^1,…x^N \in \Omega$ $x^i$是当前的第i个子问题 $FV^1,…,FV^N$ ，其中 $FV^i = F(x^i)$ $ x \in [1,N]$ $z=(z_1,…z_m)^T $ ，$z_i$ 是目前对目标$f_i$所找到的最好的点。 Input MOP(1) 一个终止准则 N：子问题的个数 N 个均匀分布的权值向量$\lambda_1,…\lambda_N$ T 每一个权值向量的邻居的数量Output: EP STEP 1) Initialization:Step 1.1) 使EP为空集 Step 1.2) 计算任意两个权值向量间的欧式距离，并找到离每个权值距离最近的T个点 ​ $B(i)=\{i_i,…i_T\}$ ，其中，$\lambda^{i_1},…\lambda^{i_T}$就是T个最近的权值向量 Step 1.3) 随机产生初始化种群 $x^1,…,x^N$ ，规定$FV^i=F(x^i).$ Step 1.4) 初始化 $z=(z_1,…z_m)^T $ STEP 2) Update:for i=1,…N Step 2.1) 复制 ：从$B(i)$随机产生两个索引$k,l$ ，然后通过遗传算子从$x_k,x_l$ 中产生新的子代$y$ Step 2.2) 提升 ：通过提升或者修理来启发式的由$y$产生$y’$ Step 2.3) 更新$z$：if $z_j &lt; f_j(y’)$ then $z_j = f_j(y’)$ Step 2.4) 更新相邻解：对于$j \in B(i)$,if $g^{te}(y’|\lambda^j,z)\leq g^{te}(x^j|\lambda^j,z)$ then $x^j=y’, FV^j=F(y’)$ Step 2.5) 更新EP：​ — 从 EP中移除被 $F(y’)$支配的所有向量​ — 如果 EP中没有向量支配 $F(y’)$，就将 F(y’)加入到EP中 STEP 3) Stopping Criteria 如果停止准则满足，并输出EP。否则，转向 STEP 2)。]]></content>
-      <categories>
-        <category>MOEA</category>
-      </categories>
-      <tags>
-        <tag>MOEA</tag>
-        <tag>MOEA\D</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MOEA/D算法(0)]]></title>
-    <url>%2F2018%2F12%2F31%2Fmoead0%2F</url>
-    <content type="text"><![CDATA[最近在复现“MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”这篇论文这是一个后补上的文章，几乎是翻译的原论文，因为课程设计凑字数，也为了省事，就干脆发在我的小博客上了。 多目标优化问题可以表示如下： maximize \quad F(x)=(f_1(x),...,f_m(x))^T \\subject \ to \ x \in \Omega其中，$\Omega$是决策空间，$F$：$\Omega \rightarrow R^m$是m个实数目标函数，$R^m$叫做目标空间，可实现的目标定义如下： \Omega=\{x \in R^n|h_j(x)\leq 0,j=1,...,m\}$h_j$是连续的函数，因此，我们也称$F(x)$是连续的MOP问题。 在现实生活中，大多数的目标函数却是相互矛盾的，并不存在$\Omega$可以同时放大所有的目标值。因此需要找相应的方法去平衡这些目标。目标之间的最佳权衡可以用帕累托(Pareto)最优性来定义。 定义$u,v\in R^m$,如果对于$\forall i \in \{1,…,m\}$，使得$u_i\geq v_i$，并且$\exists j \in \{1,…,m\} $，使得$u_i &gt; v_i$，则称$u$支配$v$。如果存在这种点$x^\in \Omega$，不存在点$x$，使$F(x)$支配$F(x^)$，那么称$F(x^*）$为帕累托最优目标向量。换言之，一个目标中帕累托最优点的任何改进都必须导致至少另一个目标的恶化。所有帕累托最优点的集合称为帕累托集合(PS)，所有帕累托最优目标向量的集合称为帕累托阵(PF)。 在多目标优化的许多实际应用中，决策者需要近似于PF来选择最终的首选解决方案。大多数MOPs可能有许多甚至无限帕累托最优向量。获取完整的PF是非常耗时的。另一方面，由于信息的溢出，决策者可能对拥有过多的帕累托最优向量不感兴趣。因此，许多多目标优化算法都是为了找到一个可管理的帕累托最优向量。一些研究者也尝试用数学模型来近似PF。 目前没有涉及到分解的大部分多目标进化算法，将MOP视为一个整体。它们不会将每个单独的解决方案与任何特定的标量优化问题关联起来。在标量目标优化问题，所有的解决方案都可以在它们目标函数值的基础上进行比较，标量目标的任务进化算法(EA)往往是寻找一个单一的最优的解决方案。然而，在MOPs中，支配并非定义目标函数中解的完整顺序空间，MOEAs旨在产生一些帕累托最优尽可能多样化的解决方案来代表整体PF。 因此，最初设计用于标量优化的传统选择算子不能直接用于非分解MOEAs。那么可以说，如果有一种适合度分配方案，用于为单个解决方案分配一个相对适合度值，以反映其选择的实用价值，那么标量优化EAs可以很容易地扩展到处理MOPs。因此，适应度分配一直是当前的一个主要问题MOEA研究。目前流行的适应度分配策略包括基于交互目标的适应度分配，如向量评价遗传算法(VEGA);基于优势的适应度分配，如帕累托存档进化策略（PAES）。 分解的思想在一些针对MOPs的元启发式中得到了一定程度的应用。例如，两阶段局部搜索(TPLS)考虑了一组标量优化问题，其中目标是所考虑的MOP中的目标的集合，基于集合系数的序列将标量优化算法应用于这些标量优化问题中，将前一个问题得到的解作为下一个问题求解的起点，因为它的集合目标与前一个问题的集合目标略有不同。多目标遗传局部搜索(MOGLS)旨在同时优化加权和方法或Tchebycheff方法构建的所有聚合。在每次迭代中，它优化随机生成的聚合目标。]]></content>
       <categories>
         <category>MOEA</category>
       </categories>
