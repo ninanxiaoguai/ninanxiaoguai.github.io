@@ -1,5 +1,5 @@
 ---
-title: Dominance-based QIs
+title: Convergence--Dominance-based QIs
 date: 2019-01-14 19:31:40
 categories: indicators
 tags: 
@@ -22,19 +22,19 @@ C(A,B)=\frac{|\{b\in B:\exists a \in A,a \preceq b \}|}{|B|}
 $$
 $C$一方面可以计算出$B$中的解被$A$中解所支配的比例部分，另一方面也可以计算出$A$相对于$B$的性能。
 
-当$C(A,B)=1$时， 意味着$B$中的所有解都被$A$中的所$\preceq$。
+当$C(A,B)=1$时，意味着$B$中的所有解都被$A$中的所$\preceq$。
 
 当$C(A,B)=0​$时，意味着$B​$中的所有解都无法被$A​$中的$\preceq​$。
 
 注意：$C(A,B)  \ne 1-C(B,A)$
 
-$ C(A,A)  \ne 0$
+$ C(A,A)  \ne 0$ 
 
 如果$W$是一个非支配解集，$A,B$满足$A \subseteq W$，$B \subseteq W$，但$C(A,B)$可为[0,1]中的任意一个值。
 
 ### $\widetilde{C}-metric$
 
-[8]多目标优化环境下的性能度量是评价优化器定量性能的数学工具，它通过单独考虑优化器或与其他优化器进行比较来评价的。这种方法可以与优化器在线评估和性能改进的优化器结合使用[5,11]，也可以离线应用于两个或两个以上优化器的最终结果，以比较它们的性能、产生的结果的质量和/或要求的计算努力。
+多目标优化环境下的性能度量是评价优化器定量性能的数学工具，它通过单独考虑优化器或与其他优化器进行比较来评价的。这种方法可以与优化器在线评估和性能改进的优化器结合使用，也可以离线应用于两个或两个以上优化器的最终结果，以比较它们的性能、产生的结果的质量和/或要求的计算努力。
 
 性能指标可以大致分为两类：
 
@@ -44,7 +44,7 @@ $ C(A,A)  \ne 0$
 $$
 \widetilde{C}(A,B)=\frac{|\{b\in B:\exists a \in A,a \prec b \}|}{|B|}
 $$
-$ C(A,A)  = 0$
+$ C(A,A)  = 0$ ，因为$A$是非支配解集。
 
 对于$\widetilde{C}(A,B)$、$C(A,B)$，值越高说明B中的解受A所$\preceq$的比例越多。
 
@@ -74,9 +74,10 @@ The contribution of algorithm $PO_2$ relatively to $PO_2$ is roughly the ratio o
 - 集合$W_1$为$PO_1$中支配$PO_2$的解集，集合$W_2$为$PO_2$中支配$PO_1$的解集。
 - 集合$L_1$为$PO_1$中被$PO_2$支配的解集，集合$L_2$为$PO_2$中被$PO_1$支配的解集，
 - 集合$N_1$为$PO_1$中不可与$PO_2$构成不可比较的解集，即$PO_1 \backslash  (C \cup W_1 \cup L_1) $
+-  集合$N_2$为$PO_2$中不可与$PO_1$构成不可比较的解集，即$PO_2 \backslash  (C \cup W_2 \cup L_2) $
 
-​       集合$N_2$为$PO_2$中不可与$PO_1$构成不可比较的解集，即$PO_2 \backslash  (C \cup W_2 \cup L_2) $
 表达式为：
+
 $$
 CONT(PO_1 / PO_2) = \frac{\frac{|C|}{2}+|W_1|+|N_1|}{|C|+|W_1|+|N_1|+|W_2|+|N_2|}
 $$
@@ -265,3 +266,7 @@ $$
 ### Wave metric(有时间再说)
 
 ### Pareto dominance indicator(有时间再说)
+
+### 总结
+
+然而，所有dominance-based QIs都有一些弱点。它们提供的信息很少，不知道一组在多大程度上优于另一组。更重要的是，如果集的所有解互不支配，它们可能会使解集变得不可比较，这在多目标优化中经常发生。此外，值得注意的是，一些dominance-based QIs可能部分表示着解集的基数(cardinality)，因为一组尺寸大一点的解可能会导致更多的非支配解。
