@@ -189,7 +189,7 @@ daovoice('init', {
 
 
   <meta name="description" content="可谓呕心沥血，翻译的累死我了，这篇是关于收敛性的indicators的《Distance-based QIs》。">
-<meta name="keywords" content="MOEA,ConvergenceQI,indicator">
+<meta name="keywords" content="MOEA,indicator,ConvergenceQI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Convergence--Distance-based QIs">
 <meta property="og:url" content="http://yoursite.com/2019/01/21/distancebased/index.html">
@@ -207,7 +207,7 @@ daovoice('init', {
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/error.png">
-<meta property="og:updated_time" content="2019-01-21T15:11:41.683Z">
+<meta property="og:updated_time" content="2019-01-22T10:27:51.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Convergence--Distance-based QIs">
 <meta name="twitter:description" content="可谓呕心沥血，翻译的累死我了，这篇是关于收敛性的indicators的《Distance-based QIs》。">
@@ -490,12 +490,24 @@ daovoice('init', {
                 
               
 
-              <time title="创建时间：2019-01-21 22:43:42 / 修改时间：23:11:41" itemprop="dateCreated datePublished" datetime="2019-01-21T22:43:42+08:00">2019-01-21</time>
+              <time title="创建时间：2019-01-21 22:43:42" itemprop="dateCreated datePublished" datetime="2019-01-21T22:43:42+08:00">2019-01-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-22 18:27:51" itemprop="dateModified" datetime="2019-01-22T18:27:51+08:00">2019-01-22</time>
               
             
           </span>
@@ -548,7 +560,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">7.3k</span>
+                <span title="本文字数">8.9k</span>
               
 
               
@@ -562,7 +574,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -739,19 +751,19 @@ rhs(Y):=GD_p(X,Y) + GD_p(Y,Z) = \frac{||d_{XY}||_p}{|X|}=\frac{||d_{YZ}||_p}{|Y|
 GD_{\infty}(A,B) = dist(A,B)</script><p>对于，$p &lt; \infty$，$GD_p$可以看作是dist的“平均”。</p>
 <p>上面翻译的自己都没看懂，实在不理解了，一下为原文，假以时日好好消化吧。</p>
 <p><img src="/2019/01/21/distancebased/5.png" alt=""></p>
-<h3 id="mathcal-M"><a href="#mathcal-M" class="headerlink" title="$\mathcal{M}$"></a>$\mathcal{M}$</h3><p>Given a set of pairwise nondominating <strong>decision vectors </strong>$X’ \subseteq X $, a neighborhood<br>parameter $ \sigma &gt; 0$ (to be chosen appropriately), and a distance metric$|| \cdot ||$ . We introduce three<br>functions to assess the quality of $X’$ regarding the parameter space: (注意是决策向量X)</p>
+<h3 id="mathcal-M"><a href="#mathcal-M" class="headerlink" title="$\mathcal{M}$"></a>$\mathcal{M}$</h3><p>Given a set of pairwise nondominating <strong>decision vectors </strong>$X’ \subseteq X ​$, a neighborhood<br>parameter $ \sigma &gt; 0​$ (to be chosen appropriately), and a distance metric$|| \cdot ||​$ . We introduce three<br>functions to assess the quality of $X’​$ regarding the parameter space: (注意是决策向量X)</p>
 <h4 id="mathcal-M-1"><a href="#mathcal-M-1" class="headerlink" title="$\mathcal{M} _1$"></a>$\mathcal{M} _1$</h4><p>the function $\mathcal{M} _1$ gives the average distence to the Pareto-optimal set $\bar{X} \subseteq X $</p>
 <script type="math/tex; mode=display">
 \mathcal{M}_1({X'}):=\frac{1}{|X'|}\sum _{a'\in X'} min \{ ||a'- \bar{a}||;\bar{a} \in \bar{X} \}</script><h4 id="mathcal-M-2"><a href="#mathcal-M-2" class="headerlink" title="$\mathcal{M} _2$"></a>$\mathcal{M} _2$</h4><p>The function $\mathcal{M} _2$  takes the distribution in combination with the number of nondominated solutions found into account.</p>
 <script type="math/tex; mode=display">
 \mathcal{M}_2({X'}):=\frac{1}{|X'-1|}\sum _{a'\in X'} \{b' \in X'; ||a'- b'|| > \sigma \}</script><h4 id="mathcal-M-3"><a href="#mathcal-M-3" class="headerlink" title="$\mathcal{M} _3$"></a>$\mathcal{M} _3$</h4><p>The function $\mathcal{M} _3$ considers the extent of the front described by $X’$.</p>
 <script type="math/tex; mode=display">
-described by $X'$.\mathcal{M}_3({X'}):= \sqrt{ \sum _{i=1}^m \max \{ ||a'_i- b'_i||;a',b' \in X' \}}</script><h3 id="mathcal-M-1"><a href="#mathcal-M-1" class="headerlink" title="$\mathcal{M}^*$"></a>$\mathcal{M}^*$</h3><p>Analogously, we define three metrics $\mathcal{M}_1^*$ , $\mathcal{M}_2^*$,$\mathcal{M}_3^*$, and on the objective space. Let<br>$Y’,\bar{Y} \subseteq Y$ be the sets of <strong>objective vectors</strong> that correspond $X’$  to $\bar{X}$ and , respectively, and $\sigma ^* &gt; 0$ and $|| \cdot ||^*$ as before:<br>before:</p>
-<h4 id="mathcal-M-1-1"><a href="#mathcal-M-1-1" class="headerlink" title="$\mathcal{M} ^* _1$"></a>$\mathcal{M} ^* _1$</h4><p>公式：</p>
+\mathcal{M}_3({X'}):= \sqrt{ \sum _{i=1}^m \max \{ ||a'_i- b'_i||;a',b' \in X' \}}</script><h3 id="mathcal-M-1"><a href="#mathcal-M-1" class="headerlink" title="$\mathcal{M}^*$"></a>$\mathcal{M}^*$</h3><p>Analogously, we define three metrics $\mathcal{M}_1^*$ , $\mathcal{M}_2^*$,$\mathcal{M}_3^*$, and on the objective space. Let $Y’,\bar{Y} \subseteq Y$ be the sets of <strong>objective vectors</strong> that correspond $X’$  to $\bar{X}$ and , respectively, and $\sigma ^* &gt; 0$ and $|| \cdot ||^*$ as before:</p>
+<h4 id="mathcal-M-1-只有这个是这个主题的QI"><a href="#mathcal-M-1-只有这个是这个主题的QI" class="headerlink" title="$\mathcal{M} ^* _1$ 只有这个是这个主题的QI"></a>$\mathcal{M} ^* _1$ 只有这个是这个主题的QI</h4><p>公式：</p>
 <script type="math/tex; mode=display">
 \mathcal{M}^*_1({Y'}):=\frac{1}{|Y'|}\sum _{p'\in X'} min \{ ||p'- \bar{p}||^*;\bar{p} \in \bar{Y} \}</script><h4 id="mathcal-M-2-1"><a href="#mathcal-M-2-1" class="headerlink" title="$\mathcal{M} ^* _2$"></a>$\mathcal{M} ^* _2$</h4><p>公式：</p>
 <script type="math/tex; mode=display">
-\mathcal{M}^*_2({Y'}):=\frac{1}{|Y'-1|}\sum _{p'\in Y'} \{q' \in Y'; ||p'- q'||^* > \sigma ^*\}</script><h4 id="mathcal-M-3-1"><a href="#mathcal-M-3-1" class="headerlink" title="$\mathcal{M} ^* _3$"></a>$\mathcal{M} ^* _3$</h4><p>公式：</p>
+\mathcal{M}^*_2({Y'}):=\frac{1}{|Y'-1|}\sum _{p'\in Y'} \{q' \in Y'; ||p'- q'||^* > \sigma ^*\}</script><h4 id="mathcal-M-3-spread-QI"><a href="#mathcal-M-3-spread-QI" class="headerlink" title="$\mathcal{M} ^* _3$ spread QI"></a>$\mathcal{M} ^* _3$ spread QI</h4><p>公式：</p>
 <script type="math/tex; mode=display">
 \mathcal{M}^*_3({Y'}):= \sqrt{ \sum _{i=1}^n \max \{ ||p'_i- q'_i||^*;p',q' \in Y' \}}</script><p>While $\mathcal{M} _1$ and $\mathcal{M} _1^*$ are intuitive, $\mathcal{M} _2$ and $\mathcal{M} _3$ (respectively $\mathcal{M} _2 ^*$ and $\mathcal{M} _3^*$ ) need further explanation. </p>
 <p>The distribution metrics give a value within the interval $[0,|X’|]$ ($[0,|Y’|] $) that reflects the number of $\sigma$ - niches ($\sigma ^*$ - niches) in X’ (Y’ ). Obviously, the higher the value, <u>the better the distribution for an appropriate neighborhood parameter</u> (e.g.,$\mathcal{M} _2 ^*(Y’)=|Y’|$  means that for each objective vector there is no other objective vector within $\sigma ^*$ -distance to it). </p>
@@ -783,9 +795,9 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
           
             <a href="/tags/MOEA/" rel="tag"># MOEA</a>
           
-            <a href="/tags/ConvergenceQI/" rel="tag"># ConvergenceQI</a>
-          
             <a href="/tags/indicator/" rel="tag"># indicator</a>
+          
+            <a href="/tags/ConvergenceQI/" rel="tag"># ConvergenceQI</a>
           
         </div>
       
@@ -807,6 +819,10 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/23/spread/" rel="prev" title="QIs for Spread">
+                QIs for Spread <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -882,7 +898,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -948,7 +964,9 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1008,7 +1026,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-the-distance-of-the-considered-solution-set-to-one-or-several-particular-points-derived-from-the-PF"><span class="nav-number">2.</span> <span class="nav-text">measure the distance of the considered solution set to one or several particular points derived from the PF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tchebycheff-distance-to-the-knee-point"><span class="nav-number">2.1.</span> <span class="nav-text">Tchebycheff distance to the knee point</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Seven-point-average-distance"><span class="nav-number">2.2.</span> <span class="nav-text">Seven point average distance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-the-distance-to-a-reference-set"><span class="nav-number">3.</span> <span class="nav-text">measure the distance to a reference set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generational-Distance-GD"><span class="nav-number">3.1.</span> <span class="nav-text">Generational Distance (GD)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GD-p"><span class="nav-number">3.2.</span> <span class="nav-text">$GD_p$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-M"><span class="nav-number">3.3.</span> <span class="nav-text">$\mathcal{M}$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">$\mathcal{M} _1$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">$\mathcal{M} _2$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-3"><span class="nav-number">3.3.3.</span> <span class="nav-text">$\mathcal{M} _3$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-M-1"><span class="nav-number">3.4.</span> <span class="nav-text">$\mathcal{M}^*$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-1-1"><span class="nav-number">3.4.1.</span> <span class="nav-text">$\mathcal{M} ^* _1$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-2-1"><span class="nav-number">3.4.2.</span> <span class="nav-text">$\mathcal{M} ^* _2$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-3-1"><span class="nav-number">3.4.3.</span> <span class="nav-text">$\mathcal{M} ^* _3$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximum-Pareto-front-error"><span class="nav-number">3.5.</span> <span class="nav-text">Maximum Pareto front error</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-the-distance-of-the-considered-solution-set-to-one-or-several-particular-points-derived-from-the-PF"><span class="nav-number">2.</span> <span class="nav-text">measure the distance of the considered solution set to one or several particular points derived from the PF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tchebycheff-distance-to-the-knee-point"><span class="nav-number">2.1.</span> <span class="nav-text">Tchebycheff distance to the knee point</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Seven-point-average-distance"><span class="nav-number">2.2.</span> <span class="nav-text">Seven point average distance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-the-distance-to-a-reference-set"><span class="nav-number">3.</span> <span class="nav-text">measure the distance to a reference set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generational-Distance-GD"><span class="nav-number">3.1.</span> <span class="nav-text">Generational Distance (GD)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GD-p"><span class="nav-number">3.2.</span> <span class="nav-text">$GD_p$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-M"><span class="nav-number">3.3.</span> <span class="nav-text">$\mathcal{M}$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">$\mathcal{M} _1$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">$\mathcal{M} _2$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-3"><span class="nav-number">3.3.3.</span> <span class="nav-text">$\mathcal{M} _3$</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-M-1"><span class="nav-number">3.4.</span> <span class="nav-text">$\mathcal{M}^*$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-1-只有这个是这个主题的QI"><span class="nav-number">3.4.1.</span> <span class="nav-text">$\mathcal{M} ^* _1$ 只有这个是这个主题的QI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-2-1"><span class="nav-number">3.4.2.</span> <span class="nav-text">$\mathcal{M} ^* _2$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mathcal-M-3-spread-QI"><span class="nav-number">3.4.3.</span> <span class="nav-text">$\mathcal{M} ^* _3$ spread QI</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximum-Pareto-front-error"><span class="nav-number">3.5.</span> <span class="nav-text">Maximum Pareto front error</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1049,7 +1067,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">74k</span>
+    <span title="站点总字数">84k</span>
   
 
   
@@ -1060,7 +1078,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:16</span>
   
 </div>
 
