@@ -45,26 +45,12 @@ description:
 
 ![](indicator\5.png)
 
-### QIs用于收敛性
+安排：
 
-收敛性作为解集质量的一个重要方面，在集的评价中受到了广泛的关注。文献中存在两类收敛QIs。一是考虑解或集之间的帕累托支配关系(表2项目1-9);另一种方法是考虑解集到帕累托前的距离，或者从帕累托前导出的一个/多个点(项目10 -22)。
-
-#### Dominance-based QIs
-
-A type of frequently-used dominance-based QIs is to consider  the <u>dominance relation between solutions of two sets</u> , such as the **C indicator** , $\widetilde{C}$ **indicator**, $\sigma- \tau- and \ \kappa-$ **metrics** , and **contribution indicator**. 
-Other QIs concerning <u>solutions’ dominance</u> include wave metric, **purity**, Pareto dominance indicator, and dominance-based quality. 
-
-The wave metric crunches the number of the nondominated fronts in a solution set. 
-
-**The purity** indicator counts nondominated solutions of the considered set over the combined collection of all the candidate sets. 
-
-The Pareto dominance indicator measures the ratio of the combined set’s nondominated solutions that are contributed by a particular set. 
-
-The dominance-based quality considers the dominance relation between a solution and its neighbours in the set.
-
-此内容见另一篇博客《Dominance-based QIs》
-
-
+- QIs for Convergence
+  - Dominance-based QIs
+  - Dominance-based QIs
+- QIs for Spread
 
 
 

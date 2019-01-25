@@ -299,9 +299,9 @@ $$
 
 ### $\mathcal{M}$
 
-Given a set of pairwise nondominating **decision vectors **$X' \subseteq X $, a neighborhood
-parameter $ \sigma > 0$ (to be chosen appropriately), and a distance metric$|| \cdot ||$ . We introduce three
-functions to assess the quality of $X'$ regarding the parameter space: (注意是决策向量X)
+Given a set of pairwise nondominating **decision vectors **$X' \subseteq X ​$, a neighborhood
+parameter $ \sigma > 0​$ (to be chosen appropriately), and a distance metric$|| \cdot ||​$ . We introduce three
+functions to assess the quality of $X'​$ regarding the parameter space: (注意是决策向量X)
 
 #### $\mathcal{M} _1$
 
@@ -321,16 +321,14 @@ $$
 
 The function $\mathcal{M} _3$ considers the extent of the front described by $X'$.
 $$
-described by $X'$.\mathcal{M}_3({X'}):= \sqrt{ \sum _{i=1}^m \max \{ ||a'_i- b'_i||;a',b' \in X' \}}
+\mathcal{M}_3({X'}):= \sqrt{ \sum _{i=1}^m \max \{ ||a'_i- b'_i||;a',b' \in X' \}}
 $$
 
 ### $\mathcal{M}^\*$
 
-Analogously, we define three metrics $\mathcal{M}_1^\*$ , $\mathcal{M}_2^\*$,$\mathcal{M}_3^\*$, and on the objective space. Let
-$Y',\bar{Y} \subseteq Y$ be the sets of **objective vectors** that correspond $X'$  to $\bar{X}$ and , respectively, and $\sigma ^\* > 0$ and $|| \cdot ||^\*$ as before:
-before:
+Analogously, we define three metrics $\mathcal{M}_1^\*$ , $\mathcal{M}_2^\*$,$\mathcal{M}_3^\*$, and on the objective space. Let $Y',\bar{Y} \subseteq Y$ be the sets of **objective vectors** that correspond $X'$  to $\bar{X}$ and , respectively, and $\sigma ^\* > 0$ and $|| \cdot ||^\*$ as before:
 
-#### $\mathcal{M} ^\* _1$
+#### $\mathcal{M} ^\* _1$ 只有这个是这个主题的QI
 
 公式：
 $$
@@ -346,7 +344,7 @@ $$
 $$
 
 
-#### $\mathcal{M} ^\* _3$
+#### $\mathcal{M} ^\* _3$ spread QI
 
 公式：
 $$
