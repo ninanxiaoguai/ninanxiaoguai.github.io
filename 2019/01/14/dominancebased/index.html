@@ -202,7 +202,8 @@ daovoice('init', {
 <meta property="og:image" content="http://yoursite.com/2019/01/14/dominancebased/may1.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/14/dominancebased/may2.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/14/dominancebased/pure1.png">
-<meta property="og:updated_time" content="2019-01-22T04:52:34.708Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/14/dominancebased/6.png">
+<meta property="og:updated_time" content="2019-01-27T15:22:09.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Convergence--Dominance-based QIs">
 <meta name="twitter:description" content="此篇介绍的是QIs for Convergence的第一部分《Dominance-based QIs》。看了一部分方法的论文，剩下一部分实在看不下去了，想继续看看别的，有时间有精神回来补一下~">
@@ -502,7 +503,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-22 12:52:34" itemprop="dateModified" datetime="2019-01-22T12:52:34+08:00">2019-01-22</time>
+                <time title="修改时间：2019-01-27 23:22:09" itemprop="dateModified" datetime="2019-01-27T23:22:09+08:00">2019-01-27</time>
               
             
           </span>
@@ -555,7 +556,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">11k</span>
+                <span title="本文字数">12k</span>
               
 
               
@@ -569,7 +570,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">10 分钟</span>
+                <span title="阅读时长">11 分钟</span>
               
             </div>
           
@@ -738,7 +739,22 @@ PF_{F_r} & |PF_{F_{r}}|=L_{rF_r}
 <script type="math/tex; mode=display">
 P_i = \frac{r_i^*}{r_i}, i = 1,2,...,N</script><p>该值是在[0,1]区间，并且越接近1越有良好的性能，纯度越高。</p>
 <p>现在想想<strong>纯度</strong>的的命名还是很形象的。</p>
-<h3 id="Dominance-based-quality（有时间再说）"><a href="#Dominance-based-quality（有时间再说）" class="headerlink" title="Dominance-based quality（有时间再说）"></a>Dominance-based quality（有时间再说）</h3><h3 id="Dominance-ranking-太长了再说"><a href="#Dominance-ranking-太长了再说" class="headerlink" title="Dominance ranking(太长了再说)"></a>Dominance ranking(太长了再说)</h3><h3 id="Wave-metric-有时间再说"><a href="#Wave-metric-有时间再说" class="headerlink" title="Wave metric(有时间再说)"></a>Wave metric(有时间再说)</h3><h3 id="Pareto-dominance-indicator-有时间再说"><a href="#Pareto-dominance-indicator-有时间再说" class="headerlink" title="Pareto dominance indicator(有时间再说)"></a>Pareto dominance indicator(有时间再说)</h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>然而，所有dominance-based QIs都有一些弱点。它们提供的信息很少，不知道一组在多大程度上优于另一组。更重要的是，如果集的所有解互不支配，它们可能会使解集变得不可比较，这在多目标优化中经常发生。此外，值得注意的是，一些dominance-based QIs可能部分表示着解集的基数(cardinality)，因为一组尺寸大一点的解可能会导致更多的非支配解。</p>
+<h3 id="Wave-metric"><a href="#Wave-metric" class="headerlink" title="Wave metric"></a>Wave metric</h3><p>这个度量标准允许我们从这个解集中提取的以帕累托边界的个数来计算解集的深度。我们应该说“pareto layers”，但是下面的算法解释了为什么“pareto frontier”更适合这种情况。Wave metric只能应用于有限尺寸的解集。要计算wave，通常是这样进行的：</p>
+<ul>
+<li><p>set i=1</p>
+</li>
+<li><p>compute the Pareto frontier using solutions set points. Remove Pareto frontier points from the solutions set</p>
+</li>
+<li><p>if the result set is empty, Wave = i</p>
+<p>else i = i + 1 and go to step 2</p>
+</li>
+</ul>
+<p>一个好的方法必须产生低wave的结果集。当wave = 1时，解集中的所有解都属于帕累托边界。在下图中，我们可以看到波度规在一个简单集合上的结果。对于这个集合，wave = 4：</p>
+<p><img src="/2019/01/14/dominancebased/6.png" alt=""></p>
+<p>实际上，我们可以从这个集合中提取4个帕累托边界。</p>
+<p>wave metric有两个严重的缺点:它不能在两个解集之间进行区分，而且不可能在两个不同的解集上比较波度量计算的相同结果。</p>
+<p>例如,如果我们计算解决方案上图的wave metric，,我们有wave = 4因为我们可以从这个集合中提取四个帕累托前沿。如果我们再加10分的Pareto frontier和计算wave metric,度量的值还是一样的。所以这个度规不能在这两个集合之间进行区分。第二，如果我们没有任何关于解集的先验信息，我们就不能说4是好是坏。</p>
+<h3 id="Dominance-based-quality（有时间再说）"><a href="#Dominance-based-quality（有时间再说）" class="headerlink" title="Dominance-based quality（有时间再说）"></a>Dominance-based quality（有时间再说）</h3><h3 id="Dominance-ranking-太长了再说"><a href="#Dominance-ranking-太长了再说" class="headerlink" title="Dominance ranking(太长了再说)"></a>Dominance ranking(太长了再说)</h3><h3 id="Pareto-dominance-indicator-有时间再说"><a href="#Pareto-dominance-indicator-有时间再说" class="headerlink" title="Pareto dominance indicator(有时间再说)"></a>Pareto dominance indicator(有时间再说)</h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>然而，所有dominance-based QIs都有一些弱点。它们提供的信息很少，不知道一组在多大程度上优于另一组。更重要的是，如果集的所有解互不支配，它们可能会使解集变得不可比较，这在多目标优化中经常发生。此外，值得注意的是，一些dominance-based QIs可能部分表示着解集的基数(cardinality)，因为一组尺寸大一点的解可能会导致更多的非支配解。</p>
 
       
     </div>
@@ -864,7 +880,7 @@ P_i = \frac{r_i^*}{r_i}, i = 1,2,...,N</script><p>该值是在[0,1]区间，并�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -932,7 +948,9 @@ P_i = \frac{r_i^*}{r_i}, i = 1,2,...,N</script><p>该值是在[0,1]区间，并�
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -992,7 +1010,7 @@ P_i = \frac{r_i^*}{r_i}, i = 1,2,...,N</script><p>该值是在[0,1]区间，并�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#QIs用于收敛性"><span class="nav-number">1.</span> <span class="nav-text">QIs用于收敛性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dominance-based-QIs"><span class="nav-number">1.1.</span> <span class="nav-text">Dominance-based QIs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-metric"><span class="nav-number">2.</span> <span class="nav-text">$C-metric$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#widetilde-C-metric"><span class="nav-number">3.</span> <span class="nav-text">$\widetilde{C}-metric$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-indicator"><span class="nav-number">4.</span> <span class="nav-text">Contribution indicator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sigma-tau-kappa-metric"><span class="nav-number">5.</span> <span class="nav-text">$\sigma-\  \ \tau- \ \ \kappa- \  metric$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">5.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sigma-metric"><span class="nav-number">5.2.</span> <span class="nav-text">$\sigma-metric$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tau-metric"><span class="nav-number">5.3.</span> <span class="nav-text">$\tau-metric$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kappa-metric"><span class="nav-number">5.4.</span> <span class="nav-text">$\kappa-metric$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例讨论"><span class="nav-number">5.5.</span> <span class="nav-text">实例讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Purity"><span class="nav-number">6.</span> <span class="nav-text">Purity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dominance-based-quality（有时间再说）"><span class="nav-number">7.</span> <span class="nav-text">Dominance-based quality（有时间再说）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dominance-ranking-太长了再说"><span class="nav-number">8.</span> <span class="nav-text">Dominance ranking(太长了再说)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wave-metric-有时间再说"><span class="nav-number">9.</span> <span class="nav-text">Wave metric(有时间再说)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pareto-dominance-indicator-有时间再说"><span class="nav-number">10.</span> <span class="nav-text">Pareto dominance indicator(有时间再说)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#QIs用于收敛性"><span class="nav-number">1.</span> <span class="nav-text">QIs用于收敛性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dominance-based-QIs"><span class="nav-number">1.1.</span> <span class="nav-text">Dominance-based QIs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-metric"><span class="nav-number">2.</span> <span class="nav-text">$C-metric$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#widetilde-C-metric"><span class="nav-number">3.</span> <span class="nav-text">$\widetilde{C}-metric$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Contribution-indicator"><span class="nav-number">4.</span> <span class="nav-text">Contribution indicator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sigma-tau-kappa-metric"><span class="nav-number">5.</span> <span class="nav-text">$\sigma-\  \ \tau- \ \ \kappa- \  metric$</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">5.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sigma-metric"><span class="nav-number">5.2.</span> <span class="nav-text">$\sigma-metric$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tau-metric"><span class="nav-number">5.3.</span> <span class="nav-text">$\tau-metric$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kappa-metric"><span class="nav-number">5.4.</span> <span class="nav-text">$\kappa-metric$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例讨论"><span class="nav-number">5.5.</span> <span class="nav-text">实例讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Purity"><span class="nav-number">6.</span> <span class="nav-text">Purity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wave-metric"><span class="nav-number">7.</span> <span class="nav-text">Wave metric</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dominance-based-quality（有时间再说）"><span class="nav-number">8.</span> <span class="nav-text">Dominance-based quality（有时间再说）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dominance-ranking-太长了再说"><span class="nav-number">9.</span> <span class="nav-text">Dominance ranking(太长了再说)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pareto-dominance-indicator-有时间再说"><span class="nav-number">10.</span> <span class="nav-text">Pareto dominance indicator(有时间再说)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -1033,7 +1051,7 @@ P_i = \frac{r_i^*}{r_i}, i = 1,2,...,N</script><p>该值是在[0,1]区间，并�
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">84k</span>
+    <span title="站点总字数">89k</span>
   
 
   
@@ -1044,7 +1062,7 @@ P_i = \frac{r_i^*}{r_i}, i = 1,2,...,N</script><p>该值是在[0,1]区间，并�
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:16</span>
+    <span title="站点阅读时长">1:21</span>
   
 </div>
 
