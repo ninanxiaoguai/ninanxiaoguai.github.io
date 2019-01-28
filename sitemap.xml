@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/01/28/cardinality/</loc>
+    
+    <lastmod>2019-01-28T14:30:38.750Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/01/21/distancebased/</loc>
+    
+    <lastmod>2019-01-28T06:58:19.468Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/01/14/dominancebased/</loc>
+    
+    <lastmod>2019-01-28T06:57:58.404Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/01/26/uniformity/</loc>
     
     <lastmod>2019-01-28T06:54:19.523Z</lastmod>
@@ -9,23 +30,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/01/14/dominancebased/</loc>
-    
-    <lastmod>2019-01-27T15:22:09.808Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/01/23/spread/</loc>
     
     <lastmod>2019-01-25T09:10:26.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/21/distancebased/</loc>
-    
-    <lastmod>2019-01-22T10:27:51.144Z</lastmod>
     
   </url>
   
