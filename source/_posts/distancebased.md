@@ -7,7 +7,6 @@ tags:
 - indicator
 - ConvergenceQI
 mathjax: true
-description:
 ---
 
 可谓呕心沥血，翻译的累死我了，这篇是关于收敛性的indicators的《Distance-based QIs》。

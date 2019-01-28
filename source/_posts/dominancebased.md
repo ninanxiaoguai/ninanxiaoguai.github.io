@@ -5,9 +5,8 @@ categories: indicators
 tags: 
 - ConvergenceQI
 - MOEA
-- indicators
+- indicator
 mathjax: true
-description:
 ---
 
 此篇介绍的是QIs for Convergence的第一部分《Dominance-based QIs》。看了一部分方法的论文，剩下一部分实在看不下去了，想继续看看别的，有时间有精神回来补一下~
@@ -278,11 +277,35 @@ $$
 
 现在想想**纯度**的的命名还是很形象的。
 
+### Wave metric
+
+这个度量标准允许我们从这个解集中提取的以帕累托边界的个数来计算解集的深度。我们应该说“pareto layers”，但是下面的算法解释了为什么“pareto frontier”更适合这种情况。Wave metric只能应用于有限尺寸的解集。要计算wave，通常是这样进行的：
+
+- set i=1
+
+- compute the Pareto frontier using solutions set points. Remove Pareto frontier points from the solutions set
+
+- if the result set is empty, Wave = i
+
+  else i = i + 1 and go to step 2
+
+一个好的方法必须产生低wave的结果集。当wave = 1时，解集中的所有解都属于帕累托边界。在下图中，我们可以看到波度规在一个简单集合上的结果。对于这个集合，wave = 4：
+
+![](distancebased/6.png)
+
+
+
+实际上，我们可以从这个集合中提取4个帕累托边界。
+
+wave metric有两个严重的缺点:它不能在两个解集之间进行区分，而且不可能在两个不同的解集上比较波度量计算的相同结果。
+
+例如,如果我们计算解决方案上图的wave metric，,我们有wave = 4因为我们可以从这个集合中提取四个帕累托前沿。如果我们再加10分的Pareto frontier和计算wave metric,度量的值还是一样的。所以这个度规不能在这两个集合之间进行区分。第二，如果我们没有任何关于解集的先验信息，我们就不能说4是好是坏。
+
 ### Dominance-based quality（有时间再说）
 
 ### Dominance ranking(太长了再说)
 
-### Wave metric(有时间再说)
+
 
 ### Pareto dominance indicator(有时间再说)
 
