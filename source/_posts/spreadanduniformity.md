@@ -37,35 +37,24 @@ $$
 
 #### Extended spread
 
-粗略的说$ \mathcal{V}(A,B) $ 是包含严格由 $A$ 的元素支配但不受 $B$ 的元素支配的两条边的最小超立方体的体积的分数(并且在[0,1]区间内)。如下图所示，两个连续的前沿 $A$ 和 $B$ 在目标空间的不同区域存在不同程度的差异，并且相互支配。(目标函数最小化)
+S 是一个解集，$S^\*$ 是已知的Pareto-optimal solutions。
 
-![](spreadanduniformity\3.png)
+$\Delta(S,Q)$ :
 
-$\mathcal{V}(A,B)$ 定义如下，对任何D维的向量 $Y$ ，$H_Y$ 为包括 $Y$ 的最小的轴平行超立方体。
+原始度规计算两个连续解之间的距离，这只适用于2个目标问题。我们通过计算一个点到它最近的邻居的距离来进行扩展:
 $$
-H_Y=\{ z \in R^D:a_i \leq z_i \leq b_i \ for \ some \ a,b \in Y \ i=1,...,D \}
+\Delta(S,S^*) = \frac{\sum_{i=1}^m d(e_i,S) + \sum_{X \in S^*} |d(X,S)-\bar{d}|}{\sum_{i = 1} ^m d(e_i,S) + |S^*| \bar{d}}
 $$
-现在用映射到单位超立方体上的规格化缩放和平移来表示$h_Y(y):H_Y \rightarrow [0,1]^D$。此转换用于消除目标伸缩的影响。相当于 $k =  h_Y(y)$ 把原来的点 $y$ 通过缩放与平移到单位超立方体中的点 $k$ 。
+其中，$\{ e_1,...,e_m \}$ 是 $ S^\*$ 中的 m 个极值解，并且：
 $$
-D_Y(A)=\{ z \in [1,0]^D:z \prec h_Y(a) \ for \ some \ a \in A \}
+d(X,S) = \min_{Y \in S,Y \neq X}||F(X)-F(Y)||^2\\
+\bar{d} = \frac{1}{|S^*|} \sum_{X \in S^*} d(X,S).
 $$
-上式为超立方体中被归一化控制的点的集合，那么$\mathcal{V}(A,B)$定义如下：
-$$
-\mathcal{V}(A,B)=\lambda(D_{A \cup B}(A) \backslash D_{A \cup B}(B) )
-$$
-其中，$\lambda(A)$ 是 $A$ 的勒贝格测量。个人认为：
+如果解决的方案有很好的distribute 并且包括这些极值点，那么，$\Delta(S,S^*)  = 0$。
 
-​          绿色的部分为$\mathcal{V}(B,A)$ 。
+#### $\Delta_{Line}$
 
-​          红色的部分为$\mathcal{V}(A,B)$ 。
-
-![](spreadanduniformity\4.png)
-
-尽管这个描述相当繁琐，但是 $\mathcal{V}(A,B)$ 和 $\mathcal{V}(B,A)$ 很容易通过对 $H_{A \cup B}$ 的蒙特卡罗抽样来计算，并计算A或b占绝对优势的样本的比例。本研究选取5万个样本进行蒙特卡罗估计。体积测量 $\mathcal{V}$ 的好处是,它将奖励设置更大的区段当这些区段是前面的比较,而不是当他们在后面,不受点分布方面,而且它也给信息多远一组(平均)面前的另一个地方。
-
-不幸的是，这个测度 $\mathcal{V}$ ，像原来的度规$\mathcal{C}$ 一样，具有这样的性质，如果$\mathcal{W}$ 是一个非支配集，并且 $A \subseteq W$，$B \subseteq W$ ，$\mathcal{V}(A,B)$ 与 $\mathcal{V}(B,A)$ 两者都是积极的。
-
-#### $\Delta_{Line}$ (不是很懂) 
+####  (不是很懂) 
 
 The $\Delta_{Line}$  measures the diversity and spread of approximate solutions without the need for the $PF_{true}$ . Let $\beta$ be the  mid-points of equally divided intervals in the range of [0, 1] $\left(  [0,\frac{1}{N}],[\frac{1}{N},\frac{2}{N}],...,[\frac{N-1}{N},1] \right)$ where $N$ is the number of solutions in approximate the PF, then the objective line distribution ( $\Delta^i_{Line}$ ) is defined as:但是并不是很懂下标的规定。
 $$
@@ -108,7 +97,7 @@ $$
 $$
 $P$ 是种群尺寸 因为并不希望任何的子代落到非支配区域，因此 $\bar{n}_{q+1} = 0$。并且有，$\sigma^2_{q+1} = \sum_{i = 1}^q \sigma^2_i$ 。如果点的分布是理想的话，那么$v=0$。因此，具有良好分布能力的算法具有低偏差度量的特点。
 
-#### sparsity
+#### Sparsity index
 
 好像没有公式，只有一段话。。。
 
@@ -122,7 +111,7 @@ $P$ 是种群尺寸 因为并不希望任何的子代落到非支配区域，因
 
 #### U-Measure(太多 再说)
 
-#### cover rate
+#### Cover rate
 
 Cover rate is the index(指标) for the diversity of the Pareto optimum individuals. The cover rate is derived in the following steps. 
 
