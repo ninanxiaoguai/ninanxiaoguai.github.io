@@ -188,18 +188,22 @@ daovoice('init', {
 
 
 
-  <meta name="description" content="此文会持续更新，记录一些在matlab中的一些常用函数。">
-<meta name="keywords" content="教程,matlab">
+  <meta name="description" content="本想在复现的上一个算法AR-MOEA中加上一点小修改，我思来想去觉得每一个步骤都无懈可击。。。于是我意识到可能是论文读的太少，于是又选了一个indicator-based的多目标优化算法学习一下——MOMBI-II，这个算法过程较AR-MOEA比较简单，此算法选择的indicator是R2但效果也不错，学习学习。">
+<meta name="keywords" content="MOEA,indicator-based">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matlab">
-<meta property="og:url" content="http://yoursite.com/2019/01/02/matlab/index.html">
+<meta property="og:title" content="MOMBI-II">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/mombiii/index.html">
 <meta property="og:site_name" content="清 泉">
-<meta property="og:description" content="此文会持续更新，记录一些在matlab中的一些常用函数。">
+<meta property="og:description" content="本想在复现的上一个算法AR-MOEA中加上一点小修改，我思来想去觉得每一个步骤都无懈可击。。。于是我意识到可能是论文读的太少，于是又选了一个indicator-based的多目标优化算法学习一下——MOMBI-II，这个算法过程较AR-MOEA比较简单，此算法选择的indicator是R2但效果也不错，学习学习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T15:48:37.887Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/21/mombiii/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/21/mombiii/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/21/mombiii/3.png">
+<meta property="og:updated_time" content="2019-03-21T15:02:23.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="matlab">
-<meta name="twitter:description" content="此文会持续更新，记录一些在matlab中的一些常用函数。">
+<meta name="twitter:title" content="MOMBI-II">
+<meta name="twitter:description" content="本想在复现的上一个算法AR-MOEA中加上一点小修改，我思来想去觉得每一个步骤都无懈可击。。。于是我意识到可能是论文读的太少，于是又选了一个indicator-based的多目标优化算法学习一下——MOMBI-II，这个算法过程较AR-MOEA比较简单，此算法选择的indicator是R2但效果也不错，学习学习。">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/21/mombiii/1.png">
 
 
 
@@ -208,7 +212,7 @@ daovoice('init', {
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/02/matlab/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/21/mombiii/"/>
 
 
 
@@ -218,7 +222,7 @@ daovoice('init', {
   };
 </script>
 
-  <title>matlab | 清 泉</title>
+  <title>MOMBI-II | 清 泉</title>
   
 
 
@@ -436,7 +440,7 @@ daovoice('init', {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/matlab/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/mombiii/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="spring">
@@ -453,7 +457,7 @@ daovoice('init', {
 
         
         
-          <h1 class="post-title" itemprop="name headline">matlab
+          <h1 class="post-title" itemprop="name headline">MOMBI-II
               
             
           </h1>
@@ -478,7 +482,7 @@ daovoice('init', {
                 
               
 
-              <time title="创建时间：2019-01-02 23:44:47 / 修改时间：23:48:37" itemprop="dateCreated datePublished" datetime="2019-01-02T23:44:47+08:00">2019-01-02</time>
+              <time title="创建时间：2019-03-21 21:29:04 / 修改时间：23:02:23" itemprop="dateCreated datePublished" datetime="2019-03-21T21:29:04+08:00">2019-03-21</time>
             
 
             
@@ -500,7 +504,7 @@ daovoice('init', {
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/matlab/" itemprop="url" rel="index"><span itemprop="name">matlab</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/indicator-based/" itemprop="url" rel="index"><span itemprop="name">indicator-based</span></a></span>
 
                 
                 
@@ -536,7 +540,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">541</span>
+                <span title="本文字数">4.6k</span>
               
 
               
@@ -550,7 +554,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -570,11 +574,43 @@ daovoice('init', {
       
 
       
-        <p>此文会持续更新，记录一些在matlab中的一些常用函数。</p>
+        <p>本想在复现的上一个算法AR-MOEA中加上一点小修改，我思来想去觉得每一个步骤都无懈可击。。。于是我意识到可能是论文读的太少，于是又选了一个indicator-based的多目标优化算法学习一下——MOMBI-II，这个算法过程较AR-MOEA比较简单，此算法选择的indicator是<strong>R2</strong>但效果也不错，学习学习。</p>
 <a id="more"></a>
-<h3 id="repmat"><a href="#repmat" class="headerlink" title="repmat"></a>repmat</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>];</span><br><span class="line">&gt;&gt; <span class="built_in">repmat</span>(a,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">%把矩阵整体堆叠成新矩阵</span></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span></span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = [<span class="number">6</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">4</span> <span class="number">5</span>];</span><br><span class="line">&gt;&gt; [~,ans] = sort(a) <span class="comment">% 默认从小到大的索引值</span></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">     <span class="number">4</span>     <span class="number">3</span>     <span class="number">2</span>     <span class="number">5</span>     <span class="number">6</span>     <span class="number">1</span></span><br><span class="line">&gt;&gt; a(<span class="built_in">ans</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">4</span>     <span class="number">5</span>     <span class="number">6</span></span><br></pre></td></tr></table></figure>
-<h3 id="尺寸扩展"><a href="#尺寸扩展" class="headerlink" title="尺寸扩展"></a>尺寸扩展</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = <span class="built_in">ones</span>(<span class="number">3</span>);</span><br><span class="line">&gt;&gt; a(<span class="number">1</span>,(<span class="number">4</span>:<span class="number">5</span>)) = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">a =</span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">1</span>     <span class="number">1</span>    <span class="number">10</span>    <span class="number">10</span></span><br><span class="line">     <span class="number">1</span>     <span class="number">1</span>     <span class="number">1</span>     <span class="number">0</span>     <span class="number">0</span></span><br><span class="line">     <span class="number">1</span>     <span class="number">1</span>     <span class="number">1</span>     <span class="number">0</span>     <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="规定"><a href="#规定" class="headerlink" title="规定"></a>规定</h3><p>the ideal objective vector：$z^*_i = \min_{\vec{x}}f_i(\vec{x})​$</p>
+<p>the nadir objective vector: $z^{nad}_i = \max_{P^*}f_i(\vec{x})$</p>
+<p>indicator: R2</p>
+<script type="math/tex; mode=display">
+R2(A,U) = \frac{1}{U}\sum_{u \in U}u^*(A)</script><p>其中，$u^*(A) = \min_{\vec{a} \in A} \{ u(\vec{a}) \}$，是在 $A$ 中最尤的效用值(utility value)。</p>
+<p>一个测度叫做 achievement scalarizing function (<strong>ASF</strong>)：</p>
+<script type="math/tex; mode=display">
+u_{asf}(\vec{v}:\vec{r},\vec{w}) = \max_{i \in \{1,...,m\} } \{\frac{|v_i - r_i|}{w_i} \}</script><p>归一化：</p>
+<script type="math/tex; mode=display">
+f'_i(\vec{x}) = \frac{f_i(\vec{x}) - z_i^{min}}{z_i^{max}-z_i^{min}}
+\\ \forall i \in \{1,...,m\}</script><h3 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h3><p><img src="/2019/03/21/mombiii/1.png" alt=""></p>
+<p><img src="/2019/03/21/mombiii/2.png" alt=""></p>
+<p><img src="/2019/03/21/mombiii/3.png" alt=""></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>借鉴了PlatEMO</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[alpha,epsilon,recordSize] = deal(<span class="number">0.5</span>,<span class="number">0.001</span>,<span class="number">5</span>);</span><br><span class="line"><span class="comment">%% Generate random population</span></span><br><span class="line">[W,N] = UniformPoint(N,M);</span><br><span class="line">Population   = Initialization();</span><br><span class="line"><span class="comment">% Ideal and nadir points</span></span><br><span class="line">zmin = min(Population_objs,[],<span class="number">1</span>);</span><br><span class="line">zmax = max(Population_objs,[],<span class="number">1</span>);</span><br><span class="line"><span class="comment">% For storing the nadir vectors of a few generations</span></span><br><span class="line">Record = <span class="built_in">repmat</span>(zmax,recordSize,<span class="number">1</span>);</span><br><span class="line">Archive= Population_objs;</span><br><span class="line"><span class="comment">% For storing whether each objective has been marked for a few</span></span><br><span class="line"><span class="comment">% generations</span></span><br><span class="line">Mark = false(recordSize,M);</span><br><span class="line"><span class="comment">% R2 ranking procedure</span></span><br><span class="line">[Rank,Norm] = R2Ranking(Population_objs,W,zmin,zmax);</span><br><span class="line"><span class="comment">%% Optimization</span></span><br><span class="line"><span class="keyword">while</span> Global.NotTermination(Population)</span><br><span class="line">    MatingPool  = TournamentSelection(<span class="number">2</span>,N,Rank,Norm);</span><br><span class="line">    Offspring   = GA(Population(MatingPool));</span><br><span class="line">    Population  = [Population,Offspring];</span><br><span class="line">    [Rank,Norm] = R2Ranking(Population_objs,W,zmin,zmax);</span><br><span class="line">    [~,rank]    = sortrows([Rank,Norm]);</span><br><span class="line">    Population  = Population(rank(<span class="number">1</span>:Global.N));</span><br><span class="line">    Rank        = Rank(rank(<span class="number">1</span>:Global.N));</span><br><span class="line">    Norm        = Norm(rank(<span class="number">1</span>:Global.N));</span><br><span class="line">    [zmin,zmax,Record,Mark] = UpdateReferencePoints(Population_objs,zmin,zmax,Record,Mark,alpha,epsilon);</span><br></pre></td></tr></table></figure>
+<p><code>R2Ranking.m</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[Rank,Norm]</span>  = <span class="title">R2Ranking</span><span class="params">(PopObj,W,zmin,zmax)</span></span></span><br><span class="line">    N  = <span class="built_in">size</span>(PopObj,<span class="number">1</span>);</span><br><span class="line">    NW = <span class="built_in">size</span>(W,<span class="number">1</span>);</span><br><span class="line">    <span class="comment">%% Normalize the population</span></span><br><span class="line">    PopObj = (PopObj-<span class="built_in">repmat</span>(zmin,N,<span class="number">1</span>))./<span class="built_in">repmat</span>(zmax-zmin,N,<span class="number">1</span>);</span><br><span class="line">    <span class="comment">%% Calculate the L2-norm of each solution</span></span><br><span class="line">    Norm = <span class="built_in">sqrt</span>(sum(PopObj.^<span class="number">2</span>,<span class="number">2</span>));</span><br><span class="line">    <span class="comment">%% Rank the population</span></span><br><span class="line">    Rank = <span class="built_in">zeros</span>(N,NW);</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : NW</span><br><span class="line">        ASF           = max(PopObj./<span class="built_in">repmat</span>(W(<span class="built_in">i</span>,:),N,<span class="number">1</span>),[],<span class="number">2</span>);</span><br><span class="line">        [~,rank]      = sortrows([ASF,Norm]);</span><br><span class="line">        [~,Rank(:,i)] = sort(rank);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    Rank = min(Rank,[],<span class="number">2</span>);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><code>UpdateReferencePoints.m</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[zmin,zmax,Record,Mark]</span> = <span class="title">UpdateReferencePoints</span><span class="params">(PopObj,zmin,zmax,Record,Mark,alpha,epsilon)</span></span></span><br><span class="line">    z      = min(PopObj,[],<span class="number">1</span>);        <span class="comment">% z*</span></span><br><span class="line">    znad   = max(PopObj,[],<span class="number">1</span>);        </span><br><span class="line">    zmin   = min(zmin,z);</span><br><span class="line">    Record = [Record(<span class="number">2</span>:end,:);znad];</span><br><span class="line">    v      = Record(<span class="keyword">end</span><span class="number">-1</span>,:) - znad;  <span class="comment">% 前一轮的zmax减去当前的zmax</span></span><br><span class="line">    mark   = false(<span class="number">1</span>,<span class="built_in">length</span>(zmax));</span><br><span class="line">    <span class="keyword">if</span> max(v) &gt; alpha                 <span class="comment">% 如果差值大到一定程度，直接赋值</span></span><br><span class="line">        zmax = znad;              </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : <span class="built_in">length</span>(zmax)      <span class="comment">% 对每一个目标函数上的维度操作</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">abs</span>(zmax(<span class="built_in">i</span>)-zmin(<span class="built_in">i</span>)) &lt; epsilon</span><br><span class="line">                zmax(<span class="built_in">i</span>) = max(zmax);  <span class="comment">% 如果在i-th维度上 zmax与新的zmin很接近，max(zmax)直接赋值到此维度上</span></span><br><span class="line">                mark(<span class="built_in">i</span>) = true;</span><br><span class="line">            <span class="keyword">elseif</span> znad(<span class="built_in">i</span>) &gt; zmax(<span class="built_in">i</span>)  </span><br><span class="line">                zmax(<span class="built_in">i</span>) = <span class="number">2</span>*znad(<span class="built_in">i</span>) - zmax(<span class="built_in">i</span>);<span class="comment">% 如果在i-th维度上，当前种群最大的大于zmax(i)</span></span><br><span class="line">                mark(<span class="built_in">i</span>) = true;</span><br><span class="line">            <span class="keyword">elseif</span> v(<span class="built_in">i</span>)==<span class="number">0</span> &amp;&amp; ~any(Mark(:,<span class="built_in">i</span>)) <span class="comment">% 如果在i-th维度上,与之前没有变：差值为0，并且 第i列Mark全为0</span></span><br><span class="line">                zmax(<span class="built_in">i</span>) = (zmax(<span class="built_in">i</span>)+max(Record(:,<span class="built_in">i</span>)))/<span class="number">2</span>; <span class="comment">% 此维度上Record的最大值与原来的zmax取平均值</span></span><br><span class="line">                mark(<span class="built_in">i</span>) = true;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    Mark = [Mark(<span class="number">2</span>:end,:);mark];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="过程理解"><a href="#过程理解" class="headerlink" title="过程理解"></a>过程理解</h3><h4 id="Ranking"><a href="#Ranking" class="headerlink" title="Ranking"></a>Ranking</h4><p>其中主要的代码就是这个：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Rank = <span class="built_in">zeros</span>(N,NW);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : NW</span><br><span class="line">	ASF           = max(PopObj./<span class="built_in">repmat</span>(W(<span class="built_in">i</span>,:),N,<span class="number">1</span>),[],<span class="number">2</span>);</span><br><span class="line">	[~,rank]      = sortrows([ASF,Norm]);</span><br><span class="line">	[~,Rank(:,i)] = sort(rank);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Rank = min(Rank,[],<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>可以看到<code>max</code>中便是开头介绍的 $u_{asf}$ 算法，公式：    </p>
+<script type="math/tex; mode=display">
+u_{asf}(\vec{v}:\vec{r},\vec{w}) = \max_{i \in \{1,...,m\} } \{\frac{|v_i - r_i|}{w_i} \}</script><ul>
+<li>首先遍历每一个一致性点<code>W(i,:)</code>，此时因为已经归一化，因此 $\vec{r} = \vec{0}$，用每一个个体<strong>点除</strong>一致性点向量($\vec{v}$)，因为在一个循环中，<code>W(i,:)</code>是不变的，因此相当于对每一维度的轴进行线性拉伸(点除)。</li>
+<li>对得到的矩阵每一行取最大，翻译一下就是找到可以包含住此点的最小边长的立方体(假设三维，高维同理)，此立方体的边长就是 $\max_{i \in \{1,…,m\} } \{\frac{|v_i |}{w_i} \}$，也可以说拉伸后据原点的最大棋盘距离。</li>
+<li>紧接着就是<code>sortrows</code>，翻译一下：先对ASF这个向量排序，如果相同的话，再按向量Norm排序。</li>
+<li>再对上面的输出索引<code>sort</code>，翻译一下：对<code>[ASF,Norm]</code>进行离散化(ACM中术语-小弘说)，赋值成<code>1~size(ASF,1)</code>的整数值。如果假设数值越小越好，那于对第 i 列的向量，每一个个体都赋予一个等级</li>
+<li>最后<code>min(Rank,[],2)</code>翻译一下：查看每一个个体的历史纪录，取它曾经最好(小)的一次。</li>
+</ul>
+<p>有必要解释一下主函数里的这两步：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Rank,Norm] = R2Ranking(Population_objs,W,zmin,zmax);</span><br><span class="line">[~,rank]    = sortrows([Rank,Norm]);</span><br></pre></td></tr></table></figure>
+<p>根据进化进程，<code>Rank</code>中会有大量的<code>[1 1 1...2 2 2...]</code>这种重复的元素，也就是说，对于<code>[1...1]</code>对应的个体来说，他们都再某个一致性点向量<code>W(i,:)</code>的结果中当过最最小，都“优秀”过。因此他们都是1，对于<code>Rank</code>中都是2的个体，同理。从这个角度来说，同为一个等级的个体都很好，但由于尺寸限制，可能不能都保留，这个时候便可以进一步比较他们到原点的(欧式)距离，对于minimize问题，当然越小越好，因此<code>sortrows([Rank,Norm])</code>。</p>
+<h4 id="update-reference-point"><a href="#update-reference-point" class="headerlink" title="update reference point"></a>update reference point</h4><p>这个我理解不了，只能复述一下代码过程，复述内容见上方的代码注释。</p>
+
       
     </div>
 
@@ -594,9 +630,9 @@ daovoice('init', {
       
         <div class="post-tags">
           
-            <a href="/tags/教程/" rel="tag"># 教程</a>
+            <a href="/tags/MOEA/" rel="tag"># MOEA</a>
           
-            <a href="/tags/matlab/" rel="tag"># matlab</a>
+            <a href="/tags/indicator-based/" rel="tag"># indicator-based</a>
           
         </div>
       
@@ -609,8 +645,8 @@ daovoice('init', {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/02/moead3/" rel="next" title="MOEA/D算法(三)">
-                <i class="fa fa-chevron-left"></i> MOEA/D算法(三)
+              <a href="/2019/03/21/armoea/" rel="next" title="AR-MOEA">
+                <i class="fa fa-chevron-left"></i> AR-MOEA
               </a>
             
           </div>
@@ -618,10 +654,6 @@ daovoice('init', {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/12/indicator/" rel="prev" title="毕设">
-                毕设 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -837,7 +869,7 @@ daovoice('init', {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#repmat"><span class="nav-number">1.</span> <span class="nav-text">repmat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">2.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尺寸扩展"><span class="nav-number">3.</span> <span class="nav-text">尺寸扩展</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#规定"><span class="nav-number">1.</span> <span class="nav-text">规定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法流程"><span class="nav-number">2.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程理解"><span class="nav-number">4.</span> <span class="nav-text">过程理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ranking"><span class="nav-number">4.1.</span> <span class="nav-text">Ranking</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#update-reference-point"><span class="nav-number">4.2.</span> <span class="nav-text">update reference point</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1398,6 +1430,30 @@ daovoice('init', {
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
