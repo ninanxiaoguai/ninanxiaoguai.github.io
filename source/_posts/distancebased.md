@@ -42,7 +42,7 @@ $\lambda_i=\frac{1}{R_i}$，$R_i$是第i个目标函数的范围(range)。
 Defined this way, the knee of the Pareto front is the point in the feasible objective
 space, $ \Lambda$, which corresponds to $ \min_{z∈\Lambda} d(z, z^∗, \lambda)$.
 
-如果一个偏好关系的$PF_{approx}$集合比另一个关系的$PF_{approx}$集合包含更多的膝关节周围的解，则该偏好关系优于其他关系。
+如果一个偏好关系的$PF_{approx}$集合比另一个关系的$PF_{approx}$集合包含更多的膝节点周围的解，则该偏好关系优于其他关系。
 
 ### Seven point average distance
 
@@ -60,7 +60,7 @@ With the resulting two points at hand, the seven comparison points are denned on
 
 这七个点具体是什么我实在没有翻译出来，在查找文献时《Evolutionary Algorithms for Solving Multi-Objective Problems 》作者：Carlos Coello Coello， David A. Van Veldhuizen， Gary B. Lamont时，有如下叙述：
 
-![](C:\Users\呢喃小怪\Desktop\distancebased\seven2.png)
+![](distancebased\seven2.png)
 
 ## measure the distance to a reference set
 
@@ -74,7 +74,7 @@ GD(A)=\frac{1}{N} ( \sum_{i=1}^{N} (d_2(a_i,PF)^2)^{1/2}
 $$
 a solution set $A=\{ a_1,a_2...,a_N\}$ 
 
-$d_2(a_i,PF)$是$a_i$到PF的2范式距离(欧几里距离)
+$d_2(a_i,PF)$是$a_i​$到PF的2范式距离(欧几里距离)
 
 在实际应用中使用了一个很好地表示PF的参考集R。
 $$
@@ -94,7 +94,7 @@ $$
 $$
 \lim_{x \to \infty}{GD(F(A_n),F(P_Q))=0}
 $$
-由上述的结果可以推广:例如，我们可以考虑a的小扰动，而不是multisets。或者，如果$F(A)$是有界的，不管$A_n$的a是否被支配，也不管$F(a)$离PF有多远，甚至满足$|A_n|=n$的任意archive序列任何$A_n$都能被选择。因此，在EMO上下文中，从这个角度来看，用进一步的、甚至占主导地位的解决方案“填充”归档文件是有好处的，因为通常较大的集合会产生更好的GD值。在社区中，它的建立是为了固定种群大小，以便对不同的算法进行比较(例如，N = 100)。然而，这给基于不受先验定义值限制的存档的MOEAs带来了麻烦。因此，“完美的”归档器(关于GD)可以接受所有(或至少是尽可能多的)候选解决方案。这当然不是我们想要的效果。
+由上述的结果可以推广:例如，我们可以考虑a的小扰动，而不是multisets。或者，如果$F(A)​$是有界的，不管$A_n​$的a是否被支配，也不管$F(a)​$离PF有多远，甚至满足$|A_n|=n​$的任意archive序列任何$A_n​$都能被选择。因此，在EMO上下文中，从这个角度来看，用进一步的、甚至占主导地位的解决方案“填充”归档文件是有好处的，因为通常较大的集合会产生更好的GD值。在社区中，它的建立是为了固定种群大小，以便对不同的算法进行比较(例如，N = 100)。然而，这给基于不受先验定义值限制的存档的MOEAs带来了麻烦。因此，“完美的”归档器(关于GD)可以接受所有(或至少是尽可能多的)候选解决方案。这当然不是我们想要的效果。
 
 为解决以上问题，便提出了$GD_p$：
 
@@ -117,7 +117,7 @@ $$
 $$
 a \prec b \ \Rightarrow \ dist(F(a),F(P_Q))<dist(F(b),F(P_Q))
 $$
-证明：因为$P_Q$是紧凑的，所以一定存在 $p_b\in P_Q$
+证明：因为$P_Q​$是紧凑的，所以一定存在 $p_b\in P_Q​$
 $$
 dist(F(b),F(P_Q))=||F(b)-F(p_b)|| > 0
 $$
@@ -352,7 +352,7 @@ $$
 $$
 While $\mathcal{M} _1$ and $\mathcal{M} _1^\*$ are intuitive, $\mathcal{M} _2$ and $\mathcal{M} _3$ (respectively $\mathcal{M} _2 ^\*$ and $\mathcal{M} _3^\*$ ) need further explanation. 
 
-The distribution metrics give a value within the interval $[0,|X'|]$ ($[0,|Y'|] $) that reflects the number of $\sigma$ - niches ($\sigma ^\*$ - niches) in X' (Y' ). Obviously, the higher the value, <u>the better the distribution for an appropriate neighborhood parameter</u> (e.g.,$\mathcal{M} _2 ^\*(Y')=|Y'|$  means that for each objective vector there is no other objective vector within $\sigma ^\*$ -distance to it). 
+The distribution metrics give a value within the interval $[0,|X'|]​$ ($[0,|Y'|] ​$) that reflects the number of $\sigma​$ - niches ($\sigma ^\*​$ - niches) in X' (Y' ). Obviously, the higher the value, <u>the better the distribution for an appropriate neighborhood parameter</u> (e.g.,$\mathcal{M} _2 ^\*(Y')=|Y'|​$  means that for each objective vector there is no other objective vector within $\sigma ^\*​$ -distance to it). 
 
 The functions $\mathcal{M} _3$  and $\mathcal{M} _3^\* $ use the maximum extent in each dimension to estimate the range to which the front spreads out. In the case of two objectives, this equals the distance of the two outer solutions.
 n is the number of the objective functions.
@@ -361,7 +361,7 @@ n is the number of the objective functions.
 
 ![](distancebased/error.png)
 
-很难测量一组向量与另一组向量的比较。例如，在比较PFknown和PFtrue时，我们希望确定这两个集合之间的“距离”以及它们在形状上的一致性。这个度量决定了一个最大的误差带，当考虑到$PF_{known}$时，它包含$PF_{true}$中的每个向量。另一种方式。这是$PF_{known}$中每个向量与PFtrue中相应的最近向量之间的最大最小距离。该指标定义为:
+很难测量一组向量与另一组向量的比较。例如，在比较$PF_{known}$和 $PF_{true}$ 时，我们希望确定这两个集合之间的“距离”以及它们在形状上的一致性。这个度量决定了一个最大的误差带，当考虑到$PF_{known}$时，它包含$PF_{true}$中的每个向量。另一种方式。这是$PF_{known}$中每个向量与 $PF_{true}$ 中相应的最近向量之间的最大最小距离。该指标定义为:
 $$
 ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\vec{x})|^p})^{(1/p)}
 $$

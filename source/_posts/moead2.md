@@ -69,13 +69,13 @@ for i=1,...N
 
 - **Step 2.2)** 提升 ：通过提升或者修理来启发式的由$y$产生$y'$ 
 
-- **Step 2.3)** 更新$z$：if $z_j < f_j(y')$ then $z_j = f_j(y')$   
+- **Step 2.3)** 更新参考点$z$：if $z_j < f_j(y')$ then $z_j = f_j(y')$   $j \in 1,...m$
 
-- **Step 2.4)** 更新相邻解：对于$j \in B(i)$,if $g^{te}(y'|\lambda^j,z)\leq g^{te}(x^j|\lambda^j,z)$ then $x^j=y', FV^j=F(y')$
+- **Step 2.4)** 更新相邻解：对于每一个$j \in B(i)$,if $g^{te}(y'|\lambda^j,z)\leq g^{te}(x^j|\lambda^j,z)$ then $x^j=y', FV^j=F(y')$
 
 - **Step 2.5)** 更新EP：
   ​                                --  从 EP中移除被 $F(y’)$支配的所有向量
-  ​                                --  如果 EP中没有向量支配 $F(y’)$，就将 F(y’)加入到EP中
+  ​                                --  如果 EP中没有向量支配 $F(y’)​$，就将 F(y’)加入到EP中
 #### STEP 3) Stopping Criteria
 
 如果停止准则满足，并输出EP。否则，转向 **STEP 2)**。

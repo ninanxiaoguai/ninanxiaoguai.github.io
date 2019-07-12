@@ -38,9 +38,9 @@ The dominance-based quality considers the dominance relation between a solution 
 $$
 C(A,B)=\frac{|\{b\in B:\exists a \in A,a \preceq b \}|}{|B|}
 $$
-$C$一方面可以计算出$B$中的解被$A$中解所支配的比例部分，另一方面也可以计算出$A$相对于$B$的性能。
+$C​$一方面可以计算出$B​$中的解被$A​$中解所支配的比例部分，另一方面也可以计算出$A​$相对于$B​$的性能。
 
-当$C(A,B)=1$时，意味着$B$中的所有解都被$A$中的所$\preceq$。
+当$C(A,B)=1​$时，意味着$B​$中的所有解都被$A​$中的所$\preceq​$。
 
 当$C(A,B)=0​$时，意味着$B​$中的所有解都无法被$A​$中的$\preceq​$。
 
@@ -48,7 +48,7 @@ $C$一方面可以计算出$B$中的解被$A$中解所支配的比例部分，�
 
 $ C(A,A)  \ne 0$ 
 
-如果$W$是一个非支配解集，$A,B$满足$A \subseteq W$，$B \subseteq W$，但$C(A,B)$可为[0,1]中的任意一个值。
+如果$W​$是一个非支配解集，$A,B​$满足$A \subseteq W​$，$B \subseteq W​$，但$C(A,B)​$可为[0,1]中的任意一个值。
 
 ### $\widetilde{C}-metric$
 
@@ -74,7 +74,7 @@ $\widetilde{C}(A,B)$与$C(A,B)$都没有考虑到前沿的延展性(extent)与�
 
 上图可以看出(minimise)：A的一致性(uniformity)更好，而B集中聚到了一个区域。
 
-但有：$ C(A,B)  = C(B,A)  =\widetilde{C}(A,B)  =\widetilde{C}(B,A)  =\frac{4}{12}$，即使A的元素在B的大部分区段上占主导地位。
+但有：$ C(A,B)  = C(B,A)  =\widetilde{C}(A,B)  =\widetilde{C}(B,A)  =\frac{4}{12}​$，即使A的元素在B的大部分区段上占主导地位。
 
 ![](dominancebased\c2.png)
 
@@ -92,7 +92,7 @@ The contribution of algorithm $PO_2$ relatively to $PO_2$ is roughly the ratio o
 - 集合$W_1$为$PO_1$中支配$PO_2$的解集，集合$W_2$为$PO_2$中支配$PO_1$的解集。
 - 集合$L_1$为$PO_1$中被$PO_2$支配的解集，集合$L_2$为$PO_2$中被$PO_1$支配的解集，
 - 集合$N_1$为$PO_1$中不可与$PO_2$构成不可比较的解集，即$PO_1 \backslash  (C \cup W_1 \cup L_1) $
--  集合$N_2$为$PO_2$中不可与$PO_1$构成不可比较的解集，即$PO_2 \backslash  (C \cup W_2 \cup L_2) $
+-  集合$N_2​$为$PO_2​$中不可与$PO_1​$构成不可比较的解集，即$PO_2 \backslash  (C \cup W_2 \cup L_2) ​$
 
 表达式为：
 
@@ -158,7 +158,7 @@ PF_j & |PF_j|=L_{rj}\\
 PF_{F_r} & |PF_{F_{r}}|=L_{rF_r}
 \end{cases}
 $$
-有两个优化器(optimizer)，每个优化器都$F_i$个$PFs$，对于第$i$个优化器，第$j$个$PF$，它有$L_{ij}$个解(solutions)。而$p_{ijk}$则为第$i$个优化器，第$j$个$PF$的第$k$个解。
+有两个优化器 $i$ (optimizer)，每个优化器都$F_i$个$PFs$，对于第$i$个优化器，第$j$个$PF$，它有$L_{ij}$个解(solutions)。而$p_{ijk}$则为第$i$个优化器，第$j$个$PF$的第$k$个解。
 
 $I(\bullet)$如果内部true则返回1，否则返回0。
 $$
@@ -230,7 +230,7 @@ izarraga等人提出了8个测试用例来评估指标的性能。测试用例�
 
 ![](dominancebased\may1.png)
 
-- a：此测试样例是关于PFs收敛性分析，$AO_cB; BO_cC;CO_cD;DO_cE$，除此之外，所有的PFs都有相同数量的解集，多样性，延展性。
+- a：此测试样例是关于PFs收敛性分析，$AO_cB; BO_cC;CO_cD;DO_cE​$，除此之外，所有的PFs都有相同数量的解集，多样性，延展性。
 - b：此测试样例是关于收敛性与多样性分析，$AO_cB,C; B,CO_cD,E$。$B$与$C$，$D$与$E$之间没有任何关系。所有的PFs有相同数量的解集，相同的多样性，但不同的延展性。
 - c：此测试样例中，所有的PFs有相同数量的解集，相同的收敛性，但是每一个PF都有一个洞，每个洞的大小不一。
 - d：此测试样例仅关于多样性。所有PFs有相同的收敛性和延展性但多样性不同。A是一致性分布，剩余的PFs都添加了一致性噪音(uniform noise)，但并没有影响其收敛性与延展性。
