@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/07/12/webscraping1/</loc>
+    
+    <lastmod>2019-07-12T03:35:33.172Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/06/allaspects/</loc>
+    
+    <lastmod>2019-04-18T05:36:14.292Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/01/14/dominancebased/</loc>
+    
+    <lastmod>2019-04-17T06:50:31.625Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/02/06/spreadanduniformity/</loc>
+    
+    <lastmod>2019-04-03T15:20:03.631Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/01/26/uniformity/</loc>
+    
+    <lastmod>2019-04-03T13:21:24.420Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/01/21/distancebased/</loc>
+    
+    <lastmod>2019-04-03T04:27:06.913Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/01/01/moead2/</loc>
+    
+    <lastmod>2019-04-02T15:56:53.429Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/03/29/moeaigd/</loc>
+    
+    <lastmod>2019-03-31T14:09:10.142Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/03/21/armoea/</loc>
     
     <lastmod>2019-03-30T09:37:25.346Z</lastmod>
@@ -23,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/03/29/moeaigd/</loc>
-    
-    <lastmod>2019-03-30T09:32:23.421Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/03/15/learningofcode/</loc>
     
     <lastmod>2019-03-27T06:07:56.741Z</lastmod>
@@ -37,44 +86,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/03/06/allaspects/</loc>
-    
-    <lastmod>2019-03-06T09:50:24.496Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/02/06/spreadanduniformity/</loc>
-    
-    <lastmod>2019-03-01T08:42:34.568Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/21/distancebased/</loc>
-    
-    <lastmod>2019-02-06T09:43:43.256Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2019/01/28/cardinality/</loc>
     
     <lastmod>2019-01-28T14:30:38.750Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/14/dominancebased/</loc>
-    
-    <lastmod>2019-01-28T06:57:58.404Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/26/uniformity/</loc>
-    
-    <lastmod>2019-01-28T06:54:19.523Z</lastmod>
     
   </url>
   
@@ -103,13 +117,6 @@
     <loc>http://yoursite.com/2018/12/30/moead0/</loc>
     
     <lastmod>2019-01-12T04:01:47.010Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/01/moead2/</loc>
-    
-    <lastmod>2019-01-05T03:30:46.230Z</lastmod>
     
   </url>
   

@@ -197,7 +197,7 @@ daovoice('init', {
 <meta property="og:description" content="可谓呕心沥血，翻译的累死我了，这篇是关于收敛性的indicators的《Distance-based QIs》。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/seven.png">
-<meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/Users/呢喃小怪/Desktop/distancebased/seven2.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/seven2.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/gdp.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/gdp2.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/gdp3.png">
@@ -207,7 +207,7 @@ daovoice('init', {
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/21/distancebased/error.png">
-<meta property="og:updated_time" content="2019-02-06T09:43:43.256Z">
+<meta property="og:updated_time" content="2019-04-03T04:27:06.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Convergence--Distance-based QIs">
 <meta name="twitter:description" content="可谓呕心沥血，翻译的累死我了，这篇是关于收敛性的indicators的《Distance-based QIs》。">
@@ -507,7 +507,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-06 17:43:43" itemprop="dateModified" datetime="2019-02-06T17:43:43+08:00">2019-02-06</time>
+                <time title="修改时间：2019-04-03 12:27:06" itemprop="dateModified" datetime="2019-04-03T12:27:06+08:00">2019-04-03</time>
               
             
           </span>
@@ -560,7 +560,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.9k</span>
+                <span title="本文字数">9k</span>
               
 
               
@@ -612,7 +612,7 @@ d(z,z^*,\lambda)=\max_{1 \leq j \leq k}\{ \lambda_j |z_j^* - z_j| \}</script><p>
 <p>k：目标函数的数量。</p>
 <p>$\lambda_i=\frac{1}{R_i}$，$R_i$是第i个目标函数的范围(range)。</p>
 <p>Defined this way, the knee of the Pareto front is the point in the feasible objective<br>space, $ \Lambda$, which corresponds to $ \min_{z∈\Lambda} d(z, z^∗, \lambda)$.</p>
-<p>如果一个偏好关系的$PF_{approx}$集合比另一个关系的$PF_{approx}$集合包含更多的膝关节周围的解，则该偏好关系优于其他关系。</p>
+<p>如果一个偏好关系的$PF_{approx}$集合比另一个关系的$PF_{approx}$集合包含更多的膝节点周围的解，则该偏好关系优于其他关系。</p>
 <h3 id="Seven-point-average-distance"><a href="#Seven-point-average-distance" class="headerlink" title="Seven point average distance"></a>Seven point average distance</h3><p>该问题用于二元目标优化。</p>
 <p>如果有效集的先验知识是可用的，MCGA完全解析E的能力可以很精确的理解为它与个体的标准和其他(已决定的)点有多接近。由于E对于任何一个测试问题都是未知的，因此为每个问题生成7点法，以衡量算法的有效性。个体准则最优约束了两个标准问题的有效集，但也可通过单独优化每一个准则而不考虑另一个准则来求出个体准则最优。有了这两点，七点法再$J_1-J_2$被定义如下原点[0,1]，最大点(在E范围内)[0,$J_2^{worst}$]和[$J_1^{worst}$,0]，和在原点与最大值之间的每个轴上的两个点。</p>
 <p>原文：</p>
@@ -620,12 +620,12 @@ d(z,z^*,\lambda)=\max_{1 \leq j \leq k}\{ \lambda_j |z_j^* - z_j| \}</script><p>
 <p><img src="/2019/01/21/distancebased/seven.png" alt=""></p>
 <p>全距离测量是通过距离处以7，该距离是从七个点中每一个点到离此点最近的MCGA种群的点的距离和。因此，每次创建距离度量时，使用总体中的7个成员。他的优点是比较不同人群在某一特定问题上的相对优势的准确方法。对于给定的问题，距离度量值最小的总体将是最接近E的总体。</p>
 <p>这七个点具体是什么我实在没有翻译出来，在查找文献时《Evolutionary Algorithms for Solving Multi-Objective Problems 》作者：Carlos Coello Coello， David A. Van Veldhuizen， Gary B. Lamont时，有如下叙述：</p>
-<p><img src="/2019/01/21/distancebased/Users\呢喃小怪\Desktop\distancebased\seven2.png" alt=""></p>
+<p><img src="/2019/01/21/distancebased/seven2.png" alt=""></p>
 <h2 id="measure-the-distance-to-a-reference-set"><a href="#measure-the-distance-to-a-reference-set" class="headerlink" title="measure the distance to a reference set"></a>measure the distance to a reference set</h2><h3 id="Generational-Distance-GD"><a href="#Generational-Distance-GD" class="headerlink" title="Generational Distance (GD)"></a>Generational Distance (GD)</h3><p>GD首先计算解集中每个解到参考集中最近点的欧氏距离，然后取所有这些距离的二次平均。</p>
 <p>公式：</p>
 <script type="math/tex; mode=display">
 GD(A)=\frac{1}{N} ( \sum_{i=1}^{N} (d_2(a_i,PF)^2)^{1/2}</script><p>a solution set $A=\{ a_1,a_2…,a_N\}$ </p>
-<p>$d_2(a_i,PF)$是$a_i$到PF的2范式距离(欧几里距离)</p>
+<p>$d_2(a_i,PF)$是$a_i​$到PF的2范式距离(欧几里距离)</p>
 <p>在实际应用中使用了一个很好地表示PF的参考集R。</p>
 <script type="math/tex; mode=display">
 d_2(a_i,PF)=\min_{r \in R}d_2(a_i,r)</script><p>$d_2(a_i,r)$是$a_i$与$r$的欧几里距离。如果前端的几何性质是已知的，GD不一定需要一个表示PF的引用集。</p>
@@ -635,7 +635,7 @@ d_2(a_i,PF)=\min_{r \in R}d_2(a_i,r)</script><p>$d_2(a_i,r)$是$a_i$与$r$的欧
 <script type="math/tex; mode=display">
 GD(F(A_n),F(P_Q))=\frac{||(1,...,1)^T||_p}{n}=\frac{\sqrt[p]{n}}{n}</script><p>我们可以看到，随着n的增加，近似质量就会变得越来越“好”，尽管估计值并没有怎么变，archives $A_n$甚至收敛到“完美”估计：</p>
 <script type="math/tex; mode=display">
-\lim_{x \to \infty}{GD(F(A_n),F(P_Q))=0}</script><p>由上述的结果可以推广:例如，我们可以考虑a的小扰动，而不是multisets。或者，如果$F(A)$是有界的，不管$A_n$的a是否被支配，也不管$F(a)$离PF有多远，甚至满足$|A_n|=n$的任意archive序列任何$A_n$都能被选择。因此，在EMO上下文中，从这个角度来看，用进一步的、甚至占主导地位的解决方案“填充”归档文件是有好处的，因为通常较大的集合会产生更好的GD值。在社区中，它的建立是为了固定种群大小，以便对不同的算法进行比较(例如，N = 100)。然而，这给基于不受先验定义值限制的存档的MOEAs带来了麻烦。因此，“完美的”归档器(关于GD)可以接受所有(或至少是尽可能多的)候选解决方案。这当然不是我们想要的效果。</p>
+\lim_{x \to \infty}{GD(F(A_n),F(P_Q))=0}</script><p>由上述的结果可以推广:例如，我们可以考虑a的小扰动，而不是multisets。或者，如果$F(A)​$是有界的，不管$A_n​$的a是否被支配，也不管$F(a)​$离PF有多远，甚至满足$|A_n|=n​$的任意archive序列任何$A_n​$都能被选择。因此，在EMO上下文中，从这个角度来看，用进一步的、甚至占主导地位的解决方案“填充”归档文件是有好处的，因为通常较大的集合会产生更好的GD值。在社区中，它的建立是为了固定种群大小，以便对不同的算法进行比较(例如，N = 100)。然而，这给基于不受先验定义值限制的存档的MOEAs带来了麻烦。因此，“完美的”归档器(关于GD)可以接受所有(或至少是尽可能多的)候选解决方案。这当然不是我们想要的效果。</p>
 <p>为解决以上问题，便提出了$GD_p$：</p>
 <h3 id="GD-p"><a href="#GD-p" class="headerlink" title="$GD_p$"></a>$GD_p$</h3><script type="math/tex; mode=display">
 GD_p(X,Y)=\left(\frac{1}{N} \sum_{i=1}^{N}dist(x_i,Y)^p\right)^{1/p}</script><p>$dist(x_i,Y)=\inf_{v \in Y}||x_i,v||$，$\inf$ 为下界(最小值)。</p>
@@ -645,7 +645,7 @@ GD_p(X,Y)=\left(\frac{1}{N} \sum_{i=1}^{N}dist(x_i,Y)^p\right)^{1/p}</script><p>
 \min_{x \in Q}{F(x)}\\
 F(x) = (f_1(x),...,f_k(x)),the \ vector \ of \ the \ objective \ functions</script><p><strong>命题1</strong>：令$k=2​$(二元目标优化问题)，$F(P_Q)​$是连接的，有$a,b\in Q​$，有：</p>
 <script type="math/tex; mode=display">
-a \prec b \ \Rightarrow \ dist(F(a),F(P_Q))<dist(F(b),F(P_Q))</script><p>证明：因为$P_Q$是紧凑的，所以一定存在 $p_b\in P_Q$</p>
+a \prec b \ \Rightarrow \ dist(F(a),F(P_Q))<dist(F(b),F(P_Q))</script><p>证明：因为$P_Q​$是紧凑的，所以一定存在 $p_b\in P_Q​$</p>
 <script type="math/tex; mode=display">
 dist(F(b),F(P_Q))=||F(b)-F(p_b)|| > 0</script><p>$dist(F(b),F(P_Q))$是固定值 r($r \ne 0$)，以$F(b)$为圆心，r为半径画一个圆，交点便是$p_b$(有点圆与$P_Q$相切的感觉)。分情况讨论：</p>
 <ul>
@@ -766,10 +766,10 @@ GD_{\infty}(A,B) = dist(A,B)</script><p>对于，$p &lt; \infty$，$GD_p$可以�
 \mathcal{M}^*_2({Y'}):=\frac{1}{|Y'-1|}\sum _{p'\in Y'} \{q' \in Y'; ||p'- q'||^* > \sigma ^*\}</script><h4 id="mathcal-M-3-spread-QI"><a href="#mathcal-M-3-spread-QI" class="headerlink" title="$\mathcal{M} ^* _3$ spread QI"></a>$\mathcal{M} ^* _3$ spread QI</h4><p>公式：</p>
 <script type="math/tex; mode=display">
 \mathcal{M}^*_3({Y'}):= \sqrt{ \sum _{i=1}^n \max \{ ||p'_i- q'_i||^*;p',q' \in Y' \}}</script><p>While $\mathcal{M} _1$ and $\mathcal{M} _1^*$ are intuitive, $\mathcal{M} _2$ and $\mathcal{M} _3$ (respectively $\mathcal{M} _2 ^*$ and $\mathcal{M} _3^*$ ) need further explanation. </p>
-<p>The distribution metrics give a value within the interval $[0,|X’|]$ ($[0,|Y’|] $) that reflects the number of $\sigma$ - niches ($\sigma ^*$ - niches) in X’ (Y’ ). Obviously, the higher the value, <u>the better the distribution for an appropriate neighborhood parameter</u> (e.g.,$\mathcal{M} _2 ^*(Y’)=|Y’|$  means that for each objective vector there is no other objective vector within $\sigma ^*$ -distance to it). </p>
+<p>The distribution metrics give a value within the interval $[0,|X’|]​$ ($[0,|Y’|] ​$) that reflects the number of $\sigma​$ - niches ($\sigma ^*​$ - niches) in X’ (Y’ ). Obviously, the higher the value, <u>the better the distribution for an appropriate neighborhood parameter</u> (e.g.,$\mathcal{M} _2 ^*(Y’)=|Y’|​$  means that for each objective vector there is no other objective vector within $\sigma ^*​$ -distance to it). </p>
 <p>The functions $\mathcal{M} _3$  and $\mathcal{M} _3^* $ use the maximum extent in each dimension to estimate the range to which the front spreads out. In the case of two objectives, this equals the distance of the two outer solutions.<br>n is the number of the objective functions.</p>
 <h3 id="Maximum-Pareto-front-error"><a href="#Maximum-Pareto-front-error" class="headerlink" title="Maximum Pareto front error"></a>Maximum Pareto front error</h3><p><img src="/2019/01/21/distancebased/error.png" alt=""></p>
-<p>很难测量一组向量与另一组向量的比较。例如，在比较PFknown和PFtrue时，我们希望确定这两个集合之间的“距离”以及它们在形状上的一致性。这个度量决定了一个最大的误差带，当考虑到$PF_{known}$时，它包含$PF_{true}$中的每个向量。另一种方式。这是$PF_{known}$中每个向量与PFtrue中相应的最近向量之间的最大最小距离。该指标定义为:</p>
+<p>很难测量一组向量与另一组向量的比较。例如，在比较$PF_{known}$和 $PF_{true}$ 时，我们希望确定这两个集合之间的“距离”以及它们在形状上的一致性。这个度量决定了一个最大的误差带，当考虑到$PF_{known}$时，它包含$PF_{true}$中的每个向量。另一种方式。这是$PF_{known}$中每个向量与 $PF_{true}$ 中相应的最近向量之间的最大最小距离。该指标定义为:</p>
 <script type="math/tex; mode=display">
 ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\vec{x})|^p})^{(1/p)}</script><p>其中，$i=1,…,n_1$ $j=1,…,n_2$ 分别是$PF_{known}$和$PF_{true}$的索引，并且$p=2$。</p>
 <p>如果 $ME=0$，表明$PF_{known} \subseteq PF_{true}$。而其他的任意值表明至少有一个$PF_{known}$，而不在$PF_{true}$。图中，$PF_{known}$中的解离$PF_{true}$中点最近的是1.118，0 和 1 。因此，$ME=1.118$.$ME = \max(\sqrt{0.5^2 + 1^2},\sqrt{0^2 + 0^2},\sqrt{0^2 + 1^2})$。</p>
@@ -898,7 +898,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -927,7 +927,9 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -978,7 +980,11 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1079,7 +1085,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">155k</span>
+    <span title="站点总字数">162k</span>
   
 
   
@@ -1090,7 +1096,7 @@ ME = \max_j(\min_i{|f_1^i(\vec{x})-|f_1^j(\vec{x})|^p + |f_2^i(\vec{x})-|f_2^j(\
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:21</span>
+    <span title="站点阅读时长">2:27</span>
   
 </div>
 
