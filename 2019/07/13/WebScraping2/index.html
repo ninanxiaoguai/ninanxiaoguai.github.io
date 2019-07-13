@@ -199,7 +199,7 @@ daovoice('init', {
 <meta property="og:image" content="http://yoursite.com/2019/07/13/WebScraping2/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/13/WebScraping2/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/07/13/WebScraping2/3.jpg">
-<meta property="og:updated_time" content="2019-07-13T15:23:49.338Z">
+<meta property="og:updated_time" content="2019-07-13T15:55:00.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebScraping-2">
 <meta name="twitter:description" content="没什么好说的，觉得学的太基础，想快快学，但是在家就很懈怠，一直看剧看剧。。。 对了，忘记声明：此系列参照了《Web Scraping with Python, 2nd Edition》———Ryan Mitchell">
@@ -482,7 +482,7 @@ daovoice('init', {
                 
               
 
-              <time title="创建时间：2019-07-13 23:15:05 / 修改时间：23:23:49" itemprop="dateCreated datePublished" datetime="2019-07-13T23:15:05+08:00">2019-07-13</time>
+              <time title="创建时间：2019-07-13 23:15:05 / 修改时间：23:55:00" itemprop="dateCreated datePublished" datetime="2019-07-13T23:15:05+08:00">2019-07-13</time>
             
 
             
@@ -634,7 +634,7 @@ daovoice('init', {
 <p><img src="/2019/07/13/WebScraping2/1.jpg" alt=""></p>
 <p>具体的html树是这样的：</p>
 <p><img src="/2019/07/13/WebScraping2/2.jpg" alt=""></p>
-<h5 id="children-and-descendants"><a href="#children-and-descendants" class="headerlink" title="children and descendants"></a>children and descendants</h5><p>此时要区分<code>children</code>与 <code>descendants</code>。</p>
+<h4 id="children-and-descendants"><a href="#children-and-descendants" class="headerlink" title="children and descendants"></a>children and descendants</h4><p>此时要区分<code>children</code>与 <code>descendants</code>。</p>
 <p><code>children</code>：是一个标签的孩子，例如，在上图中，<code>tr</code>是<code>table</code>的孩子。</p>
 <p><code>descendants</code>：是一个标签的后代，例如，在上图中，<code>tr</code>，<code>th</code>，<code>td</code>，<code>img</code>和<code>span</code>都是<code>table</code>的后代。</p>
 <p>因此，对于一个标签，它的所有的<code>children</code>都是<code>decendants</code>，但反之未必。</p>
@@ -649,11 +649,11 @@ daovoice('init', {
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">"gift"</span> <span class="attr">id</span>=<span class="string">"gift1"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">		Vegetable Basket</span><br><span class="line">	<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">		This vegetable basket is the perfect gift for your health conscious (or overweight) friends!</span><br><span class="line">		<span class="tag">&lt;<span class="name">span</span> </span></span><br><span class="line"><span class="tag">			<span class="attr">class</span>=<span class="string">"excitingNote"</span>&gt;</span>Now with super-colorful bell peppers!</span><br><span class="line">		<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">		$15.00</span><br><span class="line">	<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../img/gifts/img1.jpg"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>那么输出如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">	Vegetable Basket</span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"></span><br><span class="line">Vegetable Basket</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">	This vegetable basket is the perfect gift for your health conscious (or overweight) friends!</span><br><span class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"excitingNote"</span>&gt;</span>Now with super-colorful bell peppers!<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"></span><br><span class="line">This vegetable basket is the perfect gift for your health conscious (or overweight) friends!</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"excitingNote"</span>&gt;</span>Now with super-colorful bell peppers!<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">Now with super-colorful bell peppers!</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">$15.00</span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"></span><br><span class="line">$15.00</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../img/gifts/img1.jpg"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../img/gifts/img1.jpg"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="next-siblings"><a href="#next-siblings" class="headerlink" title="next_siblings()"></a>next_siblings()</h5><p>有了子孙后代，当然还有同辈之间函数：<code>next_siblings()</code>，具体实例如下：</p>
+<h4 id="next-siblings"><a href="#next-siblings" class="headerlink" title="next_siblings()"></a>next_siblings()</h4><p>有了子孙后代，当然还有同辈之间函数：<code>next_siblings()</code>，具体实例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = urlopen(<span class="string">'http://www.pythonscraping.com/pages/page3.html'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="keyword">for</span> sibling <span class="keyword">in</span> bs.find(<span class="string">'table'</span>, &#123;<span class="string">'id'</span>:<span class="string">'giftList'</span>&#125;).tr.next_siblings:</span><br><span class="line">	print(sibling)</span><br></pre></td></tr></table></figure>
 <p>这段代码的输出是打印商品表中的所有产品行，除了第一行标题行。为什么标题行被跳过？对象不能是它们自己的兄弟姐妹。任何时候，只要对象有兄弟姐妹，该对象本身就不会包含在列表中。正如函数的名称所示，它只调用<code>next sibling()</code>。例如，如果您要选择列表中间的一行，并在其上调用<code>next_sibling()</code>，那么只会返回后面的兄弟姐妹。因此，通过选择标题行并调用<code>next_sibling()</code>，可以选择表中的所有行，而不需要选择标题行本身。</p>
 <p>作为<code>next_sibling()</code>的一个补充，如果希望获得的同级标记列表的末尾有一个易于选择的标记，那么<code>previous_sibling()</code>函数通常会很有帮助。</p>
-<h5 id="parents"><a href="#parents" class="headerlink" title="parents"></a>parents</h5><p>在抓取页面时，您可能会发现，与查找标记的孩子或兄弟姐妹相比，查找标记的父母的频率要低一些。通常，当您以爬行为目标查看HTML页面时，首先要查看标签的顶层，然后找出如何深入到所需的确切数据块。然而，偶尔会发现自己处于一些奇怪的情况，需要BeautifulSoup的父类查找功能.parent和.parents。例如：</p>
+<h4 id="parents"><a href="#parents" class="headerlink" title="parents"></a>parents</h4><p>在抓取页面时，您可能会发现，与查找标记的孩子或兄弟姐妹相比，查找标记的父母的频率要低一些。通常，当您以爬行为目标查看HTML页面时，首先要查看标签的顶层，然后找出如何深入到所需的确切数据块。然而，偶尔会发现自己处于一些奇怪的情况，需要BeautifulSoup的父类查找功能.parent和.parents。例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = urlopen(<span class="string">'http://www.pythonscraping.com/pages/page3.html'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">print(bs.find(<span class="string">'img'</span>,&#123;<span class="string">'src'</span>:<span class="string">'../img/gifts/img1.jpg'</span>&#125;).parent.previous_sibling.get_text())</span><br></pre></td></tr></table></figure>
 <p>这段代码将打印由该位置的图像表示的对象的价格<br><code>../img/gifts/img1.jpg</code>(本例中价格为15.00美元)。</p>
 <p>具体过程如下：</p>
@@ -713,18 +713,15 @@ daovoice('init', {
 <td>aabbb, aaabbb, aabb</td>
 </tr>
 <tr>
-<td><sup><a href="#fn_" id="reffn_"></a></sup></td>
+<td>[^]</td>
 <td>匹配任何一个不在括号的字符</td>
-<td><sup><a href="#fn_A-Z" id="reffn_A-Z">A-Z</a></sup></td>
+<td>[^A-Z]*</td>
 <td>apple, nihao</td>
 </tr>
 <tr>
-<td>\</td>
-<td></td>
+<td>I</td>
 <td>匹配由I分隔的<strong>任何字符</strong>、<strong>字符串</strong>或子<strong>表达式</strong></td>
-<td>b(a\</td>
-<td>i\</td>
-<td>e)d</td>
+<td>b(aIiIe)d</td>
 <td>bad, bid, bed</td>
 </tr>
 <tr>
@@ -742,10 +739,8 @@ daovoice('init', {
 <tr>
 <td>\</td>
 <td>转义字符(这允许您使用特殊字符作为其字面含义)</td>
-<td>\.\\</td>
-<td>\\\\</td>
-<td>.\</td>
-<td>\\</td>
+<td>\.\I\\</td>
+<td>.I\</td>
 </tr>
 <tr>
 <td>$</td>
@@ -762,6 +757,7 @@ daovoice('init', {
 </tbody>
 </table>
 </div>
+<p>当然，这是简略版，还有很多的符号，在此就先不解释了。</p>
 <h2 id="Regular-expressions-and-BeautifulSoup"><a href="#Regular-expressions-and-BeautifulSoup" class="headerlink" title="Regular expressions and BeautifulSoup"></a>Regular expressions and BeautifulSoup</h2><p>因此，如果想应用在<code>BeautifulSoup</code>函数中，已上例中，想要输出所有的</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../img/gifts/img3.jpg"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在使用<code>find_all(&quot;img&quot;)</code>的时候，也会把其他的多余项加进来，代码如下：</p>
@@ -1050,7 +1046,7 @@ daovoice('init', {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Another-serving-of-BeautifulSoup"><span class="nav-number">1.</span> <span class="nav-text">Another serving of BeautifulSoup</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#find-find-all-with-BeautifulSoup"><span class="nav-number">1.1.</span> <span class="nav-text">find/find_all() with BeautifulSoup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-BeautifulSoup-objects"><span class="nav-number">1.2.</span> <span class="nav-text">other BeautifulSoup objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigating-trees"><span class="nav-number">1.3.</span> <span class="nav-text">navigating trees</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#children-and-descendants"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">children and descendants</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#next-siblings"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">next_siblings()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#parents"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">parents</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-expressions"><span class="nav-number">2.</span> <span class="nav-text">Regular expressions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-expressions-and-BeautifulSoup"><span class="nav-number">3.</span> <span class="nav-text">Regular expressions and BeautifulSoup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accessing-attributes"><span class="nav-number">4.</span> <span class="nav-text">Accessing attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda-expressions"><span class="nav-number">5.</span> <span class="nav-text">Lambda expressions</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Another-serving-of-BeautifulSoup"><span class="nav-number">1.</span> <span class="nav-text">Another serving of BeautifulSoup</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#find-find-all-with-BeautifulSoup"><span class="nav-number">1.1.</span> <span class="nav-text">find/find_all() with BeautifulSoup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-BeautifulSoup-objects"><span class="nav-number">1.2.</span> <span class="nav-text">other BeautifulSoup objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigating-trees"><span class="nav-number">1.3.</span> <span class="nav-text">navigating trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#children-and-descendants"><span class="nav-number">1.3.1.</span> <span class="nav-text">children and descendants</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#next-siblings"><span class="nav-number">1.3.2.</span> <span class="nav-text">next_siblings()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parents"><span class="nav-number">1.3.3.</span> <span class="nav-text">parents</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-expressions"><span class="nav-number">2.</span> <span class="nav-text">Regular expressions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regular-expressions-and-BeautifulSoup"><span class="nav-number">3.</span> <span class="nav-text">Regular expressions and BeautifulSoup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accessing-attributes"><span class="nav-number">4.</span> <span class="nav-text">Accessing attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda-expressions"><span class="nav-number">5.</span> <span class="nav-text">Lambda expressions</span></a></li></ol></div>
             
 
           </div>
