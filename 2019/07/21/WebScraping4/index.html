@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="当您能够控制数据和输入时，编写干净且可伸缩的代码就已经非常困难了。为web爬虫程序编写代码通常会带来独特的组织挑战，因为web爬虫程序可能需要从程序员无法控制的不同站点集合中抓取和存储各种数据。">
+<meta name="keywords" content="Web-Scraping,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebScraping4">
+<meta property="og:url" content="http://yoursite.com/2019/07/21/WebScraping4/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="当您能够控制数据和输入时，编写干净且可伸缩的代码就已经非常困难了。为web爬虫程序编写代码通常会带来独特的组织挑战，因为web爬虫程序可能需要从程序员无法控制的不同站点集合中抓取和存储各种数据。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-21T06:08:54.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebScraping4">
+<meta name="twitter:description" content="当您能够控制数据和输入时，编写干净且可伸缩的代码就已经非常困难了。为web爬虫程序编写代码通常会带来独特的组织挑战，因为web爬虫程序可能需要从程序员无法控制的不同站点集合中抓取和存储各种数据。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/21/WebScraping4/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebScraping4 | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/WebScraping4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WebScraping4
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-21 14:07:02 / 修改时间：14:08:54" itemprop="dateCreated datePublished" datetime="2019-07-21T14:07:02+08:00">2019-07-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">21k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">19 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>当您能够控制数据和输入时，编写干净且可伸缩的代码就已经非常困难了。为web爬虫程序编写代码通常会带来独特的组织挑战，因为web爬虫程序可能需要从程序员无法控制的不同站点集合中抓取和存储各种数据。</p>
+<a id="more"></a>
+<p>可能被要求从各种各样的网站收集新闻文章或博客文章，每个网站都有不同的模板和布局。一个网站的<code>h1</code>标签包含文章的标题，另一个网站的<code>h1</code>标签包含网站本身的标题，文章标题在<code>&lt;span id=&quot;title&quot;&gt;</code>中。</p>
+<p>可能需要灵活地控制哪些网站被擦除，以及它们如何被擦除，以及一种快速添加新网站或修改现有网站的方法，尽可能快，而不需要编写多行代码。</p>
+<p>可能会被要求从不同的网站上搜集产品的价格，最终目的是比较相同产品的价格。也许这些价格以不同的货币表示，也许还需要将其与来自其他非web源的外部数据相结合。</p>
+<p>尽管web爬虫程序的应用程序几乎是无穷无尽的，但是大型可伸缩爬虫程序往往会陷入以下几种模式之一。通过学习这些模式并识别它们适用的情况，可以极大地提高web爬行器的可维护性和健壮性。</p>
+<p>本章主要关注web爬虫程序，这些爬虫程序从各种网站收集有限数量的数据类型(如餐馆评论、新闻文章、公司简介)，并将这些数据类型存储为Python对象，从数据库中读写数据。</p>
+<h3 id="Planning-and-Defining-Objects"><a href="#Planning-and-Defining-Objects" class="headerlink" title="Planning and Defining Objects"></a>Planning and Defining Objects</h3><p>web抓取的一个常见陷阱是完全根据眼前可用的内容定义要收集的数据。例如，如果你想收集产品数据，你可以先去服装店看看，然后决定你刮下来的每一件产品都需要有以下几个字段：</p>
+<ul>
+<li>产品名字</li>
+<li>价格</li>
+<li>描述</li>
+<li>尺寸</li>
+<li>颜色</li>
+<li>材质</li>
+<li>客户评价</li>
+</ul>
+<p>查看另一个网站，您会发现页面上列出了sku(用于跟踪和订购商品的库存单位)。想必肯定也想收集这些数据，即使它没有出现在第一个站点上!添加这个字段：</p>
+<ul>
+<li>SKU</li>
+</ul>
+<p>虽然服装可能是一个很好的开始，但您也希望确保可以将这个爬虫扩展到其他类型的产品。你开始浏览其他网站的产品部分，并决定你也需要收集这些信息：</p>
+<p>显然，这是一种不可持续的做法。每次在网站上看到新信息时，只要向产品类型添加属性，就会导致太多字段无法跟踪。不仅如此，每次抓取一个新网站时，都将被迫对该网站的字段和到目前为止积累的字段进行详细分析，并可能添加新字段(修改的Python对象类型和数据库结构)。这将导致混乱和难以阅读的数据集，可能导致使用它的问题。</p>
+<p>在决定收集哪些数据时，最好的方法之一就是完全忽略这些网站。你不会通过浏览一个网站，然后说:“存在什么?但是通过说，“我需要什么?”然后想办法从那里找到你需要的信息。</p>
+<p>也许您真正想做的是比较多个商店之间的产品价格，并随着时间的推移跟踪这些产品的价格。在这种情况下，你需要足够的信息来唯一地识别产品，就是这样：</p>
+<ul>
+<li>商品名称</li>
+<li>制造商</li>
+<li>产品编号(如适用/相关)</li>
+</ul>
+<p>需要注意的是，这些信息都不是特定于特定存储的。例如，产品评论、评级、价格，甚至描述都是特定于特定商店中该产品的实例的。可以单独存储。</p>
+<p>其他信息(产品的颜色、材质)是特定于产品的，但可能很少——它并不适用于所有产品。重要的是退后一步，为你考虑的每一项都列一个清单，然后问自己以下问题：</p>
+<ul>
+<li>这些信息对项目目标有帮助吗？如果我没有它，它会成为一个障碍吗？或者它只是“拥有它很好”，但最终不会影响任何东西？</li>
+<li>如果这在将来可能有帮助，但我不确定，在以后的时间返回并收集数据会有多难？</li>
+<li>这些数据与我已经收集到的数据是否冗余？</li>
+<li>将数据存储在这个特定对象中合乎逻辑吗？(如前所述，如果同一产品的描述在不同站点之间发生变化，那么在产品中存储描述就没有意义了。)</li>
+</ul>
+<p>如果你决定你需要收集数据，重要的是问几个问题，然后决定如何存储和处理它的代码：</p>
+<ul>
+<li>这些数据是稀疏的还是密集的?它是相关的，并在每个列表中填充，还是只包含少数列表？</li>
+<li>数据有多大？</li>
+<li>特别是在大数据的情况下，我是否需要在每次运行分析时定期检索它，或者只是偶尔检索？</li>
+<li>这类数据的变量有多大?我是否需要定期添加新属性、修改类型(比如可能经常添加的织物图案)，或者设置为石头(鞋码)？</li>
+</ul>
+<p>假设计划围绕产品属性和价格进行一些元分析：例如，一本书的页数，或者一件衣服的面料类型，以及将来可能与价格相关的其他属性。您将遍历这些问题并意识到这些数据是稀疏的(很少有产品具有这些属性)，并且您可能决定频繁地添加或删除这些属性。在这种情况下，创建这样的产品类型可能是有意义的：</p>
+<ul>
+<li>商品名字</li>
+<li>制造商</li>
+<li>产品编号(如适用/相关)</li>
+<li>属性(可选列表或字典)</li>
+</ul>
+<p>属性类型是这样的：</p>
+<ul>
+<li>属性名字</li>
+<li>属性值</li>
+</ul>
+<p>这允许操作者随着时间的推移灵活地添加新产品属性，而不需要重新设计数据模式或重写代码。在决定如何在数据库中存储这些属性时，可以将<code>JSON</code>写入属性字段，或者将每个属性存储在一个单独的表中，并使用产品<code>ID</code>。有关实现这些类型的数据库模型的更多信息，请参见第6章。</p>
+<p>您也可以将上述问题应用于您需要存储的其他信息。为了跟踪每种产品的价格，您可能需要以下工具：</p>
+<ul>
+<li>产品编号</li>
+<li>商店编号</li>
+<li>价钱</li>
+<li>日期/时间戳价格见</li>
+</ul>
+<p>但是，如果产品的属性实际上改变了产品的价格，情况又会怎样呢?例如，商店可能会对一件大衬衫比一件小衬衫要价更高，因为大衬衫需要更多的劳动力或材料。在这种情况下，您可以考虑将单个衬衫产品拆分为每个尺寸的单独产品列表(以便每个衬衫产品可以独立定价)，或者创建一个新的项目类型来存储关于产品实例的信息，其中包含以下字段：</p>
+<ul>
+<li>产品编号</li>
+<li>实例类型(本例中为衬衫的大小)</li>
+</ul>
+<p>每个价格是这样的：</p>
+<ul>
+<li>产品实例ID</li>
+<li>商店编号</li>
+<li>价钱</li>
+<li>日期/时间戳价格见</li>
+</ul>
+<p>虽然“产品和价格”的主题似乎过于具体，但是您需要问自己的基本问题，以及在设计Python对象时使用的逻辑，几乎适用于所有情况。</p>
+<p>如果您正在抓取新闻文章，您可能需要以下基本信息：</p>
+<ul>
+<li>题目</li>
+<li>作者</li>
+<li>日期</li>
+<li>内容</li>
+</ul>
+<p>但是说一些文章包含修改日期，或者相关文章，或者一些社交媒体分享。你需要这些吗？它们与项目相关吗？如果不是所有的新闻网站都使用所有形式的社交媒体，而且社交媒体网站的受欢迎程度可能会随着时间的推移而上升或下降，你如何有效和灵活地存储社交媒体分享的数量？</p>
+<p>当面对一个新项目时，立即开始编写Python来抓取网站是很有诱惑力的。数据模型(放在后面考虑)常常会受到第一个站点上数据的可用性和格式的强烈影响。</p>
+<p>然而，数据模型是使用它的所有代码的基础。模型中的错误决策很容易导致编写和维护代码的问题，或者难以提取和有效地使用结果数据。特别是在处理各种已知和未知的网站时<br>——认真考虑和计划你到底需要收集什么，以及如何储存，变得至关重要。</p>
+<h3 id="Dealing-with-Different-Websites-Layouts"><a href="#Dealing-with-Different-Websites-Layouts" class="headerlink" title="Dealing with Different Websites Layouts"></a>Dealing with Different Websites Layouts</h3><p>像谷歌这样的搜索引擎最令人印象深刻的功绩之一是，它能够从各种各样的网站中提取相关和有用的数据，而不需要预先了解网站结构本身。尽管我们人类能够立即识别页面的标题和主要内容(除非web设计非常糟糕)，但是让机器人做同样的事情要困难得多。</p>
+<p>幸运的是，在大多数web爬行的情况下，不是要从从未见过的站点收集数据，而是要从几个或几十个由人类预先选择的站点收集数据。这意味着不需要使用复杂的算法或机器学习来检测页面上哪些文本看起来最像标题，或者哪些可能是主要内容。</p>
+<p>可以手动确定这些元素是什么。最明显的方法是为每个网站编写一个单独的web爬虫程序或页面解析器。每个对象都可以接受URL、字符串或<code>BeautifulSoup</code>对象，并为被抓取的对象返回一个Python对象。</p>
+<p>下面是内容类(表示网站上的一段内容，比如一篇新闻文章)和两个scraper函数的示例，它们接收一个<code>BeautifulSoup</code>对象并返回一个内容实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url, title, body)</span>:</span></span><br><span class="line">        self.url = url</span><br><span class="line">        self.title = title</span><br><span class="line">        self.body = body</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(url)</span>:</span></span><br><span class="line">    req = requests.get(url)</span><br><span class="line">    <span class="keyword">return</span> BeautifulSoup(req.text, <span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scrapeNYTimes</span><span class="params">(url)</span>:</span></span><br><span class="line">    bs = getPage(url)</span><br><span class="line">    title = bs.find(<span class="string">'h1'</span>).text</span><br><span class="line">    lines = bs.select(<span class="string">'div.StoryBodyCompanionColumn div p'</span>)</span><br><span class="line">    body = <span class="string">'\n'</span>.join([line.text <span class="keyword">for</span> line <span class="keyword">in</span> lines])</span><br><span class="line">    <span class="keyword">return</span> Content(url, title, body)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">scrapeBrookings</span><span class="params">(url)</span>:</span></span><br><span class="line">    bs = getPage(url)</span><br><span class="line">    title = bs.find(<span class="string">'h1'</span>).text</span><br><span class="line">    body = bs.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>, <span class="string">'post-body'</span>&#125;).text</span><br><span class="line">    <span class="keyword">return</span> Content(url, title, body)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://www.brookings.edu/blog/future-development/2018/01/26/delivering-inclusive-urban-access-3-uncomfortable-truths/'</span></span><br><span class="line">content = scrapeBrookings(url)</span><br><span class="line">print(<span class="string">'Title: &#123;&#125;'</span>.format(content.title))</span><br><span class="line">print(<span class="string">'URL: &#123;&#125;\n'</span>.format(content.url))</span><br><span class="line">print(content.body)</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://www.nytimes.com/2018/01/25/opinion/sunday/silicon-valley-immortality.html'</span></span><br><span class="line">content = scrapeNYTimes(url)</span><br><span class="line">print(<span class="string">'Title: &#123;&#125;'</span>.format(content.title))</span><br><span class="line">print(<span class="string">'URL: &#123;&#125;\n'</span>.format(content.url))</span><br><span class="line">print(content.body)</span><br></pre></td></tr></table></figure>
+<p>当您开始为其他新闻站点添加scraper功能时，您可能会注意到模式正在形成。每个网站的解析功能本质上都是一样的：</p>
+<ul>
+<li>选择title元素并提取标题的文本</li>
+<li>选择文章的主要内容</li>
+<li>根据需要选择其他内容项</li>
+<li>返回使用前面找到的字符串实例化的<code>Content</code>对象</li>
+</ul>
+<p>这里唯一真正的站点相关变量是用于获取每条信息的CSS选择器。<code>BeautifulSoup</code>的<code>find</code>和<code>find_all</code>函数接受两个参数—一个标记字符串和一个键/值属性字典—因此您可以将这些参数作为参数传递进来，这些参数定义站点本身的结构和目标数据的位置。</p>
+<p>解释以下<code>requests</code>的用法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r=requests.get(url,params,**kwargs)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>url</code>: 需要爬取的网站地址。</li>
+<li><code>params</code>: 翻译过来就是参数， <code>url</code>中的额外参数，字典或者字节流格式，可选。</li>
+<li><code>**kwargs</code> : 12个控制访问的参数</li>
+</ul>
+<p>而对于输出<code>r</code>，它的用法如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>r.status_code</td>
+<td>http请求的返回状态，若为200则表示请求成功。</td>
+</tr>
+<tr>
+<td>r.text</td>
+<td>http响应内容的字符串形式，即返回的页面内容</td>
+</tr>
+<tr>
+<td>r.encoding</td>
+<td>从http header 中猜测的相应内容编码方式</td>
+</tr>
+<tr>
+<td>r.apparent_encoding</td>
+<td>从内容中分析出的响应内容编码方式（备选编码方式）</td>
+</tr>
+<tr>
+<td>r.content</td>
+<td>http响应内容的二进制形式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>具体例子：(其中有的输出太多，已删除部分)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line"></span><br><span class="line">r.status_code</span><br><span class="line"><span class="number">200</span></span><br><span class="line"></span><br><span class="line">r.encoding</span><br><span class="line"><span class="string">'ISO-8859-1'</span></span><br><span class="line"></span><br><span class="line">r.apparent_encoding</span><br><span class="line"><span class="string">'utf-8'</span></span><br><span class="line"></span><br><span class="line">r.text</span><br><span class="line"><span class="string">'&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;ipt&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style="display: block;"&gt;æ\x9b´å¤\x9aäº§å\x93\x81&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a com/ class=cp-feedback&gt;æ\x84\x8fè§\x81å\x8f\x8dé¦\x88&lt;/a&gt;&amp;nbsp;äº¬ICPè¯\x81030173å\x8f·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n'</span></span><br><span class="line"></span><br><span class="line">r.encoding=<span class="string">'utf-8'</span></span><br><span class="line">r.text</span><br><span class="line"><span class="string">'&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta chref=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css="h读&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;意见反馈&lt;/a&gt;&amp;nbsp;京ICP证030173号&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n'</span></span><br></pre></td></tr></table></figure>
+<p>还有，<code>join(iterable)</code>函数，用于以指定分隔符将可迭代对象【成员必须为<code>str</code>类型】连接为一个新的字符串,分隔符可以为空，返回值位字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">string = <span class="string">"test"</span></span><br><span class="line">lis = [<span class="string">'w'</span>, <span class="string">'e'</span>, <span class="string">'q'</span>]</span><br><span class="line">tpl = (<span class="string">'w'</span>, <span class="string">'e'</span>, <span class="string">'q'</span>)</span><br><span class="line">dic = &#123;<span class="string">"55"</span>: <span class="number">5</span>, <span class="string">"44"</span>: <span class="number">4</span>, <span class="string">"22"</span>: <span class="number">2</span>, <span class="string">"33"</span>: <span class="number">3</span>, <span class="string">"11"</span>: <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"11"</span>.join(string))</span><br><span class="line">t11e11s11t</span><br><span class="line"></span><br><span class="line">print(<span class="string">""</span>.join(tpl))</span><br><span class="line">weq</span><br><span class="line"></span><br><span class="line">print(<span class="string">" "</span>.join(lis))</span><br><span class="line">w e q</span><br><span class="line"></span><br><span class="line">print(<span class="string">"key is : [%s] "</span> % (<span class="string">","</span>.join(dic)))</span><br><span class="line">key <span class="keyword">is</span> : [<span class="number">55</span>,<span class="number">44</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">11</span>]</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 字符串去重并按从大到小排列</span></span><br><span class="line">words = <span class="string">"wsasdeddcewtttwssa"</span></span><br><span class="line">words_set = set(words)  <span class="comment"># 集合特性实现去重 字符串集合化</span></span><br><span class="line">words_list = list(words_set)  <span class="comment"># 集合列表化</span></span><br><span class="line">words_list.sort(reverse=<span class="keyword">True</span>)  <span class="comment"># 设置排序为从大到小</span></span><br><span class="line">new_words = <span class="string">""</span>.join(words_list)  <span class="comment"># join方法以空位分隔符拼接列表元素位新字符串</span></span><br><span class="line"></span><br><span class="line">print(words_list)</span><br><span class="line">[<span class="string">'w'</span>, <span class="string">'t'</span>, <span class="string">'s'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'a'</span>]</span><br><span class="line"></span><br><span class="line">print(new_words)</span><br><span class="line">wtsedca</span><br><span class="line"></span><br><span class="line">print(os.path.join(<span class="string">"/home/"</span>, <span class="string">"test/"</span>, <span class="string">"python"</span>))  </span><br><span class="line">/home/test/python</span><br><span class="line"></span><br><span class="line">print(os.path.join(<span class="string">"/home"</span>, <span class="string">"/test"</span>, <span class="string">"/python"</span>), end=<span class="string">""</span>)</span><br><span class="line">/python</span><br></pre></td></tr></table></figure>
+<p>为了让事情变得更方便，你可以使用BeautifulSoup select函数，为你想要收集的每条信息添加一个CSS选择器字符串，然后把所有这些选择器都放到dictionary对象中，而不是处理所有这些标签参数和键/值对：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Common base class for all articles/pages</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url, title, body)</span>:</span></span><br><span class="line">        self.url = url</span><br><span class="line">        self.title = title</span><br><span class="line">        self.body = body</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Flexible printing function controls output</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        print(<span class="string">'URL: &#123;&#125;'</span>.format(self.url))</span><br><span class="line">        print(<span class="string">'TITLE: &#123;&#125;'</span>.format(self.title))</span><br><span class="line">        print(<span class="string">'BODY:\n&#123;&#125;'</span>.format(self.body))</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Website</span>:</span></span><br><span class="line">    <span class="string">""" </span></span><br><span class="line"><span class="string">    Contains information about website structure</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, url, titleTag, bodyTag)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.url = url</span><br><span class="line">        self.titleTag = titleTag</span><br><span class="line">        self.bodyTag = bodyTag</span><br></pre></td></tr></table></figure>
+<p>请注意，网站类并不存储从各个页面本身收集的信息，而是存储关于如何收集数据的说明。它不存储标题“My Page title”。它只存储字符串标签h1，表示可以在哪里找到标题。这就是为什么这个类被称为网站(这里的信息属于整个网站)，而不是内容(仅包含来自单个页面的信息)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Crawler</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            req = requests.get(url)</span><br><span class="line">        <span class="keyword">except</span> requests.exceptions.RequestException:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span> BeautifulSoup(req.text, <span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">safeGet</span><span class="params">(self, pageObj, selector)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Utilty function used to get a content string from a Beautiful Soup</span></span><br><span class="line"><span class="string">        object and a selector. Returns an empty string if no object</span></span><br><span class="line"><span class="string">        is found for the given selector</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        selectedElems = pageObj.select(selector)</span><br><span class="line">        <span class="keyword">if</span> selectedElems <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> len(selectedElems) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'\n'</span>.join([elem.get_text() <span class="keyword">for</span> elem <span class="keyword">in</span> selectedElems])</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, site, url)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Extract content from a given page URL</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        bs = self.getPage(url)</span><br><span class="line">        <span class="keyword">if</span> bs <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            title = self.safeGet(bs, site.titleTag)</span><br><span class="line">            body = self.safeGet(bs, site.bodyTag)</span><br><span class="line">            <span class="keyword">if</span> title != <span class="string">''</span> <span class="keyword">and</span> body != <span class="string">''</span>:</span><br><span class="line">                content = Content(url, title, body)</span><br><span class="line">                content.print()</span><br></pre></td></tr></table></figure>
+<p>下面的代码定义了网站对象，并开始了这个过程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">crawler = Crawler()</span><br><span class="line"></span><br><span class="line">siteData = [</span><br><span class="line">    [<span class="string">'O\'Reilly Media'</span>, <span class="string">'http://oreilly.com'</span>, <span class="string">'h1'</span>, <span class="string">'section#product-description'</span>],</span><br><span class="line">    [<span class="string">'Reuters'</span>, <span class="string">'http://reuters.com'</span>, <span class="string">'h1'</span>, <span class="string">'div.StandardArticleBody_body_1gnLA'</span>],</span><br><span class="line">    [<span class="string">'Brookings'</span>, <span class="string">'http://www.brookings.edu'</span>, <span class="string">'h1'</span>, <span class="string">'div.post-body'</span>],</span><br><span class="line">    [<span class="string">'New York Times'</span>, <span class="string">'http://nytimes.com'</span>, <span class="string">'h1'</span>, <span class="string">'div.StoryBodyCompanionColumn div p'</span>]</span><br><span class="line">]</span><br><span class="line">websites = []</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> siteData:</span><br><span class="line">    websites.append(Website(row[<span class="number">0</span>], row[<span class="number">1</span>], row[<span class="number">2</span>], row[<span class="number">3</span>]))</span><br><span class="line"></span><br><span class="line">crawler.parse(websites[<span class="number">0</span>], <span class="string">'http://shop.oreilly.com/product/0636920028154.do'</span>)</span><br><span class="line">crawler.parse(</span><br><span class="line">    websites[<span class="number">1</span>], <span class="string">'http://www.reuters.com/article/us-usa-epa-pruitt-idUSKBN19W2D0'</span>)</span><br><span class="line">crawler.parse(</span><br><span class="line">    websites[<span class="number">2</span>],</span><br><span class="line">    <span class="string">'https://www.brookings.edu/blog/techtank/2016/03/01/idea-to-retire-old-methods-of-policy-education/'</span>)</span><br><span class="line">crawler.parse(</span><br><span class="line">    websites[<span class="number">3</span>], </span><br><span class="line">    <span class="string">'https://www.nytimes.com/2018/01/28/business/energy-environment/oil-boom.html'</span>)</span><br></pre></td></tr></table></figure>
+<p>虽然这个新方法乍一看似乎并不比为每个新站点编写一个新的Python函数简单多少，但是想象一下，当从一个有4个站点源的系统切换到一个有20或200个源的系统时会发生什么。每个字符串列表相对容易编写。它不占太多空间。它可以从数据库或CSV文件加载。它可以从远程源代码导入，也可以交给有一些前端经验的非程序员填写和添加新网站，而且他们永远不必看一行代码。当然，缺点是正在放弃一定程度的灵活性。在第一个例子中，每个网站都有自己的自由形式函数来选择和解析HTML，以获得最终结果。在第二个例子中，每个网站都需要有一个特定的结构，保证字段的存在，字段中的数据必须是干净的，每个目标字段必须有一个唯一的和可靠的CSS选择器。</p>
+<p>然而，我认为这种方法的威力和相对灵活性超过了弥补其真实的或察觉到的缺点。下一节将详细介绍这个基本模板的应用程序和扩展，例如，可以处理缺少的字段、收集不同类型的数据、仅遍历网站的特定部分以及存储关于页面的更复杂的信息。</p>
+<h3 id="Structuring-Crawlers"><a href="#Structuring-Crawlers" class="headerlink" title="Structuring Crawlers"></a>Structuring Crawlers</h3><p>如果你仍然需要手工查找每个链接，那么创建灵活的、可修改的网站布局类型并没有多大用处。前一章展示了各种各样的方法，可以自动地在网站上爬行并找到新的页面。本节将展示如何将这些方法合并到一个结构良好且可扩展的网站爬虫程序中，该爬虫程序可以以自动化的方式收集链接和发现数据。我在这里只介绍了三种基本的web爬虫结构，尽管我相信它们适用于您在野外爬行站点时可能需要的大多数情况，只是在这里和那里做了一些修改。如果你遇到一个不寻常的情况与你自己的爬行问题，我也希望你将使用这些结构作为灵感，以创造一个优雅和强大的爬虫设计。</p>
+<h4 id="Crawling-Sites-Through-Search"><a href="#Crawling-Sites-Through-Search" class="headerlink" title="Crawling Sites Through Search"></a>Crawling Sites Through Search</h4><p>抓取网站最简单的方法之一就是使用与人类相同的方法:使用搜索栏。虽然搜索一个网站的关键字或主题，并收集搜索结果列表的过程可能看起来像一项任务，在不同的网站之间有很大的可变性，但有几个关键点使这一点变得非常简单：</p>
+<ul>
+<li>大多数站点检索特定主题的搜索结果列表，方法是通过URL中的参数将该主题作为字符串传递。例如:<code>http://example.com?search=myTopic</code>。URL的第一部分可以保存为网站对象的属性，主题可以简单地附加到它。</li>
+<li>搜索之后，大多数站点将结果页面呈现为一个易于识别的链接列表，通常带有一个方便的周围标记，如<code>&lt;span class=&quot;result&quot;&gt;</code>，其确切格式也可以作为网站对象的属性存储。</li>
+<li>每个结果链接要么是相对URL(例如<code>/articles/page.html</code>)，要么是绝对URL<br>URL(例如,<code>http://example.com/articles/page.html</code>)。无论期望的是绝对URL还是相对URL，都可以存储为网站对象的属性。</li>
+</ul>
+<p>让我们看看这个算法在代码中的实现。Content类与前面的示例非常相似。正在添加URL属性，以跟踪内容是在哪里找到的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span>:</span></span><br><span class="line">	<span class="string">"""Common base class for all articles/pages"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, topic, url, title, body)</span>:</span></span><br><span class="line">		self.topic = topic</span><br><span class="line">		self.title = title</span><br><span class="line">		self.body = body</span><br><span class="line">		self.url = url</span><br><span class="line">        </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">print</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		Flexible printing function controls output</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		print(<span class="string">"New article found for topic: &#123;&#125;"</span>.format(self.topic))</span><br><span class="line">		print(<span class="string">"TITLE: &#123;&#125;"</span>.format(self.title))</span><br><span class="line">		print(<span class="string">"BODY:\n&#123;&#125;"</span>.format(self.body))</span><br><span class="line">		print(<span class="string">"URL: &#123;&#125;"</span>.format(self.url))</span><br></pre></td></tr></table></figure>
+<p>网站类添加了一些新属性。<code>searchUrl</code>定义了如果您附加了要查找的主题，应该到哪里获取搜索结果。<code>resultListing</code>定义了一个“框”，其中包含关于每个结果的信息，<code>resultUrl</code>定义了这个框中的标记，它将为您提供结果的确切URL。<code>absoluteUrl</code>属性是一个布尔值，它告诉您这些搜索结果是绝对链接还是相对链接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Website</span>:</span></span><br><span class="line">	<span class="string">"""Contains information about website structure"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, url, searchUrl, resultListing,</span></span></span><br><span class="line"><span class="function"><span class="params">		resultUrl, absoluteUrl, titleTag, bodyTag)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">		self.url = url</span><br><span class="line">		self.searchUrl = searchUrl</span><br><span class="line">		self.resultListing = resultListing</span><br><span class="line">		self.resultUrl = resultUrl</span><br><span class="line">		self.absoluteUrl=absoluteUrl</span><br><span class="line">		self.titleTag = titleTag</span><br><span class="line">		self.bodyTag = bodyTag</span><br></pre></td></tr></table></figure>
+<p>已经扩展了一些，包含了我们的网站数据、要搜索的主题列表和一个循环，该循环遍历所有主题和所有网站。它还包含一个搜索功能，可以导航到特定网站和主题的搜索页面，并提取该页面上列出的所有结果链接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Crawler</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            req = requests.get(url)</span><br><span class="line">        <span class="keyword">except</span> requests.exceptions.RequestException:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span> BeautifulSoup(req.text, <span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">safeGet</span><span class="params">(self, pageObj, selector)</span>:</span></span><br><span class="line">        childObj = pageObj.select(selector)</span><br><span class="line">        <span class="keyword">if</span> childObj <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> len(childObj) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> childObj[<span class="number">0</span>].get_text()</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, topic, site)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Searches a given website for a given topic and records all pages found</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        bs = self.getPage(site.searchUrl + topic)</span><br><span class="line">        searchResults = bs.select(site.resultListing)</span><br><span class="line">        <span class="keyword">for</span> result <span class="keyword">in</span> searchResults:</span><br><span class="line">            url = result.select(site.resultUrl)[<span class="number">0</span>].attrs[<span class="string">'href'</span>]</span><br><span class="line">            <span class="comment"># Check to see whether it's a relative or an absolute URL</span></span><br><span class="line">            <span class="keyword">if</span>(site.absoluteUrl):</span><br><span class="line">                bs = self.getPage(url)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                bs = self.getPage(site.url + url)</span><br><span class="line">            <span class="keyword">if</span> bs <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">                print(<span class="string">'Something was wrong with that page or URL. Skipping!'</span>)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            title = self.safeGet(bs, site.titleTag)</span><br><span class="line">            body = self.safeGet(bs, site.bodyTag)</span><br><span class="line">            <span class="keyword">if</span> title != <span class="string">''</span> <span class="keyword">and</span> body != <span class="string">''</span>:</span><br><span class="line">                content = Content(topic, title, body, url)</span><br><span class="line">                content.print()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">crawler = Crawler()</span><br><span class="line"></span><br><span class="line">siteData = [</span><br><span class="line">    [<span class="string">'O\'Reilly Media'</span>, <span class="string">'http://oreilly.com'</span>, <span class="string">'https://ssearch.oreilly.com/?q='</span>,</span><br><span class="line">        <span class="string">'article.product-result'</span>, <span class="string">'p.title a'</span>, <span class="keyword">True</span>, <span class="string">'h1'</span>, <span class="string">'section#product-description'</span>],</span><br><span class="line">    [<span class="string">'Reuters'</span>, <span class="string">'http://reuters.com'</span>, <span class="string">'http://www.reuters.com/search/news?blob='</span>, <span class="string">'div.search-result-content'</span>,</span><br><span class="line">        <span class="string">'h3.search-result-title a'</span>, <span class="keyword">False</span>, <span class="string">'h1'</span>, <span class="string">'div.StandardArticleBody_body_1gnLA'</span>],</span><br><span class="line">    [<span class="string">'Brookings'</span>, <span class="string">'http://www.brookings.edu'</span>, <span class="string">'https://www.brookings.edu/search/?s='</span>,</span><br><span class="line">        <span class="string">'div.list-content article'</span>, <span class="string">'h4.title a'</span>, <span class="keyword">True</span>, <span class="string">'h1'</span>, <span class="string">'div.post-body'</span>]</span><br><span class="line">]</span><br><span class="line">sites = []</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> siteData:</span><br><span class="line">    sites.append(Website(row[<span class="number">0</span>], row[<span class="number">1</span>], row[<span class="number">2</span>],</span><br><span class="line">                         row[<span class="number">3</span>], row[<span class="number">4</span>], row[<span class="number">5</span>], row[<span class="number">6</span>], row[<span class="number">7</span>]))</span><br><span class="line"></span><br><span class="line">topics = [<span class="string">'python'</span>, <span class="string">'data science'</span>]</span><br><span class="line"><span class="keyword">for</span> topic <span class="keyword">in</span> topics:</span><br><span class="line">    print(<span class="string">'GETTING INFO ABOUT: '</span> + topic)</span><br><span class="line">    <span class="keyword">for</span> targetSite <span class="keyword">in</span> sites:</span><br><span class="line">        crawler.search(topic, targetSite)</span><br></pre></td></tr></table></figure>
+<p>这个脚本循环遍历主题列表中的所有主题，并在开始抓取主题之前声明:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GETTING INFO ABOUT python</span><br></pre></td></tr></table></figure>
+<p>然后它循环遍历站点列表中的所有站点，并为每个特定的主题抓取每个特定的站点。每当它成功地抓取到关于页面的信息时，就会将其打印到控制台:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">New article found for topic: python</span><br><span class="line">URL: http://example.com/examplepage.html</span><br><span class="line">TITLE: Page Title Here</span><br><span class="line">BODY: Body content is here</span><br></pre></td></tr></table></figure>
+<p>注意，它循环遍历所有主题，然后在内部循环遍历所有网站。为什么不反过来，从一个网站收集所有的主题，然后从下一个网站收集所有的主题?首先遍历所有主题是一种更均匀地分配任何一台web服务器上的负载的方法。如果有一个包含数百个主题和数十个网站的列表，这一点尤其重要。你不会一次对一个网站发出成千上万的请求;你发出10个请求，等待几分钟，再发出10个请求，等待几分钟，等等。</p>
+<p>尽管请求的数量最终是相同的，但通常情况下，在合理的时间内尽可能多地分发这些请求会更好。注意循环的结构是一种简单的方法。</p>
+<p>其中函数解释如下：</p>
+<h4 id="Crawling-Sites-Through-Links"><a href="#Crawling-Sites-Through-Links" class="headerlink" title="Crawling Sites Through Links"></a>Crawling Sites Through Links</h4><p>前一章介绍了一些方法来识别web页面上的内部和外部链接，然后使用这些链接在站点上爬行。在本节中，您将把这些相同的基本方法组合成一个更灵活的网站爬虫程序，它可以遵循任何匹配特定URL模式的链接。</p>
+<p>当希望从站点收集所有数据，而不仅仅是从特定的搜索结果或页面列表中收集数据时，这种类型的爬虫非常适合于项目。当站点的页面可能杂乱无章或广泛分散时，它也可以很好地工作。这些类型的爬虫程序不需要结构化的方法来定位链接，就像前一节在搜索页面中爬行一样，因此描述搜索页面的属性在<code>Website</code>对象中不需要。但是，因为爬虫没有为它正在寻找的链接的位置提供特定的指令，所以您确实需要一些规则来告诉它应该选择什么样的页面。您提供<code>targetPattern</code>(目标<code>URLs</code>的正则表达式)，并留下布尔值 <code>absoluteUrl</code>变量来完成此操作：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Website</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, url, targetPattern, absoluteUrl,</span></span></span><br><span class="line"><span class="function"><span class="params">		titleTag, bodyTag)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">		self.url = url</span><br><span class="line">		self.targetPattern = targetPattern</span><br><span class="line">		self.absoluteUrl=absoluteUrl</span><br><span class="line">		self.titleTag = titleTag</span><br><span class="line">		self.bodyTag = bodyTag</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Content</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url, title, body)</span>:</span></span><br><span class="line">		self.url = url</span><br><span class="line">		self.title = title</span><br><span class="line">		self.body = body</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">print</span><span class="params">(self)</span>:</span></span><br><span class="line">		print(<span class="string">"URL: &#123;&#125;"</span>.format(self.url))</span><br><span class="line">		print(<span class="string">"TITLE: &#123;&#125;"</span>.format(self.title))</span><br><span class="line">		print(<span class="string">"BODY:\n&#123;&#125;"</span>.format(self.body))</span><br></pre></td></tr></table></figure>
+<p>Content类与第一个爬虫程序示例中使用的是同一个类。<br>爬虫类从每个站点的主页开始，定位内部链接，解析找到的每个内部链接的内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Crawler</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, site)</span>:</span></span><br><span class="line">        self.site = site</span><br><span class="line">        self.visited = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getPage</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            req = requests.get(url)</span><br><span class="line">        <span class="keyword">except</span> requests.exceptions.RequestException:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span> BeautifulSoup(req.text, <span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">safeGet</span><span class="params">(self, pageObj, selector)</span>:</span></span><br><span class="line">        selectedElems = pageObj.select(selector)</span><br><span class="line">        <span class="keyword">if</span> selectedElems <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> len(selectedElems) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'\n'</span>.join([elem.get_text() <span class="keyword">for</span> elem <span class="keyword">in</span> selectedElems])</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        bs = self.getPage(url)</span><br><span class="line">        <span class="keyword">if</span> bs <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            title = self.safeGet(bs, self.site.titleTag)</span><br><span class="line">            body = self.safeGet(bs, self.site.bodyTag)</span><br><span class="line">            <span class="keyword">if</span> title != <span class="string">''</span> <span class="keyword">and</span> body != <span class="string">''</span>:</span><br><span class="line">                content = Content(url, title, body)</span><br><span class="line">                content.print()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">crawl</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Get pages from website home page</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        bs = self.getPage(self.site.url)</span><br><span class="line">        targetPages = bs.findAll(<span class="string">'a'</span>, href=re.compile(self.site.targetPattern))</span><br><span class="line">        <span class="keyword">for</span> targetPage <span class="keyword">in</span> targetPages:</span><br><span class="line">            targetPage = targetPage.attrs[<span class="string">'href'</span>]</span><br><span class="line">            <span class="keyword">if</span> targetPage <span class="keyword">not</span> <span class="keyword">in</span> self.visited:</span><br><span class="line">                self.visited.append(targetPage)</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> self.site.absoluteUrl:</span><br><span class="line">                    targetPage = <span class="string">'&#123;&#125;&#123;&#125;'</span>.format(self.site.url, targetPage)</span><br><span class="line">                self.parse(targetPage)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">reuters = Website(<span class="string">'Reuters'</span>, <span class="string">'https://www.reuters.com'</span>, <span class="string">'^(/article/)'</span>,</span><br><span class="line">                  <span class="keyword">False</span>, <span class="string">'h1'</span>, <span class="string">'div.StandardArticleBody_body_1gnLA'</span>)</span><br><span class="line">crawler = Crawler(reuters)</span><br><span class="line">crawler.crawl()</span><br></pre></td></tr></table></figure>
+<p>这里还有一个以前示例中没有使用的更改：<code>Website</code>对象(在本例中是变量<code>reuters</code>)是<code>Crawler</code>程序对象本身的属性。这对于在爬虫程序中存储已访问页面(已访问<code>visited</code>)很有效，但是这意味着必须为每个网站实例化一个新的爬虫程序，而不是重用同一个爬虫程序来抓取一个网站列表。不管您是选择使爬行器网站不可知，还是选择使网站成为爬行器的一个属性，这都是一个设计决策，您必须根据自己的特定需求来权衡。两种方法都可以。</p>
+<p>另一件需要注意的事情是，这个爬虫程序将从主页获取页面，但是在所有这些页面都被记录之后，它将不会继续爬行。您可能想编写一个包含第3章中的模式之一的爬行器，并让它在访问的每个页面上查找更多的目标。您甚至可以跟踪每个页面上的所有url(不仅仅是匹配目标模式的url)来查找包含目标模式的<code>URLs</code>。</p>
+<h4 id="Crawling-Multiple-Page-Types"><a href="#Crawling-Multiple-Page-Types" class="headerlink" title="Crawling  Multiple Page Types"></a>Crawling  Multiple Page Types</h4><p>不像爬行通过预定的一组页面，爬行通过一个网站的所有内部链接可以提出一个挑战，因为你永远不知道你到底得到了什么。幸运的是，有一些基本的方法可以识别页面类型：</p>
+<ul>
+<li>By the URL</li>
+</ul>
+<p>网站上的所有博客文章都可能包含一个URL(例如<code>http://example.com/blog/titl-of-post</code>)。</p>
+<ul>
+<li>By the presence or lack of certain fields on a site</li>
+</ul>
+<p>如果一个页面有日期，但是没有作者的名字，您可以将其归类为新闻稿。如果它有标题、主图像、价格，但没有主内容，那么它可能是一个产品页面。</p>
+<ul>
+<li>By the presence of certain tags on the page to identify the page</li>
+</ul>
+<p>即使没有在标记中收集数据，也可以利用标记。您的爬虫程序可能会查找诸如<code>&lt;div id=&quot;relatedproducts&quot;&gt;</code>这样的元素来将页面标识为产品页面，即使爬虫程序对相关产品的内容不感兴趣。</p>
+<p>要跟踪多个页面类型，您需要在Python中拥有多个类型的页面对象。这可以通过两种方式实现：</p>
+<p>如果所有页面都是相似的(它们的内容类型基本相同)，您可能想要向现有的网站页面对象添加<code>pageType</code>属性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Website</span>:</span></span><br><span class="line">	<span class="string">"""Common base class for all articles/pages"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, type, name, url, searchUrl, resultListing,</span></span></span><br><span class="line"><span class="function"><span class="params">		resultUrl, absoluteUrl, titleTag, bodyTag)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">		self.url = url</span><br><span class="line">		self.titleTag = titleTag</span><br><span class="line">		self.bodyTag = bodyTag</span><br><span class="line">		self.pageType = pageType</span><br></pre></td></tr></table></figure>
+<p>如果您将这些页面存储在类似sql的数据库中，这种类型的模式表明所有这些页面可能都存储在同一个表中，并且会添加一个额外的<code>pageType</code>列。</p>
+<p>如果您正在抓取的页面/内容彼此之间有足够的差异(它们包含不同类型的字段)，这可能需要为每种页面类型创建新的对象。当然，有些东西对所有web页面都是通用的，它们都有一个URL，并且很可能还有一个名称或页面标题。这是使用子类的理想情况：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Webpage</span>:</span></span><br><span class="line">	<span class="string">"""Common base class for all articles/pages"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, url, titleTag)</span>:</span></span><br><span class="line">		self.name = name</span><br><span class="line">		self.url = url</span><br><span class="line">		self.titleTag = titleTag</span><br></pre></td></tr></table></figure>
+<p>这不是一个对象，您的爬虫程序将直接使用，但对象将被您的页面类型引用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span><span class="params">(Website)</span>:</span></span><br><span class="line">	<span class="string">"""Contains information for scraping a product page"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, url, titleTag, productNumber, price)</span>:</span></span><br><span class="line">		Website.__init__(self, name, url, TitleTag)</span><br><span class="line">		self.productNumberTag = productNumberTag</span><br><span class="line">		self.priceTag = priceTag</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span><span class="params">(Website)</span>:</span></span><br><span class="line">	<span class="string">"""Contains information for scraping an article page"""</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, url, titleTag, bodyTag, dateTag)</span>:</span></span><br><span class="line">		Website.__init__(self, name, url, titleTag)</span><br><span class="line">		self.bodyTag = bodyTag</span><br><span class="line">		self.dateTag = dateTag</span><br></pre></td></tr></table></figure>
+<p>这个产品页面扩展了网站基类，并添加了只适用于产品的属性<code>productNumbe</code>r和<code>price</code>，而<code>Article</code>类添加了不适用于产品的属性<code>body</code>和<code>date</code>。<br>您可以使用这两个类来抓取，例如，商店网站除了产品外，可能还包含博客文章或新闻稿。</p>
+<h3 id="Thinking-About-Web-Crawler-Models"><a href="#Thinking-About-Web-Crawler-Models" class="headerlink" title="Thinking About Web Crawler Models"></a>Thinking About Web Crawler Models</h3><p>从互联网上收集信息就像从消防水管里喝水一样。外面有很多东西，你需要什么或者如何需要并不总是很清楚。任何大型web抓取项目(甚至一些小型web抓取项目)的第一步都应该是回答这些问题。</p>
+<p>当跨多个域或从多个源收集类似数据时，您的目标几乎总是要将其标准化。处理具有相同和可比字段的数据要比处理完全依赖于原始源格式的数据容易得多。</p>
+<p>在许多情况下，您应该构建scraper，并假定将来会向其中添加更多的数据源，并以最小化添加这些新数据源所需的编程开销为目标。即使一个网站乍一看不符合你的模型，它也可能以更微妙的方式符合你的模型。能够看到这些潜在的模式可以节省您的时间、金钱和很多头痛。</p>
+<p>数据块之间的连接也不应该被忽略。你希望对于具有“类型”、“大小”或“主题”等跨属性的信息数据来源？如何存储、检索和概念化这些属性软件架构是一个广泛而重要的主题，可能需要整个职业生涯的主人。幸运的是，用于web抓取的软件架构要有限得多一组相对容易掌握的技能。当你继续刮除数据后，您可能会发现相同的基本模式反复出现。创建一个结构良好的web刮刀不需要很多神秘的知识，但是它确实需要花点时间退后一步想想你的项目。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/14/WebScraping3/" rel="next" title="WebScraping-3">
+                <i class="fa fa-chevron-left"></i> WebScraping-3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Planning-and-Defining-Objects"><span class="nav-number">1.</span> <span class="nav-text">Planning and Defining Objects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dealing-with-Different-Websites-Layouts"><span class="nav-number">2.</span> <span class="nav-text">Dealing with Different Websites Layouts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Structuring-Crawlers"><span class="nav-number">3.</span> <span class="nav-text">Structuring Crawlers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Crawling-Sites-Through-Search"><span class="nav-number">3.1.</span> <span class="nav-text">Crawling Sites Through Search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Crawling-Sites-Through-Links"><span class="nav-number">3.2.</span> <span class="nav-text">Crawling Sites Through Links</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Crawling-Multiple-Page-Types"><span class="nav-number">3.3.</span> <span class="nav-text">Crawling  Multiple Page Types</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thinking-About-Web-Crawler-Models"><span class="nav-number">4.</span> <span class="nav-text">Thinking About Web Crawler Models</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">203k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">3:04</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+ <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
