@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="本章将介绍如何处理文档，无论您是将它们下载到本地文件夹，还是阅读它们并提取数据。您还将了解如何处理各种类型的文本编码，这甚至可以使阅读外语成为可能HTML页面。">
+<meta name="keywords" content="Web-Scraping,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebScraping-7">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/WebScraping7/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="本章将介绍如何处理文档，无论您是将它们下载到本地文件夹，还是阅读它们并提取数据。您还将了解如何处理各种类型的文本编码，这甚至可以使阅读外语成为可能HTML页面。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/07/24/WebScraping7/1.png">
+<meta property="og:updated_time" content="2019-07-24T14:34:25.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebScraping-7">
+<meta name="twitter:description" content="本章将介绍如何处理文档，无论您是将它们下载到本地文件夹，还是阅读它们并提取数据。您还将了解如何处理各种类型的文本编码，这甚至可以使阅读外语成为可能HTML页面。">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/24/WebScraping7/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/24/WebScraping7/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebScraping-7 | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/WebScraping7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WebScraping-7
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-24 22:30:07 / 修改时间：22:34:25" itemprop="dateCreated datePublished" datetime="2019-07-24T22:30:07+08:00">2019-07-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">14k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">13 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本章将介绍如何处理文档，无论您是将它们下载到本地文件夹，还是阅读它们并提取数据。您还将了解如何处理各种类型的文本编码，这甚至可以使阅读外语成为可能HTML页面。</p>
+<a id="more"></a>
+<p>人们很容易认为互联网主要是一个基于文本的网站集合，其中点缀着新颖的web 2.0多媒体内容，这些内容在web抓取的目的中基本上可以忽略。然而，这忽略了internet最基本的特性:传输文件的内容无关工具。</p>
+<p>尽管互联网自20世纪60年代末以来就以某种形式存在，HTML直到1992年才首次出现。在那之前，互联网主要由电子邮件和文件传输组成;我们今天所知道的web页面的概念并不存在。换句话说，internet不是HTML文件的集合。它是许多类型的文档的集合，HTML文件通常用作展示它们的框架。由于无法读取各种文档类型，包括文本、PDF、图像、视频、电子邮件等，我们将丢失大量可用数据。</p>
+<h3 id="Document-Encoding"><a href="#Document-Encoding" class="headerlink" title="Document Encoding"></a>Document Encoding</h3><p>文档的编码告诉应用程序——无论它们是您计算机的操作系统还是您自己的Python代码——如何读取它。这种编码通常可以从它的文件扩展名推断出来，尽管这个文件扩展名不是由它的编码强制的。例如，我可以毫无问题地将<code>myImage.jpg</code>保存为<code>myImage.txt</code>—至少在我的文本编辑器尝试打开它之前是这样。幸运的是，这种情况很少见，为了正确读取文档，通常只需要知道文档的文件扩展名。</p>
+<p>在基本级别上，所有文档都是用0和1编码的。最重要的是，编码算法定义了诸如“每个字符有多少位”或“每个像素有多少位代表颜色”之类的东西(对于图像文件)。除此之外，您可能还有一层压缩，或者一些空间缩减算法，就像PNG文件的情况一样。</p>
+<p>尽管一开始处理非html文件可能看起来有些吓人，但是请放心，使用正确的库，Python将能够正确地处理任何格式的信息。文本文件、视频文件和图像文件之间的唯一区别是如何解释它们的0和1。本章介绍几种常见的文件类型:文本、CSV、pdf和Word文档。</p>
+<p>注意，这些基本上都是存储文本的文件。有关处理图像的信息，我建议您通读本章，以便习惯处理和存储不同类型的文件，然后阅读第13章，了解关于图像处理的更多信息!</p>
+<h3 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h3><p>将文件以纯文本形式存储在网上有些不同寻常，但在一些基本的网站或老式网站中，拥有大型文本文件存储库很受欢迎。例如，Internet Engineering Task Force (IETF)将其所有已发布的文档存储为HTML、PDF和文本文件(参见<code>https://www.ietf.org/rfc/rfc1149.txt</code>)。大多数浏览器都会很好地显示这些文本文件，您应该能够毫无问题地抓取它们。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">textPage = urlopen(<span class="string">'http://www.pythonscraping.com/pages/warandpeace/chapter1.txt'</span>)</span><br><span class="line">print(textPage.read())</span><br></pre></td></tr></table></figure>
+<p>通常，当您使用<code>urlopen</code>检索页面时，您将它转换为一个<code>BeautifulSoup</code>对象来解析HTML。在这种情况下，您可以直接读取页面。虽然完全有可能将其转换为一个<code>BeautifulSoup</code>对象，但这只会适得其反——因为没有HTML要解析，所以库将毫无用处。一旦文本文件以字符串的形式读入，您只需像将任何其他字符串读入Python那样分析它。当然，这里的缺点是您没有能力使用HTML标记作为上下文线索，指向实际文本的方向</p>
+<h4 id="Text-Encoding-and-the-Global-Internet"><a href="#Text-Encoding-and-the-Global-Internet" class="headerlink" title="Text Encoding and the Global Internet"></a>Text Encoding and the Global Internet</h4><p>还记得我之前说过，正确读取文件只需要一个文件扩展名吗？奇怪的是，这个规则并不适用于所有最基本的文档:.txt文件。10次中有9次，使用前面描述的方法阅读文本会很好。然而，处理互联网上的文本可能是一件棘手的事情。接下来，我们将介绍英语和外语编码的基础知识，从<code>ASCII</code>到<code>Unicode</code>到<code>ISO</code>，以及如何处理它们。</p>
+<p><strong>a history of text encoding</strong></p>
+<p>ASCII最早出现在20世纪60年代，当时比特非常昂贵，除了拉丁字母和一些标点符号外，没有理由对任何东西进行编码。由于这个原因，总共只有7位被用于编码128个大写字母、小写字母和标点符号。即使有这么多的创意，他们仍然留下了33个非打印字符，其中一些被使用，取代，和/或成为过时的技术变化多年。每个人都有足够的空间，对吧?</p>
+<p>任何程序员都知道，7是一个奇怪的数字。它不是一个很好的2次方，但是它非常接近。在20世纪60年代，计算机科学家们就是否应该增加额外的位进行了争论，到底是为了方便得到一个漂亮的整数，还是为了实际的文件需要更少的存储空间。最后，7位赢了。然而，在现代计算中，每个7位序列的开头都加了一个额外的0，这就给我们留下了两个世界中最糟糕的情况——14%的文件变大了，而且只缺少128个字符的灵活性。</p>
+<p>在20世纪90年代初，人们意识到存在着比英语更多的语言，如果电脑能显示这些语言那就太好了。一个名为Unicode联盟试图通过为任何文本文档、任何语言中需要使用的每个字符建立编码来实现一个通用的文本编码器。目标是包括从拉丁字母编写的这本书是,西里尔,中国象形图,数学和逻辑符号，甚至表情符号和各种各样的符号,如生物危害和标志。</p>
+<p>您可能已经知道，生成的编码器被命名为<code>UTF-8</code>，它的意思是“通用字符集转换格式8位”。这里的8位并不是指每个字符的大小，而是指一个字符需要显示的最小大小。</p>
+<p><code>UTF-8</code>字符的实际大小是灵活的。它们的范围从1字节到4字节，这取决于它们在可能的字符列表中的位置(更流行的字符用更少的字节编码，更不常见的字符需要更多的字节)。</p>
+<p>如何实现这种灵活的编码？使用7位加上最终无用的前导0起初看起来像是ASCII中的一个设计缺陷，但事实证明<code>UTF-8</code>具有巨大的优势。由于<code>ASCII</code>非常流行，<code>Unicode</code>决定利用这个领先的0位，以0开头声明所有字节，以表示字符中只使用一个字节，并使<code>ASCII</code>和<code>UTF-8</code>的两种编码方案相同。因此，以下字符在<code>UTF-8</code>和<code>ASCII</code>中都是有效的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">01000001 - A</span><br><span class="line">01000010 - B</span><br><span class="line">01000011 - C</span><br></pre></td></tr></table></figure>
+<p>以下字符仅在<code>UTF-8</code>中有效，如果将文档解释为ASCII文档，则将呈现为不可打印：</p>
+<p><img src="/2019/07/24/WebScraping7/1.png" alt=""></p>
+<p>除了UTF-8之外，还存在其他UTF标准，如UTF-16、UTF-24和UTF-32，尽管以这些格式编码的文档很少出现，除非在不寻常的情况下，这超出了本书的范围。</p>
+<p>虽然<code>ASCII</code>的这个原始设计缺陷对<code>UTF-8</code>有一个主要的优势，但是这个劣势并没有完全消失。每个字符的前8位信息仍然只能编码128($2^7$)个字符，而不能编码完整的256个字符。在需要多个字节的<code>UTF-8</code>字符中，额外的前导位不是用于字符编码，而是用于防止损坏的检查位。在4字节字符中的32位(8 $\times$ 4)中，只有21位用于字符编码，总共有2,097,152个可能的字符，其中当前分配了1,114,112个。当然，所有通用语言编码标准的问题在于，任何用一种外语编写的文档都可能比必须的大得多。虽然您的语言可能只有100个左右的字符，但是每个字符需要16位，而不是像特定于英语的<code>ASCII</code>那样只需要8位。这使得<code>UTF-8</code>中的外语文本文档的大小大约是英语文本文档的两倍，至少对于不使用拉丁字符集的外语来说是这样。</p>
+<p><code>ISO</code>通过为每种语言创建特定的编码来解决这个问题。与<code>Unicode</code>一样，它具有与<code>ASCII</code>相同的编码，但是在每个字符的开头使用填充0位，以便为所有需要它们的语言创建128个特殊字符。这对于严重依赖拉丁字母(在编码中仍处于0 127的位置)，但需要额外特殊字符的欧洲语言最有效。这允许<code>ISO-8859-1**</code>**</p>
+<p><strong>Encodings in action</strong></p>
+<p>在上一节中，您使用了urlopen的默认设置来读取可能在internet上遇到的文本文档。这对大多数英语文本都很有用。然而，当你遇到俄语、阿拉伯语，甚至像“resume”这样的单词时，你可能会遇到问题。</p>
+<p>以下面的代码为例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">textPage = urlopen(<span class="string">'http://www.pythonscraping.com/pages/warandpeace/chapter1-ru.txt'</span>)</span><br><span class="line">print(textPage.read())</span><br></pre></td></tr></table></figure>
+<p>这读在第一章的原始战争与和平(写在俄罗斯和并将其打印到屏幕上。这个屏幕文本的部分内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b&quot;\xd0\xa7\xd0\x90\xd0\xa1\xd0\xa2\xd0\xac \xd0\x9f\xd0\x95\xd0\xa0\xd0\x92\xd0\x90\xd0\xaf\n\nI\n\n\xe2\x80\x94 Eh bien, mon prince.</span><br></pre></td></tr></table></figure>
+<p>此外，在大多数浏览器中访问这个页面会导致胡言乱语。</p>
+<p>即使对母语为俄语的人来说，这也可能有点难以理解。问题是Python试图将文档读取为ASCII文档，而浏览器则试图将其读取为ISO-8859-1编码的文档。<br>当然，双方都没有意识到这是一个UTF-8文档。您可以显式地将字符串定义为UTF-8，它可以正确地将输出格式化为Cyrillic字符:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"></span><br><span class="line">textPage = urlopen(</span><br><span class="line">             <span class="string">'http://www.pythonscraping.com/pages/warandpeace/chapter1-ru.txt'</span>)</span><br><span class="line">print(str(textPage.read(), <span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<p>在<code>BeautifulSoup</code>和Python 3.x中使用这个概念是这样的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">html = urlopen(<span class="string">"http://en.wikipedia.org/wiki/Python_(programming_language)"</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">content = bs.find(<span class="string">"div"</span>, &#123;<span class="string">"id"</span>:<span class="string">"mw-content-text"</span>&#125;).get_text()</span><br><span class="line">content = bytes(content, <span class="string">"UTF-8"</span>)</span><br><span class="line">content = content.decode(<span class="string">"UTF-8"</span>)</span><br><span class="line">print(content)</span><br></pre></td></tr></table></figure>
+<p>Python 3.默认情况下，将所有字符编码为<code>UTF-8</code>。您可能会忍不住不去管它，而是为您编写的每个web scraper使用<code>UTF-8</code>编码。毕竟，<code>UTF-8</code>还可以流畅地处理<code>ASCII</code>字符和外语。然而，重要的是要记住9%的网站使用的是<code>ISO</code>编码也一样，所以你永远无法完全避免这个问题。</p>
+<p>幸运的是，对于HTML页面，编码通常包含在站点的<head>部分中找到的标记中。大多数网站，尤其是英语网站，都有这样的标签：</head></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>而ECMA国际的网站上有这个标签：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">"Content-Type"</span> <span class="attr">CONTENT</span>=<span class="string">"text/html; charset=iso-8859-1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果您计划进行大量的web抓取，特别是国际站点，那么在阅读页面内容时，最好查找这个元标记并使用它推荐的编码。</p>
+<h3 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h3><p>当web抓取时，您可能会遇到CSV文件或喜欢这种格式的数据的同事。幸运的是，Python有一个非常棒的库，可以读取和写入CSV文件。尽管这个库能够处理CSV的许多变体，但本节主要关注标准格式。如果您有特殊情况需要处理，请参考文档!</p>
+<p><strong>Reading CSV Files</strong></p>
+<p>Python的csv库主要用于处理本地文件，假设您需要的csv数据存储在您的机器上。不幸的是，情况并非总是如此，尤其是在web抓取时。有几种方法可以解决这个问题:</p>
+<ul>
+<li>手工下载文件并将Python指向本地文件位置</li>
+<li>编写一个Python脚本来下载文件、读取文件，并(可选地)在检索后删除文件。</li>
+<li>从web中以字符串的形式检索该文件，并将该字符串包装在StringIO对象中，这样它的行为就像一个文件。</li>
+</ul>
+<p>虽然前两个选项是可行的，但是当您可以轻松地将文件保存在内存中时，占用硬盘空间是一种不好的做法。更好的方法是将文件读入字符串并将其封装在一个对象中，该对象允许Python将其视为文件，而无需保存文件。下面的脚本从internet检索CSV文件<br>(在本例中，Monty Python相册列表位于<code>http://pythonscraping.com/files/Monty‐PythonAlbums.csv</code>然后一行一行地打印到终端:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">data = urlopen(<span class="string">'http://pythonscraping.com/files/MontyPythonAlbums.csv'</span>).read().decode(<span class="string">'ascii'</span>, <span class="string">'ignore'</span>)</span><br><span class="line">dataFile = StringIO(data)</span><br><span class="line">csvReader = csv.reader(dataFile)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> csvReader:</span><br><span class="line">    print(row)</span><br><span class="line">    print(<span class="string">"The album \""</span>+row[<span class="number">0</span>]+<span class="string">"\" was released in "</span>+str(row[<span class="number">1</span>]))</span><br></pre></td></tr></table></figure>
+<p>输出类似如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[&apos;Name&apos;, &apos;Year&apos;]</span><br><span class="line">The album &quot;Name&quot; was released in Year</span><br><span class="line">[&quot;Monty Python&apos;s Flying Circus&quot;, &apos;1970&apos;]</span><br><span class="line">The album &quot;Monty Python&apos;s Flying Circus&quot; was released in 1970</span><br><span class="line">[&apos;Another Monty Python Record&apos;, &apos;1971&apos;]</span><br><span class="line">The album &quot;Another Monty Python Record&quot; was released in 1971</span><br><span class="line">[&quot;Monty Python&apos;s Previous Record&quot;, &apos;1972&apos;]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>注意第一行:专辑“Name”是在那年发行的。虽然在编写示例代码时，这可能是一个容易忽略的结果，但您不希望在现实世界中将其放入数据中。级别较低的程序员可能只是跳过<code>csvReade</code>r对象中的第一行，或者用特殊的情况编写来处理它。幸运的是，csv的替代品。reader函数会自动为您处理所有这些。输入<code>DictReader</code>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">data = urlopen(<span class="string">"http://pythonscraping.com/files/MontyPythonAlbums.csv"</span>).read().decode(<span class="string">'ascii'</span>, <span class="string">'ignore'</span>)</span><br><span class="line">dataFile = StringIO(data)</span><br><span class="line">dictReader = csv.DictReader(dataFile)</span><br><span class="line"></span><br><span class="line">print(dictReader.fieldnames)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> dictReader:</span><br><span class="line">    print(row)</span><br></pre></td></tr></table></figure>
+<p>输出类似如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[&apos;Name&apos;, &apos;Year&apos;]</span><br><span class="line">OrderedDict([(&apos;Name&apos;, &quot;Monty Python&apos;s Flying Circus&quot;), (&apos;Year&apos;, &apos;1970&apos;)])</span><br><span class="line">OrderedDict([(&apos;Name&apos;, &apos;Another Monty Python Record&apos;), (&apos;Year&apos;, &apos;1971&apos;)])</span><br><span class="line">OrderedDict([(&apos;Name&apos;, &quot;Monty Python&apos;s Previous Record&quot;), (&apos;Year&apos;, &apos;1972&apos;)])</span><br><span class="line">OrderedDict([(&apos;Name&apos;, &apos;The Monty Python Matching Tie and Handkerchief&apos;), (&apos;Year&apos;, &apos;1973&apos;)])</span><br><span class="line">OrderedDict([(&apos;Name&apos;, &apos;Monty Python Live at Drury Lane&apos;), (&apos;Year&apos;, &apos;1974&apos;)])</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><code>csv.DictReader</code>返回CSV文件中每一行的值作为<code>dictionary</code>对象而不是list对象，字段名存储在变量<code>DictReader</code>中。字段名和键在每个<code>dictionary</code>对象:</p>
+<p>当然，与<code>csvReader</code>相比，它的缺点是创建、处理和打印这些DictReader对象所需的时间稍微长一些，但是其方便性和可用性通常值得额外的开销。也要记住,当涉及到web抓取请求所需的开销和检索网站数据从外部服务器几乎总是会不可避免的限制因素在任何程序编写,所以担心技术可能刮微秒你总运行时通常是一个有争议的问题！</p>
+<h3 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h3><p>作为一名Linux用户，我知道被发送一个.docx文件的痛苦，我的非微软软件把这个文件弄得一团糟，而且我还在努力寻找代码编解码器来解释一些新的苹果媒体格式。在某种程度上，Adobe在1993年创建其可移植文档格式方面是革命性的。pdf允许不同平台上的用户以完全相同的方式查看图像和文本文档，而不管他们是在哪个平台上查看的。尽管在web上存储pdf有点过时(当您可以将其编写为HTML时，为什么要以静态、慢加载的格式存储内容?)，但是pdf仍然无处不在，尤其是在处理官方表单和归档时。2009年，一位名叫尼克·英尼斯(Nick Innes)的英国人因为要求白金汉郡市议会提供公开的学生考试成绩信息而上了新闻。根据英国版的《信息自由法》(Freedom of information Act)，白金汉郡市议会可以获得学生的考试成绩信息。在多次请求和拒绝之后，他终于收到了184份PDF文件，这是他要找的资料。尽管Innes坚持了下来，并最终获得了一个格式更合适的数据库，但如果他是一个专业的web scraper，他很可能会在法庭上节省很多时间，直接使用PDF文档，使用Python的许多PDF解析模块之一。</p>
+<p>不幸的是，许多pdf解析库都是为python2构建的。没有随着Python 3.x的发布而升级。不过，因为PDF是相对而言的简单和开放源码的文档格式，许多体面的Python库，甚至在<br>Python 3.x，可以读出来。</p>
+<p><code>PDFMiner3K</code>就是这样一个相对容易使用的库。它是灵活的，允许命令行使用或集成到现有代码中。它还可以处理各种语言编码——同样，这在web上经常派上用场。</p>
+<p>这里是一个基本的实现，允许你读取任意的pdf到一个字符串，给定一个本地文件对象：</p>
+<p>这个PDF阅读器的好处是，如果你在本地处理文件，你可以用一个普通的Python文件对象替换urlopen返回的文件对象，并使用下面这行代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pdfFile = open(<span class="string">'../pages/warandpeace/chapter1.pdf'</span>, <span class="string">'rb'</span>)</span><br></pre></td></tr></table></figure>
+<p>输出可能并不完美，特别是对于带有图像、格式奇怪的文本或表或图表中的文本的pdf。但是，对于大多数纯文本PDF，输出应该与PDF是文本文件时的输出没有什么不同。</p>
+<h3 id="Microsoft-Word-and-docx"><a href="#Microsoft-Word-and-docx" class="headerlink" title="Microsoft Word and .docx"></a>Microsoft Word and .docx</h3><p>冒着冒犯微软朋友的风险:我不喜欢微软Word。不是因为它一定是一个坏软件，而是因为它的用户滥用它的方式。它有一种特殊的天赋，可以将原本应该是简单的文本文档或pdf文件转换成大型、缓慢、难以打开的文件，这些文件在不同机器之间常常会失去所有格式，而且由于某种原因，当内容通常是静态的时候，这些文件是可以编辑的。Word文件是为内容创建而设计的，而不是为内容共享而设计的。然而，它们在某些网站上是无处不在的，包括重要的文件、信息，甚至图表和多媒体;简而言之，所有可以而且应该用HTML创建的东西。大约在2008年以前，Microsoft Office产品使用专有的.doc文件格式。这种二进制文件格式很难阅读，而且其他文字处理程序也不支持这种格式。为了顺应时代潮流，采用许多其他软件都使用的标准，微软决定使用基于xml的Open Office标准，该标准使文件与开源和其他软件兼容。不幸的是，Python对这种文件格式的支持(谷歌Docs、Open Office和Microsoft Office都使用这种格式)仍然不是很好。有python-docx库，但这只允许用户创建文档并只读取基本的文件数据，比如文件的大小和标题，而不是实际内容。要读取Microsoft Office文件的内容，您需要滚动自己的解决方案。</p>
+<p>第一步是从文件中读取XML:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> zipfile <span class="keyword">import</span> ZipFile</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">wordFile = urlopen(<span class="string">'http://pythonscraping.com/pages/AWordDocument.docx'</span>).read()</span><br><span class="line">wordFile = BytesIO(wordFile)</span><br><span class="line">document = ZipFile(wordFile)</span><br><span class="line">xml_content = document.read(<span class="string">'word/document.xml'</span>)</span><br><span class="line"></span><br><span class="line">wordObj = BeautifulSoup(xml_content.decode(<span class="string">'utf-8'</span>), <span class="string">'xml'</span>)</span><br><span class="line">textStrings = wordObj.find_all(<span class="string">'w:t'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> textElem <span class="keyword">in</span> textStrings:</span><br><span class="line">    print(textElem.text)</span><br></pre></td></tr></table></figure>
+<p>它将远程Word文档读取为二进制文件对象(BytesIO类似于使用Python的核心zipfile库解压缩它(所有.docx文件都被压缩以节省空间)，然后读取未压缩的文件XML。</p>
+<p>读取我的简单Word文档的Python脚本输出如下:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--?xml version="1.0" encoding="UTF-8" standalone="yes"?--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">w:document</span> <span class="attr">mc:ignorable</span>=<span class="string">"w14 w15 wp14"</span> <span class="attr">xmlns:m</span>=<span class="string">"http://schemas.openx</span></span></span><br><span class="line"><span class="tag"><span class="string">mlformats.org/officeDocument/2006/math"</span> <span class="attr">xmlns:mc</span>=<span class="string">"http://schemas.open</span></span></span><br><span class="line"><span class="tag"><span class="string">xmlformats.org/markup-compatibility/2006"</span> <span class="attr">xmlns:o</span>=<span class="string">"urn:schemas-micros</span></span></span><br><span class="line"><span class="tag"><span class="string">oft-com:office:office"</span> <span class="attr">xmlns:r</span>=<span class="string">"http://schemas.openxmlformats.org/off</span></span></span><br><span class="line"><span class="tag"><span class="string">iceDocument/2006/relationships"</span> <span class="attr">xmlns:v</span>=<span class="string">"urn:schemas-microsoft-com:vm</span></span></span><br><span class="line"><span class="tag"><span class="string">l"</span> <span class="attr">xmlns:w</span>=<span class="string">"http://schemas.openxmlformats.org/wordprocessingml/2006/m</span></span></span><br><span class="line"><span class="tag"><span class="string">ain"</span> <span class="attr">xmlns:w10</span>=<span class="string">"urn:schemas-microsoft-com:office:word"</span> <span class="attr">xmlns:w14</span>=<span class="string">"htt</span></span></span><br><span class="line"><span class="tag"><span class="string">p://schemas.microsoft.com/office/word/2010/wordml"</span> <span class="attr">xmlns:w15</span>=<span class="string">"http://</span></span></span><br><span class="line"><span class="tag"><span class="string">schemas.microsoft.com/office/word/2012/wordml"</span> <span class="attr">xmlns:wne</span>=<span class="string">"http://sche</span></span></span><br><span class="line"><span class="tag"><span class="string">mas.microsoft.com/office/word/2006/wordml"</span> <span class="attr">xmlns:wp</span>=<span class="string">"http://schemas.o</span></span></span><br><span class="line"><span class="tag"><span class="string">penxmlformats.org/drawingml/2006/wordprocessingDrawing"</span> <span class="attr">xmlns:wp14</span>=<span class="string">"h</span></span></span><br><span class="line"><span class="tag"><span class="string">ttp://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"</span> <span class="attr">x</span></span></span><br><span class="line"><span class="tag"><span class="attr">mlns:wpc</span>=<span class="string">"http://schemas.microsoft.com/office/word/2010/wordprocessin</span></span></span><br><span class="line"><span class="tag"><span class="string">gCanvas"</span> <span class="attr">xmlns:wpg</span>=<span class="string">"http://schemas.microsoft.com/office/word/2010/wor</span></span></span><br><span class="line"><span class="tag"><span class="string">dprocessingGroup"</span> <span class="attr">xmlns:wpi</span>=<span class="string">"http://schemas.microsoft.com/office/word</span></span></span><br><span class="line"><span class="tag"><span class="string">/2010/wordprocessingInk"</span> <span class="attr">xmlns:wps</span>=<span class="string">"http://schemas.microsoft.com/offi</span></span></span><br><span class="line"><span class="tag"><span class="string">ce/word/2010/wordprocessingShape"</span>&gt;</span><span class="tag">&lt;<span class="name">w:body</span>&gt;</span><span class="tag">&lt;<span class="name">w:p</span> <span class="attr">w:rsidp</span>=<span class="string">"00764658"</span> <span class="attr">w:r</span></span></span><br><span class="line"><span class="tag"><span class="attr">sidr</span>=<span class="string">"00764658"</span> <span class="attr">w:rsidrdefault</span>=<span class="string">"00764658"</span>&gt;</span><span class="tag">&lt;<span class="name">w:ppr</span>&gt;</span><span class="tag">&lt;<span class="name">w:pstyle</span> <span class="attr">w:val</span>=<span class="string">"Tit</span></span></span><br><span class="line"><span class="tag"><span class="string">le"</span>&gt;</span><span class="tag">&lt;/<span class="name">w:pstyle</span>&gt;</span><span class="tag">&lt;/<span class="name">w:ppr</span>&gt;</span><span class="tag">&lt;<span class="name">w:r</span>&gt;</span><span class="tag">&lt;<span class="name">w:t</span>&gt;</span>A Word Document on a Website<span class="tag">&lt;/<span class="name">w:t</span>&gt;</span><span class="tag">&lt;/</span></span><br><span class="line"><span class="tag"><span class="attr">w:r</span>&gt;</span><span class="tag">&lt;<span class="name">w:bookmarkstart</span> <span class="attr">w:id</span>=<span class="string">"0"</span> <span class="attr">w:name</span>=<span class="string">"_GoBack"</span>&gt;</span><span class="tag">&lt;/<span class="name">w:bookmarkstart</span>&gt;</span><span class="tag">&lt;<span class="name">w:b</span></span></span><br><span class="line"><span class="tag"><span class="attr">ookmarkend</span> <span class="attr">w:id</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">w:bookmarkend</span>&gt;</span><span class="tag">&lt;/<span class="name">w:p</span>&gt;</span><span class="tag">&lt;<span class="name">w:p</span> <span class="attr">w:rsidp</span>=<span class="string">"00764658"</span> <span class="attr">w:r</span></span></span><br><span class="line"><span class="tag"><span class="attr">sidr</span>=<span class="string">"00764658"</span> <span class="attr">w:rsidrdefault</span>=<span class="string">"00764658"</span>&gt;</span><span class="tag">&lt;/<span class="name">w:p</span>&gt;</span><span class="tag">&lt;<span class="name">w:p</span> <span class="attr">w:rsidp</span>=<span class="string">"0076465</span></span></span><br><span class="line"><span class="tag"><span class="string">8"</span> <span class="attr">w:rsidr</span>=<span class="string">"00764658"</span> <span class="attr">w:rsidrdefault</span>=<span class="string">"00764658"</span> <span class="attr">w:rsidrpr</span>=<span class="string">"00764658"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">w:</span> <span class="attr">r</span>&gt;</span> <span class="tag">&lt;<span class="name">w:t</span>&gt;</span>This is a Word document, full of content that you want ve</span><br><span class="line">ry much. Unfortunately, it’s difficult to access because I’m putting</span><br><span class="line">it on my website as a .<span class="tag">&lt;/<span class="name">w:t</span>&gt;</span><span class="tag">&lt;/<span class="name">w:r</span>&gt;</span><span class="tag">&lt;<span class="name">w:prooferr</span> <span class="attr">w:type</span>=<span class="string">"spellStart"</span>&gt;</span><span class="tag">&lt;/</span></span><br><span class="line"><span class="tag"><span class="attr">w:prooferr</span>&gt;</span><span class="tag">&lt;<span class="name">w:r</span>&gt;</span><span class="tag">&lt;<span class="name">w:t</span>&gt;</span>docx<span class="tag">&lt;/<span class="name">w:t</span>&gt;</span><span class="tag">&lt;/<span class="name">w:r</span>&gt;</span><span class="tag">&lt;<span class="name">w:prooferr</span> <span class="attr">w:type</span>=<span class="string">"spellEnd"</span>&gt;</span><span class="tag">&lt;/</span></span><br><span class="line"><span class="tag"><span class="attr">w:prooferr</span>&gt;</span> <span class="tag">&lt;<span class="name">w:r</span>&gt;</span> <span class="tag">&lt;<span class="name">w:t</span> <span class="attr">xml:space</span>=<span class="string">"preserve"</span>&gt;</span> file, rather than just p</span><br><span class="line">ublishing it as HTML<span class="tag">&lt;/<span class="name">w:t</span>&gt;</span> <span class="tag">&lt;/<span class="name">w:r</span>&gt;</span> <span class="tag">&lt;/<span class="name">w:p</span>&gt;</span> <span class="tag">&lt;<span class="name">w:sectpr</span> <span class="attr">w:rsidr</span>=<span class="string">"00764658"</span></span></span><br><span class="line"><span class="tag"><span class="attr">w:rsidrpr</span>=<span class="string">"00764658"</span>&gt;</span> <span class="tag">&lt;<span class="name">w:pgszw:h="15840"</span> <span class="attr">w:w</span>=<span class="string">"12240"</span>&gt;</span><span class="tag">&lt;/<span class="name">w:pgsz</span>&gt;</span><span class="tag">&lt;<span class="name">w:pgm</span></span></span><br><span class="line"><span class="tag"><span class="attr">ar</span> <span class="attr">w:bottom</span>=<span class="string">"1440"</span> <span class="attr">w:footer</span>=<span class="string">"720"</span> <span class="attr">w:gutter</span>=<span class="string">"0"</span> <span class="attr">w:header</span>=<span class="string">"720"</span> <span class="attr">w:left</span>=</span></span><br><span class="line"><span class="tag">"<span class="attr">1440</span>" <span class="attr">w:right</span>=<span class="string">"1440"</span> <span class="attr">w:top</span>=<span class="string">"1440"</span>&gt;</span><span class="tag">&lt;/<span class="name">w:pgmar</span>&gt;</span> <span class="tag">&lt;<span class="name">w:cols</span> <span class="attr">w:space</span>=<span class="string">"720"</span>&gt;</span><span class="tag">&lt;</span></span><br><span class="line">/w:cols&amp;g; &lt;w:docgrid w:linepitch="360"&gt;&lt;/w:docgrid&gt; &lt;/w:sectpr&gt; &lt;/w:</span><br><span class="line">body&gt; <span class="tag">&lt;/<span class="name">w:document</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里显然有很多元数据，但是您想要的实际文本内容被隐藏了。幸运的是，文档中的所有文本，包括顶部的标题，都包含在<code>w:t</code>标签中，便于抓取:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> zipfile <span class="keyword">import</span> ZipFile</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">wordFile = urlopen(<span class="string">'http://pythonscraping.com/pages/AWordDocument.docx'</span>).read()</span><br><span class="line">wordFile = BytesIO(wordFile)</span><br><span class="line">document = ZipFile(wordFile)</span><br><span class="line">xml_content = document.read(<span class="string">'word/document.xml'</span>)</span><br><span class="line"></span><br><span class="line">wordObj = BeautifulSoup(xml_content.decode(<span class="string">'utf-8'</span>), <span class="string">'xml'</span>)</span><br><span class="line">textStrings = wordObj.find_all(<span class="string">'w:t'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> textElem <span class="keyword">in</span> textStrings:</span><br><span class="line">    print(textElem.text)</span><br></pre></td></tr></table></figure>
+<p>注意这里不是html。解析器解析器通常与<code>BeautifulSoup</code>一起使用，您将把<code>xml</code>解析器传递给它。这是因为冒号在HTML标记名中是不标准的，比如<code>w:t</code>和HTML。解析器不能识别它们。输出并不完美，但它已经达到了这个目标，将每个<code>w:t</code>标记打印在新行上可以很容易地看到单词是如何分割文本的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A Word Document on a Website</span><br><span class="line">This is a Word document, full of content that you want very much. Unfortunately,</span><br><span class="line">it’s difficult to access because I’m putting it on my website as a .</span><br><span class="line">docx</span><br><span class="line">file, rather than just publishing it as HTML</span><br></pre></td></tr></table></figure>
+<p>请注意，单词“<code>docx</code>”位于它自己的行上。在原始XML中，它被标记<code>&lt;w:proofErrw:type=&quot;spellStart&quot;/</code>&gt;包围。这是Word的突出显示方式“<code>docx</code>”下划线为红色，表示它认为自己的文件格式的名称存在拼写错误。</p>
+<p>文档的标题前面有样式描述符标签<code>&lt;w:pstyle w:val=&quot; title &quot;&gt;</code>。尽管这并不能让我们非常容易地识别标题(或其他样式的文本)，使用<code>BeautifulSoup</code>的导航功能可以很有用:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">textStrings = wordObj.find_all(<span class="string">'w:t'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> textElem <span class="keyword">in</span> textStrings:</span><br><span class="line">    style = textElem.parent.parent.find(<span class="string">'w:pStyle'</span>)</span><br><span class="line">    <span class="keyword">if</span> style <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> style[<span class="string">'w:val'</span>] == <span class="string">'Title'</span>:</span><br><span class="line">        print(<span class="string">'Title is: &#123;&#125;'</span>.format(textElem.text))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(textElem.text)</span><br></pre></td></tr></table></figure>
+<p>可以很容易地扩展此函数，以便围绕各种文本样式打印标记，或者以其他方式标记它们。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/23/WebScraping6/" rel="next" title="WebScraping-6">
+                <i class="fa fa-chevron-left"></i> WebScraping-6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-Encoding"><span class="nav-number">1.</span> <span class="nav-text">Document Encoding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text"><span class="nav-number">2.</span> <span class="nav-text">Text</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Text-Encoding-and-the-Global-Internet"><span class="nav-number">2.1.</span> <span class="nav-text">Text Encoding and the Global Internet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSV"><span class="nav-number">3.</span> <span class="nav-text">CSV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PDF"><span class="nav-number">4.</span> <span class="nav-text">PDF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-Word-and-docx"><span class="nav-number">5.</span> <span class="nav-text">Microsoft Word and .docx</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">236k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">3:35</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+ <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
