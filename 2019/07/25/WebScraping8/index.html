@@ -188,35 +188,22 @@ daovoice('init', {
 
 
 
-  <meta name="description" content="最近想要复现一个关于indicator-based的多目标优化算法，因此，选了一个容易入手的AR-MOEA算法，此算法，是由安徽大学的田野老师在2018年提出，选用的indicator是IGD。 An Indicator-Based Multiobjective Evolutionary Algorithm With Reference Point Adaptation for Better Ve">
-<meta name="keywords" content="MOEA,indicator">
+  <meta name="description" content="到目前为止，在本书中，您已经忽略了格式糟糕的数据的问题，而是使用了一般格式良好的数据源，如果数据偏离了您的预期，则完全删除数据。但通常，在web抓取中，您不能对数据的来源或外观过于挑剔。由于标点符号错误、大小写不一致、换行符和拼写错误，脏数据在web上可能是一个大问题。本章将介绍一些工具和技术，通过改变编写代码的方式，以及在数据库中清理数据，帮助您从源头上预防问题。">
+<meta name="keywords" content="Web-Scraping,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AR-MOEA">
-<meta property="og:url" content="http://yoursite.com/2019/03/21/armoea/index.html">
+<meta property="og:title" content="WebScraping-8">
+<meta property="og:url" content="http://yoursite.com/2019/07/25/WebScraping8/index.html">
 <meta property="og:site_name" content="清 泉">
-<meta property="og:description" content="最近想要复现一个关于indicator-based的多目标优化算法，因此，选了一个容易入手的AR-MOEA算法，此算法，是由安徽大学的田野老师在2018年提出，选用的indicator是IGD。 An Indicator-Based Multiobjective Evolutionary Algorithm With Reference Point Adaptation for Better Ve">
+<meta property="og:description" content="到目前为止，在本书中，您已经忽略了格式糟糕的数据的问题，而是使用了一般格式良好的数据源，如果数据偏离了您的预期，则完全删除数据。但通常，在web抓取中，您不能对数据的来源或外观过于挑剔。由于标点符号错误、大小写不一致、换行符和拼写错误，脏数据在web上可能是一个大问题。本章将介绍一些工具和技术，通过改变编写代码的方式，以及在数据库中清理数据，帮助您从源头上预防问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/6.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/7.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/8.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/9.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/10.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/11.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/12.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/13.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/14.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/15.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/21/armoea/7.png">
-<meta property="og:updated_time" content="2019-03-30T09:37:25.346Z">
+<meta property="og:image" content="http://yoursite.com/2019/07/25/WebScraping8/1.bmp">
+<meta property="og:image" content="http://yoursite.com/2019/07/25/WebScraping8/2.bmp">
+<meta property="og:image" content="http://yoursite.com/2019/07/25/WebScraping8/3.bmp">
+<meta property="og:updated_time" content="2019-07-25T11:19:53.157Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AR-MOEA">
-<meta name="twitter:description" content="最近想要复现一个关于indicator-based的多目标优化算法，因此，选了一个容易入手的AR-MOEA算法，此算法，是由安徽大学的田野老师在2018年提出，选用的indicator是IGD。 An Indicator-Based Multiobjective Evolutionary Algorithm With Reference Point Adaptation for Better Ve">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/21/armoea/1.png">
+<meta name="twitter:title" content="WebScraping-8">
+<meta name="twitter:description" content="到目前为止，在本书中，您已经忽略了格式糟糕的数据的问题，而是使用了一般格式良好的数据源，如果数据偏离了您的预期，则完全删除数据。但通常，在web抓取中，您不能对数据的来源或外观过于挑剔。由于标点符号错误、大小写不一致、换行符和拼写错误，脏数据在web上可能是一个大问题。本章将介绍一些工具和技术，通过改变编写代码的方式，以及在数据库中清理数据，帮助您从源头上预防问题。">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/25/WebScraping8/1.bmp">
 
 
 
@@ -225,7 +212,7 @@ daovoice('init', {
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/21/armoea/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/07/25/WebScraping8/"/>
 
 
 
@@ -235,7 +222,7 @@ daovoice('init', {
   };
 </script>
 
-  <title>AR-MOEA | 清 泉</title>
+  <title>WebScraping-8 | 清 泉</title>
   
 
 
@@ -453,7 +440,7 @@ daovoice('init', {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/armoea/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/25/WebScraping8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="spring">
@@ -470,7 +457,7 @@ daovoice('init', {
 
         
         
-          <h1 class="post-title" itemprop="name headline">AR-MOEA
+          <h1 class="post-title" itemprop="name headline">WebScraping-8
               
             
           </h1>
@@ -495,24 +482,12 @@ daovoice('init', {
                 
               
 
-              <time title="创建时间：2019-03-21 21:13:09" itemprop="dateCreated datePublished" datetime="2019-03-21T21:13:09+08:00">2019-03-21</time>
+              <time title="创建时间：2019-07-25 19:16:16 / 修改时间：19:19:53" itemprop="dateCreated datePublished" datetime="2019-07-25T19:16:16+08:00">2019-07-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-30 17:37:25" itemprop="dateModified" datetime="2019-03-30T17:37:25+08:00">2019-03-30</time>
               
             
           </span>
@@ -529,7 +504,7 @@ daovoice('init', {
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/indicator-based/" itemprop="url" rel="index"><span itemprop="name">indicator-based</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
 
                 
                 
@@ -565,7 +540,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.2k</span>
+                <span title="本文字数">9.2k</span>
               
 
               
@@ -579,7 +554,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -599,77 +574,72 @@ daovoice('init', {
       
 
       
-        <p>最近想要复现一个关于indicator-based的多目标优化算法，因此，选了一个容易入手的AR-MOEA算法，此算法，是由安徽大学的田野老师在2018年提出，选用的indicator是IGD。</p>
-<p>An Indicator-Based Multiobjective Evolutionary Algorithm With Reference Point Adaptation for Better Versatility</p>
-<p><em>Ye Tian, Ran Cheng, Xingyi Zhang, Fan Cheng, and Yaochu Jin, Fellow, IEEE</em></p>
-<p><em><a id="more"></a></em></p>
-<h3 id="算法规定"><a href="#算法规定" class="headerlink" title="算法规定"></a>算法规定</h3><p>定义：无贡献解</p>
-<script type="math/tex; mode=display">
-\nexists y \in Y \ satisfying \ dis(y,x') = \min_{x \in X} dis(y,x)</script><p>其中，距离为欧式距离。例子如下图：</p>
-<p><img src="/2019/03/21/armoea/1.png" alt=""></p>
-<p>适应度为：</p>
-<script type="math/tex; mode=display">
-IGD-NS(X,Y) = \sum_{y \in Y} \min_{x \in X} dis(y,x) + \sum_{x \in X^*} \min_{y \in Y} dis(y,x')</script><p>符号规定：</p>
-<ul>
-<li>the population <strong>P</strong> contains the candidate solutions as final output</li>
-<li>the initial reference point set <strong>R</strong> is used to guarantee uniform distribution of the candidate solutions in <strong>P</strong></li>
-<li>the archive <strong>A</strong> reflects the Pareto front and guides the reference point adaptation</li>
-<li>the adapted reference point set <strong>R‘</strong> is used in the <strong>IGD-NS</strong>-based selection for truncating the population <strong>P</strong></li>
-</ul>
-<p>具体关系如下图：</p>
-<p><img src="/2019/03/21/armoea/2.png" alt=""></p>
-<h3 id="算法伪代码"><a href="#算法伪代码" class="headerlink" title="算法伪代码"></a>算法伪代码</h3><p><img src="/2019/03/21/armoea/3.png" alt=""></p>
-<p><strong>MatingSelection(P,R’)：</strong> </p>
-<p>个体 p 的适应度，定义为：</p>
-<script type="math/tex; mode=display">
-fitness_p = IGD-NS(P \backslash \{p\},R' )</script><p><img src="/2019/03/21/armoea/4.png" alt=""></p>
-<p><img src="/2019/03/21/armoea/5.png" alt=""></p>
-<h3 id="细节图示"><a href="#细节图示" class="headerlink" title="细节图示"></a>细节图示</h3><p>以下为我的个人想法与心得：声明此代码借鉴PlatEMO中的算法</p>
-<p>主函数以下为例</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">N = <span class="number">100</span>;                        <span class="comment">% 种群个数</span></span><br><span class="line">D = <span class="number">10</span>;                         <span class="comment">% 变量个数</span></span><br><span class="line">M = <span class="number">3</span>;                          <span class="comment">% 目标个数</span></span><br><span class="line">name = <span class="string">'DTLZ3'</span>;                 <span class="comment">% 测试函数选择，目前只有：DTLZ1、DTLZ2、DTLZ3</span></span><br><span class="line">[res,Population,PF] = funfun(); <span class="comment">% 生成初始种群与目标值</span></span><br><span class="line">REF = UniformPoint(N,M);        <span class="comment">% 生成一致性参考解</span></span><br><span class="line">[Archive,RefPoint,Range] = UpdateRefPoint(res,REF,[]);</span><br><span class="line">PD_v = [];</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">400</span></span><br><span class="line">    MatingPool = MatingSelection(Population,RefPoint,Range);  <span class="comment">%已修改</span></span><br><span class="line">    Offspring  = GA(Population(MatingPool,:));                <span class="comment">%已修改</span></span><br><span class="line">    Offspring_objs = CalObj(Offspring);</span><br><span class="line">    [Archive,RefPoint,Range] = UpdateRefPoint([Archive;Offspring_objs([all(PopCon&lt;=<span class="number">0</span>,<span class="number">2</span>)],:)],REF,Range);</span><br><span class="line">    [Population,Range]       = EnvironmentalSelection([Population;Offspring],RefPoint,Range,N);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">hold on</span><br><span class="line">plot3(PF(:,<span class="number">1</span>),PF(:,<span class="number">2</span>),PF(:,<span class="number">3</span>),<span class="string">'g*'</span>)</span><br></pre></td></tr></table></figure>
-<p><code>UniformPoint.m</code> 此函数是产生一致性点，当参数如上图所示，那么，这些一致性点在目标空间中，分布如下：</p>
-<p><img src="/2019/03/21/armoea/6.png" alt=""></p>
-<p><code>UpdateRefPoint.m</code>，此算法就是根据目前的Archive，Poupulation和Reference points生成新的Archive与Reference points。</p>
-<p>先要介绍一下<code>AdjustLocation.m</code></p>
-<p>图为此时刻下的调整之前的Reference Points：两个图是同一状态，只是视角不同</p>
-<p><img src="/2019/03/21/armoea/7.png" alt=""></p>
-<p><img src="/2019/03/21/armoea/8.png" alt=""></p>
-<p>再加上蓝色的点，即为当前种群：</p>
-<p><img src="/2019/03/21/armoea/9.png" alt=""></p>
-<p>红色的点即为调整之后的Reference Points：</p>
-<p><img src="/2019/03/21/armoea/10.png" alt=""></p>
-<p>这么看可能会发现不了什么规律，其实根据公式也可以知道，如果开始时对所有点进行归一化，那么由原点连接每一个黑色的点，对应的调整后的点必定在这条射线上。就像算盘上的珠子一样，滑到与所有蓝色的点(当前种群)中与到射线最短的距离所对应的投影点上，也就是原论文中的$p \leftarrow argmin_{p \in P}||F(P)||sin(\vec{z^*r},F(p))$，如下图：</p>
-<p>(黄线穿过：原点-黑点-红点 )</p>
-<p><img src="/2019/03/21/armoea/11.png" alt=""></p>
-<p>只画出部分射线：</p>
-<p><img src="/2019/03/21/armoea/12.png" alt=""></p>
-<p><code>AdjustLocation</code>解释完了，就容易理解<code>RefPointAdaption.m</code>了</p>
-<p>注意一点，在<code>RefPointAdaption.m</code>中的Reference Points是一致性点，所以，应该是这样的：</p>
-<p><img src="/2019/03/21/armoea/13.png" alt=""></p>
-<ul>
-<li>先对当前解、Reference点进行归一化，简单地说就是为了让射线从原点出发。</li>
-<li>把ReferencePoint根据当前种群<strong>Archive</strong>进行调整，也就是上图的黑点变红点。</li>
-<li>更新 Archive：<ul>
-<li>删除重复和受支配的解(因为又添加了交叉变异的个体)</li>
-<li>滑动每一个Reference point到Archive中离它最近的的个体周围(映射点)，并且把这些新的个体称为 $A^{con}$，这样可以使得大多数个体多多少少周围都有几个Reference point，当然有的个体可能周围一个都没有。</li>
-<li>如果个数不够就要从剩下的Archive中来凑，找在离newAchieve夹角最小中所有最大的那个$argmax_{p \in A \backslash A’} \min_{q \in A’} arccos(F(p),F(q))$。我猜测是为了增大多样性。</li>
-</ul>
-</li>
-<li>更新Reference Points：<ul>
-<li>根据之前找到的$A^{con}$ ，把离这些$A^{con}$ 中最近的Reference Point(调整后的)，作为newReferencePoint。</li>
-<li>如果个数不够就要从新产生的的newArchive中来凑。</li>
-<li>把newReferencePoint根据当前种群<strong>Population</strong>进行调整。</li>
-</ul>
-</li>
-</ul>
-<p>结果如下：</p>
-<p><img src="/2019/03/21/armoea/14.png" alt=""></p>
-<p><img src="/2019/03/21/armoea/15.png" alt=""></p>
-<p><strong>蓝色</strong>为一致性点</p>
-<p><strong>绿色</strong>为真实PF</p>
-<p><strong>红色</strong>为AR-MOEA算法结果</p>
-<h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><p><img src="/2019/03/21/armoea/7.png" alt=""></p>
-<p>首先，它是用了IGD-indicator来计算每一个个体的适应度。其次，选用了Archive与ReferencePoint来一起维护收敛与一致性。期间只要有靠近新的ReferencePoint，就有很大的概率被留下来，R’也会不断的接近R，其中在那个平面的点，说明此参考点周围已经子代存在，而呈拱形的点便是从A’\A中选择出来的，随着种群进化过程，平面上的点会逐渐变多，拱形上的点逐渐减少，最后便会得出均匀且收敛性较好的解集。</p>
+        <p>到目前为止，在本书中，您已经忽略了格式糟糕的数据的问题，而是使用了一般格式良好的数据源，如果数据偏离了您的预期，则完全删除数据。但通常，在web抓取中，您不能对数据的来源或外观过于挑剔。由于标点符号错误、大小写不一致、换行符和拼写错误，脏数据在web上可能是一个大问题。本章将介绍一些工具和技术，通过改变编写代码的方式，以及在数据库中清理数据，帮助您从源头上预防问题。</p>
+<a id="more"></a>
+<h3 id="Cleaning-in-Code"><a href="#Cleaning-in-Code" class="headerlink" title="Cleaning in Code"></a>Cleaning in Code</h3><p>在语言学中，<code>n-gram</code>是在文本或言语中使用的n个单词的序列。在进行自然语言分析时，通过查找常用的<code>n-gram</code>或经常一起使用的重复单词集，通常可以方便地分解一段文本。</p>
+<p>本节的重点是获取格式正确的<code>n-gram</code>，而不是使用它们进行任何分析。稍后，在第9章中，您可以看到<code>2-gram</code>和<code>3-gram</code>在执行文本摘要和分析。<br>下面返回了在Wikipedia关于Python编程语言的文章中找到的2克的列表:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgrams</span><span class="params">(content, n)</span>:</span></span><br><span class="line">  content = content.split(<span class="string">' '</span>)</span><br><span class="line">  output = []</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content)-n+<span class="number">1</span>):</span><br><span class="line">    output.append(content[i:i+n])</span><br><span class="line">  <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Python_(programming_language)'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">content = bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'mw-content-text'</span>&#125;).get_text()</span><br><span class="line">ngrams = getNgrams(content, <span class="number">2</span>)</span><br><span class="line">print(ngrams)</span><br><span class="line">print(<span class="string">'2-grams count is: '</span>+str(len(ngrams)))</span><br></pre></td></tr></table></figure>
+<p><code>getNgrams</code>函数接受一个输入字符串，并将其分解为一系列单词(假设所有单词都用空格分隔)，并将每个单词开头的n-gram(在本例中为2- gram)添加到数组中。</p>
+<p>这将从文本中返回一些真正有趣和有用的2- gram：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'of'</span>, <span class="string">'free'</span>], [<span class="string">'free'</span>, <span class="string">'and'</span>], [<span class="string">'and'</span>, <span class="string">'open-source'</span>], [<span class="string">'open-source'</span>, <span class="string">'software'</span>]</span><br></pre></td></tr></table></figure>
+<p>但它也会返回很多垃圾：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'software\nOutline\nSPDX\n\n\n\n\n\n\n\n\nOperating'</span>, <span class="string">'system\nfamilies\n\n\n\nAROS\nBSD\nDarwin\neCos\nFreeDOS\nGNU\nHaiku\nInferno\nLinux\nMach\nMINIX\nOpenSolaris\nPlan'</span>], [<span class="string">'system\nfamilies\n\n\n\nAROS\nBSD\nDarwin\neCos\nFreeDOS\nGNU\nHaiku\nInferno\nLinux\nMach\nMINIX\nOpenSolaris\nPlan'</span>, <span class="string">'9\nReactOS\nTUD:OS\n\n\n\n\n\n\n\n\nDevelopment\n\n\n\nBasic'</span>], [<span class="string">'9\nReactOS\nTUD:OS\n\n\n\n\n\n\n\n\nDevelopment\n\n\n\nBasic'</span>, <span class="string">'For'</span>]</span><br></pre></td></tr></table></figure>
+<p>此外，由于为遇到的每个单词都创建了2-gram(除了最后一个单词)，所以在撰写本文时，本文中有7,411个2-gram。不是一个非常容易管理的数据集！</p>
+<p>使用正则表达式删除转义字符(比如\n)和过滤删除任何Unicode字符，您可以稍微清理一下输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgrams</span><span class="params">(content, n)</span>:</span></span><br><span class="line">    content = re.sub(<span class="string">'\n|[[\d+\]]'</span>, <span class="string">' '</span>, content)</span><br><span class="line">    content = bytes(content, <span class="string">'UTF-8'</span>)</span><br><span class="line">    content = content.decode(<span class="string">'ascii'</span>, <span class="string">'ignore'</span>)</span><br><span class="line">    content = content.split(<span class="string">' '</span>)</span><br><span class="line">    content = [word <span class="keyword">for</span> word <span class="keyword">in</span> content <span class="keyword">if</span> word != <span class="string">''</span>]</span><br><span class="line">    output = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content)-n+<span class="number">1</span>):</span><br><span class="line">        output.append(content[i:i+n])</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Python_(programming_language)'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">content = bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'mw-content-text'</span>&#125;).get_text()</span><br><span class="line">ngrams = getNgrams(content, <span class="number">2</span>)</span><br><span class="line">print(ngrams)</span><br><span class="line">print(<span class="string">'2-grams count is: '</span>+str(len(ngrams)))</span><br></pre></td></tr></table></figure>
+<p>这将用空格替换换行符的所有实例，删除诸如[123]之类的引用，并过滤行中多个空格导致的所有空字符串。然后，使用<code>UTF-8</code>编码内容，消除转义字符。</p>
+<p>需要解释以下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content = re.sub(<span class="string">'\n|[[\d+\]]'</span>, <span class="string">' '</span>, content)</span><br></pre></td></tr></table></figure>
+<p>其中，<code>\n|[[\d+\]]</code>或前面是换行字符，后面的<code>[[\d+\]]</code>是说的是<code>\[|\d+|\]</code>这三个相或，为什么只有<code>]</code>前面加一个<code>\</code>这个是规定，表示对这个字符进行操作，但为什么<code>[</code>没有这样的讲究，只能说规定如此，而且我觉得<code>[[\d+\]\n]</code>也是等价的。</p>
+<p>这些步骤大大提高了函数的输出，但仍存在一些问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;years&apos;, &apos;ago(&apos;], [&apos;ago(&apos;, &apos;-&apos;], [&apos;-&apos;, &apos;-&apos;], [&apos;-&apos;, &apos;)&apos;], [&apos;)&apos;, &apos;Stable&apos;]</span><br></pre></td></tr></table></figure>
+<p>您可以通过删除每个单词前后的所有标点符号来改进这一点标点符号(剥离)。这保留了单词中的连字符，但是消除了空字符串之后只包含一个标点符号的字符串。</p>
+<p>当然，标点符号本身是有意义的，简单地去掉它可能会丢失一些有价值的信息。例如，句点后面的空格可以被认为是一个完整句子或语句的结尾。您可能想要禁止n-gram在这样的stop上桥接，并且只考虑在句子中创建的那些。</p>
+<p>例如，给定文本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Python features a dynamic type system and automatic memory management. It supports multiple programming paradigms...</span><br></pre></td></tr></table></figure>
+<p>2-gram[‘memory’, ‘management’]是有效的，但是2-gram[‘management’, ‘It’]无效。</p>
+<p>现在，您有了一个更长的“清洁任务”列表，您正在介绍“清洁任务”的概念“句子”，你的程序已经变得越来越复杂，最好把它们移到四个不同的函数中:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanSentence</span><span class="params">(sentence)</span>:</span></span><br><span class="line">    sentence = sentence.split(<span class="string">' '</span>)</span><br><span class="line">    sentence = [word.strip(string.punctuation+string.whitespace) <span class="keyword">for</span> word <span class="keyword">in</span> sentence]</span><br><span class="line">    sentence = [word <span class="keyword">for</span> word <span class="keyword">in</span> sentence <span class="keyword">if</span> len(word) &gt; <span class="number">1</span> <span class="keyword">or</span> (word.lower() == <span class="string">'a'</span> <span class="keyword">or</span> word.lower() == <span class="string">'i'</span>)]</span><br><span class="line">    <span class="keyword">return</span> sentence</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanInput</span><span class="params">(content)</span>:</span></span><br><span class="line">    content = content.upper()</span><br><span class="line">    content = re.sub(<span class="string">'\n|[[\d+\]]'</span>, <span class="string">' '</span>, content)</span><br><span class="line">    content = bytes(content, <span class="string">"UTF-8"</span>)</span><br><span class="line">    content = content.decode(<span class="string">"ascii"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">    sentences = content.split(<span class="string">'. '</span>)</span><br><span class="line">    <span class="keyword">return</span> [cleanSentence(sentence) <span class="keyword">for</span> sentence <span class="keyword">in</span> sentences]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgramsFromSentence</span><span class="params">(content, n)</span>:</span></span><br><span class="line">    output = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(content)-n+<span class="number">1</span>):</span><br><span class="line">        output.append(content[i:i+n])</span><br><span class="line">    <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgrams</span><span class="params">(content, n)</span>:</span></span><br><span class="line">    content = cleanInput(content)</span><br><span class="line">    ngrams = []</span><br><span class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> content:</span><br><span class="line">        ngrams.extend(getNgramsFromSentence(sentence, n))</span><br><span class="line">    <span class="keyword">return</span>(ngrams)</span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://en.wikipedia.org/wiki/Python_(programming_language)'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">content = bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'mw-content-text'</span>&#125;).get_text()</span><br><span class="line">print(getNgrams(content, <span class="number">2</span>))</span><br><span class="line">print(len(getNgrams(content, <span class="number">2</span>)))</span><br></pre></td></tr></table></figure>
+<p>其中，<code>.strip()</code>，是只能删除开头或是结尾的字符，不能删除中间部分的字符。</p>
+<p><code>getNgrams</code>仍然是您进入程序的基本入口点。<code>cleanInput</code>和前面一样删除了换行和引用，但也根据句点和空格的位置将文本分割为“句子”。它还调用了<code>cleanSentence</code>，它将句子分成单词，去掉标点符号和空格，并删除除<code>I</code>和<code>a</code>之外的单个字符。</p>
+<p>创建n个gram的关键行被移动到<code>getNgramsFromSentence</code>中，<code>getngram</code>对每个句子调用这个函数。这确保不会创建跨多个句子的<code>n-gram</code>。<br>注意<code>string.punctuation</code>和<code>string.whitespace</code>的使用。获取Python中所有标点符号的列表。您可以查看字符串的输出。Python终端中的标点符号:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> string</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(string.punctuation)</span><br><span class="line">!<span class="string">"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`&#123;|&#125;~</span></span><br></pre></td></tr></table></figure>
+<p>通过在循环中遍历内容中的所有单词时使用<code>item.strip(string. +string.whitespace)</code>，单词两边的任何标点符号都将被删除，而连字符(标点符号被两边的字母包围)将保持不变。</p>
+<p>这种努力的结果是更干净的2-gram：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="string">'Python'</span>, <span class="string">'Paradigm'</span>], [<span class="string">'Paradigm'</span>, <span class="string">'Object-oriented'</span>], [<span class="string">'Object-oriented'</span>,<span class="string">'imperative'</span>], [<span class="string">'imperative'</span>, <span class="string">'functional'</span>], [<span class="string">'functional'</span>, <span class="string">'procedural'</span>],[<span class="string">'procedural'</span>, <span class="string">'reflective'</span>],...</span><br></pre></td></tr></table></figure>
+<h3 id="Data-Normalization"><a href="#Data-Normalization" class="headerlink" title="Data Normalization"></a>Data Normalization</h3><p>每个人都遇到过设计糟糕的web表单:“输入您的电话号码。您的电话号码必须是‘xxx- xxxx -xxxx’格式。”</p>
+<p>作为一名优秀的程序员，您可能会想，为什么他们不去掉我输入的非数字字符，然后自己来做呢?数据规范化是确保在语言或逻辑上彼此等价的字符串(如电话号码(555)123-4567和555.123.4567)显示为等价字符串，或至少将其进行比较的过程。</p>
+<p>使用上一节中的n-gram代码，您可以添加数据规范化特性。这段代码的一个明显问题是它包含许多重复的2-gram。它每遇到2-gram就会被添加到列表中，没有记录它的频率。记录这些2-gram的频率(而不仅仅是它们的存在)不仅很有趣，而且在绘制清洗和数据归一化算法更改的效果时也很有用。如果数据被成功归一化，那么唯一n-gram的总数将减少，而找到的n-gram总数(即，确定为n—gram的唯一或非唯一项的数目)不会减少。换句话说，对于相同数量的n克，“木桶”会更少。</p>
+<p>您可以通过修改收集n个g的代码来实现这一点，将它们添加到计数器对象而不是列表中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNgrams</span><span class="params">(content, n)</span>:</span></span><br><span class="line">    content = cleanInput(content)</span><br><span class="line">    ngrams = Counter()</span><br><span class="line">    ngrams_list = []</span><br><span class="line">    <span class="keyword">for</span> sentence <span class="keyword">in</span> content:</span><br><span class="line">        newNgrams = [<span class="string">' '</span>.join(ngram) <span class="keyword">for</span> ngram <span class="keyword">in</span> getNgramsFromSentence(sentence, n)]</span><br><span class="line">        ngrams_list.extend(newNgrams)</span><br><span class="line">        ngrams.update(newNgrams)</span><br><span class="line">    <span class="keyword">return</span>(ngrams)</span><br><span class="line">print(getNgrams(content, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<p>还有许多其他方法可以做到这一点，比如向dictionary对象添加n-grams，其中list的值按其被看到的次数计数。这有一个缺点，它需要更多的管理，并使排序变得棘手。但是，使用计数器对象也有一个缺点：它不能存储列表(列表是不可缓存的)，所以您需要首先在每个n-gram的列表理解中使用’ ‘.join(n-gram)将它们转换为字符串。</p>
+<p>这里是结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Counter(&#123;&apos;Python Software&apos;: 37, &apos;Software Foundation&apos;: 37, &apos;of the&apos;: 34,&apos;of Python&apos;: 28, &apos;in Python&apos;: 24, &apos;in the&apos;: 23, &apos;van Rossum&apos;: 20, &apos;to the&apos;:20, &apos;such as&apos;: 19, &apos;Retrieved February&apos;: 19, &apos;is a&apos;: 16, &apos;from the&apos;: 16,&apos;Python Enhancement&apos;: 15,...</span><br></pre></td></tr></table></figure>
+<p>在撰写本文时，总共有7275个2克，5628个独特的2克，其中最流行的2克是“软件基础”，其次是“Python Software.””。然而，对结果的分析表明，“Python Software.””以“Python软件”另外两次。同样的，” vanRossum “和” vanRossum”单独出现在列表中。</p>
+<p>添加一行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content = content.upper()</span><br></pre></td></tr></table></figure>
+<p>对于<code>cleanInput</code>函数，保持找到的2-gram的总数稳定在7,275，同时将惟一的2-gram的数量减少到5,479。</p>
+<p>除此之外，通常最好停下来，考虑一下需要花费多少计算能力来规范化数据。在许多情况下，单词的不同拼写是等价的，但是为了解决这种等价性，您需要检查每个单词，看看它是否匹配任何预编程的等价。</p>
+<p>例如，Python first和Python 1st都出现在2-gram的列表中。然而，如果要制定一个总括规则，即all first、second、third等等都将被解析为1st、2nd、3rd等等(反之亦然)，那么每个单词将会被额外检查10次左右。同样，不一致地使用连字符(coordination对co-ordination)、拼写错误和其他自然语言的不一致也会影响n-gram的分组，如果这些不一致足够常见，可能会混淆输出的结果。对于带连字符的单词，一种解决方案可能是完全删除连字符，将单词视为一个字符串，这只需要一个操作。然而，这也意味着连字符短语(非常常见的现象)将被视为一个单词。走另一条路，将连字符作为空格可能是更好的选择。只是为偶尔的配合和配合攻击做好准备。</p>
+<h3 id="Cleaning-After-the-Fact"><a href="#Cleaning-After-the-Fact" class="headerlink" title="Cleaning After the Fact"></a>Cleaning After the Fact</h3><p>在代码中，您只能(或想)做这么多。此外，您可能正在处理一个没有创建的数据集，或者一个甚至在没有先查看数据集的情况下就知道如何清理的数据集。许多程序员在这种情况下的下意识反应是编写一个脚本，这可能是一个很好的解决方案。然而，第三方工具，如<code>OpenRefine</code>，不仅能够快速轻松地清理数据，而且允许非程序员轻松地查看和使用数据。</p>
+<h4 id="OpenRefine"><a href="#OpenRefine" class="headerlink" title="OpenRefine"></a>OpenRefine</h4><p><code>OpenRefine</code>是一个开源项目，由Metaweb公司于2009年启动。谷歌于2010年收购Metaweb，将项目名称从Freebase Gridworks改为谷歌Refine。2012年，谷歌放弃了对Refine的支持，再次将名称更改为<code>OpenRefine</code>，欢迎任何人为项目的开发做出贡献。</p>
+<p>要使用OpenRefine，需要将数据保存为CSV文件，或者，如果您将数据存储在数据库中，则可以将其导出到CSV文件。</p>
+<h4 id="Using-OpenRefine"><a href="#Using-OpenRefine" class="headerlink" title="Using OpenRefine"></a>Using OpenRefine</h4><p>在下面的例子中，您将使用从Wikipedia的“比较”中提取的数据文本编辑器”表;见图8 - 1。虽然这个表的格式相对较好，但是它包含了人们在很长一段时间内进行的许多编辑，因此它有一些格式上的小矛盾。此外，由于它的数据是由人而不是机器读取的，所以一些格式选择(例如，使用“Free”而不是“$0.00”)不适合编程输入。</p>
+<p><img src="/2019/07/25/WebScraping8/1.bmp" alt=""></p>
+<p>关于OpenRefine要注意的第一件事是，每个列标签旁边都有一个箭头。此箭头提供了一个工具菜单，可与该列一起用于筛选、排序、转换或删除数据。</p>
+<p><strong>Filtering</strong> 数据过滤可以使用两种方法执行:<code>Filters</code>和<code>facets</code>。过滤器适用于使用正则表达式对数据进行过滤;例如，在“编程语言”列中，只显示包含三种或更多逗号分隔的编程语言的数据，如图8-2所示。可以通过操作右栏中的块轻松地组合、编辑和添加过滤器。它们还可以与<code>facets</code>组合。</p>
+<p><img src="/2019/07/25/WebScraping8/2.bmp" alt=""></p>
+<p>可以通过操作右栏中的块轻松地组合、编辑和添加过滤器。它们还可以与facet组合。</p>
+<p><code>faces</code>t非常适合包含或排除基于列的整个内容的数据。(例如，“显示所有使用GPL或MIT许可的行，这些行在2005年后首次发布”，如图8-3所示)。他们有内置的过滤工具。例如，对数值进行筛选可以使用幻灯片条选择要包含的值范围。</p>
+<p><img src="/2019/07/25/WebScraping8/3.bmp" alt=""></p>
+<p>无论您如何过滤数据，它都可以在任何时候导出到OpenRefine支持的几种格式之一。这包括CSV, HTML(一个HTML表)，Excel和其他几种格式。</p>
+<p><strong>cleaning</strong> 只有在开始时数据相对干净时，才能成功地进行数据过滤。例如，在前一节的facet示例中，“First public release”facet中不会选择发布日期为01-01-2006的文本编辑器，该文本编辑器正在寻找一个值为2006的值，并忽略了看起来不像这个值的值。</p>
+<p>使用OpenRefine表达式在OpenRefine中执行数据转换语言，称为GREL (G是OpenRefine的前一个名称遗留下来的，谷歌优化)。此语言用于创建基于简单规则转换单元格中的值的短lambda函数。例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(value.length() != 4, &quot;invalid&quot;, value)</span><br></pre></td></tr></table></figure>
+<p>当这个函数应用于“第一个稳定版本”列时，它将保存日期为YYYY格式的单元格的值，并将所有其他列标记为无效(图8-4)。</p>
+<p>可以通过单击任何列标签旁边的下箭头并选择Edit cells$\rightarrow$Transform来应用任意的GREL语句。<br>然而，将所有不太理想的值标记为无效，同时使它们易于发现，这对您没有多大好处。如果可能，最好尝试从格式糟糕的值中回收信息。这可以通过使用GREL的match函数来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value.match(&quot;.*([0-9]&#123;4&#125;).*&quot;).get(0)</span><br></pre></td></tr></table></figure>
+<p>这将尝试将字符串值与给定的正则表达式匹配。如果正则表达式与字符串匹配，则返回一个数组。任何与正则表达式中的捕获组匹配的子字符串(由表达式中的括号分隔，在本例中为[0-9]{4})都作为数组值返回。实际上，这段代码将在一行中找到四个小数的所有实例，并返回第一个实例。这通常足以从文本或格式糟糕的日期中提取年份。它还具有为不存在的日期返回null的优点。(在对空变量执行操作时，GREL不会抛出空指针异常。)使用单元格编辑和GREL可以进行许多其他数据转换。在OpenRefine的<a href="https://github.com/OpenRefine/OpenRefine/wiki/Documentation-For-Users" target="_blank" rel="noopener">GitHub</a>页面上可以找到该语言的完整指南。</p>
 
       
     </div>
@@ -690,9 +660,9 @@ fitness_p = IGD-NS(P \backslash \{p\},R' )</script><p><img src="/2019/03/21/armo
       
         <div class="post-tags">
           
-            <a href="/tags/MOEA/" rel="tag"># MOEA</a>
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
           
-            <a href="/tags/indicator/" rel="tag"># indicator</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -705,8 +675,8 @@ fitness_p = IGD-NS(P \backslash \{p\},R' )</script><p><img src="/2019/03/21/armo
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/15/learningofcode/" rel="next" title="代码学习">
-                <i class="fa fa-chevron-left"></i> 代码学习
+              <a href="/2019/07/24/WebScraping7/" rel="next" title="WebScraping-7">
+                <i class="fa fa-chevron-left"></i> WebScraping-7
               </a>
             
           </div>
@@ -714,10 +684,6 @@ fitness_p = IGD-NS(P \backslash \{p\},R' )</script><p><img src="/2019/03/21/armo
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/21/mombiii/" rel="prev" title="MOMBI-II">
-                MOMBI-II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -939,7 +905,7 @@ fitness_p = IGD-NS(P \backslash \{p\},R' )</script><p><img src="/2019/03/21/armo
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法规定"><span class="nav-number">1.</span> <span class="nav-text">算法规定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法伪代码"><span class="nav-number">2.</span> <span class="nav-text">算法伪代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#细节图示"><span class="nav-number">3.</span> <span class="nav-text">细节图示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法分析"><span class="nav-number">4.</span> <span class="nav-text">算法分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cleaning-in-Code"><span class="nav-number">1.</span> <span class="nav-text">Cleaning in Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Normalization"><span class="nav-number">2.</span> <span class="nav-text">Data Normalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cleaning-After-the-Fact"><span class="nav-number">3.</span> <span class="nav-text">Cleaning After the Fact</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OpenRefine"><span class="nav-number">3.1.</span> <span class="nav-text">OpenRefine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-OpenRefine"><span class="nav-number">3.2.</span> <span class="nav-text">Using OpenRefine</span></a></li></ol></li></ol></div>
             
 
           </div>
