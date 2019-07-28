@@ -10,3 +10,4 @@ Disallow: /css/
 Disallow: /lib/
 
 Sitemap: http://www.purespring.top/sitemap.xml
+Sitemap: http://www.purespring.top/baidusitemap.xml
