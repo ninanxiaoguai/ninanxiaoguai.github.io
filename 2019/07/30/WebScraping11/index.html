@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="客户端脚本语言是在浏览器本身中运行的语言，而不是在web服务器上运行的语言。客户端语言的成功取决于浏览器正确解释和执行该语言的能力。 部分原因是很难让每个浏览器制造商都同意一个标准，客户端语言比服务器端语言少得多。对于web抓取来说，这是一件好事:需要处理的语言越少越好">
+<meta name="keywords" content="Web-Scraping,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebScraping-11">
+<meta property="og:url" content="https://purespring.top/2019/07/30/WebScraping11/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="客户端脚本语言是在浏览器本身中运行的语言，而不是在web服务器上运行的语言。客户端语言的成功取决于浏览器正确解释和执行该语言的能力。 部分原因是很难让每个浏览器制造商都同意一个标准，客户端语言比服务器端语言少得多。对于web抓取来说，这是一件好事:需要处理的语言越少越好">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-30T14:45:33.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebScraping-11">
+<meta name="twitter:description" content="客户端脚本语言是在浏览器本身中运行的语言，而不是在web服务器上运行的语言。客户端语言的成功取决于浏览器正确解释和执行该语言的能力。 部分原因是很难让每个浏览器制造商都同意一个标准，客户端语言比服务器端语言少得多。对于web抓取来说，这是一件好事:需要处理的语言越少越好">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://purespring.top/2019/07/30/WebScraping11/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebScraping-11 | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://purespring.top/2019/07/30/WebScraping11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WebScraping-11
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-30 22:42:02 / 修改时间：22:45:33" itemprop="dateCreated datePublished" datetime="2019-07-30T22:42:02+08:00">2019-07-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/30/WebScraping11/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/WebScraping11/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/30/WebScraping11/" class="leancloud_visitors" data-flag-title="WebScraping-11">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">14k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">13 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>客户端脚本语言是在浏览器本身中运行的语言，而不是在web服务器上运行的语言。客户端语言的成功取决于浏览器正确解释和执行该语言的能力。</p>
+<p>部分原因是很难让每个浏览器制造商都同意一个标准，客户端语言比服务器端语言少得多。<br>对于web抓取来说，这是一件好事:需要处理的语言越少越好</p>
+<a id="more"></a>
+<p>在大多数情况下，您在网上只会经常遇到两种语言:Action Script (Flash应用程序使用的脚本)和JavaScript。与10年前相比，ActionScript现在的使用频率要低得多，它经常被用来流媒体文件，作为在线游戏的平台，或者显示没有人想看介绍页面的网站的介绍页面。无论如何，由于对抓取Flash页面的需求不大，本章将重点放在现代web页面中普遍存在的客户端语言:JavaScript。</p>
+<p>到目前为止，JavaScript是web上最常见、最受支持的客户端脚本语言。它可以用来收集用户跟踪的信息，无需重新加载页面即可提交表单，嵌入多媒体，甚至可以支持整个在线游戏。即使看起来很简单的页面也常常包含多个JavaScript片段。你可以发现它嵌入<code>script</code>标签之间的网页的源代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    alert(<span class="string">"This creates a pop-up using JavaScript"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="A-Brief-Introduction-to-JavaScript"><a href="#A-Brief-Introduction-to-JavaScript" class="headerlink" title="A Brief Introduction to JavaScript"></a>A Brief Introduction to JavaScript</h3><p>至少对您正在抓取的代码中发生的事情有一些了解是非常有用的。记住这一点，熟悉自己是个好主意JavaScript</p>
+<p>JavaScript是一种弱类型语言，其语法常常与c++和Java相比较。尽管语法的某些元素，如操作符、循环和数组，可能是类似的，但是这种语言的弱类型和类似脚本的性质可能使它成为一些程序员难以处理的问题。</p>
+<p>例如，下面递归地计算斐波那契数列中的值，并将它们打印到浏览器的开发人员控制台：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> nextNum = a + b;</span><br><span class="line">		<span class="built_in">console</span>.log(nextNum+<span class="string">" is in the Fibonacci sequence"</span>);</span><br><span class="line">		<span class="keyword">if</span>(nextNum &lt; <span class="number">100</span>)&#123;</span><br><span class="line">			fibonacci(b, nextNum);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	fibonacci(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>注意，所有变量都是通过在它们前面加上var来标识的。这类似于PHP中的$符号，或Java或c++中的类型声明(int、String、List等)。Python的不同寻常之处在于它没有这种显式的变量声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> fibonacci = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = b;</span><br><span class="line">        b = a + b;</span><br><span class="line">        a = temp;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fibInstance = fibonacci();</span><br><span class="line"><span class="built_in">console</span>.log(fibInstance() + <span class="string">" is in the Fibonacci sequence"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(fibInstance() + <span class="string">" is in the Fibonacci sequence"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(fibInstance() + <span class="string">" is in the Fibonacci sequence"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>乍一看，这似乎有点吓人，但是如果你从lambda表达式的角度来考虑(在第2章中讨论过)，它就会变得很简单，变量fibonacci被定义为一个函数。函数的值返回一个函数，该函数在斐波那契数列中打印越来越大的值。每次调用它时，它都会返回Fibonaccicalculating函数，该函数将再次执行并增加函数中的值。</p>
+<p>虽然乍一看似乎有些复杂，但有些问题，比如计算斐波那契值，倾向于像这样的模式。在处理用户操作和回调时，将函数作为变量传递也是非常有用的，在阅读JavaScript时，熟悉这种编程风格是值得的。</p>
+<h4 id="Common-JavaScript-Libraries"><a href="#Common-JavaScript-Libraries" class="headerlink" title="Common JavaScript Libraries"></a>Common JavaScript Libraries</h4><h5 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h5><p>jQuery是一个非常常见的库，70%最流行的internet站点和大约30%的internet站点都使用它。使用jQuery的站点很容易识别，因为它的代码中包含了对jQuery的导入:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script </span><br><span class="line">src=<span class="string">"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果在站点上找到jQuery，在抓取它时必须小心。jQuery擅长动态创建仅在JavaScript执行后才出现的HTML内容。如果使用传统方法抓取页面内容，则只检索JavaScript创建内容之前出现的预加载页面(一会有更详细的介绍)。</p>
+<p>此外，这些页面更可能包含动画、交互式内容和嵌入式媒体，这可能使抓取具有挑战性。</p>
+<h5 id="Google-Analytics"><a href="#Google-Analytics" class="headerlink" title="Google Analytics"></a>Google Analytics</h5><p>大约50%的网站使用谷歌分析，这使得它可能是最常见的JavaScript库和互联网上最流行的用户跟踪工具。无论是<code>http://pythonscraping.com</code>还是<code>http://www.oreilly.com/</code>都使用了谷歌分析。</p>
+<p>确定一个页面是否使用谷歌分析是很容易的。它将在底部有JavaScript，类似于以下内容(摘自O ‘Reilly媒体网站):</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Google Analytics --&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">var</span> _gaq = _gaq || [];</span><br><span class="line">_gaq.push([<span class="string">'_setAccount'</span>, <span class="string">'UA-4591498-1'</span>]);</span><br><span class="line">_gaq.push([<span class="string">'_setDomainName'</span>, <span class="string">'oreilly.com'</span>]);</span><br><span class="line">_gaq.push([<span class="string">'_addIgnoredRef'</span>, <span class="string">'oreilly.com'</span>]);</span><br><span class="line">_gaq.push([<span class="string">'_setSiteSpeedSampleRate'</span>, <span class="number">50</span>]);</span><br><span class="line">_gaq.push([<span class="string">'_trackPageview'</span>]);</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">var</span> ga = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>); ga.type =</span><br><span class="line"><span class="string">'text/javascript'</span>; ga.async = <span class="literal">true</span>; ga.src = (<span class="string">'https:'</span> ==</span><br><span class="line"><span class="built_in">document</span>.location.protocol ? <span class="string">'https://ssl'</span> : <span class="string">'http://www'</span>) +</span><br><span class="line"><span class="string">'.google-analytics.com/ga.js'</span>; <span class="keyword">var</span> s =</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];</span><br><span class="line">s.parentNode.insertBefore(ga, s); &#125;)();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此脚本处理特定于谷歌分析程序的cookie，用于跟踪页面之间的访问。对于旨在执行JavaScript和处理cookie的web抓取器(如使用Selenium的web抓取器，本章稍后将对此进行讨论)，这有时可能是一个问题。</p>
+<p>如果一个站点使用谷歌分析或类似的web分析系统，而您不希望该站点知道它正在被爬行或被刮除，请确保丢弃用于分析的任何cookie或完全丢弃cookie。</p>
+<h5 id="Google-Maps"><a href="#Google-Maps" class="headerlink" title="Google Maps"></a>Google Maps</h5><p>如果你在互联网上呆过一段时间，你几乎肯定会在一个网站上看到嵌入的谷歌地图。它的API使得在任何站点上嵌入带有自定义信息的地图变得极其简单。</p>
+<p>如果您正在抓取任何类型的位置数据，了解谷歌映射的工作原理可以很容易地获得格式良好的经纬度坐标，甚至地址。在谷歌映射中，最常用的表示位置的方法之一是通过标记(也称为pin)。</p>
+<p>使用如下代码，可以将标记插入任何谷歌映射:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var marker = new google.maps.Marker(&#123;</span><br><span class="line">	position: new google.maps.LatLng(<span class="number">-25.363882</span>,<span class="number">131.044922</span>),</span><br><span class="line">	map: map,</span><br><span class="line">	title: <span class="string">'Some marker text'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Python使提取<code>google.maps</code>之间发生的所有坐标实例变得很容易。获取纬度/经度坐标列表。</p>
+<h3 id="Ajax-and-Dynamic-HTML"><a href="#Ajax-and-Dynamic-HTML" class="headerlink" title="Ajax and Dynamic HTML"></a>Ajax and Dynamic HTML</h3><p>到目前为止，我们与web服务器通信的唯一方法是通过检索新页面向它发送某种HTTP请求。如果您曾经在没有重新加载页面的情况下提交过表单或从服务器检索过信息，那么您可能使用过使用Ajax的网站。</p>
+<p>与一些人所认为的相反，Ajax不是一种语言，而是一组用于完成特定任务的技术(仔细想想，就像web抓取一样)。Ajax代表Asynchronous(异步)JavaScript和XML，用于从web服务器发送和接收信息，而不需要发出单独的页面请求。</p>
+<p>You should never say, “This website will be written in Ajax.” It would be correct to say, “This form will use Ajax to communicate with the web server.”</p>
+<p>与Ajax一样，动态HTML (DHTML)是一组用于共同目的的技术。DHTML是HTML代码、CSS语言，或者两者都随着客户机端脚本更改页面上的HTML元素而更改。按钮可能只在用户移动光标之后才出现，背景颜色可能在单击时发生变化，或者Ajax请求可能触发要加载的新内容块。</p>
+<p>请注意，虽然“动态”这个词通常与“移动”或“更改”之类的词相关联，但是交互式HTML组件、移动图像或嵌入式媒体的出现并不一定使页面DHTML成为动态的，即使它看起来可能是动态的。此外，internet上一些最无趣、看起来静态的页面可以在后台运行DHTML进程，这些进程依赖于使用JavaScript来操纵HTML和CSS。</p>
+<p>如果您抓取了许多网站，您很快就会遇到这样的情况:您在浏览器中查看的内容与您在从站点检索的sourcec ode中看到的内容不匹配。您可能会查看scraper的输出，然后挠挠头，试图找出浏览器中相同页面上所看到的所有内容都消失到哪里去了。</p>
+<p>web页面也可能有一个加载页面，它会将您重定向到另一个结果页面，但是您会注意到，当重定向发生时，页面的URL不会更改。这两种情况都是由于scraper无法执行JavaScript而导致的，而JavaScript正是在页面上实现这一神奇的功能的原因。如果没有JavaScript, HTML就只是停留在那里，站点可能看起来与web浏览器中的非常不同，web浏览器执行JavaScript时没有问题。页面可能使用Ajax或DHTML来更改/加载内容，但在这种情况下，只有两种解决方案:直接从JavaScript中提取内容;或者使用能够执行JavaScript本身的Python包，并在浏览器中查看网站时对其进行抓取。</p>
+<h4 id="Executing-JavaScript-in-Python-with-Selenium"><a href="#Executing-JavaScript-in-Python-with-Selenium" class="headerlink" title="Executing JavaScript in Python with Selenium"></a>Executing JavaScript in Python with Selenium</h4><p>Selenium是一个功能强大的web抓取工具，最初是为网站测试开发的。现在，当需要准确地描述web站点(如在浏览器中出现的站点)时，也可以使用它。Selenium通过自动化浏览器来加载网站、检索所需的数据，甚至可以截屏或断言网站上发生了某些操作。</p>
+<p>Selenium不包含自己的web浏览器;它需要与第三方浏览器集成才能运行。例如，如果您使用Firefox运行Selenium，您将看到屏幕上打开一个Firefox实例，导航到网站，并执行代码中指定的操作。虽然这看起来很整洁，但是我更喜欢脚本在后台静静地运行，所以我使用了一个名为PhantomJS的工具来代替实际的浏览器。</p>
+<p>PhantomJS是一种headless浏览器。它将网站加载到内存中，并在页面上执行JavaScript，但不向用户呈现网站的任何图形。通过将Selenium与PhantomJS结合起来，您可以运行一个非常强大的web scraper，它可以轻松地处理cookie、JavaScript、header和其他所有您需要的东西。</p>
+<p>您可以从其网站下载Selenium库，或者使用第三方安装程序(如pip)从命令行安装它。</p>
+<p>虽然很多页面都使用Ajax加载数据(尤其是谷歌)，但我在<code>http://pythonscraping.com/pages/javascript/ajaxDemo.html</code>中创建了一个示例页面来运行爬虫。这个页面包含一些示例文本，硬编码到页面HTML中，经过两秒钟的延迟后，这些文本将被ajax生成的内容所替代。如果您要使用传统方法抓取此页面的数据，您只会得到加载页面，而不会得到您想要的数据。</p>
+<p>Selenium库是对象WebDriver上调用的API。WebDriver.程序有点像浏览器，因为它可以加载网站，但它也可以像BeautifulSoup对象一样被用来查找页面元素，与页面上的元素交互(发送文本、单击等)，以及执行其他操作来驱动web爬虫。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line">driver = webdriver.Chrome(</span><br><span class="line">    executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>, </span><br><span class="line">    options=chrome_options)</span><br><span class="line">driver.get(<span class="string">'http://pythonscraping.com/pages/javascript/ajaxDemo.html'</span>)</span><br><span class="line">time.sleep(<span class="number">3</span>)</span><br><span class="line">print(driver.find_element_by_id(<span class="string">'content'</span>).text)</span><br><span class="line">driver.close()</span><br></pre></td></tr></table></figure>
+<p>如果：<code>time.sleep(3)</code>运行，那么输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Here is some important text you want to retrieve!</span><br><span class="line">A button to click!</span><br></pre></td></tr></table></figure>
+<p>如果注释掉<code>time.sleep(3)</code>，那么输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is some content that will appear on the page while it&apos;s loading. You don&apos;t care about scraping this.</span><br></pre></td></tr></table></figure>
+<p><strong>Selenium Selectors</strong></p>
+<p>前几章中，您已经使用<code>BeautifulSoup</code>选择器(如<code>find</code>和<code>find_all</code>)选择了页面元素。<code>Selenium</code>使用一组全新的选择器来查找web驱动程序DOM中的元素，尽管它们的名称相当简单。</p>
+<p>在这个例子中，您使用了选择器<code>find_element_by_id</code>，尽管下面的其他选择器也可以工作:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">'#content'</span>)</span><br><span class="line">driver.find_element_by_tag_name(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+<p>当然，如果希望在页面上选择多个元素，这些元素选择器中的大多数都可以使用元素返回Python元素列表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_elements_by_css_selector(<span class="string">'#content'</span>)</span><br><span class="line">driver.find_elements_by_css_selector(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+<p>如果你仍然想使用<code>BeautifulSoup</code>来解析这些内容，你可以使用Web‐<br>方法所查看的，该函数返回页面的源代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pageSource = driver.page_source</span><br><span class="line">bs = BeautifulSoup(pageSource, <span class="string">'html.parser'</span>)</span><br><span class="line">print(bs.find(id=<span class="string">'content'</span>).get_text())</span><br></pre></td></tr></table></figure>
+<p>这将使用<code>PhantomJS</code>库创建一个新的<code>Selenium web</code>驱动程序，它告诉<br><code>WebDriver</code>加载一个页面，然后暂停执行三秒钟，然后查看页面以检索(希望已加载)内容。</p>
+<p>根据安装PhantomJS的位置，在创建新的PhantomJS Web驱动程序时，可能还需要显式地将Selenium指向正确的方向:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.PhantomJS(executable_path=<span class="string">'path/to/driver/'</span>\</span><br><span class="line">        <span class="string">'phantomjs-1.9.8-macosx/bin/phantomjs'</span>)</span><br></pre></td></tr></table></figure>
+<p>虽然这个解决方案有效，但它的效率有些低，而且实现它可能会在很大程度上导致问题。页面加载时间是不一致的，这取决于任何特定毫秒的服务器负载，并且连接速度会发生自然的变化。虽然这个页面加载应该只需要2秒多一点的时间，但是您给了它整整3秒的时间来确保它完全加载。更有效的解决方案是反复检查已加载的页面上是否存在特定的元素，并仅在该元素存在时返回。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line">driver = webdriver.Chrome(</span><br><span class="line">    executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>,</span><br><span class="line">    options=chrome_options)</span><br><span class="line"></span><br><span class="line">driver.get(<span class="string">'http://pythonscraping.com/pages/javascript/ajaxDemo.html'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    element = WebDriverWait(driver, <span class="number">10</span>).until(</span><br><span class="line">                       EC.presence_of_element_located((By.ID, <span class="string">'loadedButton'</span>)))</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(driver.find_element_by_id(<span class="string">'content'</span>).text)</span><br><span class="line">    driver.close()</span><br></pre></td></tr></table></figure>
+<p>个脚本有几个新的导入，最著名的是WebDriverWait和expected_con，这两个变量在这里组合在一起，形成Selenium所称的(implicit wait)隐式等待。</p>
+<p>隐式等待与显式等待的区别在于，它在DOM在继续之前发生，而显式等待定义了硬编码时间，如前一个示例所示，它的等待时间为3秒。在隐式等待中，触发DOM状态由expected_condition定义(注意，这里的导入转换为EC，这是一种用于简洁的常见约定)。Selenium库中的预期条件可以有很多，包括以下内容:</p>
+<ul>
+<li>弹出一个警告框。</li>
+<li>元素(例如文本框)被放入选定的状态(selected state)。</li>
+<li>页面的标题更改，或文本现在显示在页面或特定元素中。</li>
+<li>元素现在对DOM可见，或者元素从DOM中消失。</li>
+</ul>
+<p>大多数这些预期的条件要求您首先指定要监视的元素。元素是使用定位器指定的。注意，定位器与选择器不同(有关选择器的更多信息，请参阅刚刚介绍的“Selenium选择器”)。定位器是一种抽象的查询语言，使用By对象，可以以多种方式使用，包括创建选择器。</p>
+<p>在下面的代码中，定位器用于查找ID <code>loadedButton</code>的元素：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EC.presence_of_element_located((By.ID, <span class="string">'loadedButton'</span>))</span><br></pre></td></tr></table></figure>
+<p>定位器也可以用来创建选择器，使用<code>find_element WebDriver</code>函数:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(driver.find_element(By.ID, <span class="string">'content'</span>).text)</span><br></pre></td></tr></table></figure>
+<p>当然，这在功能上相当于示例代码中的行:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(driver.find_element_by_id(<span class="string">'content'</span>).text)</span><br></pre></td></tr></table></figure>
+<p>如果你不需要使用定位器，就不要使用;它将为您节省导入。然而，这个方便的工具用于各种应用程序，并且具有很大的灵活性。</p>
+<p>以下定位器选择策略可以与<code>By</code>对象一起使用:</p>
+<ul>
+<li>ID : 在本例中使用;根据元素的HTML <code>id</code>属性查找元素。</li>
+<li>CLASS_NAME : 用于根据其HTML类属性查找元素。为什么这个函数是<code>CLASS_NAME</code>而不是<code>CLASS</code>?使用form <code>object.CLASS</code>会给Selenium的Java库带来问题，其中.class是一个保留方法。为了保持不同语言之间Selenium语法的一致性，使用了<code>CLASS_NAME</code>。</li>
+<li>CSS_SELECTOR : 使用#idName、. classname、tagName约定，根据类、id或标记名称查找元素。</li>
+<li>LINK_TEXT : 根据包含的文本查找HTML<code>&lt;a&gt;</code> 标记。例如，可以使用(By.LINK_TEXT, “NEXT”)，”NEXT”标签会被选择出来。</li>
+<li>PARTIAL_LINK_TEXT : 类似于LINK_TEXT，但匹配部分字符串。</li>
+<li>NAME : 根据名称属性查找HTML标记。这对于HTML表单非常方便。</li>
+<li>TAG_NAME : 根据标记名称查找HTML标记。</li>
+<li>使用XPath表达式(其语法将在下面描述)来选择匹配的元素。</li>
+</ul>
+<p><strong>XPath Syntax</strong></p>
+<p>XPath (XML Path的缩写)是一种查询语言，用于导航和选择XML文档的某些部分。W3C于1999年创建，在处理XML文档时，偶尔会在Python、Java和c#等语言中使用它。</p>
+<p>虽然BeautifulSoup不支持XPath，但本书中的许多其他库(如Scrapy和Selenium)都支持。它通常可以与CSS选择器(如mytag#idname)以相同的方式使用，尽管它被设计用于更通用的情况<br>特别是XML文档而不是HTML文档。</p>
+<p>XPath语法有四个主要概念:</p>
+<ul>
+<li>根节点和非根节点<ul>
+<li><code>/div</code>只有在div节点位于文档的根节点时才会选择它</li>
+<li><code>//div</code>选择文档中任何位置的所有div。</li>
+</ul>
+</li>
+<li>属性选择<ul>
+<li><code>//@href</code>选择具有href属性的任何节点。</li>
+<li><code>//a[@href=&#39;http://google.com&#39;]</code>选择文档中指向谷歌的所有链接。</li>
+</ul>
+</li>
+<li>按位置选择节点<ul>
+<li>//a[3]选择文档中的第三个链接。</li>
+<li>//table[last()]选择文档中的最后一个表。</li>
+<li>//a[position() &lt; 3]选择文档中的前三个链接。</li>
+</ul>
+</li>
+<li>星号(*)匹配任何一组字符或节点，可用于各种情况<ul>
+<li><code>//table/tr/*</code>选择所有表中tr标记的所有子元素(这对于同时使用th和td标记选择单元格非常有用)。</li>
+<li><code>//div[@*]</code>选择所有具有任何属性的div标记。</li>
+</ul>
+</li>
+</ul>
+<p>XPath语法还有许多高级特性。多年来，它已经发展成为一种相对复杂的查询语言，具有布尔逻辑、函数(如<code>position()</code>)和这里没有讨论的各种操作符。</p>
+<p>如果有HTML或XML选择问题无法通过这里显示的函数解决，请参阅Microsoft的XPath语法页面。</p>
+<h4 id="Additional-Selenium-Webdrivers"><a href="#Additional-Selenium-Webdrivers" class="headerlink" title="Additional Selenium Webdrivers"></a>Additional Selenium Webdrivers</h4><p>在前一节中，PhantomJS驱动程序与Selenium一起使用。在大多数情况下，没有什么理由让浏览器在屏幕上弹出并开始抓取web，所以像PhantomJS这样的无头网络驱动程序可以很方便。然而，使用不同类型的web浏览器可能对运行爬虫很有用，原因如下:</p>
+<ul>
+<li>故障排除。如果您的代码正在运行PhantomJS，并且失败了，如果没有看到前面的页面，可能很难诊断失败。您还可以暂停代码执行，并像往常一样随时与web页面进行交互。</li>
+<li>测试可能依赖于特定的浏览器来运行。</li>
+<li>一个异常挑剔的网站或脚本在不同的浏览器上的表现可能略有不同。您的代码可能无法在PhantomJS中工作。</li>
+</ul>
+<p>现在，许多官方和非官方的组织都参与了为每个主要浏览器创建和维护Selenium web驱动程序。Selenium组管理这些web驱动程序的集合，以便于参考。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">firefox_driver = webdriver.Firefox(<span class="string">'&lt;path to Firefox webdriver&gt;'</span>)</span><br><span class="line">chrome_driver = webdriver.Chrome(<span class="string">'&lt;path to Chrome webdriver&gt;'</span>)</span><br><span class="line">safari_driver = webdriver.Safari(<span class="string">'&lt;path to Safari webdriver&gt;'</span>)</span><br><span class="line">ie_driver = webdriver.Ie(<span class="string">'&lt;path to Internet Explorer webdriver&gt;'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Handling-Redirects"><a href="#Handling-Redirects" class="headerlink" title="Handling Redirects"></a>Handling Redirects</h3><p>客户端重定向是由JavaScript在浏览器中执行的页面重定向，而不是在发送页面内容之前在服务器上执行的重定向。在web浏览器中访问页面时，有时很难区分它们。重定向可能发生得非常快，以至于您没有注意到加载时间上的任何延迟，并且假设客户端重定向实际上是服务器端重定向。</p>
+<p>然而，当抓取web时，差别是明显的。服务器端重定向，取决于它是如何处理的，可以很容易地由Python的urllib库遍历，而不需要Selenium的任何帮助(关于这方面的更多信息，请参阅第3章)。</p>
+<p>Selenium能够像处理其他JavaScript执行一样处理这些JavaScript重定向;然而，这些重定向的主要问题是何时停止页面执行—也就是说，如何判断页面何时完成重定向。在<code>http://pythonscraping.com/pages/javascript/redirectDemo1.html</code>上的演示页面给出了这种重定向的示例，其中有一个两秒钟的暂停。</p>
+<p>通过在页面初始加载时“监视”DOM中的元素，然后反复调用该元素，直到Selenium抛出<code>StaleElementReferenceException</code>，您可以以一种聪明的方式检测重定向;元素不再附加到页面的DOM，网站已重定向:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.remote.webelement <span class="keyword">import</span> WebElement</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> StaleElementReferenceException</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">waitForLoad</span><span class="params">(driver)</span>:</span></span><br><span class="line">    elem = driver.find_element_by_tag_name(<span class="string">"html"</span>)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> count &gt; <span class="number">20</span>:</span><br><span class="line">            print(<span class="string">"Timing out after 10 seconds and returning"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        time.sleep(<span class="number">.5</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            elem == driver.find_element_by_tag_name(<span class="string">"html"</span>)</span><br><span class="line">        <span class="keyword">except</span> StaleElementReferenceException:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line">driver = webdriver.Chrome(</span><br><span class="line">    executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>,</span><br><span class="line">    options=chrome_options)</span><br><span class="line">driver.get(<span class="string">"http://pythonscraping.com/pages/javascript/redirectDemo1.html"</span>)</span><br><span class="line">waitForLoad(driver)</span><br><span class="line">print(driver.page_source)</span><br><span class="line">driver.close()</span><br></pre></td></tr></table></figure>
+<p>此脚本每半秒检查一次页面，超时时间为10秒，不过用于检查时间和超时的时间可以根据需要轻松地向上或向下调整。</p>
+<p>或者，您可以编写一个类似的循环来检查页面的当前URL，直到URL发生更改，或者它匹配您正在寻找的特定URL。</p>
+<p>等待元素出现和消失是Selenium中的一项常见任务，您还可以使用前面的按钮加载示例中使用的相同的WebDriverWait函数。在这里，您为它提供了一个15秒的超时和一个XPath选择器，该选择器查找页面主体内容来完成相同的任务:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.common.exceptions <span class="keyword">import</span> TimeoutException</span><br><span class="line"></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line">driver = webdriver.Chrome(</span><br><span class="line">    executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>, </span><br><span class="line">    options=chrome_options)</span><br><span class="line">driver.get(<span class="string">'http://pythonscraping.com/pages/javascript/redirectDemo1.html'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    bodyElement = WebDriverWait(driver, <span class="number">15</span>).until(EC.presence_of_element_located(</span><br><span class="line">        (By.XPATH, <span class="string">'//body[contains(text(), "This is the page you are looking for!")]'</span>)))</span><br><span class="line">    print(bodyElement.text)</span><br><span class="line"><span class="keyword">except</span> TimeoutException:</span><br><span class="line">    print(<span class="string">'Did not find the element'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="A-Final-Note-on-JavaScript"><a href="#A-Final-Note-on-JavaScript" class="headerlink" title="A Final Note on JavaScript"></a>A Final Note on JavaScript</h3><p>现在大多数网站都使用JavaScript。对我们来说幸运的是，在许多情况下，这种Java脚本的使用不会影响您如何抓取页面。例如，JavaScript可能仅限于为其跟踪工具供电、控制站点的一小部分或操作下拉菜单。如果JavaScript确实影响了您抓取站点的方式，那么可以使用Selenium之类的工具轻松地执行JavaScript，以便生成您在本书第一部分中学习过的简单HTML页面。</p>
+<p><strong>记住</strong>:仅仅因为一个站点使用JavaScript并不意味着所有传统的web抓取工具都将消失。JavaScript的最终目的是生成可以由浏览器呈现的HTML和CSS代码，或者通过HTTP请求和响应与服务器进行动态通信。一旦使用了Selenium，页面上的HTML和CSS就可以像使用任何其他网站代码一样被读取和解析，HTTP请求和响应可以通过前面几章中的技术由代码发送和处理，甚至无需使用Selenium。</p>
+<p>此外，JavaScript甚至可以成为web抓取器的一个优势，因为它作为一个浏览器端内容管理系统的使用可能会向外部世界公开有用的api，让您更直接地获取数据。有关这方面的更多信息，请参见第十二章。</p>
+<p>如果您仍然难以处理特别复杂的JavaScript情况，您可以在第14章中找到关于Selenium的信息，并直接与动态网站交互，包括拖放界面。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/29/WebScraping10/" rel="next" title="WebScraping-10">
+                <i class="fa fa-chevron-left"></i> WebScraping-10
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Brief-Introduction-to-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">A Brief Introduction to JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Common-JavaScript-Libraries"><span class="nav-number">1.1.</span> <span class="nav-text">Common JavaScript Libraries</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery"><span class="nav-number">1.1.1.</span> <span class="nav-text">jQuery</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Google-Analytics"><span class="nav-number">1.1.2.</span> <span class="nav-text">Google Analytics</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Google-Maps"><span class="nav-number">1.1.3.</span> <span class="nav-text">Google Maps</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax-and-Dynamic-HTML"><span class="nav-number">2.</span> <span class="nav-text">Ajax and Dynamic HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Executing-JavaScript-in-Python-with-Selenium"><span class="nav-number">2.1.</span> <span class="nav-text">Executing JavaScript in Python with Selenium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Additional-Selenium-Webdrivers"><span class="nav-number">2.2.</span> <span class="nav-text">Additional Selenium Webdrivers</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handling-Redirects"><span class="nav-number">3.</span> <span class="nav-text">Handling Redirects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Final-Note-on-JavaScript"><span class="nav-number">4.</span> <span class="nav-text">A Final Note on JavaScript</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">286k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">4:20</span>
+  
+</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+ </span>
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NUATd6a1PUQYtIT7MpFYzq4X-gzGzoHsz',
+        appKey: 'Iny9yO41c59ioJOJc84vGygI',
+        placeholder: '如果填写邮箱，可以直接回复至您邮箱中~',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
