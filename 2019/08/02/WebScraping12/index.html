@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="JavaScript一直以来都是web爬行器的祸根。在internet的古老历史上，您可以保证向web服务器发出的请求将获取与用户发出相同请求时在web浏览器中看到的相同的数据。随着JavaScript和Ajax内容生成和加载变得越来越普遍，这种情况变得越来越不常见。在第11章中，您了解了解决这个问题的一种方法:使用Selenium自动化浏览器并获取数据。这是一件容易的事。它几乎一直都在工作。问题">
+<meta name="keywords" content="Web-Scraping,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebScraping-12">
+<meta property="og:url" content="https://purespring.top/2019/08/02/WebScraping12/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="JavaScript一直以来都是web爬行器的祸根。在internet的古老历史上，您可以保证向web服务器发出的请求将获取与用户发出相同请求时在web浏览器中看到的相同的数据。随着JavaScript和Ajax内容生成和加载变得越来越普遍，这种情况变得越来越不常见。在第11章中，您了解了解决这个问题的一种方法:使用Selenium自动化浏览器并获取数据。这是一件容易的事。它几乎一直都在工作。问题">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://purespring.top/2019/08/02/WebScraping12/1.bmp">
+<meta property="og:image" content="https://purespring.top/2019/08/02/WebScraping12/2.bmp">
+<meta property="og:image" content="https://purespring.top/2019/08/02/WebScraping12/3.bmp">
+<meta property="og:updated_time" content="2019-08-01T16:26:54.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebScraping-12">
+<meta name="twitter:description" content="JavaScript一直以来都是web爬行器的祸根。在internet的古老历史上，您可以保证向web服务器发出的请求将获取与用户发出相同请求时在web浏览器中看到的相同的数据。随着JavaScript和Ajax内容生成和加载变得越来越普遍，这种情况变得越来越不常见。在第11章中，您了解了解决这个问题的一种方法:使用Selenium自动化浏览器并获取数据。这是一件容易的事。它几乎一直都在工作。问题">
+<meta name="twitter:image" content="https://purespring.top/2019/08/02/WebScraping12/1.bmp">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://purespring.top/2019/08/02/WebScraping12/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebScraping-12 | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://purespring.top/2019/08/02/WebScraping12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WebScraping-12
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-02 00:17:14 / 修改时间：00:26:54" itemprop="dateCreated datePublished" datetime="2019-08-02T00:17:14+08:00">2019-08-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/02/WebScraping12/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/WebScraping12/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/08/02/WebScraping12/" class="leancloud_visitors" data-flag-title="WebScraping-12">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">14k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">13 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JavaScript一直以来都是web爬行器的祸根。在internet的古老历史上，您可以保证向web服务器发出的请求将获取与用户发出相同请求时在web浏览器中看到的相同的数据。随着JavaScript和Ajax内容生成和加载变得越来越普遍，这种情况变得越来越不常见。在第11章中，您了解了解决这个问题的一种方法:使用Selenium自动化浏览器并获取数据。这是一件容易的事。它几乎一直都在工作。问题是，当您有一个像Selenium一样强大和有效的锤子时，每个web刮削问题看起来都很像钉子。在本章中，您将看到完全删除JavaScript(不需要执行甚至加载它!)，直接进入数据的来源:生成它的API。</p>
+<a id="more"></a>
+<h3 id="A-Brief-Introduction-to-APIs"><a href="#A-Brief-Introduction-to-APIs" class="headerlink" title="A Brief Introduction to APIs"></a>A Brief Introduction to APIs</h3><p>尽管有无数的书籍、演讲和指南都写过关于REST、GraphQL、JSON和XML api的复杂之处，他们的核心都基于一个简单的概念。API定义了一种标准化的语法，允许软件的一个部分与另一个部分通信，即使它们可能是用不同的语言编写的，或者以其他不同的结构编写的。</p>
+<p>本节重点介绍web API(特别是允许web服务器与浏览器通信的API)，并使用术语API专门指代这种类型。但是您可能要记住，在其他上下文中，API也是一个通用术语，例如，它允许Java程序与运行在同一台机器上的Python程序通信。API并不总是“跨internet”的，也不一定涉及任何web技术。</p>
+<p>Web api通常由使用经过良好宣传和文档化的公共服务的开发人员使用。例如，ESPN为运动员信息、比赛分数等提供api。谷歌在其开发人员部分中有几十个api，用于语言翻译、分析和地理定位。</p>
+<p>例如，下面提供pathparam作为路由路径中的参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/the-api-route/pathparam</span><br></pre></td></tr></table></figure>
+<p>这提供了pathparam作为参数param1的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/the-api-route?param1=pathparam</span><br></pre></td></tr></table></figure>
+<p>这两种将变量数据传递给API的方法都经常被使用，尽管像计算机科学中的许多主题一样，关于变量应该在何时何地通过路径或参数传递的哲学争论也很激烈。</p>
+<p>来自API的响应通常以JSON或XML格式返回。JSON在现代比XML流行得多，但是您可能仍然会看到一些XML响应。许多api允许您更改响应类型，通常使用另一个参数来定义您想要的响应类型。</p>
+<p>下面是一个json格式的API响应示例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"user"</span>:&#123;<span class="string">"id"</span>: <span class="number">123</span>, <span class="string">"name"</span>: <span class="string">"Ryan Mitchell"</span>, <span class="string">"city"</span>: <span class="string">"Boston"</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是一个xml格式的API响应示例:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;user&gt;&lt;id&gt;123&lt;/id&gt;&lt;name&gt;Ryan Mitchell&lt;/name&gt;&lt;city&gt;Boston&lt;/city&gt;&lt;/user&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="HTTP-Methods-and-APIs"><a href="#HTTP-Methods-and-APIs" class="headerlink" title="HTTP Methods and APIs"></a>HTTP Methods and APIs</h4><p>在前一节中，您了解了向服务器发出GET请求以获取信息的api。通过HTTP从web服务器请求信息有四种主要方法:</p>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<li>PUT</li>
+<li>DELETE</li>
+</ul>
+<p>从技术上讲，这四个选项不止一个(如HEAD、OPTIONS和CONNECT)，但是它们很少在api中使用，您不太可能看到它们。绝大多数api都将自己局限于这四个方法，甚至是这四个方法的子集。通常可以看到只使用GET或只使用GET和POST的api。</p>
+<p><code>GET</code>是通过浏览器中的地址栏访问网站时使用的工具。GET是在调用<code>http://freegeoip.net/json /50.78.253.58</code>时使用的方法。您可以将GET看作是这样说的:“嘿，web服务器，请检索/获取此信息。”，<strong>注意</strong>：此写法已经失效。详细见下方代码。</p>
+<p>根据定义，<code>GET</code>请求不更改服务器数据库中的信息。没有什么是存储;没有修改。信息只被读取。</p>
+<p><code>POST</code>是您在填写表单或提交信息时使用的工具，这些信息可能是提供给服务器上的后端脚本的。每次你登录一个网站，你都在用你的用户名和(希望是)加密密码发出一个帖子请求。如果您使用API发出<code>POST</code>请求，您的意思是“请将此信息存储在数据库中”。</p>
+<p><code>PUT</code>在与网站交互时不太常用，但有时在api中使用。PUT请求用于更新对象或信息。例如，一个API可能需要一个POST请求来创建一个新用户，但是如果您想要更新该用户的电子邮件地址，它可能需要一个PUT请求。</p>
+<p><code>DELETE</code>用于删除对象。例如，如果将DELETE请求发送到<code>http://myapi.com/user/23</code>，它将删除具有ID的用户在公共api中不经常遇到<code>DELETE</code>方法，公共api主要用于传播信息或允许用户创建或发布信息，而不是允许用户从数据库中删除这些信息。</p>
+<p>与<code>GET</code>请求不同，<code>POST</code>、<code>PUT</code>和<code>DELETE</code>请求允许您在请求体中发送信息，除了您请求数据的URL或路由之外。</p>
+<p>就像您从web服务器接收到的响应一样，主体中的数据通常被格式化为JSON，或者不太常见的XML格式，并且该数据的格式由API的语法定义。例如，如果您正在使用在博客文章上创建评论的API，您可能会向其发出PUT请求:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/comments?post=123</span><br></pre></td></tr></table></figure>
+<p>request body 如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"title"</span>: <span class="string">"Great post about APIs!"</span>, <span class="string">"body"</span>: <span class="string">"Very informative. Really helped me</span></span><br><span class="line"><span class="string">out with a tricky technical challenge I was facing. Thanks for taking the time</span></span><br><span class="line"><span class="string">to write such a detailed blog post about PUT requests!"</span>, <span class="string">"author"</span>: &#123;<span class="string">"name"</span>: <span class="string">"Ryan</span></span><br><span class="line"><span class="string">Mitchell"</span>, <span class="string">"website"</span>: <span class="string">"http://pythonscraping.com"</span>, <span class="string">"company"</span>: <span class="string">"O'Reilly Media"</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，blog post(123)的ID作为URL中的一个参数传递，您正在创建的新评论的内容将在请求体中传递。参数和数据可以同时在参数和主体中传递。需要哪些参数以及传递这些参数的位置同样由API的语法决定。</p>
+<h3 id="Parsing-JSON"><a href="#Parsing-JSON" class="headerlink" title="Parsing JSON"></a>Parsing JSON</h3><p>在本章中，您已经了解了各种类型的api及其功能，并了解了来自这些api的JSON响应示例。现在让我们看看如何解析和使用这些信息。</p>
+<p>在本章的开头，您看到了freegeoip.net IP的示例，它将IP地址解析为物理地址</p>
+<p><strong>注意</strong>：此域名已经修改成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://api.ipstack.com/134.201.250.155?access_key = YOUR_ACCESS_KEY</span><br></pre></td></tr></table></figure>
+<p>其中<code>YOUR_ACCESS_KEY</code>是注册后可获得的准许码。</p>
+<p>您可以获取该请求的输出，并使用Python的json解析函数对其进行解码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">access_key = <span class="string">"your access key"</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCountry</span><span class="params">(ipAddress)</span>:</span></span><br><span class="line">    response = urlopen(<span class="string">'http://api.ipstack.com/'</span>+ipAddress+<span class="string">'?access_key='</span> + access_key).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    responseJson = json.loads(response)</span><br><span class="line">    <span class="keyword">return</span> responseJson.get(<span class="string">'country_code'</span>)</span><br><span class="line">print(getCountry(<span class="string">'50.78.253.58'</span>))</span><br></pre></td></tr></table></figure>
+<p>输出为：<code>US</code></p>
+<p>使用的<code>JSON</code>解析库是Python核心库的一部分。只要在顶部输入<code>import json</code>，一切就都设置好了!与许多可能将<code>JSON</code>解析为特殊<code>JSON</code>对象或<code>JSON</code>节点的语言不同，Python使用了一种更灵活的方法将<code>JSON</code>对象放入字典，将<code>JSON</code>数组放入列表，将<code>JSON</code>字符串放入字符串，等等。通过这种方式，访问和操作存储在其中的值非常容易。</p>
+<p>下面快速演示了Python的JSON库如何处理JSON字符串中可能遇到的值:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">jsonString = <span class="string">'&#123;"arrayOfNums":[&#123;"number":0&#125;,&#123;"number":1&#125;,&#123;"number":2&#125;],</span></span><br><span class="line"><span class="string">"arrayOfFruits":[&#123;"fruit":"apple"&#125;,&#123;"fruit":"banana"&#125;,</span></span><br><span class="line"><span class="string">&#123;"fruit":"pear"&#125;]&#125;'</span></span><br><span class="line">jsonObj = json.loads(jsonString)</span><br><span class="line">print(jsonObj.get(<span class="string">'arrayOfNums'</span>))</span><br><span class="line">print(jsonObj.get(<span class="string">'arrayOfNums'</span>)[<span class="number">1</span>])</span><br><span class="line">print(jsonObj.get(<span class="string">'arrayOfNums'</span>)[<span class="number">1</span>].get(<span class="string">'number'</span>) +</span><br><span class="line">jsonObj.get(<span class="string">'arrayOfNums'</span>)[<span class="number">2</span>].get(<span class="string">'number'</span>))</span><br><span class="line">print(jsonObj.get(<span class="string">'arrayOfFruits'</span>)[<span class="number">2</span>].get(<span class="string">'fruit'</span>))</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="string">'number'</span>: <span class="number">0</span>&#125;, &#123;<span class="string">'number'</span>: <span class="number">1</span>&#125;, &#123;<span class="string">'number'</span>: <span class="number">2</span>&#125;]</span><br><span class="line">&#123;<span class="string">'number'</span>: <span class="number">1</span>&#125;</span><br><span class="line"><span class="number">3</span></span><br><span class="line">pear</span><br></pre></td></tr></table></figure>
+<h3 id="Undocumented-APIs"><a href="#Undocumented-APIs" class="headerlink" title="Undocumented APIs"></a>Undocumented APIs</h3><p>到目前为止，在本章中，我们只讨论了文档化的api。它们的开发人员希望它们被公众使用，发布关于它们的信息，并假设api将被其他开发人员使用。但是绝大多数api根本没有任何已发布的文档。<br>但是为什么要创建一个没有任何公共文档的API呢?正如本章开头所提到的，这一切都与JavaScript有关。</p>
+<p>传统上，当用户请求页面时，动态网站的web服务器有几个任务:</p>
+<ul>
+<li>处理用户请求网站页面的GET请求</li>
+<li>从出现在该页面的数据库中检索数据</li>
+<li>将数据格式化为页面的HTML模板</li>
+<li>将格式化的HTML发送给用户</li>
+</ul>
+<p>随着JavaScript框架变得越来越普遍，由服务器处理的许多HTML创建任务转移到了浏览器中。服务器可能发送硬编码将HTML模板加载到用户的浏览器中，但是会发出单独的Ajax请求来加载内容并将其放入该HTML模板中的正确位置。所有这些都将发生在浏览器/客户机端。</p>
+<p>这最初是web抓取器的一个问题。他们习惯于向HTML页面发出请求，然后返回一个包含所有内容的HTML页面。相反，他们现在得到了一个没有任何内容的HTML模板。Selenium被用来解决这个问题。现在，程序员的web scraper可以成为浏览器，请求HTML模板，执行任何JavaScript，允许所有数据加载到它的位置，然后再从页面中抓取数据。由于HTML都已加载完毕，因此它本质上简化为一个以前解决过的问题，即解析和格式化现有HTML的问题。</p>
+<p>然而，由于整个内容管理系统(过去只驻留在web服务器中)已经从本质上转移到浏览器客户机，即使是最简单的网站也可能膨胀为几兆字节的内容和十几个HTTP请求。</p>
+<p>此外，当使用Selenium时，用户不必关心的所有“附加功能”都会加载。调用跟踪程序，加载侧边栏广告，调用跟踪程序为侧边栏广告。图像，CSS，第三方字体数据-所有这些都需要加载。这似乎好当你使用浏览器浏览网页的时候,但是,如果您正在编写一个web刮刀需要快速行动,收集具体数据,并将尽可能少的web服务器上的负载,可以装载一百倍比你需要的数据。</p>
+<p>但是，所有这些JavaScript、Ajax和web现代化都有一线希望:因为服务器不再将数据格式化为HTML，所以它们常常充当数据库本身的瘦包装器。这个薄薄的包装器只是从数据库中提取数据，然后通过API将数据返回给页面。</p>
+<p>当然，除了网页本身，任何人或任何东西都不打算使用这些api，因此开发人员将它们放在文档中，并假设(或希望)没有人会注意到它们。但它们确实存在。</p>
+<p>例如，纽约时报网站通过JSON加载所有搜索结果。如果你访问链接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://query.nytimes.com/search/sitesearch/#/python</span><br></pre></td></tr></table></figure>
+<p>这将显示搜索词“python”的最新新闻文章。“如果你使用<code>urllib</code>或请求库来抓取这个页面，你将不会找到任何搜索结果。它们分别通过API调用加载:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://query.nytimes.com/svc/add/v1/sitesearch.json</span><br><span class="line">?q=python&amp;spotlight=true&amp;facet=true</span><br></pre></td></tr></table></figure>
+<p>如果您要用<code>Selenium</code>加载这个页面，那么您将发出大约100个请求，并在每次搜索中传输600 - 700kb的数据。直接使用API，您只发出一个请求，并且只传输大约60kb的格式化良好的数据。</p>
+<p>在前几章中，您已经使用了Chrome检查器来检查HTML页面内容，但是现在您将把它用于一个稍微不同的目的:检查用于构造该页面的调用的请求和响应。</p>
+<p>为此，打开Chrome inspector窗口并单击Network选项卡:</p>
+<p><img src="/2019/08/02/WebScraping12/1.bmp" alt=""></p>
+<p>注意，您需要在加载页面之前打开此窗口。它在关闭时不跟踪网络呼叫。当页面加载时，每当浏览器回调web服务器以获取呈现页面的附加信息时，您将看到实时出现一行。<br>这可能包括一个API调用。</p>
+<p>寻找未文档化的api可能需要一些侦探工作(要完成侦探工作，一般来说，当你看到它的时候你就知道了。</p>
+<p>API调用往往有几个特性，这些特性对于在网络调用列表中定位它们很有用:</p>
+<ul>
+<li>它们通常包含JSON或XML。您可以使用search/filter字段过滤请求列表。</li>
+<li>对于GET请求，URL将包含传递给它们的参数值。例如，如果您正在寻找返回搜索结果的API调用，或者正在加载特定页面的数据，那么这将非常有用。只需使用您使用的搜索词、页面ID或其他标识信息过滤结果。</li>
+<li>它们通常是XHR类型。</li>
+</ul>
+<h4 id="Documenting-Undocumented-APIs"><a href="#Documenting-Undocumented-APIs" class="headerlink" title="Documenting Undocumented APIs"></a>Documenting Undocumented APIs</h4><p>api可能并不总是显而易见的，特别是在具有许多特性的大型站点中，这些特性可能在加载单个页面时进行数百次调用。然而，只要稍加练习，就能更容易地在大海捞针。</p>
+<p>在您发现正在进行API调用之后，在某种程度上对它进行文档化通常是很有用的，特别是当您的抓取器严重依赖于该调用时。您可能希望在网站上加载几个页面，在inspector console network选项卡中过滤目标API调用。通过这样做，您可以看到调用如何在页与页之间更改，并标识它接受和返回的字段。</p>
+<p>每个API调用都可以通过注意以下字段来识别和记录:</p>
+<ul>
+<li>HTTP method used</li>
+<li>Inputs<ul>
+<li>Path parameters</li>
+<li>Headers(including cookies)</li>
+<li>Body content (for PUT and POST calls)</li>
+</ul>
+</li>
+<li>Outputs<ul>
+<li>Response headers (including cookies set)</li>
+<li>Response body type</li>
+<li>Response body fields</li>
+</ul>
+</li>
+</ul>
+<h4 id="Finding-and-Documenting-APIs-Automatically"><a href="#Finding-and-Documenting-APIs-Automatically" class="headerlink" title="Finding and Documenting APIs Automatically"></a>Finding and Documenting APIs Automatically</h4><p>定位和记录api的工作看起来有些单调和算法化。这主要是因为事实就是如此。虽然一些网站可能会试图混淆浏览器获取数据的方式，这让任务变得有点棘手，但寻找和记录api基本上是一个程序化的任务。</p>
+<p>书的作者在<code>https://github.com/chell/apiscraper</code>创建了一个GitHub存储库，它尝试从这个任务中去掉一些繁重的工作。</p>
+<p>它使用Selenium、ChromeDriver和一个名为BrowserMob Proxy的库来加载页面、抓取域中的页面、分析页面加载期间发生的网络流量，并将这些请求组织成可读的API调用。</p>
+<ul>
+<li><p>apicall.py</p>
+<p>包含定义API调用(路径、参数等)的属性，以及决定两个API调用是否相同的逻辑。</p>
+</li>
+<li><p>apiFinder.py</p>
+<p>主要的爬行class。py和consoleservice.py用于启动查找api的过程。</p>
+</li>
+<li><p>browser.py</p>
+<p>只有三种方法——initialize、get和close——但是包含相对复杂的功能，可以将BrowserMob代理服务器和硒。滚动整个页面，以确保整个页面已加载、保存HTTP Archive (HAR)文件到适当的位置进行处理。</p>
+</li>
+<li><p>consoleservice.py</p>
+<p>处理来自控制台的命令并启动主APIFinder类。</p>
+</li>
+<li><p>harParser.py</p>
+<p>解析HAR文件并提取API调用。</p>
+</li>
+<li><p>html_template.html</p>
+<p>提供用于在浏览器中显示API调用的模板。</p>
+</li>
+<li><p>README.md</p>
+</li>
+<li><p>Git自述文件页面。</p>
+</li>
+</ul>
+<p>从<code>https://bmp.lightbody.net/</code>下载BrowserMob代理二进制文件，并将提取的文件放在apiscraper项目目录中。</p>
+<p>在撰写本文时，BrowserMob代理的当前版本是2.1.4，因此该脚本将假定二进制文件位于相对于根项目目录的browsermob-proxy- Proxy -2.1.4/bin/browsermob-proxy。如果不是这样，您可以在运行时提供一个不同的目录，或者(可能更容易)修改apiFinder.py中的代码。</p>
+<p>下载ChromeDriver并将其放在apiscraper项目目录中。</p>
+<p>你需要安装以下Python库:</p>
+<ul>
+<li>tldextract</li>
+<li>selebium</li>
+<li>browsermob-proxy</li>
+</ul>
+<p>设置完成后，就可以开始收集API调用了。打字:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python consoleservice.py -h</span><br></pre></td></tr></table></figure>
+<p>会给你一个列表的选择开始:</p>
+<p>usage: consoleService.py [-h] [-u [U]] [-d [D]] [-s [S]] [-c [C]] [—p]</p>
+<p></p><p><br>optional arguments:<br></p>
+<p>  -h, —help  show this help message and exit</p>
+<p>  -u [U]      Target URL. If not provided, target directory will be scanned<br>              for har files.</p>
+<p>  -d [D]      Target directory (default is “hars”). If URL is provided,<br>              directory will store har files. If URL is not provided,<br>              directory will be scanned.</p>
+<p>  -s [S]      Search term</p>
+<p>  -c [C]      Count of pages to crawl (with target URL only)</p>
+<p>  —p         Flag, remove unnecessary parameters (may dramatically increase<br>              run time)</p>
+<p>您可以为单个搜索项在单个页面上搜索API调用。例如，您可以在<code>http://target.com</code>上搜索一个返回产品数据的API页面，以填充产品页面:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python consoleservice.py -u https://www.target.com/p/rogue-one-a-star-wars-\story-blu-ray-dvd-digital-3-disc/-/A-52030319 -s &quot;Rogue One: A Star Wars Story&quot;</span><br></pre></td></tr></table></figure>
+<p>这返回的信息，包括一个URL，为一个API返回该页面的产品数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">URL: https://redsky.target.com/v2/pdp/tcin/52030319</span><br><span class="line">METHOD: GET</span><br><span class="line">AVG RESPONSE SIZE: 34834</span><br><span class="line">SEARCH TERM CONTEXT: c&quot;:&quot;786936852318&quot;,&quot;product_description&quot;:&#123;&quot;title&quot;:</span><br><span class="line">&quot;Rogue One: A Star Wars Story (Blu-ray + DVD + Digital) 3 Disc&quot;,</span><br><span class="line">&quot;long_description&quot;:...</span><br></pre></td></tr></table></figure>
+<p>使用<code>-i</code>标志，可以从提供的URL开始爬取多个页面(默认为一个页面)。这对于搜索特定关键字的所有网络流量非常有用，或者，通过省略-s搜索词标志，收集加载每个页面时发生的所有API流量。</p>
+<p>所有收集到的数据都存储为一个<code>HAR</code>文件，存储在项目根目录的默认目录<code>/ HAR</code>中，不过可以使用<code>-d</code>标志更改该目录。</p>
+<p>如果没有提供URL，还可以传入一个预先收集的HAR文件目录，用于搜索和分析。</p>
+<p>本项目提供了许多其他功能，包括:</p>
+<ul>
+<li>不必要的参数删除(删除不影响API调用返回值的GET或POST参数)</li>
+<li>多种API输出格式(命令行、HTML、JSON)</li>
+<li>区分表示单独API路由的路径参数和仅作为相同API路由的GET参数的路径参数</li>
+</ul>
+<p>随着我和其他人继续使用它进行web抓取和API收集，还计划进行进一步的开发。</p>
+<h3 id="Combining-APIs-with-Other-Data-Sources"><a href="#Combining-APIs-with-Other-Data-Sources" class="headerlink" title="Combining APIs with Other Data Sources"></a>Combining APIs with Other Data Sources</h3><p>尽管许多现代web应用程序存在的理由是采用现有数据并以更吸引人的方式对其进行格式化，但我认为在大多数情况下，这样做并不有趣。如果您使用API作为惟一的数据源，那么您所能做的最好的事情就是复制其他人已经存在的数据库，而且基本上已经发布了。更有趣的是，以一种新颖的方式将两个或多个数据源组合在一起，或者使用API作为一种工具，从一个新的角度查看被抓取的数据。</p>
+<p>让我们看一个例子，看看如何将来自api的数据与web抓取结合使用，以了解世界上哪些地方对Wikipedia贡献最大。</p>
+<p>如果你在维基百科上花了很多时间，你可能会看到一篇文章的修订历史页面，其中显示了最近的编辑列表。如果用户在编辑时登录到Wikipedia，则显示他们的用户名。如果没有登录，则记录它们的IP地址，如图。</p>
+<p><img src="/2019/08/02/WebScraping12/2.bmp" alt=""></p>
+<p>历史页面上提供的IP地址是121.97.110.145。通过使用freegeoip.net API，在撰写本文时，该IP地址来自菲律宾的奎松(IP地址有时会在地理上发生变化)。</p>
+<p>这些信息本身并不那么有趣，但是如果您可以收集关于Wikipedia编辑的许多地理数据点，以及它们发生在哪里，情况会怎样呢?几年前，我就是这么做的，并使用谷歌的地理图库创建了一个有趣的图表，显示了在英文维基百科上编辑的位置，以及维基百科是用其他语言编写的。</p>
+<p><img src="/2019/08/02/WebScraping12/3.bmp" alt=""></p>
+<p>创建一个基本脚本来抓取Wikipedia，查找修订历史页面，然后在这些修订历史页面上查找IP地址并不困难。使用第3章修改过的代码，下面的脚本就可以做到这一点:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">random.seed(datetime.datetime.now())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLinks</span><span class="params">(articleUrl)</span>:</span></span><br><span class="line">    html = urlopen(<span class="string">'http://en.wikipedia.org&#123;&#125;'</span>.format(articleUrl))</span><br><span class="line">    bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">    <span class="keyword">return</span> bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'bodyContent'</span>&#125;).findAll(<span class="string">'a'</span>, </span><br><span class="line">        href=re.compile(<span class="string">'^(/wiki/)((?!:).)*$'</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getHistoryIPs</span><span class="params">(pageUrl)</span>:</span></span><br><span class="line">    <span class="comment">#Format of revision history pages is: </span></span><br><span class="line">    <span class="comment">#http://en.wikipedia.org/w/index.php?title=Title_in_URL&amp;action=history</span></span><br><span class="line">    pageUrl = pageUrl.replace(<span class="string">'/wiki/'</span>, <span class="string">''</span>)</span><br><span class="line">    historyUrl = <span class="string">'http://en.wikipedia.org/w/index.php?title=&#123;&#125;&amp;action=history'</span>.format(pageUrl)</span><br><span class="line">    print(<span class="string">'history url is: &#123;&#125;'</span>.format(historyUrl))</span><br><span class="line">    html = urlopen(historyUrl)</span><br><span class="line">    bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line">    <span class="comment">#finds only the links with class "mw-anonuserlink" which has IP addresses </span></span><br><span class="line">    <span class="comment">#instead of usernames</span></span><br><span class="line">    ipAddresses = bs.findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'mw-anonuserlink'</span>&#125;)</span><br><span class="line">    addressList = set()</span><br><span class="line">    <span class="keyword">for</span> ipAddress <span class="keyword">in</span> ipAddresses:</span><br><span class="line">        addressList.add(ipAddress.get_text())</span><br><span class="line">    <span class="keyword">return</span> addressList</span><br><span class="line"></span><br><span class="line">links = getLinks(<span class="string">'/wiki/Python_(programming_language)'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(len(links) &gt; <span class="number">0</span>):</span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">        print(<span class="string">'-'</span>*<span class="number">20</span>) </span><br><span class="line">        historyIPs = getHistoryIPs(link.attrs[<span class="string">'href'</span>])</span><br><span class="line">        <span class="keyword">for</span> historyIP <span class="keyword">in</span> historyIPs:</span><br><span class="line">            print(historyIP)</span><br><span class="line"></span><br><span class="line">    newLink = links[random.randint(<span class="number">0</span>, len(links)<span class="number">-1</span>)].attrs[<span class="string">'href'</span>]</span><br><span class="line">    links = getLinks(newLink)</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">history url is: http://en.wikipedia.org/w/index.php?title=Programming_paradigm&amp;action=history</span><br><span class="line">223.104.186.241</span><br><span class="line">213.207.90.158</span><br><span class="line">92.115.222.143</span><br><span class="line">213.108.115.55</span><br><span class="line">2605:a601:e0c:6300:996d:68c0:fb03:af2c</span><br><span class="line">192.117.105.47</span><br><span class="line">31.203.136.191</span><br><span class="line">168.216.130.133</span><br><span class="line">2a02:c7d:a492:f200:e126:2b36:53ca:513a</span><br><span class="line">37.238.238.36</span><br><span class="line">197.255.127.246</span><br><span class="line">110.55.67.15</span><br><span class="line">193.80.242.220</span><br><span class="line">42.111.56.168</span><br><span class="line">223.230.96.108</span><br><span class="line">113.162.8.249</span><br><span class="line">39.36.182.41</span><br><span class="line">--------------------</span><br><span class="line">history url is: http://en.wikipedia.org/w/index.php?title=Object-oriented_programming&amp;action=history</span><br><span class="line">113.199.249.237</span><br><span class="line">205.251.185.250</span><br><span class="line">1.22.150.73</span><br><span class="line">121.58.212.157</span><br><span class="line">217.225.8.24</span><br><span class="line">162.204.116.16</span><br><span class="line">112.200.199.62</span><br><span class="line">117.239.185.50</span><br><span class="line">103.252.25.104</span><br><span class="line">103.74.23.139</span><br><span class="line">103.241.244.36</span><br><span class="line">2605:a601:474:600:2088:fbde:7512:53b2</span><br><span class="line">122.181.5.162</span><br><span class="line">24.93.131.140</span><br><span class="line">119.152.87.84</span><br><span class="line">93.136.125.208</span><br><span class="line">27.251.109.234</span><br><span class="line">223.230.215.145</span><br><span class="line">103.16.68.215</span><br><span class="line">170.142.177.246</span><br><span class="line">--------------------</span><br></pre></td></tr></table></figure>
+<p>这个程序使用了两个主要功能:<code>getLinks</code>(同时也是用于第三章),和新的<code>getHistoryIPs</code>搜索所有链接的内容与类<code>mw-anonuserlink</code>(表明一个匿名用户提供一个IP地址,而不是用户名)并返回一组。</p>
+<p>这段代码还使用了一种有点随意的(但对于本例来说是有效的)搜索模式来查找可以从中检索修订历史的文章。它首先检索由起始页面链接到的所有Wikipedia文章的历史记录<br>(在本例中，是关于Python编程语言的文章)。然后，它随机选择一个新的起始页面，并检索该页面链接到的所有文章的修订历史页面。它将一直持续到没有链接的页面。</p>
+<p>现在您已经有了以字符串形式检索IP地址的代码，您可以将其与上一节中的getCountry函数结合使用，以便将这些IP地址解析为国家。您将稍微修改getCountry，以便解释导致404 Not Found错误的无效或格式错误的IP地址(例如，在撰写本文时，FreeGeoIP无法解决IPv6，这可能会触发这样的错误):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getCountry</span><span class="params">(ipAddress)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = urlopen(</span><br><span class="line">            <span class="string">'http://freegeoip.net/json/&#123;&#125;'</span>.format(ipAddress)).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="keyword">except</span> HTTPError:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    responseJson = json.loads(response)</span><br><span class="line">    <span class="keyword">return</span> responseJson.get(<span class="string">'country_code'</span>)</span><br><span class="line">    </span><br><span class="line">links = getLinks(<span class="string">'/wiki/Python_(programming_language)'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(len(links) &gt; <span class="number">0</span>):</span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">        print(<span class="string">'-'</span>*<span class="number">20</span>) </span><br><span class="line">        historyIPs = getHistoryIPs(link.attrs[<span class="string">"href"</span>])</span><br><span class="line">        <span class="keyword">for</span> historyIP <span class="keyword">in</span> historyIPs:</span><br><span class="line">            country = getCountry(historyIP)</span><br><span class="line">            <span class="keyword">if</span> country <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">                print(<span class="string">'&#123;&#125; is from &#123;&#125;'</span>.format(historyIP, country))</span><br><span class="line"></span><br><span class="line">    newLink = links[random.randint(<span class="number">0</span>, len(links)<span class="number">-1</span>)].attrs[<span class="string">'href'</span>]</span><br><span class="line">    links = getLinks(newLink)</span><br></pre></td></tr></table></figure>
+<p>Here’s the sample output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">-------------------</span><br><span class="line">history url is: http://en.wikipedia.org/w/index.php?title=Programming_</span><br><span class="line">paradigm&amp;action=history</span><br><span class="line">68.183.108.13 is from US</span><br><span class="line">86.155.0.186 is from GB</span><br><span class="line">188.55.200.254 is from SA</span><br><span class="line">108.221.18.208 is from US</span><br><span class="line">141.117.232.168 is from CA</span><br><span class="line">76.105.209.39 is from US</span><br><span class="line">182.184.123.106 is from PK</span><br><span class="line">212.219.47.52 is from GB</span><br><span class="line">72.27.184.57 is from JM</span><br><span class="line">49.147.183.43 is from PH</span><br><span class="line">209.197.41.132 is from US</span><br><span class="line">174.66.150.151 is from US</span><br></pre></td></tr></table></figure>
+<h3 id="More-About-APIs"><a href="#More-About-APIs" class="headerlink" title="More About APIs"></a>More About APIs</h3><p>本章介绍了现代api通常用于访问web上的数据的几种方法，以及如何使用这些api构建更快更强大的web抓取器。如果您正在寻找构建api而不是仅仅使用它们，或者如果您想了解更多关于它们的构造和语法的理论，我推荐Leonard Richardson、Mike Amundsen和Sam Ruby (O Reilly)编写的RESTful Web api。本书对在web上使用api的理论和实践提供了一个强有力的概述。此外，Mike Amundsen有一个很有意思的视频系列，为Web设计api (O Reilly)，它教你如何创建自己的api，如果你决定以一种方便的格式向公众提供你的抓取数据，这是一件很有用的事情。</p>
+<p>虽然有些人可能会哀叹JavaScript和动态网站的无所不在，使传统的抓取和解析HTML页面的做法过时了，但我对我们的新机器人统治者表示欢迎。由于动态网站不太依赖HTML页面供人使用，而更多地依赖严格格式化的JSON文件供HTML使用，这为每个试图获得干净、格式良好的数据的人提供了便利。web不再是偶尔带有多媒体和CSS装饰的HTML页面的集合。它是数百种文件类型和数据格式的集合，一次可以快速生成数百个页面，您可以通过浏览器使用这些页面。真正的技巧通常是越过你面前的页面，抓住数据的来源。更多的</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/30/WebScraping11/" rel="next" title="WebScraping-11">
+                <i class="fa fa-chevron-left"></i> WebScraping-11
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Brief-Introduction-to-APIs"><span class="nav-number">1.</span> <span class="nav-text">A Brief Introduction to APIs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-Methods-and-APIs"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP Methods and APIs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parsing-JSON"><span class="nav-number">2.</span> <span class="nav-text">Parsing JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Undocumented-APIs"><span class="nav-number">3.</span> <span class="nav-text">Undocumented APIs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Documenting-Undocumented-APIs"><span class="nav-number">3.1.</span> <span class="nav-text">Documenting Undocumented APIs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Finding-and-Documenting-APIs-Automatically"><span class="nav-number">3.2.</span> <span class="nav-text">Finding and Documenting APIs Automatically</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combining-APIs-with-Other-Data-Sources"><span class="nav-number">4.</span> <span class="nav-text">Combining APIs with Other Data Sources</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More-About-APIs"><span class="nav-number">5.</span> <span class="nav-text">More About APIs</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">301k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">4:33</span>
+  
+</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+ </span>
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NUATd6a1PUQYtIT7MpFYzq4X-gzGzoHsz',
+        appKey: 'Iny9yO41c59ioJOJc84vGygI',
+        placeholder: '如果填写邮箱，可以直接回复至您邮箱中~',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
