@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="从谷歌的自动驾驶汽车到识别假币的自动售货机，机器视觉是一个有着深远目标和影响的巨大领域。本章主要关注该领域的一个小方面:文本识别——具体地说，如何识别和使用通过使用各种Python库在网上找到的基于文本的图像。">
+<meta name="keywords" content="Web-Scraping,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebScraping-13">
+<meta property="og:url" content="https://purespring.top/2019/08/05/WebScraping13/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="从谷歌的自动驾驶汽车到识别假币的自动售货机，机器视觉是一个有着深远目标和影响的巨大领域。本章主要关注该领域的一个小方面:文本识别——具体地说，如何识别和使用通过使用各种Python库在网上找到的基于文本的图像。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://purespring.top/2019/08/05/WebScraping13/1.png">
+<meta property="og:image" content="https://purespring.top/2019/08/05/WebScraping13/textOriginal.png">
+<meta property="og:image" content="https://purespring.top/2019/08/05/WebScraping13/2.bmp">
+<meta property="og:image" content="https://purespring.top/2019/08/05/WebScraping13/3.bmp">
+<meta property="og:image" content="https://purespring.top/2019/08/05/WebScraping13/1.bmp">
+<meta property="og:updated_time" content="2019-08-05T15:39:53.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebScraping-13">
+<meta name="twitter:description" content="从谷歌的自动驾驶汽车到识别假币的自动售货机，机器视觉是一个有着深远目标和影响的巨大领域。本章主要关注该领域的一个小方面:文本识别——具体地说，如何识别和使用通过使用各种Python库在网上找到的基于文本的图像。">
+<meta name="twitter:image" content="https://purespring.top/2019/08/05/WebScraping13/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://purespring.top/2019/08/05/WebScraping13/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebScraping-13 | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://purespring.top/2019/08/05/WebScraping13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WebScraping-13
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-05 23:34:49 / 修改时间：23:39:53" itemprop="dateCreated datePublished" datetime="2019-08-05T23:34:49+08:00">2019-08-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/05/WebScraping13/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/08/05/WebScraping13/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/08/05/WebScraping13/" class="leancloud_visitors" data-flag-title="WebScraping-13">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">22k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">20 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>从谷歌的自动驾驶汽车到识别假币的自动售货机，机器视觉是一个有着深远目标和影响的巨大领域。本章主要关注该领域的一个小方面:文本识别——具体地说，如何识别和使用通过使用各种Python库在网上找到的基于文本的图像。</p>
+<a id="more"></a>
+<p>当您不希望文本被机器人发现和读取时，使用图像代替文本是一种常见的技术。当电子邮件地址部分或全部呈现为图像时，经常可以在联系人表单中看到这一点。这取决于它的技巧，甚至可能不会被人类观众注意到，但机器人很难阅读这些图像，而这项技术足以阻止大多数垃圾邮件发送者获取你的电子邮件地址。</p>
+<p>当然，验证码利用了这样一个事实:用户可以读取安全图像，但大多数机器人不能。有些验证码比其他的更难，这个问题我们将在本书后面讨论。</p>
+<p>但验证码并不是抓取器需要图片到文本翻译帮助的唯一地方。即使在今天这个时代，许多文件都是从硬拷贝中扫描出来放到网上的，这就使得这些文件即使“隐藏在普通的视线中”，对大多数互联网来说也是不可访问的。“如果没有图像-文本功能，让人们能够访问这些文件的唯一方法就是手工输入——没有人有时间这么做。</p>
+<p>将图像转换成文本被称为光学字符识别(OCR)。一些主要的库可以执行OCR，许多其他库支持它们或构建在它们之上。这个库系统有时会变得相当复杂，所以我建议您在尝试本章中的任何练习之前阅读下一节。</p>
+<h3 id="Overview-of-Libraries"><a href="#Overview-of-Libraries" class="headerlink" title="Overview of Libraries"></a>Overview of Libraries</h3><p>Python是一种出色的语言，用于图像处理和读取、基于图像的机器学习，甚至图像创建。虽然许多库可以用于图像处理，但我们将重点关注两个库:Pillow和Tesseract。在处理和处理web上的图像时，这两个库构成了一个强大的互补组合。Pillow执行第一次扫描、清洗和过滤图像，Tesseract试图将这些图像中的形状与它的已知文本库匹配起来。本章将介绍它们的安装和基本用法，以及一些示例</p>
+<h4 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h4><p>尽管Pillow可能不是功能最齐全的图像处理库，但它拥有你可能需要的所有功能，而且有些——除非你打算用Python重写Photoshop，在这种情况下，你读错了书!Pillow还有一个优势，就是它是文档更丰富的第三方库之一，而且非常容易开箱即用。</p>
+<p>从python2的Python图像库(PIL)中分离出来。x，枕头增加支持Python 3. x。和它的前辈一样，Pillow可以让你很容易地导入和操作各种各样的滤镜、蒙版，甚至是像素特定的转换图像:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image, ImageFilter</span><br><span class="line">kitten = Image.open(<span class="string">'kitten.jpg'</span>)</span><br><span class="line">blurryKitten = kitten.filter(ImageFilter.GaussianBlur)</span><br><span class="line">blurryKitten.save(<span class="string">'kitten_blurred.jpg'</span>)</span><br><span class="line">blurryKitten.show()</span><br></pre></td></tr></table></figure>
+<p>在前面的示例中，图像kitten.jpg将在您的默认图像查看器中打开，其中添加了一个blur，并且还将以更模糊的状态保存为同一目录中的kitten_blur .jpg。<br>您将使用Pillow对图像进行预处理，使其更具机器可读性，但是正如前面提到的，除了这些简单的过滤器应用程序外，您还可以使用库做许多其他事情。要了解更多信息，请查看Pillow文档。</p>
+<h4 id="Tesseract"><a href="#Tesseract" class="headerlink" title="Tesseract"></a>Tesseract</h4><p>Tesseract是一个OCR库。由谷歌(一家以OCR和机器学习技术闻名的公司)赞助，Tesseract被广泛认为是可用的最好的、最准确的开源OCR系统。除了准确，它还非常灵活。可以训练它识别任意数量的字体(只要这些字体内部相对一致，您很快就会看到)。还可以扩展它来识别任何Unicode字符。本章使用命令行程序Tesseract及其第三方Python包装器pytesseract。两者都将被显式地命名为这两个中的一个，所以要知道，当您看到Tesseract时，我指的是命令行软件，当您看到pytesseract时，我特别指的是它的第三方Python包装器。</p>
+<ul>
+<li>在CMD中运行，<code>pip install pytesseract</code>，我的文件会放在<code>D:\Anaconda3\Lib\site-packages\pytesseract</code>中</li>
+<li>打开<code>Tesseract</code>window下载<a href="https://digi.bib.uni-mannheim.de/tesseract/" target="_blank" rel="noopener">链接</a> ，下载最新版本，下载时会有语言选项，按需求来选择语言数据。我下载到了<code>D:\Tesseract-OCR</code>这里，因此，打开<code>D:\Anaconda3\Lib\site-packages\pytesseract\pytesseract.py</code>，如下代码修改一下。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tesseract_cmd = <span class="string">'pytesseract.exe'</span></span><br><span class="line"><span class="comment">#修改成一下</span></span><br><span class="line">tesseract_cmd = <span class="string">'D:/Tesseract-OCR/tesseract.exe'</span></span><br></pre></td></tr></table></figure>
+<p>就大功告成了。<code>Pytesseract</code>除了返回如上面的代码示例所示的图像的OCR结果外，还有几个有用的特性。它可以估计框文件(每个字符边界的像素位置):</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(pytesseract.image_to_boxes(Image.open(<span class="string">'files/text_2.png'</span>)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">T 23 60 34 77 0</span><br><span class="line">h 23 60 36 77 0</span><br><span class="line">i 39 60 49 77 0</span><br><span class="line">s 52 60 67 77 0</span><br><span class="line">i 76 60 78 77 0</span><br><span class="line">s 80 60 91 73 0</span><br><span class="line">s 99 60 109 73 0</span><br><span class="line">o 111 60 122 73 0</span><br><span class="line">m 125 60 142 73 0</span><br><span class="line">e 144 60 156 73 0</span><br><span class="line">t 164 56 172 77 0</span><br><span class="line">e 164 60 170 77 0</span><br><span class="line">x 171 60 182 73 0</span><br><span class="line">t 184 60 195 73 0</span><br><span class="line">, 196 56 206 77 0</span><br><span class="line">w 216 60 229 77 0</span><br><span class="line">r 216 60 233 73 0</span><br><span class="line">i 235 60 241 73 0</span><br><span class="line">t 243 60 252 77 0</span><br><span class="line">t 253 60 259 77 0</span><br><span class="line">e 260 60 272 73 0</span><br><span class="line">n 275 60 285 73 0</span><br><span class="line">i 295 60 297 77 0</span><br><span class="line">n 300 60 310 73 0</span><br><span class="line">A 317 56 329 77 0</span><br><span class="line">r 317 60 333 77 0</span><br><span class="line">i 335 60 341 73 0</span><br><span class="line">a 343 60 345 77 0</span><br><span class="line">l 347 60 363 77 0</span><br><span class="line">, 367 56 369 62 0</span><br><span class="line">t 378 60 384 77 0</span><br><span class="line">h 387 60 397 77 0</span><br><span class="line">a 399 60 410 73 0</span><br><span class="line">t 412 60 418 77 0</span><br><span class="line">w 425 60 437 77 0</span><br><span class="line">i 425 60 442 73 0</span><br><span class="line">l 444 60 451 77 0</span><br><span class="line">l 455 60 457 77 0</span><br><span class="line">b 467 60 477 77 0</span><br><span class="line">e 479 60 491 73 0</span><br><span class="line">r 500 60 506 73 0</span><br><span class="line">e 507 60 519 73 0</span><br><span class="line">a 520 60 532 73 0</span><br><span class="line">d 534 60 545 77 0</span><br><span class="line">b 555 60 565 77 0</span><br><span class="line">y 567 55 578 73 0</span><br><span class="line">T 23 31 36 48 0</span><br><span class="line">e 35 31 46 44 0</span><br><span class="line">s 48 31 59 44 0</span><br><span class="line">s 50 31 71 48 0</span><br><span class="line">e 60 31 71 44 0</span><br><span class="line">r 72 31 84 44 0</span><br><span class="line">a 87 31 93 44 0</span><br><span class="line">c 94 31 105 44 0</span><br><span class="line">t 107 31 118 44 0</span><br><span class="line">. 118 31 130 48 0</span><br><span class="line">H 140 31 153 48 0</span><br><span class="line">e 156 31 168 44 0</span><br><span class="line">r 171 31 177 44 0</span><br><span class="line">e 178 31 189 44 0</span><br><span class="line">a 198 31 209 44 0</span><br><span class="line">r 212 31 218 44 0</span><br><span class="line">e 219 31 230 44 0</span><br><span class="line">s 239 31 249 44 0</span><br><span class="line">o 251 31 262 44 0</span><br><span class="line">m 265 31 282 44 0</span><br><span class="line">e 284 31 296 44 0</span><br><span class="line">s 304 31 315 44 0</span><br><span class="line">y 316 26 327 44 0</span><br><span class="line">m 329 31 346 44 0</span><br><span class="line">b 334 26 355 48 0</span><br><span class="line">o 349 31 360 48 0</span><br><span class="line">l 362 31 373 44 0</span><br><span class="line">s 376 31 378 48 0</span><br><span class="line">: 380 31 396 44 0</span><br><span class="line">! 407 31 410 48 0</span><br><span class="line">| 409 26 420 49 0</span><br><span class="line">@ 413 26 435 48 0</span><br><span class="line"># 436 31 449 48 0</span><br><span class="line">$ 451 29 462 49 0</span><br><span class="line">% 464 31 482 48 0</span><br><span class="line">* 485 39 494 48 0</span><br><span class="line">&amp; 496 31 510 48 0</span><br><span class="line">* 512 41 519 48 0</span><br><span class="line">( 512 26 528 49 0</span><br><span class="line">) 522 26 536 48 0</span><br></pre></td></tr></table></figure>
+<p>它还可以返回所有数据的完整输出，如置信度评分、页码、行号、框号等信息:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(pytesseract.image_to_data(Image.open(<span class="string">'files/text_2.png'</span>)))</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/05/WebScraping13/1.png" alt=""></p>
+<p>后两个文件的默认输出是空格或制表符分隔的字符串文件，但也可以作为字典或字节字符串(如果UTF-8解码不够)得到输出:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> pytesseract <span class="keyword">import</span> Output</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(pytesseract.image_to_data(Image.open(<span class="string">'files/textOriginal.png'</span>),output_type=Output.DICT))</span><br><span class="line">print(<span class="string">'-------------------'</span>)</span><br><span class="line">print(pytesseract.image_to_string(Image.open(<span class="string">'files/textOriginal.png'</span>), output_type=Output.BYTES))</span><br></pre></td></tr></table></figure>
+<p>图片是这样的：</p>
+<p><img src="/2019/08/05/WebScraping13/textOriginal.png" alt=""></p>
+<p>输入结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;level&apos;: [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 5, 5, 5, 5, 5, 5], &apos;page_num&apos;: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], &apos;block_num&apos;: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], &apos;par_num&apos;: [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], &apos;line_num&apos;: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2], &apos;word_num&apos;: [0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 0, 1, 2, 3, 4, 5, 6], &apos;left&apos;: [0, 23, 23, 23, 23, 76, 99, 164, 215, 295, 317, 378, 425, 467, 500, 555, 23, 23, 140, 198, 239, 304, 407], &apos;top&apos;: [0, 26, 26, 26, 26, 26, 30, 26, 26, 26, 26, 26, 26, 26, 26, 26, 54, 55, 55, 59, 59, 55, 54], &apos;width&apos;: [600, 555, 555, 555, 44, 15, 57, 42, 70, 15, 52, 40, 32, 24, 45, 23, 513, 107, 49, 32, 57, 92, 129], &apos;height&apos;: [103, 51, 51, 22, 17, 17, 13, 21, 17, 17, 21, 17, 17, 17, 17, 22, 23, 17, 17, 13, 13, 22, 23], &apos;conf&apos;: [&apos;-1&apos;, &apos;-1&apos;, &apos;-1&apos;, &apos;-1&apos;, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 96, &apos;-1&apos;, 96, 96, 96, 96, 90, 64], &apos;text&apos;: [&apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;&apos;, &apos;This&apos;, &apos;is&apos;, &apos;some&apos;, &apos;text,&apos;, &apos;written&apos;, &apos;in&apos;, &apos;Arial,&apos;, &apos;that&apos;, &apos;will&apos;, &apos;be&apos;, &apos;read&apos;, &apos;by&apos;, &apos;&apos;, &apos;Tesseract.&apos;, &apos;Here&apos;, &apos;are&apos;, &apos;some&apos;, &apos;symbols:&apos;, &apos;!|@#$%&amp;*()&apos;]&#125;</span><br><span class="line">-------------------</span><br><span class="line">b&apos;This is some text, written in Arial, that will be read by\nTesseract. Here are some symbols: !|@#$%&amp;*()\n\x0c&apos;</span><br></pre></td></tr></table></figure>
+<p>本章结合使用了<code>pytesseract</code>库和命令行以及通过子进程库从Python触发<code>Tesseract</code>。虽然<code>pytesseract</code>库非常有用和方便，但是它不能执行一些<code>Tesseract</code>函数，所以最好熟悉所有方法。</p>
+<h4 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h4><p>虽然对于简单的OCR并不需要NumPy，但是如果您想训练Tesseract识别本章后面介绍的其他字符集或字体，就需要它。在后面的一些代码示例中，您还将使用它来完成简单的数学任务(比如加权平均)。</p>
+<p>即使您不打算运行任何使用它的代码示例，我也强烈建议安装它或将它添加到您的Python库中。它使Python的内置数学库更加完善，并具有许多有用的特性，特别是对于数字列表的操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">numbers = [<span class="number">100</span>, <span class="number">102</span>, <span class="number">98</span>, <span class="number">97</span>, <span class="number">103</span>]</span><br><span class="line">print(np.std(numbers))</span><br><span class="line">print(np.mean(numbers))</span><br></pre></td></tr></table></figure>
+<h3 id="Processing-Well-Formatted-Text"><a href="#Processing-Well-Formatted-Text" class="headerlink" title="Processing Well-Formatted Text"></a>Processing Well-Formatted Text</h3><p>如果幸运的话，您需要处理的大部分文本将相对干净，格式也很好。格式良好的文本通常满足几个要求，尽管“混乱”和“格式良好”之间的界限可能是主观的。</p>
+<p>一般来说，格式良好的文本:</p>
+<ul>
+<li>用一种标准字体书写(不包括手写字体、草书字体或过分装饰的字体);</li>
+<li>如复制或拍照，线条极清晰，无复制伪影或暗斑;</li>
+<li>排列整齐，没有倾斜的字母;和</li>
+<li>不运行的图像，也没有切断文字或边缘的图像</li>
+</ul>
+<p>有些东西可以在预处理中固定下来。例如，可以将图像转换为灰度，可以调整亮度和对比度，还可以根据需要裁剪和旋转图像。然而，一些基本的限制可能需要更广泛的培训。</p>
+<p>您可以从命令行运行Tesseract来读取这个文件，并将结果写入文本文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract text.tif textoutput | cat textoutput.txt</span><br></pre></td></tr></table></figure>
+<p>输出是关于Tesseract库的一行信息，表示它正在运行，然后是新创建的<code>textoutput.txt</code>的内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Tesseract Open Source OCR Engine v3.02.02 with Leptonica</span><br><span class="line">This is some text, written in Arial, that will be read by</span><br><span class="line">Tesseract. Here are some symbols: !@#$%&quot;&amp;‘()</span><br></pre></td></tr></table></figure>
+<p>您可以看到，虽然符号^和*分别被解释为双引号和单引号，但是结果基本上是准确的。不过，总的来说，这可以让你相当舒服地阅读文本。</p>
+<p>在模糊图像文本、创建一些JPG压缩工件并添加一个轻微的背景渐变之后，结果会变得更糟</p>
+<p><img src="/2019/08/05/WebScraping13/2.bmp" alt=""></p>
+<p>Tesseract无法很好地处理这幅图像，主要是由于背景渐变，产生如下输出:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This is some text, written In Arlal, that&quot;</span><br><span class="line">Tesseract. Here are some symbols: _</span><br></pre></td></tr></table></figure>
+<p>请注意，一旦背景渐变使文本更难区分，文本就会被切断，而且每一行的最后一个字符都是错误的，因为<code>Tesseract</code>徒劳地试图理解它。此外，JPG构件和模糊使得<code>Tesseract</code>很难区分小写i和大写i以及数字1。</p>
+<p>这就是使用Python脚本首先清理图像的地方。使用<code>Pillow</code>库，您可以创建一个阈值过滤器来去除背景中的灰色，显示文本，并使图像更清晰，以便<code>Tesseract</code>读取。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanFile</span><span class="params">(filePath, newFilePath)</span>:</span></span><br><span class="line">	image = Image.open(filePath)</span><br><span class="line">	<span class="comment">#Set a threshold value for the image, and save</span></span><br><span class="line">	image = image.point(<span class="keyword">lambda</span> x: <span class="number">0</span> <span class="keyword">if</span> x &lt; <span class="number">143</span> <span class="keyword">else</span> <span class="number">255</span>)</span><br><span class="line">	image.save(newFilePath)</span><br><span class="line">	<span class="keyword">return</span> image</span><br><span class="line">image = cleanFile(<span class="string">'files/textBad.png'</span>, <span class="string">'files/textCleaned.png'</span>)</span><br><span class="line"><span class="comment">#call tesseract to do OCR on the newly created image</span></span><br><span class="line">print(pytesseract.image_to_string(image))</span><br></pre></td></tr></table></figure>
+<p>生成的图像，自动创建为<code>textclean.png</code>，如图所示:</p>
+<p><img src="/2019/08/05/WebScraping13/3.bmp" alt=""></p>
+<p>除了一些难以辨认或缺少标点符号外，文本至少对我们来说是可读的。Tesseract竭尽全力:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This us some text‘ written In Anal, that will be read by</span><br><span class="line">Tesseract Here are some symbols: !@#$%&quot;&amp;&apos;()</span><br></pre></td></tr></table></figure>
+<p>句号和逗号非常小，它们是这幅图像争吵的第一个受害者，几乎从我们和Tesseract的视野中消失。还有一个不幸的误解是把Arial误译成Anal，这是Tesseract把r和i解释成单个字符n的结果。</p>
+<p>尽管如此，这还是比之前的版本有了改进，在之前的版本中，几乎有一半的文本被剪掉了。Tesseract最大的缺点似乎是背景亮度不同。Tesseract的算法试图在阅读文本之前自动调整图像的对比度，但是您可以使用Pillow library这样的工具自己完成这项工作，从而获得更好的结果。</p>
+<p>在提交到Tesseract之前，您一定要修复那些倾斜的、大面积非文本的或有其他问题的图像。</p>
+<h4 id="Adjusting-Images-Automatically"><a href="#Adjusting-Images-Automatically" class="headerlink" title="Adjusting Images Automatically"></a>Adjusting Images Automatically</h4><p>在前面的例子中，为了让<code>Tesseract</code>读取图像，实验中选择143作为理想阈值，将所有图像像素调整为黑色或白色。但是，如果您有许多图像，所有的图像都有稍微不同的灰度问题，并且无法合理地手动调整所有这些图像，情况会怎样呢?找到最好的解决方案的一种方法(或者至少是一个很好的一个)是运行超正方体对一系列图像调整到不同的价值观和算法选择一个最好的结果,以某种组合的字符串的字符数和/或超正方体可以阅读,和信心,它读取这些字符。</p>
+<p>确切地说，您使用的算法可能会因应用程序的不同而略有不同，但这是迭代图像处理阈值以找到“最佳”设置的一个例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> pytesseract <span class="keyword">import</span> Output</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanFile</span><span class="params">(filePath, threshold)</span>:</span></span><br><span class="line">    image = Image.open(filePath)</span><br><span class="line">    <span class="comment">#Set a threshold value for the image, and save</span></span><br><span class="line">    image = image.point(<span class="keyword">lambda</span> x: <span class="number">0</span> <span class="keyword">if</span> x&lt;threshold <span class="keyword">else</span> <span class="number">255</span>)</span><br><span class="line">    <span class="keyword">return</span> image</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getConfidence</span><span class="params">(image)</span>:</span></span><br><span class="line">    data = pytesseract.image_to_data(image, output_type=Output.DICT)</span><br><span class="line">    text = data[<span class="string">'text'</span>]</span><br><span class="line">    confidences = []</span><br><span class="line">    numChars = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(text)):</span><br><span class="line">        <span class="keyword">if</span> int(data[<span class="string">'conf'</span>][i]) &gt; <span class="number">-1</span>:</span><br><span class="line">            confidences.append(data[<span class="string">'conf'</span>][i])</span><br><span class="line">            numChars.append(len(text[i]))</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> np.average(confidences, weights=numChars), sum(numChars)</span><br><span class="line">    </span><br><span class="line">filePath = <span class="string">'files/textBad.png'</span></span><br><span class="line"></span><br><span class="line">start = <span class="number">80</span></span><br><span class="line">step = <span class="number">5</span></span><br><span class="line">end = <span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> threshold <span class="keyword">in</span> range(start, end, step):</span><br><span class="line">    image = cleanFile(filePath, threshold)</span><br><span class="line">    scores = getConfidence(image)</span><br><span class="line">    print(<span class="string">'threshold: &#123;&#125;, confidence: &#123;&#125;, numChars '</span>.format(str(threshold), str(scores[<span class="number">0</span>]), str(scores[<span class="number">1</span>])))</span><br></pre></td></tr></table></figure>
+<p>这个脚本有两个功能:</p>
+<ul>
+<li><p>cleanFile</p>
+<p>接受一个原始的“坏”文件和一个阈值变量来运行PIL阈值工具。它处理文件并返回PIL图像对象。</p>
+</li>
+<li><p>getConfidence</p>
+<p>接受清洗后的PIL图像对象，并通过Tesseract运行它。它计算每个已识别字符串的平均置信度(由该字符串中的字符数加权)，以及已识别字符的数量。</p>
+<p>通过改变阈值，得到每个值的置信度和识别字符的个数，得到输出:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">threshold: 80, confidence: 61.8333333333 numChars 18</span><br><span class="line">threshold: 85, confidence: 64.9130434783 numChars 23</span><br><span class="line">threshold: 90, confidence: 62.2564102564 numChars 39</span><br><span class="line">threshold: 95, confidence: 64.5135135135 numChars 37</span><br><span class="line">threshold: 100, confidence: 60.7878787879 numChars 66</span><br><span class="line">threshold: 105, confidence: 61.9078947368 numChars 76</span><br><span class="line">threshold: 110, confidence: 64.6329113924 numChars 79</span><br><span class="line">threshold: 115, confidence: 69.7397260274 numChars 73</span><br><span class="line">threshold: 120, confidence: 72.9078947368 numChars 76</span><br><span class="line">threshold: 125, confidence: 73.582278481 numChars 79</span><br><span class="line">threshold: 130, confidence: 75.6708860759 numChars 79</span><br><span class="line">threshold: 135, confidence: 76.8292682927 numChars 82</span><br><span class="line">threshold: 140, confidence: 72.1686746988 numChars 83</span><br><span class="line">threshold: 145, confidence: 75.5662650602 numChars 83</span><br><span class="line">threshold: 150, confidence: 77.5443037975 numChars 79</span><br><span class="line">threshold: 155, confidence: 79.1066666667 numChars 75</span><br><span class="line">threshold: 160, confidence: 78.4666666667 numChars 75</span><br><span class="line">threshold: 165, confidence: 80.1428571429 numChars 70</span><br><span class="line">threshold: 170, confidence: 78.4285714286 numChars 70</span><br><span class="line">threshold: 175, confidence: 76.3731343284 numChars 67</span><br><span class="line">threshold: 180, confidence: 76.7575757576 numChars 66</span><br><span class="line">threshold: 185, confidence: 79.4920634921 numChars 63</span><br><span class="line">threshold: 190, confidence: 76.0793650794 numChars 63</span><br><span class="line">threshold: 195, confidence: 70.6153846154 numChars 65</span><br></pre></td></tr></table></figure>
+<p>无论是对结果的平均信心，还是识别的字符数，都有一个明显的趋势。两者都趋向于在145的阈值附近达到峰值，这接近手动找到的143的“理想”结果。</p>
+<p>阈值为140和145都给出了可识别字符的最大数量(83)，但是对于那些找到的字符，阈值145给出了最高的可信度，因此您可能希望使用该结果并返回在该阈值下识别的文本，该文本是图像包含哪些文本的“最佳猜测”。</p>
+<p>当然，仅仅找到“大多数”字符并不一定意味着所有这些字符都是真实的。在某些阈值下，Tesseract可以将单个字符分割成多个字符，或者将图像中的随机噪声解释为实际上不存在的文本字符。在这种情况下，您可能希望更多地依赖于每个得分的平均信心。</p>
+<p>例如，如果您发现以下结果(部分):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">threshold: 145, confidence: 75.5662650602 numChars 83</span><br><span class="line">threshold: 150, confidence: 97.1234567890 numChars 82</span><br></pre></td></tr></table></figure>
+<p>如果只丢失一个字符，您的信心就增加了20%以上，并且假设阈值为145的结果是不正确的，或者可能分割了一个字符，或者发现了一些不存在的东西，那么您很可能会毫不犹豫地接受这个结果。</p>
+<p>这是一些预先的实验，以完善您的阈值选择算法可能会派上用场。例如,你可能想要选择的分数的乘积的信心和字符的数量最大化(在这种情况下,145仍然赢得了6272的产物,和在我们的虚构的示例中,阈值150会赢的产品7964)和其他指标。注意，这种类型的选择算法也适用于任意的PIL工具值，而不仅仅是阀值。此外，您还可以使用它来选择两个或多个值，方法是改变每个值的值，并以类似的方式选择最佳结果得分。显然，这种类型的选择算法是计算密集型的。你在每张图片上运行PIL和Tesseract很多次，但是如果你提前知道理想的阈值，你只需要运行一次。</p>
+<p>请记住，当您开始处理正在处理的图像时，您可能会注意到理想值中的模式。实际上，您可能只需要尝试130到180之间的阈值，而不是尝试80到200之间的每个阈值。您甚至可以采用另一种方法，选择阈值，例如，第一次迭代间隔20个阈值，然后使用贪婪算法，通过减小在前一次迭代中找到的最佳解决方案之间阈值的步长，来获得最佳结果。当您处理多个变量时，这也可能是最有效的。</p>
+<h4 id="Scraping-Text-from-Images-on-Websites"><a href="#Scraping-Text-from-Images-on-Websites" class="headerlink" title="Scraping Text from Images on Websites"></a>Scraping Text from Images on Websites</h4><p>使用Tesseract从硬盘上的图像中读取文本似乎并不那么令人兴奋，但是当与web scraper一起使用时，它可以成为一个强大的工具。图像可能会无意中混淆网站上的文本(与本地餐馆网站上菜单的JPG副本一样)，但它们也可能有意地隐藏文本，在下一个示例中我将展示这一点。尽管Amazon的robots.txt文件允许抓取站点的产品页面，但通常不会被路过的机器人获取图书预览。这是因为图书预览是通过用户触发的Ajax脚本加载的，图像被小心地隐藏在div层之下。对于一般的网站访问者来说，它们可能更像Flash演示而不是图像文件。当然，即使你能看到这些图片，作为文本来阅读也不是一件小事。下面的脚本完成了这一壮举:它导航到托尔斯泰《伊凡·伊里奇之死》的大字印刷版本，打开阅读器，收集图像url，然后系统地下载、阅读和打印每个url的文本。请注意，这段代码依赖于Amazon清单以及Amazon网站的几个架构特性才能正确运行。如果该列表下降或被替换，请使用预览功能免费替换另一本书的URL(我发现大字体、无衬线字体工作得很好)。</p>
+<p>因为这是一个相对复杂的代码，它借鉴了前几章的多个概念，所以我在整个代码中添加了注释，以便更容易理解正在发生的事情:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlretrieve</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create new Selenium driver</span></span><br><span class="line">driver = webdriver.Chrome(executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'</span>)</span><br><span class="line"></span><br><span class="line">driver.get(</span><br><span class="line">    <span class="string">'https://www.amazon.com/Death-Ivan-Ilyich-Nikolayevich-Tolstoy/dp/1427027277'</span>)</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Click on the book preview button</span></span><br><span class="line">driver.find_element_by_id(<span class="string">'imgBlkFront'</span>).click()</span><br><span class="line">imageList = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># Wait for the page to load</span></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="string">'pointer'</span> <span class="keyword">in</span> driver.find_element_by_id(<span class="string">'sitbReaderRightPageTurner'</span>).get_attribute(<span class="string">'style'</span>):</span><br><span class="line">    <span class="comment"># While the right arrow is available for clicking, turn through pages</span></span><br><span class="line">    driver.find_element_by_id(<span class="string">'sitbReaderRightPageTurner'</span>).click()</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="comment"># Get any new pages that have loaded (multiple pages can load at once,</span></span><br><span class="line">    <span class="comment"># but duplicates will not be added to a set)</span></span><br><span class="line">    pages = driver.find_elements_by_xpath(</span><br><span class="line">        <span class="string">'//div[@class=\'pageImage\']/div/img'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> len(pages):</span><br><span class="line">        print(<span class="string">'No pages found'</span>)</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> pages:</span><br><span class="line">        image = page.get_attribute(<span class="string">'src'</span>)</span><br><span class="line">        print(<span class="string">'Found image: &#123;&#125;'</span>.format(image))</span><br><span class="line">        <span class="keyword">if</span> image <span class="keyword">not</span> <span class="keyword">in</span> imageList:</span><br><span class="line">            urlretrieve(image, <span class="string">'page.jpg'</span>)</span><br><span class="line">            imageList.append(image)</span><br><span class="line">            print(pytesseract.image_to_string(Image.open(<span class="string">'page.jpg'</span>)))</span><br><span class="line"></span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<p>虽然这个脚本理论上可以在任何类型的Selenium webdriver上运行，但我发现它目前在Chrome上运行得最可靠。正如您以前使用Tesseract阅读器时所经历的那样，它打印了本书的许多长段落，大部分都很清晰，如第一章的预览所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Chapter I</span><br><span class="line">During an Interval In the Melvmskl trial In the large</span><br><span class="line">building of the Law Courts the members and public</span><br><span class="line">prosecutor met in [van Egorowch Shebek‘s private</span><br><span class="line">room, where the conversation turned on the celebrated</span><br><span class="line">Krasovski case. Fedor Vasillevich warmly maintained</span><br><span class="line">that it was not subject to their jurisdiction, Ivan</span><br><span class="line">Egorovich maintained the contrary, while Peter</span><br><span class="line">ivanowch, not havmg entered into the discussmn at</span><br><span class="line">the start, took no part in it but looked through the</span><br><span class="line">Gazette which had Just been handed in.</span><br><span class="line">“Gentlemen,” he said, “Ivan Ilych has died!&quot;</span><br></pre></td></tr></table></figure>
+<p>然而，很多单词都有明显的错误，比如“Melvmsl”而不是“Melvinski”，“discussmn”而不是“discussion”。许多这类错误都可以通过根据字典上的单词列表进行猜测来纠正(也许还可以根据相关专有名词如“Melvinski”进行添加)。</p>
+<p>偶尔一个错误可能跨越整个单词，如在文本的第3页:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it is he who is dead and not 1.</span><br></pre></td></tr></table></figure>
+<p>在这种情况下，单词“I”被字符“1”替换。“除了单词字典，马尔科夫链分析在这里可能很有用。如果文本的任何部分包含一个非常不常见的短语(“and not 1”)，那么可以假定文本实际上是更常见的短语(“and not I”)。</p>
+<p>当然，这些字符替换遵循可预测的模式是有帮助的:vi变成w, I变成1。如果这些替换在您的文本中频繁发生，您可能会创建一个列表，用于尝试新单词和短语，选择最有意义的解决方案。一种方法可能是替换经常混淆的字符，并使用与字典中的单词匹配的解决方案，或者使用可识别(或最常见)的n-gram。如果您采用这种方法，请务必阅读第9章，以获得更多关于文本处理和自然语言处理的信息。虽然本例中的文本是一种常见的sans-serif字体，并且Tesseract应该能够相对轻松地识别它，但是有时进行一些再培训也有助于提高准确性。下一节将讨论另一种方法，使用少量的前期投资来解决文本混乱的问题。通过向Tesseract提供大量具有已知值的文本图像集合，可以教会Tesseract在未来以更高的精度和准确度识别相同的字体，即使文本中偶尔会出现背景和定位问题。</p>
+<h3 id="Reading-CAPTCHAs-and-Training-Tesseract"><a href="#Reading-CAPTCHAs-and-Training-Tesseract" class="headerlink" title="Reading CAPTCHAs and Training Tesseract"></a>Reading CAPTCHAs and Training Tesseract</h3><p>尽管大多数人都熟悉CAPTCHA这个词，但是很少有人知道它代表什么:(Completely Automated Public Turing Test to Tell Computers and Humans Apart)完全自动化的公共图灵测试来告诉计算机和人类分开。它笨拙的首字母缩略词暗示了它在阻碍完全可用的web界面方面所扮演的相当笨拙的角色，因为人类和非人类机器人常常难以解决CAPTCHA测试。</p>
+<p>具有讽刺意味的是，在过去的60年里，我们从使用这些测试来测试机器到使用它们来测试我们自己，结果好坏参半。谷歌最近关闭了他们臭名昭著的困难的reCAPTCHA，这在很大程度上是因为它倾向于屏蔽合法的网站用户。其他大多数验证码都比较简单。例如，Drupal是一个流行的基于php的内容管理系统，它有一个流行的CAPTCHA模块，可以生成不同难度的CAPTCHA图像。默认图像如图所示。</p>
+<p><img src="/2019/08/05/WebScraping13/1.bmp" alt=""></p>
+<p>与其他验证码相比，是什么让这个验证码对人类和机器来说如此容易阅读?</p>
+<ul>
+<li>字符之间不会重叠，也不会横向交叉到彼此的空间中。也就是说，可以在每个字符周围绘制一个整洁的矩形，而不重叠任何其他字符。</li>
+<li>没有任何背景图像、线条或其他干扰OCR程序的垃圾。</li>
+<li>从这张图中并不明显，但是在字体上有一些变化验证码使用。它在干净的无衬线字体之间交替使用(如字符中所示)“4”和“M”)以及手写字体(如字符“M”所示，“C”和“3”)。</li>
+<li>白色的背景与深色的文字形成了强烈的对比。</li>
+</ul>
+<p>不过，这个验证码确实抛出了一些曲线，这使得OCR程序阅读起来很有挑战性:</p>
+<ul>
+<li>同时使用字母和数字，增加了潜在字符的数量。</li>
+<li>字母的随机倾斜可能会让OCR软件感到困惑，但对人类来说仍然很容易阅读。</li>
+<li>相对奇怪的手写字体带来了特殊的挑战，“C”和“3”多了几行，小写字母“m”也小得不寻常，需要额外的训练才能让电脑熟悉。</li>
+</ul>
+<p>当您使用命令在此映像上运行Tesseract时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract captchaExample.png output</span><br></pre></td></tr></table></figure>
+<p>你得到这个output.txt文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4N\,,,C&lt;3</span><br></pre></td></tr></table></figure>
+<p>它得到了正确的4、C和3，但是它显然不能很快填满CAPTCHAprotected字段。</p>
+<h4 id="Training-Tesseract"><a href="#Training-Tesseract" class="headerlink" title="Training Tesseract"></a>Training Tesseract</h4><p>为了训练Tesseract识别文字，无论是晦涩难读的字体还是验证码，你需要给每个字符提供多个例子。这部分你可能会想要排一个好的播客或电影，因为这将是几个小时相当无聊的工作。第一步是将验证码的多个示例下载到一个目录中。编译的示例数量将取决于验证码的复杂性;我在CAPTCHA培训中使用了100个样本文件(总共500个字符，平均每个符号大约有8个示例)，这似乎非常有效。</p>
+<p>我建议用它所代表的CAPTCHA解决方案(例如，4MmC3.jpg)来命名图像。我发现这有助于在大量文件之间进行快速的错误检查;您可以以缩略图的形式查看所有文件，并轻松地将图像与其图像名称进行比较。这也大大有助于后续步骤中的错误检查。</p>
+<p>第二步是准确地告诉Tesseract每个字符是什么以及它在图像中的位置。这包括为每个CAPTCHA映像创建一个框文件。一个框文件是这样的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 15 26 33 55 0</span><br><span class="line">M 38 13 67 45 0</span><br><span class="line">m 79 15 101 26 0</span><br><span class="line">C 111 33 136 60 0</span><br><span class="line">3 147 17 176 45 0</span><br></pre></td></tr></table></figure>
+<p>第一个符号是所表示的字符，接下来的四个数字表示勾勒出图像的矩形框的坐标，最后一个数字是用于使用多页文档进行培训的页码(对于我们来说是0)。</p>
+<p>显然，手工创建这些box文件并不有趣，但是各种工具可以帮助您解决这个问题。我喜欢在线工具<code>Tesseract OCR Chopper</code>，因为它不需要安装或额外的库，可以在任何有浏览器的机器上运行，而且相对容易使用。上传图片，如果需要额外的框，单击底部的Add按钮，如果需要，调整框的大小，并将新的.box文件文本复制粘贴到一个新文件中。</p>
+<p>框文件必须以纯文本形式保存，扩展名为<code>. Box</code>。与图像文件一样，根据它们所代表的CAPTCHA解决方案(例如，4mmc .box)来命名框文件也很方便。同样，这使得根据文件名对<code>.box</code>文件文本的内容进行双重检查变得很容易，如果按照文件名对数据目录中的所有文件进行排序，则再次针对与之匹配的图像文件进行检查。同样，您需要创建大约100个这样的文件，以确保您拥有足够的数据。此外，Tesseract有时会因为不可读而丢弃文件，所以您可能希望在此之上有一些缓冲空间。如果你发现你的OCR结果不像你想的那么好，或者Tesseract被某些字符绊倒，这是一个很好的调试步骤，创建额外的训练数据，然后再试一次。</p>
+<p>在创建一个充满.box文件和图像文件的数据文件夹之后，将该数据复制到备份文件夹中，然后再对其进行任何操作。尽管在数据上运行培训脚本不太可能删除任何内容，但是如果要在.box文件的创建中花费数小时的时间，那么这比后悔要安全得多。此外，能够删除一个充满已编译数据的杂乱目录，然后重试也是一件好事。</p>
+<p>执行所有数据分析和创建Tesseract所需的培训文件需要六个步骤。有一些工具可以为您提供相应的源映像和.box文件，但遗憾的是，目前还没有针对Tesseract 3.02的工具。<br>我用Python编写了一个解决方案，它对一个包含图像和框文件的文件进行操作，并自动创建所有必要的培训文件。</p>
+<p>这个程序的初始设置和步骤可以在类的<code>_init__</code>和<code>runAll</code>方法中看到:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">	languageName = <span class="string">'eng'</span></span><br><span class="line">	fontName = <span class="string">'captchaFont'</span></span><br><span class="line">	directory = <span class="string">'&lt;path to images&gt;'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">runAll</span><span class="params">(self)</span>:</span></span><br><span class="line">	self.createFontFile()</span><br><span class="line">	self.cleanImages()</span><br><span class="line">	self.renameFiles()</span><br><span class="line">	self.extractUnicode()</span><br><span class="line">	self.runShapeClustering()</span><br><span class="line">	self.runMfTraining()</span><br><span class="line">	self.runCnTraining()</span><br><span class="line">	self.createTessData()</span><br></pre></td></tr></table></figure>
+<p>这里只需要设置三个变量，它们非常简单:</p>
+<ul>
+<li><p>languageName</p>
+<p>Tesseract使用三个字母的语言代码来理解它所查看的语言。在大多数情况下，您可能希望使用英语的eng。</p>
+</li>
+<li><p>fontName</p>
+<p>所选字体的名称。这可以是任何东西，但必须是一个没有空格的单词。</p>
+</li>
+<li><p>directory</p>
+<p>包含所有映像和框文件的目录。我建议您将此路径设置为绝对路径，但如果使用相对路径，则需要将其设置为运行Python代码的位置的相对路径。如果它是绝对的，则可以在机器上的任何位置运行代码。</p>
+</li>
+</ul>
+<p>让我们看一下使用的各个函数。</p>
+<p><code>createFontFile</code>创建一个必要的文件，<code>font_properties</code>，让Tesseract知道您正在创建的新字体:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">captchaFont 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+<p>该文件由字体名称组成，后跟1和0，表示是否应该考虑斜体、粗体或其他版本的字体。(使用这些属性训练字体是一项有趣的练习，但不幸超出了本书的范围。)</p>
+<p><code>cleanImages</code> 创建所有找到的图像文件的高对比度版本，将它们转换为灰度，并执行其他操作，使OCR程序更容易读取图像文件。如果您正在处理CAPTCHA图像中的视觉垃圾，这些垃圾在后期处理中可能很容易过滤掉，那么可以在这里添加额外的处理。</p>
+<p><code>renameFiles</code> 用Tesseract要求的名称重命名所有.box文件及其对应的图像文件(这里的文件编号是连续的数字，以便将多个文件分开):</p>
+<ul>
+<li><code>&lt;languageName&gt;.&lt;fontName&gt;.exp&lt;fileNumber&gt;.box</code></li>
+<li><code>&lt;languageName&gt;.&lt;fontName&gt;.exp&lt;fileNumber&gt;.tiff</code></li>
+</ul>
+<p><code>extractUnicode</code>查看所有创建的<code>.box</code>文件，并确定要训练的可用字符的总数。生成的Unicode文件将告诉您找到了多少个不同的字符，这可能是快速查看是否遗漏了什么内容的好方法。</p>
+<p>接下来的三个函数<code>runshapeclu</code>、<code>runMfTraining</code>和<code>runCtTraining</code>分别创建文件<code>shapetable</code>、<code>pfftable</code>和<code>normproto</code>。这些都提供了关于每个字符的几何形状和形状的信息，还提供了统计信息，Tesseract使用这些信息来计算给定字符是一种或另一种类型的概率。</p>
+<p>最后，Tesseract对每个编译后的数据文件夹重新命名，以所需的语言名称作为前缀(例如，<code>shapetable</code>被重命名为<code>eng.shapetable</code>)，并将所有这些文件编译成最终的培训数据文件<code>eng.traineddata</code>。</p>
+<p>这一小节我是真没看懂。。。代码也没跑通，放弃了</p>
+<h3 id="Retrieving-CAPTCHAs-and-Submitting-Solutions"><a href="#Retrieving-CAPTCHAs-and-Submitting-Solutions" class="headerlink" title="Retrieving CAPTCHAs and Submitting Solutions"></a>Retrieving CAPTCHAs and Submitting Solutions</h3><p>许多流行的内容管理系统经常被预先编程为具有这些用户注册页面的已知位置的机器人的注册发送垃圾邮件。例如，在<code>http://pythonscraping.com</code>网站上，即使是验证码(公认的弱验证码)也无法抑制注册的涌入。那么这些机器人是怎么做到的呢?我们已经成功地解决了硬盘上的图像验证码问题，但是我们如何才能制造出一个功能齐全的机器人呢?本节结合了前几章中介绍的许多技术。如果你还没有读过，你至少应该浏览一下第十章。</p>
+<p>大多数基于图像的验证码有以下几个特性:</p>
+<ul>
+<li>它们是由服务器端程序动态生成的图像。它们可能具有与传统图像不同的图像源，比如<code>&lt;img src=&quot;WebForm.aspx? &quot;id=8AP85CQKE9TJ&quot;&gt;</code>，但可以像任何其他图像一样下载和操作。</li>
+<li>图像的解决方案存储在服务器端数据库中。</li>
+<li>如果你花了太长时间来解决验证码，很多验证码都会失效。这对于机器人来说通常不是问题，但是排队验证码解决方案供以后使用，或者其他可能会延迟验证码被请求到提交解决方案之间的时间的实践，可能不会成功。</li>
+</ul>
+<p>实现此目的的一般方法是将CAPTCHA图像文件下载到您的硬盘驱动器，清除它，使用Tesseract解析图像，并在适当的表单参数下返回解决方案。</p>
+<p>作者在<code>http://pythonscraping.com/humans-only</code>上创建了一个页面，其中只有<code>CAPTCHAprotected</code>注释表单，用于编写一个要击败的机器人。这个机器人使用命令行Tesseract库，而不是pytesseract包装器(尽管它也可以很容易地使用)，看起来像这样:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlretrieve</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> ImageOps</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cleanImage</span><span class="params">(imagePath)</span>:</span></span><br><span class="line">    image = Image.open(imagePath)</span><br><span class="line">    image = image.point(<span class="keyword">lambda</span> x: <span class="number">0</span> <span class="keyword">if</span> x&lt;<span class="number">143</span> <span class="keyword">else</span> <span class="number">255</span>)</span><br><span class="line">    borderImage = ImageOps.expand(image,border=<span class="number">20</span>,fill=<span class="string">'white'</span>)</span><br><span class="line">    borderImage.save(imagePath)</span><br><span class="line"></span><br><span class="line">html = urlopen(<span class="string">'http://www.pythonscraping.com/humans-only'</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">'html.parser'</span>)</span><br><span class="line"><span class="comment">#Gather prepopulated form values</span></span><br><span class="line">imageLocation = bs.find(<span class="string">'img'</span>, &#123;<span class="string">'title'</span>: <span class="string">'Image CAPTCHA'</span>&#125;)[<span class="string">'src'</span>]</span><br><span class="line">formBuildId = bs.find(<span class="string">'input'</span>, &#123;<span class="string">'name'</span>:<span class="string">'form_build_id'</span>&#125;)[<span class="string">'value'</span>]</span><br><span class="line">captchaSid = bs.find(<span class="string">'input'</span>, &#123;<span class="string">'name'</span>:<span class="string">'captcha_sid'</span>&#125;)[<span class="string">'value'</span>]</span><br><span class="line">captchaToken = bs.find(<span class="string">'input'</span>, &#123;<span class="string">'name'</span>:<span class="string">'captcha_token'</span>&#125;)[<span class="string">'value'</span>]</span><br><span class="line"></span><br><span class="line">captchaUrl = <span class="string">'http://pythonscraping.com'</span>+imageLocation</span><br><span class="line">urlretrieve(captchaUrl, <span class="string">'captcha.jpg'</span>)</span><br><span class="line">cleanImage(<span class="string">'captcha.jpg'</span>)</span><br><span class="line">p = subprocess.Popen([<span class="string">'tesseract'</span>, <span class="string">'captcha.jpg'</span>, <span class="string">'captcha'</span>], stdout=</span><br><span class="line">    subprocess.PIPE,stderr=subprocess.PIPE)</span><br><span class="line">p.wait()</span><br><span class="line">f = open(<span class="string">'captcha.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Clean any whitespace characters</span></span><br><span class="line">captchaResponse = f.read().replace(<span class="string">' '</span>, <span class="string">''</span>).replace(<span class="string">'\n'</span>, <span class="string">''</span>)</span><br><span class="line">print(<span class="string">'Captcha solution attempt: '</span>+captchaResponse)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(captchaResponse) == <span class="number">5</span>:</span><br><span class="line">    params = &#123;<span class="string">'captcha_token'</span>:captchaToken, <span class="string">'captcha_sid'</span>:captchaSid,   </span><br><span class="line">              <span class="string">'form_id'</span>:<span class="string">'comment_node_page_form'</span>, <span class="string">'form_build_id'</span>: formBuildId, </span><br><span class="line">              <span class="string">'captcha_response'</span>:captchaResponse, <span class="string">'name'</span>:<span class="string">'Ryan Mitchell'</span>, </span><br><span class="line">              <span class="string">'subject'</span>: <span class="string">'I come to seek the Grail'</span>, </span><br><span class="line">              <span class="string">'comment_body[und][0][value]'</span>: </span><br><span class="line">               <span class="string">'...and I am definitely not a bot'</span>&#125;</span><br><span class="line">    r = requests.post(<span class="string">'http://www.pythonscraping.com/comment/reply/10'</span>, </span><br><span class="line">                          data=params)</span><br><span class="line">    responseObj = BeautifulSoup(r.text, <span class="string">'html.parser'</span>)</span><br><span class="line">    <span class="keyword">if</span> responseObj.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'messages'</span>&#125;) <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        print(responseObj.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'messages'</span>&#125;).get_text())</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'There was a problem reading the CAPTCHA correctly!'</span>)</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Captcha solution attempt: EM3;y楼</span><br><span class="line">There was a problem reading the CAPTCHA correctly!</span><br></pre></td></tr></table></figure>
+<p>注意，这个脚本在两种情况下失败:如果Tesseract没有从图像中提取恰好五个字符(因为您知道这个CAPTCHA的所有有效解决方案都必须有五个字符)，或者它提交了表单，但是CAPTCHA被错误地解决了。第一种情况发生的概率大约为50%，此时它不需要提交表单，并且会出现错误消息。第二种情况发生的概率约为20%，总准确率约为30%(或遇到的每个字符的准确率约为80%，超过5个字符)。</p>
+<p>尽管这看起来很低，但请记住，通常不限制用户尝试验证码的次数，而且大多数不正确的尝试都可以在不需要实际发送表单的情况下终止。当发送表单时，验证码在大多数情况下是准确的。如果这还不能使您信服，还请记住，简单的猜测将使您的准确率达到0.00001%。<br>运行一个程序三到四次而不是猜测9亿次是相当节省时间的检索!</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/02/WebScraping12/" rel="next" title="WebScraping-12">
+                <i class="fa fa-chevron-left"></i> WebScraping-12
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-of-Libraries"><span class="nav-number">1.</span> <span class="nav-text">Overview of Libraries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pillow"><span class="nav-number">1.1.</span> <span class="nav-text">Pillow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tesseract"><span class="nav-number">1.2.</span> <span class="nav-text">Tesseract</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NumPy"><span class="nav-number">1.3.</span> <span class="nav-text">NumPy</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processing-Well-Formatted-Text"><span class="nav-number">2.</span> <span class="nav-text">Processing Well-Formatted Text</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Adjusting-Images-Automatically"><span class="nav-number">2.1.</span> <span class="nav-text">Adjusting Images Automatically</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scraping-Text-from-Images-on-Websites"><span class="nav-number">2.2.</span> <span class="nav-text">Scraping Text from Images on Websites</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reading-CAPTCHAs-and-Training-Tesseract"><span class="nav-number">3.</span> <span class="nav-text">Reading CAPTCHAs and Training Tesseract</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Training-Tesseract"><span class="nav-number">3.1.</span> <span class="nav-text">Training Tesseract</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieving-CAPTCHAs-and-Submitting-Solutions"><span class="nav-number">4.</span> <span class="nav-text">Retrieving CAPTCHAs and Submitting Solutions</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">323k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">4:54</span>
+  
+</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+ </span>
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NUATd6a1PUQYtIT7MpFYzq4X-gzGzoHsz',
+        appKey: 'Iny9yO41c59ioJOJc84vGygI',
+        placeholder: '如果填写邮箱，可以直接回复至您邮箱中~',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
