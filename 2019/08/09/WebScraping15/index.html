@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="当处理具有大型开发堆栈的web项目时，通常只有堆栈的后面才会定期进行测试。现在的大多数编程语言(包括Python)都有某种类型的测试框架，但是网站前端常常被排除在这些自动化测试之外，尽管它们可能是项目中唯一面向客户的部分。">
+<meta name="keywords" content="Web-Scraping,python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebScraping-15">
+<meta property="og:url" content="https://purespring.top/2019/08/09/WebScraping15/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="当处理具有大型开发堆栈的web项目时，通常只有堆栈的后面才会定期进行测试。现在的大多数编程语言(包括Python)都有某种类型的测试框架，但是网站前端常常被排除在这些自动化测试之外，尽管它们可能是项目中唯一面向客户的部分。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-09T06:52:03.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebScraping-15">
+<meta name="twitter:description" content="当处理具有大型开发堆栈的web项目时，通常只有堆栈的后面才会定期进行测试。现在的大多数编程语言(包括Python)都有某种类型的测试框架，但是网站前端常常被排除在这些自动化测试之外，尽管它们可能是项目中唯一面向客户的部分。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://purespring.top/2019/08/09/WebScraping15/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebScraping-15 | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://purespring.top/2019/08/09/WebScraping15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WebScraping-15
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-09 14:48:41 / 修改时间：14:52:03" itemprop="dateCreated datePublished" datetime="2019-08-09T14:48:41+08:00">2019-08-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Scraping/" itemprop="url" rel="index"><span itemprop="name">Web-Scraping</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/09/WebScraping15/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/08/09/WebScraping15/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/08/09/WebScraping15/" class="leancloud_visitors" data-flag-title="WebScraping-15">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">13k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">12 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>当处理具有大型开发堆栈的web项目时，通常只有堆栈的后面才会定期进行测试。现在的大多数编程语言(包括Python)都有某种类型的测试框架，但是网站前端常常被排除在这些自动化测试之外，尽管它们可能是项目中唯一面向客户的部分。</p>
+<a id="more"></a>
+<p>部分问题在于，网站常常是许多标记语言和编程语言的混合体。您可以为JavaScript的各个部分编写单元测试，但是如果与之交互的HTML发生了更改，以致JavaScript无法在页面上执行预期的操作，那么这是没有用的，即使它可以正常工作。</p>
+<p>前端网站测试的问题常常被留到以后再考虑，或者委托给级别较低的程序员，他们最多配备一个检查表和一个bug跟踪器。然而，只要稍微提前一点努力，您就可以用一系列单元测试替换这个检查表，并使用web scraper替换人眼。</p>
+<p>想象一下:web开发的测试驱动开发。每天进行测试，确保web界面的所有部分都按预期运行。每当有人添加新的网站功能或更改元素的位置时，都会运行一组测试。本章介绍了测试的基础知识，以及如何使用基于python的web scraper测试各种各样的网站，从简单到复杂。</p>
+<h3 id="An-Introduction-to-Testing"><a href="#An-Introduction-to-Testing" class="headerlink" title="An Introduction to Testing"></a>An Introduction to Testing</h3><p>如果您以前从未为您的代码编写过测试，那么现在就开始吧。拥有一组可以运行的测试，以确保您的代码按照预期执行(至少，就您编写测试的目的而言)，可以节省您的时间和担心，并使发布新的更新变得容易。</p>
+<h4 id="What-Are-Unit-Tests"><a href="#What-Are-Unit-Tests" class="headerlink" title="What Are Unit Tests"></a>What Are Unit Tests</h4><p>单词test和单元测试(Unit Tests)经常可以互换使用。通常，当程序员提到“编写测试”时，他们真正的意思是“编写单元测试”。另一方面，当一些程序员提到编写单元测试时，他们实际上是在编写其他类型的测试。</p>
+<p>虽然定义和实践往往因公司而异，但单元测试通常具有以下特征:</p>
+<ul>
+<li><p>每个单元测试测试组件功能的一个方面。例如，如果从银行帐户中取出负数美元，它可能会确保抛出适当的错误消息。</p>
+<p>通常，单元测试根据它们所测试的组件分组在同一个类中。您可能要对从银行帐户中提取的负美元值进行测试，然后对透支银行帐户的行为进行单元测试。</p>
+</li>
+<li><p>每个单元测试都可以完全独立地运行，单元测试所需的任何设置或拆卸都必须由单元测试本身处理。类似地，单元测试不能干扰其他测试的成功或失败，并且它们必须能够以任何顺序成功运行。</p>
+</li>
+<li><p>每个单元测试都可以完全独立地运行，单元测试所需的任何设置或拆卸都必须由单元测试本身处理。类似地，单元测试不能干扰其他测试的成功或失败，并且它们必须能够以任何顺序成功运行。</p>
+</li>
+<li><p>每个单元测试通常至少包含一个断言。例如，单元测试可能断言2 + 2的答案是4。有时候，单元测试可能只包含一个失败状态。例如，如果抛出异常，它可能会失败，但是如果一切顺利，则默认通过。</p>
+</li>
+<li><p>单元测试与大部分代码是分开的。虽然它们必须导入和使用它们正在测试的代码，但是它们通常保存在单独的类和目录中。</p>
+</li>
+</ul>
+<p>尽管许多其他类型的测试可以编写—例如集成测试和验证测试—本章主要关注单元测试。随着最近的测试驱动开发的推进，单元测试不仅变得非常流行，而且它们的长度和灵活性使它们易于作为示例使用，而且Python具有一些内置的单元测试功能，您将在下一节中看到。</p>
+<h3 id="Python-unittest"><a href="#Python-unittest" class="headerlink" title="Python unittest"></a>Python unittest</h3><p>Python的单元测试模块unittest随所有标准Python安装一起打包。只需导入并扩展unittest。TestCase，它将执行以下操作:</p>
+<ul>
+<li>提供在每个单元测试之前和之后运行的<code>setUp</code>和<code>tearDown</code>函数</li>
+<li>提供几种类型的“断言”语句，以允许测试通过或失败</li>
+<li>运行所有以<code>test_</code>开头的函数作为单元测试，忽略那些没有作为测试前缀的函数</li>
+</ul>
+<p>下面提供了一个简单的单元测试来确保2 + 2 = 4，Python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestAddition</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'Setting up the test'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'Tearing down the test'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_twoPlusTwo</span><span class="params">(self)</span>:</span></span><br><span class="line">        total = <span class="number">2</span>+<span class="number">2</span></span><br><span class="line">        self.assertEqual(<span class="number">4</span>, total);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main(argv=[<span class="string">''</span>], exit=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">Setting up the test</span><br><span class="line">Tearing down the test</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 1 test in 0.003s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+<p>虽然<code>setUp</code>和<code>tearDown</code>在这里没有提供任何有用的功能，但是出于演示的目的，它们被包含了进来。注意，这些函数在每个单独的测试之前和之后运行，而不是在类中的所有测试之前和之后运行。</p>
+<p>这表明测试运行成功，2 + 2确实等于4。</p>
+<p><strong>Running unittest in Jupyter Notebooks</strong></p>
+<p>只有当直接在其中执行时，<code>__name__ == &#39;__main__&#39;</code>才为true而不是通过import语句。这允许您使用<code>unittest.TestCase</code>，直接从命令行扩展的<code>TestCase</code>类。</p>
+<p>在Jupyter Notebooks上，情况有点不同。由Jupyter创建的<code>argv</code>参数可能会在单元测试中导致错误，并且，由于unittest框架在测试运行后默认退出Python(这会在notebook内核中导致问题)，我们还需要防止这种情况发生。</p>
+<p>在Jupyter Notebooks中，你将使用以下方法进行单元测试:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	unittest.main(argv=[<span class="string">''</span>], exit=<span class="keyword">False</span>)</span><br><span class="line">	%reset</span><br></pre></td></tr></table></figure>
+<p><em>：</em>第二行将所有<code>argv</code>变量(命令行参数)设置为一个空字符串，<code>unnittest.main</code>将忽略这个空字符串。它还可以防止<code>unittest</code>在运行测试之后退出。</p>
+<p><code>%reset</code>行非常有用，因为它重置了内存并销毁了Jupyter Notebooks中所有用户创建的变量。如果没有它，您在记事本中编写的每个单元测试都将包含以前运行的所有测试的所有方法，这些测试也继承了<code>unittest.TestCase</code>，包括<code>setUp</code>和<code>tearDown</code>方法。这也意味着每个单元测试将运行之前单元测试中的所有方法!</p>
+<p>使用<code>%reset</code>确实为用户在运行测试时创建了一个额外的手动步骤。运行测试时，笔记本会提示用户，询问他们是否确定要重置内存。只需输入y并按回车键即可。</p>
+<h4 id="Testing-Wikipedia"><a href="#Testing-Wikipedia" class="headerlink" title="Testing Wikipedia"></a>Testing Wikipedia</h4><p>测试你网站的前端(不包括JavaScript，我们将在下一篇文章中讨论)就像把Python unittest库和web scraper结合起来一样简单:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestWikipedia</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    bs = <span class="keyword">None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUpClass</span><span class="params">()</span>:</span></span><br><span class="line">        url = <span class="string">'http://en.wikipedia.org/wiki/Monty_Python'</span></span><br><span class="line">        TestWikipedia.bs = BeautifulSoup(urlopen(url), <span class="string">'html.parser'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_titleText</span><span class="params">(self)</span>:</span></span><br><span class="line">        pageTitle = TestWikipedia.bs.find(<span class="string">'h1'</span>).get_text()</span><br><span class="line">        self.assertEqual(<span class="string">'Monty Python'</span>, pageTitle);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_contentExists</span><span class="params">(self)</span>:</span></span><br><span class="line">        content = TestWikipedia.bs.find(<span class="string">'div'</span>,&#123;<span class="string">'id'</span>:<span class="string">'mw-content-text'</span>&#125;)</span><br><span class="line">        self.assertIsNotNone(content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main(argv=[<span class="string">''</span>], exit=<span class="keyword">False</span>)</span><br><span class="line">    %reset</span><br></pre></td></tr></table></figure>
+<p>这一次有两个测试:第一个测试页面的标题是否是预期的“Monty Python”，第二个测试确保页面有一个内容div。</p>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">..</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 2 tests in 3.263s</span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line">Once deleted, variables cannot be recovered. Proceed (y/[n])? y</span><br></pre></td></tr></table></figure>
+<p>注意，页面的内容只加载一次，并且全局对象<code>bs</code>在测试之间共享。这是通过使用<code>unittest</code>指定的函数<code>setUpClass</code>来实现的，<code>setUpClass</code>在类的开始时只运行一次(与<code>setUp</code>不同，<code>setUp</code>在每个单独的测试之前运行)。使用<code>setUpClass</code>而不是<code>setUp</code>可以节省不必要的页面加载;您可以获取内容一次并对其运行多个测试。</p>
+<p><code>setUpClass</code>和<code>setUp</code>之间的一个主要架构区别是，<code>setUpClass</code>是一个静态方法，它属于类本身并具有全局类变量，而<code>setUp</code>是一个实例函数，它属于类的一个特定实例。这就是为什么<code>setUp</code>可以在self上设置属性，而<code>setUpClass</code>只能访问<code>TestWikipedia</code>类的静态类属性。</p>
+<p>虽然一次测试一个页面可能并没有那么强大或有趣，但是您可能还记得第3章，构建能够迭代地遍历网站所有页面的web爬虫程序相对比较容易。当您将web爬虫程序与对每个页面作出断言的单元测试组合在一起时，会发生什么?</p>
+<p>重复运行测试的方法有很多，但是对于要在页面上运行的每一组测试，必须小心地只加载每个页面一次，而且还必须避免一次在内存中保存大量信息。下面的设置就是这样做的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> unquote</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestWikipedia</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_PageProperties</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.url = <span class="string">'http://en.wikipedia.org/wiki/Monty_Python'</span></span><br><span class="line">        <span class="comment">#Test the first 10 pages we encounter</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">            self.bs = BeautifulSoup(urlopen(self.url), <span class="string">'html.parser'</span>)</span><br><span class="line">            titles = self.titleMatchesURL()</span><br><span class="line">            self.assertEqual(titles[<span class="number">0</span>], titles[<span class="number">1</span>])</span><br><span class="line">            self.assertTrue(self.contentExists())</span><br><span class="line">            self.url = self.getNextLink()</span><br><span class="line">        print(<span class="string">'Done!'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">titleMatchesURL</span><span class="params">(self)</span>:</span></span><br><span class="line">        pageTitle = self.bs.find(<span class="string">'h1'</span>).get_text()</span><br><span class="line">        urlTitle = self.url[(self.url.index(<span class="string">'/wiki/'</span>)+<span class="number">6</span>):]</span><br><span class="line">        urlTitle = urlTitle.replace(<span class="string">'_'</span>, <span class="string">' '</span>)</span><br><span class="line">        urlTitle = unquote(urlTitle)</span><br><span class="line">        <span class="keyword">return</span> [pageTitle.lower(), urlTitle.lower()]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">contentExists</span><span class="params">(self)</span>:</span></span><br><span class="line">        content = self.bs.find(<span class="string">'div'</span>,&#123;<span class="string">'id'</span>:<span class="string">'mw-content-text'</span>&#125;)</span><br><span class="line">        <span class="keyword">if</span> content <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getNextLink</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># Returns random link on page, using technique from Chapter 3</span></span><br><span class="line">        links = self.bs.find(<span class="string">'div'</span>, &#123;<span class="string">'id'</span>:<span class="string">'bodyContent'</span>&#125;).find_all(<span class="string">'a'</span>, href=re.compile(<span class="string">'^(/wiki/)((?!:).)*$'</span>))</span><br><span class="line">        randomLink = random.SystemRandom().choice(links)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'https://wikipedia.org&#123;&#125;'</span>.format(randomLink.attrs[<span class="string">'href'</span>])</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main(argv=[<span class="string">''</span>], exit=<span class="keyword">False</span>)</span><br><span class="line">    %reset</span><br></pre></td></tr></table></figure>
+<p>有几件事需要注意。首先，这个类中只有一个实际的测试。其他函数在技术上只是辅助函数，尽管它们要做大量的计算工作来确定测试是否通过。因为测试函数执行断言语句，所以测试的结果被传递回发生断言的测试函数。</p>
+<p>此外，<code>contentExists</code>返回一个布尔值，而<code>titleMatchesURL</code>返回值本身进行计算。要查看为什么要返回值而不仅仅是布尔值，请比较布尔断言的结果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">======================================================================</span><br><span class="line">FAIL: test_PageProperties (__main__.TestWikipedia)</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File &quot;15-3.py&quot;, line 22, in test_PageProperties</span><br><span class="line">self.assertTrue(self.titleMatchesURL())</span><br><span class="line">AssertionError: False is not true</span><br><span class="line">with the results of an assertEquals statement:</span><br><span class="line">======================================================================</span><br><span class="line">FAIL: test_PageProperties (__main__.TestWikipedia)</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">File &quot;15-3.py&quot;, line 23, in test_PageProperties</span><br><span class="line">self.assertEquals(titles[0], titles[1])</span><br><span class="line">AssertionError: &apos;lockheed u-2&apos; != &apos;u-2 spy plane&apos;</span><br></pre></td></tr></table></figure>
+<p>哪个更容易调试?(在本例中，当文章<code>http://wikipedia.org/wiki/u-2%20spy%20plane</code>重定向到标题为“Lockheed U-2”的文章时，错误是由于重定向而发生的。)</p>
+<h3 id="Testing-with-Selenium"><a href="#Testing-with-Selenium" class="headerlink" title="Testing with Selenium"></a>Testing with Selenium</h3><p>与第11章中的Ajax抓取一样，JavaScript在进行网站测试时也面临着特殊的挑战。幸运的是，Selenium有一个非常好的框架来处理特别复杂的网站;事实上，这个库最初是为网站测试而设计的!</p>
+<p>虽然显然是用同一种语言编写的，但是Python单元测试和Selenium单元测试的语法却出奇地少有共同点。Selenium不要求它的单元测试作为函数包含在类中;它的断言语句不需要括号;测试无声地通过，只在失败时产生某种消息:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.PhantomJS()</span><br><span class="line">driver.get(<span class="string">'http://en.wikipedia.org/wiki/Monty_Python'</span>)</span><br><span class="line"><span class="keyword">assert</span> <span class="string">'Monty Python'</span> <span class="keyword">in</span> driver.title</span><br><span class="line">driver.close()</span><br></pre></td></tr></table></figure>
+<p>当运行时，这个测试应该不会产生任何输出。<br>通过这种方式，Selenium测试可以比Python单元测试更随意地编写，断言语句甚至可以集成到常规代码中，如果不满足某些条件，代码执行可以终止。</p>
+<h4 id="Interacting-With-the-Site"><a href="#Interacting-With-the-Site" class="headerlink" title="Interacting With the Site"></a>Interacting With the Site</h4><p>最近，我想通过当地一家小企业的网站的联系方式联系它，但是发现HTML表单被破坏了;当我点击submit按钮时，什么也没有发生。经过一点调查，我发现他们使用了一个简单的mailto表单，这个表单的目的是向他们发送包含表单内容的电子邮件。幸运的是，我能够使用这些信息给他们发送电子邮件，解释他们表单的问题，并雇佣他们，尽管存在技术问题。如果我要编写一个使用或测试此表单的传统scraper，那么我的scraper很可能只是复制表单的布局，并直接发送一封电子邮件来绕过表单。我怎么能测试表单的功能,并确保它是完全通过浏览器工作吗?</p>
+<p>虽然前几章已经讨论了导航链接、提交表单和其他类型的交互活动，但在其核心，我们所做的一切都是为了绕过浏览器界面，而不是使用它。另一方面，Selenium可以直接输入文本、单击按钮，并通过浏览器(在本例中是headless PhantomJS浏览器)执行所有操作，并检测诸如破损的表单、编码糟糕的JavaScript、HTML打印错误以及其他可能阻碍实际客户的问题。</p>
+<p>这种测试的关键是Selenium elements。这个对象在第11章中被短暂地遇到，并通过如下调用返回:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usernameField = driver.find_element_by_name(<span class="string">'username'</span>)</span><br></pre></td></tr></table></figure>
+<p>正如您可以在浏览器中对网站的各个元素执行许多操作一样，Selenium也可以对任何给定元素执行许多操作。其中包括:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myElement.click()</span><br><span class="line">myElement.click_and_hold()</span><br><span class="line">myElement.release()</span><br><span class="line">myElement.double_click()</span><br><span class="line">myElement.send_keys_to_element(<span class="string">'content to enter'</span>)</span><br></pre></td></tr></table></figure>
+<p>除了对元素执行一次性操作外，还可以将操作字符串组合成操作链，这些操作链可以在程序中存储和执行一次或多次。操作链非常有用，因为它们可以方便地串接多个操作的长集合，但是它们在功能上与在元素上显式调用操作相同，如上面的示例所示。</p>
+<p>要查看这种差异，请查看<code>http://pythonscraping.com/pages/files/form.html</code>中的表单页面(前面在第10章中用作示例)。我们可以通过以下方式填写表格并提交:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome(</span><br><span class="line">    executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>,</span><br><span class="line">    options=chrome_options)</span><br><span class="line">driver.get(<span class="string">'http://pythonscraping.com/pages/files/form.html'</span>)</span><br><span class="line"></span><br><span class="line">firstnameField = driver.find_element_by_name(<span class="string">'firstname'</span>)</span><br><span class="line">lastnameField = driver.find_element_by_name(<span class="string">'lastname'</span>)</span><br><span class="line">submitButton = driver.find_element_by_id(<span class="string">'submit'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">### METHOD 1 ###</span></span><br><span class="line">firstnameField.send_keys(<span class="string">'Ryan'</span>)</span><br><span class="line">lastnameField.send_keys(<span class="string">'Mitchell'</span>)</span><br><span class="line">submitButton.click()</span><br><span class="line"><span class="comment">################</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### METHOD 2 ###</span></span><br><span class="line"><span class="comment">#actions = ActionChains(driver).click(firstnameField).send_keys('Ryan').click(lastnameField).send_keys('Mitchell').send_keys(Keys.RETURN)</span></span><br><span class="line"><span class="comment">#actions.perform()</span></span><br><span class="line"><span class="comment">################</span></span><br><span class="line"></span><br><span class="line">print(driver.find_element_by_tag_name(<span class="string">'body'</span>).text)</span><br><span class="line"></span><br><span class="line">driver.close()</span><br></pre></td></tr></table></figure>
+<p>方法1在两个字段上调用<code>send_keys</code>，然后单击<code>submit</code>按钮。<br>方法2使用一个操作链在每个字段中单击并输入文本，这在调用执行方法后按顺序进行。无论使用第一种方法还是第二种方法，该脚本都以相同的方式运行，并打印以下行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello there, Ryan Mitchell!</span><br></pre></td></tr></table></figure>
+<p>除了用于处理命令的对象之外，这两个方法还有另一个变体:注意，第一个方法单击Submit按钮，而第二个方法在提交文本框时使用Return键提交表单。<br>因为有很多方法可以考虑完成相同操作的事件序列，所以有很多方法可以使用Selenium完成相同的操作。</p>
+<p><strong>Drag and drop</strong></p>
+<p>单击按钮并输入文本是一回事，但是Selenium真正的亮点在于它能够处理相对新颖的web交互形式。Selenium允许轻松地操作拖放接口。使用它的拖放函数需要指定一个源元素(要拖拽的元素)和一个偏移量来拖拽它，或者一个目标元素来拖拽它。</p>
+<p>演示页面位于<code>http://pythonscraping.com/pages/javascript/draggable.html</code>展示了这类接口的一个例子:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestAddition</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    driver = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        chrome_options = Options()</span><br><span class="line">        chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(</span><br><span class="line">            executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>,</span><br><span class="line">            options=chrome_options)</span><br><span class="line">        url = <span class="string">'http://pythonscraping.com/pages/javascript/draggableDemo.html'</span></span><br><span class="line">        self.driver.get(url)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.driver.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_drag</span><span class="params">(self)</span>:</span></span><br><span class="line">        element = self.driver.find_element_by_id(<span class="string">"draggable"</span>)</span><br><span class="line">        target = self.driver.find_element_by_id(<span class="string">"div2"</span>)</span><br><span class="line">        actions = ActionChains(self.driver)</span><br><span class="line">        actions.drag_and_drop(element, target).perform()</span><br><span class="line">        self.assertEqual(<span class="string">"You are definitely not a bot!"</span>,</span><br><span class="line">                         self.driver.find_element_by_id(<span class="string">"message"</span>).text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main(argv=[<span class="string">''</span>], exit=<span class="keyword">False</span>)</span><br><span class="line">    %reset</span><br></pre></td></tr></table></figure>
+<p>演示页面上的<code>message</code> div中打印出两条消息。第一个说:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Prove you are not a bot, by dragging the square from the blue area to the red area!</span><br></pre></td></tr></table></figure>
+<p>然后，快速地，在任务完成后，内容再次打印出来，现在读取:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">You are definitely not a bot!</span><br></pre></td></tr></table></figure>
+<p>正如演示页面所示，在许多验证码中，拖拽元素来证明你不是机器人是一个常见的主题。尽管机器人能够拖拽物体已经有很长一段时间了(这只是一个点击、按住和移动的问题)，但不知何故，用拖拽来验证人性的想法不会消失。此外，这些可拖动的CAPTCHA库很少使用任何机器人难以执行的任务，比如将小猫的图片拖放到奶牛的图片上(这要求您在解析指令时将图片标识为小猫和奶牛);相反，它们通常涉及数字排序或其他一些相当琐碎的任务，如前面示例中的任务。</p>
+<p>当然，它们的优势在于，它们有如此多的变体，但却很少被使用;没人会费心去做一个能打败所有对手的机器人。无论如何，这个例子应该足以说明为什么不应该在大型网站上使用这种技术。</p>
+<p><strong>Taking screenshots</strong></p>
+<p>除了通常的测试功能之外，Selenium还有一个有趣的技巧，它可能会让您的测试(或让您的老板印象深刻)变得更容易一些:截屏。是的，可以从单元测试运行中创建照片证据，而不需要实际按下<code>PrtScn</code>键:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.PhantomJS()</span><br><span class="line">driver.get(<span class="string">'http://www.pythonscraping.com/'</span>)</span><br><span class="line">driver.get_screenshot_as_file(<span class="string">'tmp/pythonscraping.png'</span>)</span><br></pre></td></tr></table></figure>
+<p>该脚本导航到<code>http://pythonscraping.com</code>，然后将主页的屏幕截图存储在本地tmp文件夹中(要正确存储此文件夹，必须已经存在该文件夹)。截图可以保存为多种图像格式。</p>
+<h3 id="unittest-or-Selenium"><a href="#unittest-or-Selenium" class="headerlink" title="unittest or Selenium"></a>unittest or Selenium</h3><p>Python <code>unittest</code>的语法严密性和冗长性可能是大多数大型测试套件所需要的，而Selenium测试的灵活性和强大功能可能是测试某些网站特性的唯一选择。那么该用哪个呢?秘诀是:你不必做出选择。Selenium可以很容易地获得关于网站的信息，而unittest可以评估这些信息是否符合通过测试的标准。您没有理由不能将Selenium工具导入到Python <code>unittest</code>中，将两者的优点结合起来。</p>
+<p>例如，下面的脚本为网站的draggable界面创建了一个单元测试，断言它正确地说:“您不是一个机器人!“在一个元素被拖到另一个元素之后:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestDragAndDrop</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    driver = <span class="keyword">None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        chrome_options = Options()</span><br><span class="line">        chrome_options.add_argument(<span class="string">"--headless"</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(</span><br><span class="line">            executable_path=<span class="string">'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe'</span>,</span><br><span class="line">            options=chrome_options)</span><br><span class="line">        url = <span class="string">'http://pythonscraping.com/pages/javascript/draggableDemo.html'</span></span><br><span class="line">        self.driver.get(url)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.driver.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_drag</span><span class="params">(self)</span>:</span></span><br><span class="line">        element = self.driver.find_element_by_id(<span class="string">'draggable'</span>)</span><br><span class="line">        target = self.driver.find_element_by_id(<span class="string">'div2'</span>)</span><br><span class="line">        actions = ActionChains(self.driver)</span><br><span class="line">        actions.drag_and_drop(element, target).perform()</span><br><span class="line">        self.assertEqual(<span class="string">'You are definitely not a bot!'</span>,</span><br><span class="line">            self.driver.find_element_by_id(<span class="string">'message'</span>).text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main(argv=[<span class="string">''</span>], exit=<span class="keyword">False</span>)</span><br><span class="line">    %reset</span><br></pre></td></tr></table></figure>
+<p>实际上，网站上的任何内容都可以通过Python的<code>unittest</code>和<code>Selenium</code>的组合进行测试。事实上，结合第13章中的一些图像处理库，您甚至可以截屏并逐像素测试它应该包含什么内容!</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-Scraping/" rel="tag"># Web-Scraping</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/07/WebScraping14/" rel="next" title="WebScraping-14">
+                <i class="fa fa-chevron-left"></i> WebScraping-14
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="spring" />
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#An-Introduction-to-Testing"><span class="nav-number">1.</span> <span class="nav-text">An Introduction to Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#What-Are-Unit-Tests"><span class="nav-number">1.1.</span> <span class="nav-text">What Are Unit Tests</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-unittest"><span class="nav-number">2.</span> <span class="nav-text">Python unittest</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Testing-Wikipedia"><span class="nav-number">2.1.</span> <span class="nav-text">Testing Wikipedia</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Testing-with-Selenium"><span class="nav-number">3.</span> <span class="nav-text">Testing with Selenium</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Interacting-With-the-Site"><span class="nav-number">3.1.</span> <span class="nav-text">Interacting With the Site</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unittest-or-Selenium"><span class="nav-number">4.</span> <span class="nav-text">unittest or Selenium</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">351k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">5:19</span>
+  
+</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+ </span>
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NUATd6a1PUQYtIT7MpFYzq4X-gzGzoHsz',
+        appKey: 'Iny9yO41c59ioJOJc84vGygI',
+        placeholder: '如果填写邮箱，可以直接回复至您邮箱中~',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
