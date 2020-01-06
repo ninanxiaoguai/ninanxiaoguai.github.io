@@ -501,20 +501,23 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
+  appid:  NUATd6a1PUQYtIT7MpFYzq4X-gzGzoHsz
+  appkey:  Iny9yO41c59ioJOJc84vGygI
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  placeholder:  如果填写邮箱，可以直接回复至您邮箱中~
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
-  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  visitor: true # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  comment_count: true # if false, comment count will only be displayed in post page, not in home page
+
+
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: MTAyMC8zOTEyOS8xNTY1Ng==
+# livere_uid: MTAyMC8zOTEyOS8xNTY1Ng==
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -658,7 +661,7 @@ firestore:
 # Show Views/Visitors of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
-  enable: true
+  enable: false
   total_visitors: true
   total_visitors_icon: user
   total_views: true
@@ -676,7 +679,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -956,7 +959,7 @@ vendors:
 
   # valine comment
   # Example: https://cdn.jsdelivr.net/npm/valine@1.1.8/dist/Valine.min.js
-  valine:
+ # valine:
 
 
 # Assets
@@ -968,3 +971,27 @@ images: images
 daovoice: true
 #daovoice_app_id: 37874f6b
 daovoice_app_id: 5052a9e6
+
+# Security
+##
+encrypt:
+    enable: true
+
+baidu_url_submit:
+  count: 5 ## 比如100，代表提交最新的一百个链接
+  host: purespring.top ## 在百度站长平台中注册的域名
+  token: JxjfQwugeMRdtDab ## 刚刚复制的秘钥，不要公布到任何地方。
+  path: baidu_urls.txt ## 文本文档的地址，新链接会保存在此文本文档里
+
+# sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://purespring.top
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:

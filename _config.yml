@@ -8,15 +8,9 @@ subtitle:
 description: 梦想天空分外蓝~
 keywords:
 author: spring
-language: zh-CN
+language: zh-CN # for 'nest'
+#language: zh-Hans # for 'Yelee'
 timezone:
-
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
 
 # Directory
 source_dir: source
@@ -90,15 +84,19 @@ plugins: hexo-generate-feed
 
 
 theme: next
-
+#theme: Yelee
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+  - type: git
   #repo: https://github.com/ninanxiaoguai/ninanxiaoguai.github.io.git
-  repo: ssh://git@github.com/ninanxiaoguai/ninanxiaoguai.github.io.git
-  branch: master
+    repo: 
+         github: ssh://git@github.com/ninanxiaoguai/ninanxiaoguai.github.io.git
+         coding: git@git.coding.net:puresping/puresping.git
+    branch: master
+
+  - type: baidu_url_submitter # 注意，这个为新增的
   
 
 # hexo-admin authentification
@@ -107,3 +105,27 @@ admin:
   password_hash: $2a$10$yb7TvUxWoWz2f6EI.XD/f.7o/.B5en1lti5n5l4Y0O.q3QbVSGSvS
   secret: my super secret phrase
 
+# Security
+##
+encrypt:
+    enable: true
+
+baidu_url_submit:
+  count: 5 ## 比如100，代表提交最新的一百个链接
+  host: purespring.top ## 在百度站长平台中注册的域名
+  token: JxjfQwugeMRdtDab ## 刚刚复制的秘钥，不要公布到任何地方。
+  path: baidu_urls.txt ## 文本文档的地址，新链接会保存在此文本文档里
+
+# sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+  
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://purespring.top
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:

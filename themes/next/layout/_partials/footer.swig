@@ -46,7 +46,9 @@
 {% endif %}
 
 {% if theme.footer.powered.enable %}
-
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+ </span>
 
 
 
