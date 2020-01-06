@@ -621,7 +621,7 @@ daovoice('init', {
 <p>在<code>BeautifulSoup</code>和Python 3.x中使用这个概念是这样的:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line">html = urlopen(<span class="string">"http://en.wikipedia.org/wiki/Python_(programming_language)"</span>)</span><br><span class="line">bs = BeautifulSoup(html, <span class="string">"html.parser"</span>)</span><br><span class="line">content = bs.find(<span class="string">"div"</span>, &#123;<span class="string">"id"</span>:<span class="string">"mw-content-text"</span>&#125;).get_text()</span><br><span class="line">content = bytes(content, <span class="string">"UTF-8"</span>)</span><br><span class="line">content = content.decode(<span class="string">"UTF-8"</span>)</span><br><span class="line">print(content)</span><br></pre></td></tr></table></figure>
 <p>Python 3.默认情况下，将所有字符编码为<code>UTF-8</code>。您可能会忍不住不去管它，而是为您编写的每个web scraper使用<code>UTF-8</code>编码。毕竟，<code>UTF-8</code>还可以流畅地处理<code>ASCII</code>字符和外语。然而，重要的是要记住9%的网站使用的是<code>ISO</code>编码也一样，所以你永远无法完全避免这个问题。</p>
-<p>幸运的是，对于HTML页面，编码通常包含在站点的<head>部分中找到的标记中。大多数网站，尤其是英语网站，都有这样的标签：</head></p>
+<p>幸运的是，对于HTML页面，编码通常包含在站点的<head><meta name="generator" content="Hexo 3.9.0">部分中找到的标记中。大多数网站，尤其是英语网站，都有这样的标签：</head></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>而ECMA国际的网站上有这个标签：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">META</span> <span class="attr">HTTP-EQUIV</span>=<span class="string">"Content-Type"</span> <span class="attr">CONTENT</span>=<span class="string">"text/html; charset=iso-8859-1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1016,7 +1016,7 @@ daovoice('init', {
 
 <!--
 
-<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 
