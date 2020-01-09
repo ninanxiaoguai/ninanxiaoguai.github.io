@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+<!-- S 新增代码 -->
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #24292e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<!-- E 新增代码 -->
+
+
+
+
+
+ <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/37874f6b.js","daovoice")
+ 
+daovoice('init', {
+      app_id: "5052a9e6"
+    });
+  daovoice('update');
+  
+  </script>
+
+
+
+  <meta name="baidu-site-verification" content="Ji5duS2dR8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logoo32.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logoo16.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+
+
+  <meta name="description" content="最近还在学习多目标优化，在于其他算法比较时，就会用到indicator，发现在PlatEMO平台上，HV做了归一化，而IGD并没有做归一化处理，这样可能就会出现一些不对等的信息，出现这个问题的原因之一是在计算IGD时的采样点的方法不是很好。另外最近看到了IGD的升级版-IGD+，此版本是这学期的算法课老师Hisao Ishibuchi提出，也抱着慕名的心情拜读了一下，一共分为两个论文，其一是“Mo">
+<meta name="keywords" content="MOEA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IGDplus">
+<meta property="og:url" content="https://purespring.top/2020/01/09/IGDplus/index.html">
+<meta property="og:site_name" content="清 泉">
+<meta property="og:description" content="最近还在学习多目标优化，在于其他算法比较时，就会用到indicator，发现在PlatEMO平台上，HV做了归一化，而IGD并没有做归一化处理，这样可能就会出现一些不对等的信息，出现这个问题的原因之一是在计算IGD时的采样点的方法不是很好。另外最近看到了IGD的升级版-IGD+，此版本是这学期的算法课老师Hisao Ishibuchi提出，也抱着慕名的心情拜读了一下，一共分为两个论文，其一是“Mo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/1.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/2.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/3.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/4.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/5.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/6.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/7.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/9.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/8.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/10.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/11.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/12.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/13.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/14.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/15.png">
+<meta property="og:image" content="https://purespring.top/2020/01/09/IGDplus/16.png">
+<meta property="og:updated_time" content="2020-01-09T05:01:28.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IGDplus">
+<meta name="twitter:description" content="最近还在学习多目标优化，在于其他算法比较时，就会用到indicator，发现在PlatEMO平台上，HV做了归一化，而IGD并没有做归一化处理，这样可能就会出现一些不对等的信息，出现这个问题的原因之一是在计算IGD时的采样点的方法不是很好。另外最近看到了IGD的升级版-IGD+，此版本是这学期的算法课老师Hisao Ishibuchi提出，也抱着慕名的心情拜读了一下，一共分为两个论文，其一是“Mo">
+<meta name="twitter:image" content="https://purespring.top/2020/01/09/IGDplus/1.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="清 泉" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://purespring.top/2020/01/09/IGDplus/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>IGDplus | 清 泉</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+
+
+
+<a href="https://github.com/ninanxiaoguai" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+
+
+
+
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">清 泉</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://purespring.top/2020/01/09/IGDplus/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="spring">
+      <meta itemprop="description" content="梦想天空分外蓝~">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清 泉">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">IGDplus
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-09 12:50:05 / 修改时间：13:01:28" itemprop="dateCreated datePublished" datetime="2020-01-09T12:50:05+08:00">2020-01-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/indicators/" itemprop="url" rel="index"><span itemprop="name">indicators</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/09/IGDplus/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/01/09/IGDplus/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/09/IGDplus/" class="leancloud_visitors" data-flag-title="IGDplus">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近还在学习多目标优化，在于其他算法比较时，就会用到indicator，发现在PlatEMO平台上，HV做了归一化，而IGD并没有做归一化处理，这样可能就会出现一些不对等的信息，出现这个问题的原因之一是在计算IGD时的采样点的方法不是很好。另外最近看到了IGD的升级版-IGD+，此版本是这学期的算法课老师Hisao Ishibuchi提出，也抱着慕名的心情拜读了一下，一共分为两个论文，其一是“Modified Distance Calculation in Generational Distance and Inverted Generational Distance” 与 “Comparison of Hypervolume, IGD and IGD+ from the Viewpoint of Optimal Distributions of Solutions” 很容易看出，第一个为提出IGD+算法，然后进一步与IGD与HV进行对比。</p>
+<a id="more"></a>
+<h2 id="IGD-的不足"><a href="#IGD-的不足" class="headerlink" title="IGD 的不足"></a>IGD 的不足</h2><p>这里有一个概念叫做：<code>Pareto Compliant indicator</code>，两个集合A与B，如果，总会有 A支配B。类似的还有<code>Weak Pareto Compliant indicator</code>，，总会有A弱支配B。目前HV是我们知道的唯一一个满足<code>Pareto Compliant indicator</code>的。IGD上面两个都不满足。</p>
+<p>下图就是很好的例子，可以看出，A集是优于B集合的，但IGD会得出相反的结果。</p>
+<p><img src="/2020/01/09/IGDplus/1.png" alt="img"></p>
+<p>于是提出了IGD+的概念</p>
+<p>分析：在计算IGD中，会遇到两种：</p>
+<p><img src="/2020/01/09/IGDplus/2.png" alt="img"></p>
+<p>左图中，，因此求出的IGD结果的结果是正确的，但相对于右图而言， 且 ，这样的IGD结果便会出现误导。</p>
+<h2 id="IGD"><a href="#IGD" class="headerlink" title="IGD+"></a>IGD+</h2><p>如图：</p>
+<p><img src="/2020/01/09/IGDplus/3.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/4.png" alt="img"></p>
+<p>对于左面，没有修改；对于右面，只考虑了之间的差距。这是因为在上  优于  。数学表达式为：</p>
+<p>其中，m为目标数，</p>
+<p>新的IGD版本，满足<code>Weak Pareto Compliant indicator</code>，具体证明原论文有给出。</p>
+<p>代码实现也很简单：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Score</span> = <span class="title">IGDplus</span><span class="params">(PopObj,PF)</span></span></span><br><span class="line">NP = <span class="built_in">size</span>(PopObj,<span class="number">1</span>);</span><br><span class="line">res = <span class="built_in">ones</span>(<span class="built_in">size</span>(PF,<span class="number">1</span>),<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(PF,<span class="number">1</span>)</span><br><span class="line">    tem = PopObj - <span class="built_in">repmat</span>(PF(<span class="built_in">i</span>,:),NP,<span class="number">1</span>);</span><br><span class="line">    tem(tem &lt;<span class="number">0</span>) = <span class="number">0</span>;</span><br><span class="line">    res(<span class="built_in">i</span>) = min(<span class="built_in">sqrt</span>(sum(tem.*tem,<span class="number">2</span>)));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Score    = mean(res);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="IGD-HV-IGD-对比"><a href="#IGD-HV-IGD-对比" class="headerlink" title="IGD, HV, IGD+ 对比"></a>IGD, HV, IGD+ 对比</h2><h3 id="IGD-与-IGD"><a href="#IGD-与-IGD" class="headerlink" title="IGD 与 IGD+"></a>IGD 与 IGD+</h3><p><img src="/2020/01/09/IGDplus/5.png" alt="img"></p>
+<p>根据收敛性来说，绿色的点比紫色的点更好，IGD不可以正确表达，而IGD+可以正确表达。</p>
+<h3 id="二维分布"><a href="#二维分布" class="headerlink" title="二维分布"></a>二维分布</h3><p>经过其他实验研究表面：</p>
+<ul>
+<li>当帕累托前沿为非线性时，通过HV计算的解的最优分布取决于帕累托前沿的斜率。</li>
+<li>当帕累托前沿为线性时，HV指标通过均匀分布的解得到最大。</li>
+</ul>
+<p>开始实验对比：</p>
+<p>对于HV需要一个参考点，对于二维来说，分别设置：(1, 1), (1.1, 1.1), (2, 2) 与 (10, 10)。PF分别设置线性，凸，凹。将三个指标带入SMS-MOEA算法中。</p>
+<p><img src="/2020/01/09/IGDplus/6.png" alt="img"></p>
+<h4 id="线性："><a href="#线性：" class="headerlink" title="线性："></a>线性：</h4><p><img src="/2020/01/09/IGDplus/7.png" alt="img"></p>
+<p>在线性条件下：</p>
+<ul>
+<li>HV指标的点是均匀分布的，并且有关研究表明，当 时(是参考点的个数，r是选取的参考点)，两个极端点是被包括在其中的。</li>
+<li>当Pareto前沿为线性时，通过均匀分布的解最小化IGD指标。</li>
+<li>当Pareto前沿为线性时，IGD+指标似乎也被均匀分布的解最小化</li>
+</ul>
+<p>因此，在线性中，三者很相似。</p>
+<h4 id="convex-与-concave"><a href="#convex-与-concave" class="headerlink" title="convex 与 concave"></a>convex 与 concave</h4><p><img src="/2020/01/09/IGDplus/9.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/8.png" alt="img"></p>
+<p>图5与6均是非线性。</p>
+<ul>
+<li>HV：最大化解集的最优分布取决于Pareto前沿的斜率。解集的紧凑度最高的地方是斜率为45°的区域。从45°斜坡开始，密度随坡度的增大或减小而减小。这样，在帕累托前缘的中心就得到了更多的解。可以观察上图5、6的(a)-(d)<ul>
+<li>在convex中，在帕累托前沿的两个极端点附近的解决方案不能有较大的高压贡献。因此，即使在r = 2.0的图6(c)中，两个极值点附近也没有解。</li>
+<li>在concave中，两个极值点的HV贡献较大。如图5(b) - (d)所示。当r = 1.0作为计算HV的参考点，这两个极值点与帕累托前沿的形状无关 。这是因为当r = 1.0时，他们的HV贡献总是0。</li>
+</ul>
+</li>
+<li>IGD：我们可以看到，独立于Pareto前沿形状的IGD极小化得到了相似的分布。IGD最小化是指从Pareto前沿的每个参考点到最近解的平均距离最小化。这个问题可以看作是给定参考点的聚类问题。在图4、图5和图6(e)中，给定的1,001个参考点被分成11个簇。也就是说，每个图中的Pareto front被划分为11条线或曲线。每个线段(长度约为帕累托前1/11)的非线性较弱。也就是说，即使帕累托前沿是非线性的，每个线段也类似于一条直线。因此，在图4、图5和图6(e)中得到了相似的IGD最小化分布。</li>
+<li>图5和图6中一个有趣的观察结果是，(f)对于IGD+最小化的结果与(b)对于HV最大化的结果(r = 1.1)相比结果更相似。这可以通过图2(b)所示的IGD+计算机制来解释。从图2 (b)，我们可以看到，IGD +是大约的计算评估的区别真正的帕累托解集和主导地区的前面。这种差异的最小化是解集的高压的最大化。也就是说，IGD +最大化与HV最小化密切相关。因此，(f)中的IGD+极小化和(b)中的HV极大化得到了相似的解分布，如图5和图6所示。如图5(f)和图6(f)所示，在坡度接近0或90的区域，所得到的解非常接近支配区域。<strong>因此，在这些地区不需要许多解决方案来最小化IGD+</strong>。需要在具有45度斜度的帕累托前缘中心附近找到更多的解。两个极值点对于IGD+最小化的重要性取决于Pareto前沿的形状(即，凹或凸)。IGD+最优分布的这些特征与HV最优分布的特征相同。</li>
+</ul>
+<h3 id="三维分布"><a href="#三维分布" class="headerlink" title="三维分布"></a>三维分布</h3><p>实验分析的测试问题为：</p>
+<p><img src="/2020/01/09/IGDplus/10.png" alt="img"></p>
+<p>结果如下：</p>
+<p><img src="/2020/01/09/IGDplus/11.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/12.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/13.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/14.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/15.png" alt="img"></p>
+<p><img src="/2020/01/09/IGDplus/16.png" alt="img"></p>
+<p>实验结果如图7、8、9、10、11、12所示。</p>
+<ul>
+<li>HV：在图7的线性三角帕累托前缘，计算HV参考点位置的影响较小。在图9中，concave三角帕累托前沿对参考点位置的影响也很小。经常使用的测试问题，如DTLZ1-4[8]和WFG4-9[11]，具有线形或凹形的三角形Pareto前沿。因此，EMO社区没有强调计算HV的参考点位置的重要性。然而，当帕累托前沿为倒三角形时(图8、10和12)，<strong>参考点的位置对HV最大化的解的最优分布有很大的影响</strong>。这意味着基于HV的比较结果强烈地依赖于参考点的位置。</li>
+<li>在图7、8、9、10、11、12中，只有当图7中的Pareto front为线性三角形时，六种指标设置(即， HV与参考点四种设置，与IGD和IGD+)。在图8中，线性倒三角帕累托前缘，在r = 1.1, IGD, IGD+时，HV也得到了相似的结果。这些观察结果表明，当帕累托锋为线性时，三个指标的比较结果相似(当倒三角形帕累托前沿时，HV计算的参考点正确指定)。</li>
+<li>如前一节所述，图7、8、9、10、11和12(e)中得到的IGD极小化解的分布是相似的(即，整个帕累托前边一致)。相反，得到的HV极大化和IGD+分布的解的分布与Pareto锋的形状有很大的关系。当r = 1.1(即所得到的HV最大值和IGD+最小值的分布是相似的。也就是说，图7、8、9、10、11、12中(b)和(f)的结果是相似的。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>区别如下：</p>
+<ul>
+<li>当帕累托前沿为三角形时(如DTLZ1-4, WFG4-9)，参考点的位置对获得的HV最大化的最优解分布几乎没有影响或影响很小。</li>
+<li>当帕累托前沿为倒三角形时(如Inverted DTLZ、Minus-DTLZ、Minus- WFG)，参考点的位置对得到的HV最大化的近似最优解分布具有主导作用。</li>
+<li>当Pareto前沿为线性三角形时(如DTLZ1)，三个指标的解分布相似。</li>
+<li>平均分布的解决方案总是得到的IGD最小化独立于形状的帕累托前沿。</li>
+<li>当参考点不太小也不太大时，得到了与Pareto前沿形状无关的HV最大化和IGD+最小化解的相似分布。</li>
+</ul>
+<p>这些观察结果表明，IGD+可作为HV的代用品。(作为整体性能指标)当HV由于计算量大而不易使用时。这也表明，IGD+和HV并不总是评价解集均匀性的好指标。虽然IGD由于其不符合Pareto imcomplain的特性，并不总是一个好的整体性能指标，但在我们的计算实验中，<strong>IGD是一个很好的评估解决方案一致性的指标。</strong></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MOEA/" rel="tag"># MOEA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/21/WebScraping19/" rel="next" title="WebScraping-19">
+                <i class="fa fa-chevron-left"></i> WebScraping-19
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+  <div class="comments" id="comments"></div>
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '.comments',
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: true,
+            app_id: '',
+            app_key: '',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    </script>
+    
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="spring">
+            
+              <p class="site-author-name" itemprop="name">spring</p>
+              <p class="site-description motion-element" itemprop="description">梦想天空分外蓝~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+
+
+
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ninanxiaoguai" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ninanxiaoguai@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IGD-的不足"><span class="nav-number">1.</span> <span class="nav-text">IGD 的不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IGD"><span class="nav-number">2.</span> <span class="nav-text">IGD+</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IGD-HV-IGD-对比"><span class="nav-number">3.</span> <span class="nav-text">IGD, HV, IGD+ 对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IGD-与-IGD"><span class="nav-number">3.1.</span> <span class="nav-text">IGD 与 IGD+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维分布"><span class="nav-number">3.2.</span> <span class="nav-text">二维分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线性："><span class="nav-number">3.2.1.</span> <span class="nav-text">线性：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convex-与-concave"><span class="nav-number">3.2.2.</span> <span class="nav-text">convex 与 concave</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三维分布"><span class="nav-number">3.3.</span> <span class="nav-text">三维分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  <!--
+  &copy; 
+
+<span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">spring</span>
+-->
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">423k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">6:24</span>
+  
+</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+ </span>
+
+
+
+
+<!--
+
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.3.0</div>
+
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NUATd6a1PUQYtIT7MpFYzq4X-gzGzoHsz',
+        appKey: 'Iny9yO41c59ioJOJc84vGygI',
+        placeholder: '如果填写邮箱，可以直接回复至您邮箱中~',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
