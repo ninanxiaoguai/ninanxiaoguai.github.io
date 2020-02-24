@@ -735,7 +735,7 @@ x_{31} & x_{32} & x_{33}
 \right]</script><p>然后每一位均取倒数即可。高维度($m \geq 3$)的依此类推。</p>
 <p>注意，如果矩阵E的秩小于m，那么这m个极限点就不能构成一个m维的超平面。甚至即使超平面能够建立，也可能在某些方向上得不到截距或某些截距 $a_i$ ，不满足 $a_i &gt; z^*_i$。在所有上述情形下，对于每一个 $i \in \{ i,…,m\}$ ，$z^{nad}_i$设置维 $S_t$ 中的非支配解在目标 $f_i$ 上的最大值。</p>
 <p>在MATLAB代码中，如下：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Extreme = <span class="built_in">zeros</span>(<span class="number">1</span>,M);</span><br><span class="line">w       = <span class="built_in">zeros</span>(M)+<span class="number">1e-6</span>+<span class="built_in">eye</span>(M);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : M</span><br><span class="line">	[~,Extreme(i)] = min(max(PopObj./<span class="built_in">repmat</span>(w(<span class="built_in">i</span>,:),N,<span class="number">1</span>),[],<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Hyperplane = PopObj(Extreme,:)\<span class="built_in">ones</span>(M,<span class="number">1</span>);</span><br><span class="line">a = <span class="number">1.</span>/Hyperplane;</span><br><span class="line"><span class="keyword">if</span> any(<span class="built_in">isnan</span>(a))</span><br><span class="line">	a = max(PopObj,[],<span class="number">1</span>)';</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Extreme = <span class="built_in">zeros</span>(<span class="number">1</span>,M);</span><br><span class="line">w       = <span class="built_in">zeros</span>(M)+<span class="number">1e-6</span>+<span class="built_in">eye</span>(M);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : M</span><br><span class="line">	[~,Extreme(<span class="built_in">i</span>)] = <span class="built_in">min</span>(<span class="built_in">max</span>(PopObj./<span class="built_in">repmat</span>(w(<span class="built_in">i</span>,:),N,<span class="number">1</span>),[],<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Hyperplane = PopObj(Extreme,:)\<span class="built_in">ones</span>(M,<span class="number">1</span>);</span><br><span class="line">a = <span class="number">1.</span>/Hyperplane;</span><br><span class="line"><span class="keyword">if</span> any(<span class="built_in">isnan</span>(a))</span><br><span class="line">	a = <span class="built_in">max</span>(PopObj,[],<span class="number">1</span>)';</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h4 id="个体对参考点链接"><a href="#个体对参考点链接" class="headerlink" title="个体对参考点链接"></a>个体对参考点链接</h4><p>效果如下：</p>
 <p><img src="/2019/03/28/nsgaiii/6.png" alt=""></p>
 <p>算法流程：</p>
@@ -1093,7 +1093,7 @@ j \in Z^r:\rho_j = \sum_{S \in S_t/F_l}((\pi(s)=j)?1:0)</script><ul>
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">428k</span>
+    <span title="站点总字数">427k</span>
   
 
   
@@ -1104,7 +1104,7 @@ j \in Z^r:\rho_j = \sum_{S \in S_t/F_l}((\pi(s)=j)?1:0)</script><ul>
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">6:29</span>
+    <span title="站点阅读时长">6:28</span>
   
 </div>
 

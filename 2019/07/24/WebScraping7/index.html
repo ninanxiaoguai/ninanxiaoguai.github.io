@@ -663,7 +663,7 @@ daovoice('init', {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A Word Document on a Website</span><br><span class="line">This is a Word document, full of content that you want very much. Unfortunately,</span><br><span class="line">it’s difficult to access because I’m putting it on my website as a .</span><br><span class="line">docx</span><br><span class="line">file, rather than just publishing it as HTML</span><br></pre></td></tr></table></figure>
 <p>请注意，单词“<code>docx</code>”位于它自己的行上。在原始XML中，它被标记<code>&lt;w:proofErrw:type=&quot;spellStart&quot;/</code>&gt;包围。这是Word的突出显示方式“<code>docx</code>”下划线为红色，表示它认为自己的文件格式的名称存在拼写错误。</p>
 <p>文档的标题前面有样式描述符标签<code>&lt;w:pstyle w:val=&quot; title &quot;&gt;</code>。尽管这并不能让我们非常容易地识别标题(或其他样式的文本)，使用<code>BeautifulSoup</code>的导航功能可以很有用:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">textStrings = wordObj.find_all(<span class="string">'w:t'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> textElem <span class="keyword">in</span> textStrings:</span><br><span class="line">    style = textElem.parent.parent.find(<span class="string">'w:pStyle'</span>)</span><br><span class="line">    <span class="keyword">if</span> style <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> style[<span class="string">'w:val'</span>] == <span class="string">'Title'</span>:</span><br><span class="line">        print(<span class="string">'Title is: &#123;&#125;'</span>.format(textElem.text))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(textElem.text)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">textStrings = wordObj.find_all(<span class="string">'w:t'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> textElem <span class="keyword">in</span> textStrings:</span><br><span class="line">    style = textElem.parent.parent.find(<span class="string">'w:pStyle'</span>)</span><br><span class="line">    <span class="keyword">if</span> style <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> style[<span class="string">'w:val'</span>] == <span class="string">'Title'</span>:</span><br><span class="line">        print(<span class="string">'Title is: &#123;&#125;'</span>.format(textElem.text))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(textElem.text)</span><br></pre></td></tr></table></figure>
 <p>可以很容易地扩展此函数，以便围绕各种文本样式打印标记，或者以其他方式标记它们。</p>
 
       
@@ -989,7 +989,7 @@ daovoice('init', {
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">428k</span>
+    <span title="站点总字数">427k</span>
   
 
   
@@ -1000,7 +1000,7 @@ daovoice('init', {
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">6:29</span>
+    <span title="站点阅读时长">6:28</span>
   
 </div>
 

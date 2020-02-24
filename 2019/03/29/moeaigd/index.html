@@ -671,7 +671,7 @@ r_3 \rightarrow d^i_j = \sqrt{\sum_{l=1}^m(f_l(x^i)-(p^*)^j_l)^2}</script><p>等
 <p>其中11行：找到A个个体，这些个体满足整体对于参考点 $r$ 有最小的proximity distance，需要一个 linear assignment problem(LAP)。</p>
 <h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>选择压力的损失是传统的MOEAs解决MaOPs的主要问题，因为传统的个体间的支配比较会给出很大部分的非支配解集。在所提出的算法中，所有个体间的支配关系与通过IGD来计算的所需的参考点相比较。可是，在PF中均匀分布的参考点很难获得。基于此，就在Utopian PF中均与采样出一些点来。而已，为了解决因为参考点不准确的问题，基于它们对所估计出的参考点的支配关系而设计了三种计算距离的方法。我们希望，越小的proximity distance意味着对应的个体有更好的估计。特别地，如果等级为 $r_2$ 的个体，仍然与 $r_1$ 和 $r_3$ 就算距离的方式相同，那么收敛性就会损失。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>代码最先不断的循环找到nadir point</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DNPE = Global.ParameterSet(<span class="number">100</span>*Global.N);</span><br><span class="line"><span class="keyword">while</span> Global.NotTermination(Population) &amp;&amp; Global.evaluated &lt; DNPE</span><br><span class="line">	Offspring  = GA(Population(randi(<span class="keyword">end</span>,<span class="number">1</span>,Global.N)),&#123;<span class="number">0.9</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">20</span>&#125;);  </span><br><span class="line">	<span class="comment">% Off = GA(P,&#123;proC,disC,proM,disM&#125;) dis = distribution index </span></span><br><span class="line">	Population = [Population,Offspring];</span><br><span class="line">	[~,rank]   = sort(Fitness(Population.objs),<span class="number">1</span>);</span><br><span class="line">	Population = Population(unique(rank(<span class="number">1</span>:<span class="built_in">ceil</span>(Global.N/Global.M),:)));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">% --------------------------------------------</span></span><br><span class="line"><span class="comment">% 可以看到：交叉的概率0.9，交叉的参数20，变异的概率1，变异的参数20，非常大的数值了</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DNPE = Global.ParameterSet(<span class="number">100</span>*Global.N);</span><br><span class="line"><span class="keyword">while</span> Global.NotTermination(Population) &amp;&amp; Global.evaluated &lt; DNPE</span><br><span class="line">	Offspring  = GA(Population(randi(<span class="keyword">end</span>,<span class="number">1</span>,Global.N)),&#123;<span class="number">0.9</span>,<span class="number">20</span>,<span class="number">1</span>,<span class="number">20</span>&#125;);  </span><br><span class="line">	<span class="comment">% Off = GA(P,&#123;proC,disC,proM,disM&#125;) dis = distribution index </span></span><br><span class="line">	Population = [Population,Offspring];</span><br><span class="line">	[~,rank]   = <span class="built_in">sort</span>(Fitness(Population.objs),<span class="number">1</span>);</span><br><span class="line">	Population = Population(unique(rank(<span class="number">1</span>:<span class="built_in">ceil</span>(Global.N/Global.M),:)));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">% --------------------------------------------</span></span><br><span class="line"><span class="comment">% 可以看到：交叉的概率0.9，交叉的参数20，变异的概率1，变异的参数20，非常大的数值了</span></span><br></pre></td></tr></table></figure>
 <p>种群依次为：</p>
 <p><img src="/2019/03/29/moeaigd/11.png" alt=""><br><img src="/2019/03/29/moeaigd/12.png" alt=""><br><img src="/2019/03/29/moeaigd/13.png" alt=""><br><img src="/2019/03/29/moeaigd/14.png" alt=""><br><img src="/2019/03/29/moeaigd/15.png" alt=""></p>
 
@@ -996,7 +996,7 @@ r_3 \rightarrow d^i_j = \sqrt{\sum_{l=1}^m(f_l(x^i)-(p^*)^j_l)^2}</script><p>等
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">428k</span>
+    <span title="站点总字数">427k</span>
   
 
   
@@ -1007,7 +1007,7 @@ r_3 \rightarrow d^i_j = \sqrt{\sum_{l=1}^m(f_l(x^i)-(p^*)^j_l)^2}</script><p>等
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">6:29</span>
+    <span title="站点阅读时长">6:28</span>
   
 </div>
 
