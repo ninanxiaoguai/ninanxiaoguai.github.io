@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vscodelatex]]></title>
+    <url>%2F2020%2F06%2F27%2Fvscodelatex%2F</url>
+    <content type="text"><![CDATA[配置vscode + latex + SumatraPDF 安装texlive2020去官网下载 下载VScode再下载插件Latex Workshop 配置文件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455// LaTeX "latex-workshop.latex.tools": [ &#123; "name": "xelatex", "command": "xelatex", "args": [ "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-pdf", "%DOCFILE%" ] &#125;, &#123; "name": "pdflatex", "command": "pdflatex", "args": [ "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOCFILE%" ] &#125;, &#123; "name": "bibtex", "command": "bibtex", "args": [ "%DOCFILE%" ] &#125;],"latex-workshop.latex.recipes": [ &#123; "name": "xelatex", "tools": [ "xelatex" ] &#125;, &#123; "name": "xe-&gt;bib-&gt;xe-&gt;xe", "tools": [ "xelatex", "bibtex", "xelatex", "xelatex" ] &#125;, &#123; "name": "pdflatex", "tools": [ "pdflatex" ] &#125;], 下载SumatraPDF在 配置文件里加入，设置默认用SumatraPDF打开，并设置正向搜索。 12345678910111213"latex-workshop.view.pdf.viewer": "external","latex-workshop.view.pdf.external.viewer.command": "D:/SumatraPDF/SumatraPDF.exe", // 注意修改路径"latex-workshop.view.pdf.external.viewer.args": [ "%PDF%" ],"latex-workshop.view.pdf.external.synctex.command": "D:/SumatraPDF/SumatraPDF.exe", // 注意修改路径"latex-workshop.view.pdf.external.synctex.args": [ "-forward-search", "%TEX%", "%LINE%", "%PDF%" ], 在SumatraPDF中，高级选项 中，设置如下： 1EnableTeXEnhancements = true 再进入 选项 中，设置如下，反向搜索： 1&quot;D:\Microsoft VS Code\Code.exe&quot; &quot;D:\Microsoft VS Code\resources\app\out\cli.js&quot; -g &quot;%f&quot;:&quot;%l&quot; 最好不要清理 xelatex 生成的 gz 后缀的临时文件，否则就不能进行正向和反向搜索；]]></content>
+      <categories>
+        <category>latex</category>
+      </categories>
+      <tags>
+        <tag>vscode</tag>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于Coding设置]]></title>
     <url>%2F2020%2F04%2F30%2FCoding%2F</url>
     <content type="text"><![CDATA[网站之前一直处于崩的状态，今天上午抽出时间收拾了一下，甚至联系了阿里云的客服，判断域名没有问题，那就应该是托管在Coding和GitHub的阶段出现了问题，考虑Coding之前出现过一次大更新，于是就先检查了一遍Coding，果然就解决了。因为我直接把文件删除了，所以就算是如何托管在Coding的步骤记录。 生成与绑定SSH因为之前已经有了SSH key，因此，只需要找到，并绑定在Coding上即可： 输入 cd ~/.ssh 再输入 cat id_rsa.pub会输出 12ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxmyemail@example.com 然后复制到Coding中个人设置的对应位置。 在Git bash中输入： 1ssh -T git@e.coding.net 会输出以下，即为完成。 123Coding 提示: Hello 张清泉, You&apos;ve connected to Coding.net via SSH. This is a personal key.张清泉，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥.公钥指纹：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 转移DNS解析这次我没有用阿里云的DNS解析，而是用了腾讯的。 首先，在阿里云DNS解析中，设置转到腾讯云，将DNS服务器设置为： 12f1g1ns1.dnspod.netf1g1ns2.dnspod.net 这样就算转移成功，以下操作都是在腾讯云中操作。 在主文件的_config.yml中，设置为如下，即分别托管在Github与Coding上 12345deploy: - type: git repo: github: ssh://git@github.com/ninanxiaoguai/ninanxiaoguai.github.io.git coding: https://e.coding.net/purespring/purespring.git 这样在Git bash中输入以下，文件即可托管到到Coding中 123hexo cleanhexo ghexo d Coding 中设置打开静态网页的接口，在团队管理中找到团队设置，进行认证。 在项目设置中，进入项目与成员，进入功能开关，功能全部打开。 进入静态网站，设置，在自定义域名中加入purespring.top，进行绑定 注意这句话”您可为此网站指定自定义域名，用以代替 9zdxkv.coding-pages.com作为网站的访问地址。 最多可绑定 5 个自定义域名，绑定前请在域名 DNS 设置中添加 CNAME 记录指向 9zdxkv.coding-pages.com“，就是说在腾讯云中添加一条。所有的都按照以下图来就好： 其中注意：在Coding中申请自定义域名，申请证书时，要在下图设置中的境内设置默认，境外那个暂时关闭。否则会出现申请失败！]]></content>
@@ -181,7 +193,7 @@
   <entry>
     <title><![CDATA[test]]></title>
     <url>%2F2019%2F07%2F26%2Ftest%2F</url>
-    <content type="text"><![CDATA[Welcome to this article, please enter password to read. Incorrect Password! No content to display! U2FsdGVkX1+aGIGZZst3uHOGOOWoCT9JTVY07lj4OdskDdDQL/OfxkQtXUdJzW/9kOZU2zSjs6kQdcxtjmdOWmBWnfkKvWXILqlgtKIUXCjPO0ei1/FwVR4hP5SIdCFr2+9iHzB6rmfMD8s/L93cgJDxTawp1GATV93orj30PlzDbX5jCAg4ZURGfT3buJbWsZKXl73YVjQA2ksrLUyxFnqXWVc0asV38VsK/rFbzl9smVB5pZ9u9f6ZPRvm0Sm/P9IbCPsa2cH9t7KKIrtnGm9kG07X6n3qM6ZSwf57bH7ugcD8Prg4SVM3GwZhWLkzcw8jW36mOKLNemgmCMyyNsKjcE0aLkhtAryIzec6MNQbBQFJVpnBUPbP+PcoXsNk8KyGoUikguhODKWhy65oXDm5uaeIagj+Xj5MukOgbQpqJqaHr6O5BjaMjQLk+scwpn3cjH3JSbenlAtY5Piv16/7bY7ScZGysuVsCueK0SS69dRfHmYTncxDd6hm378RJ2EuiT7SiZMSYA6+a2AAwaiYg4JxKDBRKsGNqdVr+XBZX492lip8ftPw7yoT9x5QYL2VEQ4779rqvlM3c+h/1b2C8SZAg9RwTqYT8OiG/4icDqBlwNYVOwFjHPiRFqTjk1kKv9YUJDWVQsI+WZ+U78n01Ga7NpntFZcjuWuW99UfQcfHtm26NlByP3uezfXtB76+6lY2ZKV9df4N7ei8XDFhjqxrIgTsiGm/uom8VoNAfq/oxY4XwsO4k6zoEOX71RcfCSpgzyP+5fGPQq3P7zXqxIPfUlLSsdnnKrmPtvg=]]></content>
+    <content type="text"><![CDATA[Welcome to this article, please enter password to read. Incorrect Password! No content to display! U2FsdGVkX1891E79cOyfOcOxIfUPUkYWj7cjS5uCNGEYh3gpq4m/b6Sy3LEDvLzpJmgx4FVBXK4Z43rqG/sZQM5pYDKFE8i6oJvm2FoVMF8eVkWMU7DZZRpGSREeh9umxuVKCOePwWdUPvyFKIjiTZKGf3SCbfobBTUiE7cpB3qBvHkjgqfiovaoOBGZ+XsqYWOutFOyK3d206NFH8BVCmn7nWHKXmIEMpz6cMzctBHKmGxgS8G4BXhGvZwgajlV+fBYALM1ohnCI6HHJtnO/TILybVGfrIE0cd5Ikv2HYVdbgYzev2alLWrtdWsQe1/Wds1ROjAExkdfzwyy6azPPGUOmzlU/+J12VPjxcM/csslmXZkg45EVhfeI7dsd0DSL4S6Cl6oCAqpllp+h6943xwfqZUexzdfSmTdzgtdTtwFva+Ak2EarcRZRCrHM3mghhX9cnJYTnC5RX0AeUapLp60XN0Hm75YxMc2jXo9jSO7imxFhgOnF3ZJsRnngm6Kc3a2Fj2sXRBjTjrOoiSFZSILjTp87Giv7OKJDWHKkY/BgswVb/d2VaVNb0/WU1tgckv/SQTqk20iAVkxZhdgMsTn0GCIZ873cHlGEftk3vzHHk9x0tn1+6m3Pfj2fGSYdMEi3L94Jjb4+hXKUhMSlzco2XfvV810Z0gF9xuCohADdaedrwuoMbeXlgBBjnJaaxtAPEsWzw3FYhEitOi/THB/Vnm6GJal9p5VqrZ3Igz5w5qxcrmLHPj+apaHNXBxxCpzjw2wpR55HeMscaSPD9O4PSu/CD2n3xpzjBzkK0=]]></content>
       <categories>
         <category>test</category>
       </categories>
