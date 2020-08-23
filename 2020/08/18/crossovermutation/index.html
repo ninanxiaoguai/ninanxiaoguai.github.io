@@ -197,7 +197,7 @@ daovoice('init', {
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://purespring.top/2020/08/18/crossovermutation/1.png">
 <meta property="og:image" content="https://purespring.top/2020/08/18/crossovermutation/2.png">
-<meta property="og:updated_time" content="2020-08-23T06:42:17.072Z">
+<meta property="og:updated_time" content="2020-08-23T06:49:39.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="crossovermutation">
 <meta name="twitter:description" content="一直都在直接调用SBX与Polynomial mutation，并没有具体的学习这两个算子是如何操作的，因此，抽出一段时间，学习了一下。">
@@ -495,7 +495,7 @@ daovoice('init', {
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-23 14:42:17" itemprop="dateModified" datetime="2020-08-23T14:42:17+08:00">2020-08-23</time>
+                <time title="修改时间：2020-08-23 14:49:39" itemprop="dateModified" datetime="2020-08-23T14:49:39+08:00">2020-08-23</time>
               
             
           </span>
@@ -646,8 +646,8 @@ x_{i}^{(2, t+1)} &=0.5\left[\left(1-\beta_{q i}\right) x_{i}^{(1, t)}+\left(1+\b
 <li>生成子代</li>
 </ul>
 <script type="math/tex; mode=display">
-y_{i}^{(1, t+1)}=x_{i}^{(1, t+1)}+\left(x_{i}^{\mathcal{U}}-x_{i}^{\mathcal{L}}\right) \bar{\delta}_{i}</script><pre><code>其中，$x_{i}^{\mathcal{U}}$与$x_{i}^{\mathcal{L}}$分别为自变量x的上界与下界，该式也有一个人工设置的参数参数，$\eta_{m}$。类似的分布曲线图如下：
-</code></pre><p><img src="/2020/08/18/crossovermutation/2.png" alt=""></p>
+y_{i}^{(1, t+1)}=x_{i}^{(1, t+1)}+\left(x_{i}^{\mathcal{U}}-x_{i}^{\mathcal{L}}\right) \bar{\delta}_{i}</script><p>其中，$x_{i}^{\mathcal{U}}$与$x_{i}^{\mathcal{L}}$分别为自变量x的上界与下界，该式也有一个人工设置的参数参数，$\eta_{m}$。类似的分布曲线图如下：</p>
+<p><img src="/2020/08/18/crossovermutation/2.png" alt=""></p>
 <p>可以看到数值越大，生成的子代更接近父代。</p>
 <p>Matlab代码如下，出自PlatEMO：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% Polynomial mutation</span></span><br><span class="line">Lower = <span class="built_in">repmat</span>(Global.lower,<span class="number">2</span>*N,<span class="number">1</span>);</span><br><span class="line">Upper = <span class="built_in">repmat</span>(Global.upper,<span class="number">2</span>*N,<span class="number">1</span>);</span><br><span class="line">Site  = <span class="built_in">rand</span>(<span class="number">2</span>*N,D) &lt; proM/D;</span><br><span class="line">mu    = <span class="built_in">rand</span>(<span class="number">2</span>*N,D);</span><br><span class="line">temp  = Site &amp; mu&lt;=<span class="number">0.5</span>;</span><br><span class="line">Offspring       = <span class="built_in">min</span>(<span class="built_in">max</span>(Offspring,Lower),Upper);</span><br><span class="line">Offspring(temp) = Offspring(temp)+(Upper(temp)-Lower(temp)).*((<span class="number">2.</span>*mu(temp)+(<span class="number">1</span><span class="number">-2.</span>*mu(temp)).*(<span class="number">1</span>-(Offspring(temp)-Lower(temp))./(Upper(temp)-Lower(temp))).^(disM+<span class="number">1</span>)).^(<span class="number">1</span>/(disM+<span class="number">1</span>))<span class="number">-1</span>);</span><br><span class="line">temp = Site &amp; mu&gt;<span class="number">0.5</span>; </span><br><span class="line">Offspring(temp) = Offspring(temp)+(Upper(temp)-Lower(temp)).*(<span class="number">1</span>-(<span class="number">2.</span>*(<span class="number">1</span>-mu(temp))+<span class="number">2.</span>*(mu(temp)<span class="number">-0.5</span>).*(<span class="number">1</span>-(Upper(temp)-Offspring(temp))./(Upper(temp)-Lower(temp))).^(disM+<span class="number">1</span>)).^(<span class="number">1</span>/(disM+<span class="number">1</span>)));</span><br></pre></td></tr></table></figure>
