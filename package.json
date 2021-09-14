@@ -30,7 +30,7 @@
     "hexo-symbols-count-time": "^0.4.4",
     "hexo-wordcount": "^3.0.2",
     "hoek": "^4.2.1",
-    "set-value": "^2.0.1",
+    "set-value": "^4.0.1",
     "shell-quote": "^1.6.1"
   }
 }
